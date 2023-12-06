@@ -34,7 +34,7 @@ export const LayoutStyled = {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
-    font-family: 'Elice+DX+Neolli';
+    font-family: 'Elice DX Neolli';
   `,
 
   QuizSub: styled.div<{ border: string; color: string }>`
