@@ -1,16 +1,16 @@
-import { Data33Quiz as QuizData } from '../../Data/Book3';
 // import { useEffect, useState } from 'react';
-import DayLayout from '../../Layout/Day3';
+import { Data41Quiz as QuizData } from '../../Data/Book3';
+import DayLayout from '../../Layout/Day4';
 import Styled from '../../style';
-import SingleQuiz from '../../ThirdGrade02-exercise/Day1/Single1-3';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubJustCal, ThirdGrade3Day3 } from '../../utils/handleTitle';
+import { SubBlank, ThirdGrade3Day4 } from '../../utils/handleTitle';
+import SingleQuiz from './Single4-1';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
-const ThirdGrade33Exercise = () => {
+const ThirdGrade41Exercise = () => {
   return (
-    <DayLayout title={ThirdGrade3Day3.title} subTitle={SubJustCal}>
+    <DayLayout title={ThirdGrade3Day4.title} subTitle={SubBlank}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
           <div>예시 부분 이미지 첨부 예정</div>
@@ -26,9 +26,9 @@ const ThirdGrade33Exercise = () => {
           </Styled.RowWrapBox>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={3} />
+      <ConfirmBtn type={true} day={4} />
     </DayLayout>
   );
 };
 
-export default ThirdGrade33Exercise;
+export default ThirdGrade41Exercise;

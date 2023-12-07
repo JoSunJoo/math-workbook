@@ -7,6 +7,21 @@ const Styled = {
     align-items: center;
     gap: ${props => (props.gap ? `${props.gap}rem` : '')};
   `,
+  ColGapBox2: styled.div<{ gap?: number }>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: ${props => (props.gap ? `${props.gap}rem` : '')};
+  `,
+  ColGapBox3: styled.div<{ gap?: number }>`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: ${props => (props.gap ? `${props.gap}rem` : '')};
+  `,
+
   RowWrapBox: styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +61,17 @@ const Styled = {
     gap: 3rem;
     justify-content: center;
   `,
-
+  RowWrapBox5: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    & > div {
+      width: 35%;
+      justify-content: center;
+    }
+  `,
   RowBox: styled.div`
     display: flex;
   `,
@@ -146,6 +171,23 @@ const Styled = {
     font-weight: 600;
     position: relative;
   `,
+  ExampleBox5: styled.div`
+    //SingleWrapper5 와 비슷한 예제 박스
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    width: 100%;
+    min-width: 32.5rem;
+    height: fit-content;
+    border-radius: 1rem;
+    border: 1px solid #c0c0c0;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: relative;
+  `,
   ExampleExplain1: styled.div`
     position: absolute;
     color: #ff2e00;
@@ -234,7 +276,6 @@ const Styled = {
     height: fit-content;
     align-items: center;
     justify-content: center;
-    background-color: rgba(193, 193, 193, 0.2);
     border-radius: 1rem;
     position: relative;
     padding: 2rem;
@@ -255,6 +296,15 @@ const Styled = {
     font-weight: 600;
     display: flex;
     padding: 4rem 0;
+    align-items: center;
+    justify-content: center;
+  `,
+  PaddingBox3: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    padding: 2rem;
     align-items: center;
     justify-content: center;
   `,
@@ -372,7 +422,40 @@ const Styled = {
       color: #ff2e00;
     }
   `,
-  TopLineInput: styled.input`
+  InputBox4: styled.input`
+    width: 6.6rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
+  SpacingInputBox1: styled.input`
+    width: 4.8125rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.3rem;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    letter-spacing: 0.3rem;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
+  TopLineInput: styled.div`
     border: none;
     border-top: 2px solid #c0c0c0;
     outline: none;
@@ -383,8 +466,24 @@ const Styled = {
     width: 40%;
     text-align: center;
     letter-spacing: 0.55rem;
-    padding-left: 0.6rem;
+    padding-left: 0.1rem;
     box-sizing: border-box;
+    padding-top: 0.3rem;
+  `,
+  TopLineInput2: styled.div`
+    border: none;
+    border-top: 2px solid #c0c0c0;
+    outline: none;
+    background-color: transparent;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.55rem;
+    padding-left: 0.1rem;
+    box-sizing: border-box;
+    padding-top: 0.3rem;
   `,
   InputExplainWrapper: styled.div<{ left?: number }>`
     display: flex;
@@ -452,7 +551,6 @@ const Styled = {
   TextSize: styled.div`
     font-size: 1.25rem;
     font-weight: 600;
-    padding: 1rem;
   `,
   InnerColBox: styled.div`
     display: flex;
@@ -513,6 +611,11 @@ const Styled = {
     text-align: right;
     width: 100%;
   `,
+  LetterSpacing3: styled.div`
+    letter-spacing: 2.5rem;
+    text-align: right;
+    width: 40%;
+  `,
   RightDashBorder: styled.div`
     width: 3rem;
     height: 9rem;
@@ -532,7 +635,13 @@ const Styled = {
     justify-content: space-between;
   `,
   DashNumMid: styled.div`
-    width: 80%;
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.2rem;
+  `,
+  DashNumMid2: styled.div`
+    width: 95%;
     display: flex;
     justify-content: space-between;
     padding-left: 1.2rem;
@@ -542,7 +651,12 @@ const Styled = {
     height: 0.125rem;
     background-color: black;
   `,
-  DashBoxUpper: styled.div`
+  DashBoxMidLine2: styled.div`
+    width: 105%;
+    height: 0.125rem;
+    background-color: black;
+  `,
+  DashBoxUpper: styled.input`
     position: absolute;
     top: -3rem;
     left: 3.4rem;
@@ -551,6 +665,100 @@ const Styled = {
     background-color: #eff5ff;
     width: 2.5rem;
     height: 2.3125rem;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  `,
+  ColorBox: styled.div`
+    background-color: #d0e0ff;
+    padding: 0 0.5rem;
+    border-radius: 0.55rem;
+  `,
+  NumBox1: styled.div<{ color?: string }>`
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => (props.color ? props.color : '#F4F0FF')};
+  `,
+  NumBox2: styled.div<{ color?: string }>`
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #747373;
+    border-top: 1px solid #747373;
+    background-color: ${props => (props.color ? props.color : '#F4F0FF')};
+  `,
+  NumBox2Input: styled.input<{ noBottom?: boolean; noRight?: boolean }>`
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #747373;
+    border-bottom: ${props => (props.noBottom ? 'none' : ' ')};
+    border-right: ${props => (props.noRight ? 'none' : ' ')};
+    background-color: #fff;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  `,
+  TempSize1: styled.div`
+    width: 4.8rem;
+    height: fit-content;
+    padding-bottom: 2rem;
+  `,
+
+  SelectSingleWrapper: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    min-height: 3rem;
+    height: fit-content;
+    border-radius: 1rem;
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #c0c0c0;
+    & > div {
+      width: 25%;
+    }
+    & > div:first-of-type > label {
+      border-radius: 1rem 0 0 1rem;
+    }
+    & > div:last-of-type > label {
+      border-radius: 0 1rem 1rem 0;
+      border-right: none !important;
+    }
+
+    & > div > input {
+      width: 0;
+      height: 0;
+      display: none;
+      &:checked + label {
+        background-color: #e6f8f0;
+      }
+    }
+  `,
+  SelectSingleButton: styled.label`
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    flex-grow: 1;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border-right: 2px dashed #c0c0c0 !important;
+    &:hover {
+      background-color: #e6f8f0;
+    }
   `,
 };
 

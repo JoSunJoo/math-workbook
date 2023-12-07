@@ -15,7 +15,9 @@ const Single53 = (props: Props) => {
             <Styled.LetterSpacing>{quiz2}</Styled.LetterSpacing>
           </Styled.ColGapBox>
         </Styled.RowBox4>
-        <Styled.TopLineInput></Styled.TopLineInput>
+        <Styled.TopLineInput>
+          <Styled.SpacingInputBox1></Styled.SpacingInputBox1>
+        </Styled.TopLineInput>
       </Styled.ColGapBox>
     </Styled.MiniSingleWrapper>
   );
