@@ -1,22 +1,24 @@
 import React from 'react';
 
-import { Data51Quiz as QuizData } from '../../Data/Book3';
-import DayLayout from '../../Layout/Day5';
+import { Data52Quiz as QuizData } from '../../Data/Book3';
+import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubBlank, ThirdGrade3Day5 } from '../../utils/handleTitle';
-import ExampleQuiz from './Example5-1';
-import SingleQuiz from './Single5-1';
+import { ThirdGrade5Day2 } from '../../utils/handleTitle';
+import SingleQuiz from './Single2-1';
 
-import type { Data51QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data52QuizProps as QuizProps } from '../../Type/Type3';
 
-const ThirdGrade51Exercise: React.FC = () => {
+const ThirdGrade21Exercise: React.FC = () => {
   return (
-    <DayLayout title={ThirdGrade3Day5.title} subTitle={SubBlank}>
+    <DayLayout
+      title={ThirdGrade5Day2.title}
+      subTitle={ThirdGrade5Day2.subTitle}
+    >
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={3}>
+          <div>이미지 첨부 예정</div>
           <Styled.RowWrapBox5>
-            <ExampleQuiz />
             {QuizData.map((item: QuizProps, idx) => (
               <SingleQuiz
                 key={idx}
@@ -24,15 +26,16 @@ const ThirdGrade51Exercise: React.FC = () => {
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
                 quiz3={item.quiz3}
+                quiz4={item.quiz3}
                 sign1={item.sign1}
               />
             ))}
           </Styled.RowWrapBox5>
         </Styled.ColGapBox2>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={5} />
+      <ConfirmBtn type={true} day={2} />
     </DayLayout>
   );
 };
 
-export default ThirdGrade51Exercise;
+export default ThirdGrade21Exercise;

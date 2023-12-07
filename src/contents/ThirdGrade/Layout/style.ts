@@ -54,6 +54,7 @@ export const LayoutStyled = {
     text-align: center;
     box-sizing: border-box;
     white-space: pre-wrap;
+    padding: 1rem;
   `,
   QuizBox: styled.div<{ color: string; line: boolean }>`
     bottom: 4%;

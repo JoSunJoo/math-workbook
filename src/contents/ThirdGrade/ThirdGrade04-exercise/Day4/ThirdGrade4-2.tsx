@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Data51Quiz as QuizData } from '../../Data/Book3';
-import DayLayout from '../../Layout/Day5';
+import { Data42Quiz as QuizData } from '../../Data/Book4';
+import DayLayout from '../../Layout/Day4';
 import Styled from '../../style';
+import SingleQuiz from '../../ThirdGrade03-exercise/Day5/Single5-1';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubBlank, ThirdGrade3Day5 } from '../../utils/handleTitle';
-import ExampleQuiz from './Example5-1';
-import SingleQuiz from './Single5-1';
+import { SubBlank, ThirdGrade4Day4 } from '../../utils/handleTitle';
+import ExampleQuiz from './Example4-2';
 
 import type { Data51QuizProps as QuizProps } from '../../Type/Type3';
 
-const ThirdGrade51Exercise: React.FC = () => {
+const ThirdGrade42Exercise: React.FC = () => {
   return (
-    <DayLayout title={ThirdGrade3Day5.title} subTitle={SubBlank}>
+    <DayLayout title={ThirdGrade4Day4.title} subTitle={SubBlank}>
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={3}>
           <Styled.RowWrapBox5>
@@ -30,9 +30,9 @@ const ThirdGrade51Exercise: React.FC = () => {
           </Styled.RowWrapBox5>
         </Styled.ColGapBox2>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={5} />
+      <ConfirmBtn type={true} day={4} />
     </DayLayout>
   );
 };
 
-export default ThirdGrade51Exercise;
+export default ThirdGrade42Exercise;

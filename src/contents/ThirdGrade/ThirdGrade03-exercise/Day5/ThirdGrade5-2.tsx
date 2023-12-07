@@ -4,17 +4,14 @@ import { Data52Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day5';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { ThirdGrade3Day3 } from '../../utils/handleTitle';
+import { SubBlank, ThirdGrade3Day5 } from '../../utils/handleTitle';
 import SingleQuiz from './Single5-2';
 
 import type { Data52QuizProps as QuizProps } from '../../Type/Type3';
 
 const ThirdGrade52Exercise: React.FC = () => {
   return (
-    <DayLayout
-      title={ThirdGrade3Day3.title}
-      subTitle={ThirdGrade3Day3.subTitle}
-    >
+    <DayLayout title={ThirdGrade3Day5.title} subTitle={SubBlank}>
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={3}>
           <Styled.RowWrapBox5>

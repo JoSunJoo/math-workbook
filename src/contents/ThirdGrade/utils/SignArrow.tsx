@@ -11,7 +11,7 @@ const SignArrow = (props: Props) => {
   return (
     <Wrapper width={width} deg={deg}>
       <Line>
-        <SignBox>{sign}</SignBox>
+        <SignBox deg={deg}>{sign}</SignBox>
         <Triangle />
       </Line>
     </Wrapper>
@@ -33,7 +33,7 @@ const Line = styled.div`
   height: 0.7rem;
   background-color: #ffa260;
 `;
-const SignBox = styled.div`
+const SignBox = styled.div<{ deg?: number }>`
   position: absolute;
   top: -90%;
   left: 40%;
@@ -45,6 +45,7 @@ const SignBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: ${props => (props.deg ? `rotate(-${props.deg}deg)` : ' ')};
 `;
 const Triangle = styled.div`
   position: absolute;

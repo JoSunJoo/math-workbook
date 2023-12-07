@@ -97,6 +97,20 @@ const Styled = {
     align-items: flex-end;
     gap: 1rem;
   `,
+  RowBox6: styled.div`
+    display: flex;
+    width: 85%;
+  `,
+  RowBox7: styled.div`
+    display: flex;
+    gap: 0.6rem;
+  `,
+  RowBox8: styled.div`
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  `,
 
   RedFont1: styled.div`
     color: #ff2e00;
@@ -355,6 +369,16 @@ const Styled = {
   `,
   LongInput: styled.input`
     width: 60%;
+    height: 2rem;
+    margin: 0 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #c0c0c0;
+    font-size: 1.5rem;
+    background-color: transparent;
+  `,
+  MiddleInput: styled.input`
+    width: 40%;
     height: 2rem;
     margin: 0 1rem;
     border: none;
@@ -693,7 +717,33 @@ const Styled = {
     border-top: 1px solid #747373;
     background-color: ${props => (props.color ? props.color : '#F4F0FF')};
   `,
-  NumBox2Input: styled.input<{ noBottom?: boolean; noRight?: boolean }>`
+  NumBox3: styled.input`
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-left: 1px solid #747373;
+    border-top: 1px solid #747373;
+    background-color: rgba(98, 151, 255, 0.3);
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  `,
+  NumBox2Input: styled.div<{ noBottom?: boolean; noRight?: boolean }>`
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #747373;
+    border-bottom: ${props => (props.noBottom ? 'none' : ' ')};
+    border-right: ${props => (props.noRight ? 'none' : ' ')};
+    background-color: #fff;
+  `,
+  NumBox3Input: styled.input<{ noBottom?: boolean; noRight?: boolean }>`
     width: 4rem;
     height: 3rem;
     display: flex;
@@ -759,6 +809,154 @@ const Styled = {
     &:hover {
       background-color: #e6f8f0;
     }
+  `,
+
+  SelectSingleWrapper2: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    min-height: 3rem;
+    height: fit-content;
+    border-radius: 1rem;
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #c0c0c0;
+    & > div:first-of-type > label {
+      border-radius: 1rem 0 0 1rem;
+    }
+    & > div:last-of-type > label {
+      border-radius: 0 1rem 1rem 0;
+      border-right: none !important;
+    }
+
+    & > div {
+      min-width: 12.5rem;
+    }
+    & > div > label {
+      padding-top: 1rem;
+    }
+    & > div > input {
+      width: 0;
+      height: 0;
+      display: none;
+      &:checked + label {
+        background-color: #e6f8f0;
+      }
+    }
+  `,
+  SelectSingleButton2: styled.label`
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    flex-grow: 1;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border-right: 2px dashed #c0c0c0 !important;
+  `,
+
+  //4권
+  DivSingleWrapper: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    min-height: 10rem;
+  `,
+  DivSingleWrapper2: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    min-height: 3rem;
+  `,
+  DivWrapper: styled.div`
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    margin-right: 9rem;
+  `,
+  DivLeftCircle: styled.div`
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.3rem;
+    left: -1.1rem;
+  `,
+  DivLeftNum: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-right: 0.4rem;
+    margin-top: 0.2rem;
+    background-color: #fff;
+    width: 4rem;
+    height: 4.4rem;
+    position: absolute;
+    top: -0.1rem;
+    left: -1.42rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1rem;
+  `,
+  DivLeftNum2: styled.div<{ isCheck: boolean }>`
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-right: 0.4rem;
+    margin-top: 0.2rem;
+    background-color: ${props => (props.isCheck ? '#e6f8f0' : '#fff')};
+    width: 4rem;
+    height: 4.4rem;
+    position: absolute;
+    top: -0.1rem;
+    left: -1.42rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1rem;
+  `,
+  DivCenterNum: styled.div`
+    position: absolute;
+    top: 1rem;
+    left: 2.8rem;
+    border-top: 2px solid black;
+    min-width: 5.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-left: -0.25rem;
+    margin-top: 0.2rem;
+  `,
+  DivTopInputWrapper: styled.div`
+    position: absolute;
+    top: -1.5rem;
+    left: 3rem;
+    display: flex;
+    gap: 0.2rem;
+    background-color: #fff;
+  `,
+  BorderBox1: styled.div`
+    border: 1.5px solid #c0c0c0;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 70%;
+    padding-bottom: 3rem;
+  `,
+  //5권
+  BorderBox2: styled.div`
+    border-radius: 1rem;
+    background-color: rgba(98, 151, 255, 0.4);
+    width: fit-content;
+    height: fit-content;
+    padding: 0 0.5rem;
   `,
 };
 
