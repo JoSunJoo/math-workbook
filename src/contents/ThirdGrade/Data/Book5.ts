@@ -1,8 +1,62 @@
+export const Data12Quiz = [
+  { id: '①', quiz1: '15 × 6' },
+  { id: '②', quiz1: '4 × 19' },
+  { id: '③', quiz1: '58 × 8' },
+  { id: '④', quiz1: '48 × 6' },
+];
+
 export const Data14Quiz = [
   { id: '①', quiz1: '85 ÷ 5' },
   { id: '②', quiz1: '98 ÷ 7' },
   { id: '③', quiz1: '116 ÷ 4' },
   { id: '④', quiz1: '68 ÷ 4' },
+];
+
+export const Data21Quiz = [
+  {
+    id: '①',
+    quiz1: '14',
+    quiz2: '32',
+    quiz3: '8',
+    quiz4: '56',
+    quiz5: '7',
+    quiz6: '',
+    quiz7: '',
+    quiz8: '',
+  },
+  {
+    id: '②',
+    quiz1: '10',
+    quiz2: '48',
+    quiz3: '15',
+    quiz4: '32',
+    quiz5: '',
+    quiz6: '5',
+    quiz7: '',
+    quiz8: '',
+  },
+  {
+    id: '③',
+    quiz1: '28',
+    quiz2: '34',
+    quiz3: '14',
+    quiz4: '68',
+    quiz5: '',
+    quiz6: '',
+    quiz7: '2',
+    quiz8: '',
+  },
+  {
+    id: '④',
+    quiz1: '55',
+    quiz2: '18',
+    quiz3: '22',
+    quiz4: '45',
+    quiz5: '',
+    quiz6: '',
+    quiz7: '',
+    quiz8: '9',
+  },
 ];
 
 export const Data22Quiz = [

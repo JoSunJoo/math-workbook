@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Data52Quiz as QuizData } from '../../Data/Book3';
+import { Data21Quiz as QuizData } from '../../Data/Book5';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { ThirdGrade5Day2 } from '../../utils/handleTitle';
 import SingleQuiz from './Single2-1';
 
-import type { Data52QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data21QuizProps as QuizProps } from '../../Type/Type5';
 
 const ThirdGrade21Exercise: React.FC = () => {
   return (
@@ -26,8 +26,11 @@ const ThirdGrade21Exercise: React.FC = () => {
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
                 quiz3={item.quiz3}
-                quiz4={item.quiz3}
-                sign1={item.sign1}
+                quiz4={item.quiz4}
+                quiz5={item.quiz5}
+                quiz6={item.quiz6}
+                quiz7={item.quiz7}
+                quiz8={item.quiz8}
               />
             ))}
           </Styled.RowWrapBox5>

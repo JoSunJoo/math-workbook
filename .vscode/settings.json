@@ -1,10 +1,10 @@
 {
   // vscode
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": false,
-    "source.fixAll.stylelint": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.tslint": "never",
+    "source.fixAll.stylelint": "never"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnPaste": true,
@@ -27,5 +27,8 @@
   // YAML
   "yaml.customTags": [
     "!reference sequence" // ref: https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#configure-your-ide-to-support-reference-tags
-  ]
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

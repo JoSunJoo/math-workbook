@@ -1,9 +1,16 @@
 import Styled from '../../style';
 
-import type { Data52QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data21QuizProps as QuizProps } from '../../Type/Type5';
 
 const Single21 = (props: QuizProps) => {
-  const { id, quiz1, quiz2, quiz3, quiz4, sign1 } = props;
+  const { id, quiz1, quiz2, quiz3, quiz4, quiz5, quiz6, quiz7, quiz8 } = props;
+  const handleComponent = (num: string) => {
+    if (num === '') return <Styled.NumBox3></Styled.NumBox3>;
+    else
+      return (
+        <Styled.NumBox2 color="rgba(98, 151, 255, 0.3)">{num}</Styled.NumBox2>
+      );
+  };
   return (
     <Styled.SingleWrapper5>
       <Styled.IdNumBox3>{id}</Styled.IdNumBox3>
@@ -12,27 +19,19 @@ const Single21 = (props: QuizProps) => {
           <Styled.ColGapBox3>
             <Styled.RowBox>
               <Styled.RowBox>
-                <Styled.NumBox2 color="rgba(98, 151, 255, 0.4)">
-                  {quiz1}
-                </Styled.NumBox2>
-                <Styled.NumBox2 color="rgba(98, 151, 255, 0.4)">
-                  {quiz2}
-                </Styled.NumBox2>
+                {handleComponent(quiz5)}
+                {handleComponent(quiz8)}
               </Styled.RowBox>
-              <Styled.NumBox2Input noBottom={true}></Styled.NumBox2Input>
+              <Styled.NumBox2Input noBottom={true}>{quiz4}</Styled.NumBox2Input>
             </Styled.RowBox>
             <Styled.RowBox>
-              <Styled.NumBox2 color="rgba(98, 151, 255, 0.4)">
-                {quiz3}
-              </Styled.NumBox2>
-              <Styled.NumBox2 color="rgba(98, 151, 255, 0.4)">
-                {quiz4}
-              </Styled.NumBox2>
-              <Styled.NumBox2Input></Styled.NumBox2Input>
+              {handleComponent(quiz6)}
+              {handleComponent(quiz7)}
+              <Styled.NumBox2Input>{quiz3}</Styled.NumBox2Input>
             </Styled.RowBox>
             <Styled.RowBox>
-              <Styled.NumBox2Input noRight={true}></Styled.NumBox2Input>
-              <Styled.NumBox2Input></Styled.NumBox2Input>
+              <Styled.NumBox2Input noRight={true}>{quiz1}</Styled.NumBox2Input>
+              <Styled.NumBox2Input>{quiz2}</Styled.NumBox2Input>
             </Styled.RowBox>
           </Styled.ColGapBox3>
         </Styled.ColGapBox3>

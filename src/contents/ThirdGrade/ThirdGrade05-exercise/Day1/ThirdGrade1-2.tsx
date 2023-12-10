@@ -1,27 +1,31 @@
-import { Data31Quiz as QuizData } from '../../Data/Book5';
+import { Data14Quiz as QuizData } from '../../Data/Book5';
 // import { useEffect, useState } from 'react';
-import DayLayout from '../../Layout/Day3';
+import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubGeometry, ThirdGrade5Day3 } from '../../utils/handleTitle';
-import SingleQuiz from './Single3-1';
+import { ThirdGrade5Day1 } from '../../utils/handleTitle';
+import ExampleQuiz from './Example1-2';
+import SingleQuiz from './Single1-2';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
 
-const ThirdGrade31Exercise = () => {
+const ThirdGrade12Exercise = () => {
   return (
-    <DayLayout title={ThirdGrade5Day3.title} subTitle={SubGeometry}>
+    <DayLayout
+      title={ThirdGrade5Day1.title}
+      subTitle={ThirdGrade5Day1.subTitle}
+    >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>예시 이미지 첨부 예정</div>
+          <ExampleQuiz />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz key={idx} id={item.id} quiz1={item.quiz1} />
           ))}
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={3} />
+      <ConfirmBtn type={true} day={1} />
     </DayLayout>
   );
 };
 
-export default ThirdGrade31Exercise;
+export default ThirdGrade12Exercise;

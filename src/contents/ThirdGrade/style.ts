@@ -111,6 +111,58 @@ const Styled = {
     justify-content: space-between;
     gap: 1rem;
   `,
+  RowBox9: styled.div`
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 2rem;
+  `,
+  RowBox10: styled.div`
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 0.6rem;
+    align-items: center;
+  `,
+  RowBox11: styled.div`
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    gap: 4.5rem;
+  `,
+  RowBox12: styled.div`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  `,
+
+  RowBox13Upper: styled.div`
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    top: -1.2rem;
+    left: 0;
+  `,
+  RowBox13Lower: styled.div`
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    top: 1.7rem;
+    right: 3.2rem;
+  `,
 
   RedFont1: styled.div`
     color: #ff2e00;
@@ -187,6 +239,22 @@ const Styled = {
   `,
   ExampleBox5: styled.div`
     //SingleWrapper5 와 비슷한 예제 박스
+    margin-top: 2.938rem;
+    margin-bottom: 0.1875rem;
+    width: 50rem;
+    height: 13rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 2rem;
+  `,
+  ExampleBox6: styled.div`
+    //좀 더 큰 예제박스
     font-size: 1.5rem;
     font-weight: 600;
     display: flex;
@@ -201,6 +269,19 @@ const Styled = {
     justify-content: center;
     background-color: #fff;
     position: relative;
+  `,
+  ExampleBox7: styled.div`
+    //절반 사이즈 문제와 동일한 사이즈의 예제
+    width: 35%;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
   `,
   ExampleExplain1: styled.div`
     position: absolute;
@@ -462,6 +543,38 @@ const Styled = {
       color: #ff2e00;
     }
   `,
+  InputBox5: styled.input`
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
+  InputBox6: styled.input`
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
   SpacingInputBox1: styled.input`
     width: 4.8125rem;
     height: 2.3125rem;
@@ -555,6 +668,9 @@ const Styled = {
     left: 1.2rem;
     font-size: 1.7rem;
   `,
+  IdNumBox4: styled.div`
+    margin-right: 1rem;
+  `,
   TextBoxWrapper: styled.div`
     display: flex;
     flex-direction: column;
@@ -572,10 +688,50 @@ const Styled = {
     font-weight: 500;
     font-size: 1.25rem;
   `,
+  TextBox2: styled.div`
+    white-space: pre-wrap;
+    line-height: 150%;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  `,
+  TextBox3: styled.div`
+    white-space: pre-wrap;
+    line-height: 150%;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+  `,
+  TextBox4: styled.div`
+    line-height: 150%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  `,
   TextSize: styled.div`
     font-size: 1.25rem;
     font-weight: 600;
   `,
+  InnerTextBox: styled.div`
+    width: 100%;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: rgba(193, 193, 193, 0.2);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+  `,
+
   InnerColBox: styled.div`
     display: flex;
     flex-direction: column;
@@ -957,6 +1113,73 @@ const Styled = {
     width: fit-content;
     height: fit-content;
     padding: 0 0.5rem;
+  `,
+  //6권
+  FractUnderLine: styled.div`
+    width: 115%;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.12rem;
+    border-bottom: 1px solid black;
+    text-align: center;
+    line-height: 75%;
+  `,
+  FractUnderNum: styled.div`
+    line-height: 95%;
+  `,
+  CountWrapper: styled.div`
+    width: 80%;
+    display: flex;
+  `,
+  CountBtn: styled.button<{ checked: string }>`
+    border: ${props =>
+      props.checked === '#6297FF' ? '2px solid #6297FF' : '1px dashed #c0c0c0'};
+    border-left: none;
+    border-collapse: collapse;
+    width: 2rem;
+    height: 2rem;
+    background-color: ${props =>
+      props.checked === '#6297FF' ? '#D0E0FF' : 'rgba(192, 192, 192, 0.1)'};
+    &:first-of-type {
+      border-left: ${props =>
+        props.checked === '#6297FF'
+          ? '2px solid #6297FF'
+          : '1px dashed #c0c0c0'};
+    }
+
+    border-right: ${props =>
+      props.checked === '#6297FF' ? '2px solid #6297FF' : '1px dashed #c0c0c0'};
+  `,
+  CountExample: styled.div`
+    display: flex;
+    & > div {
+      border: 1px dashed #c0c0c0;
+      border-collapse: collapse;
+      width: 1.3rem;
+      height: 1.3rem;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .color {
+      border: 1px solid #6297ff;
+      border-right: none;
+      background-color: #d0e0ff;
+    }
+    .last-color {
+      border: 1px solid #6297ff;
+      background-color: #d0e0ff;
+    }
+  `,
+  BlueSpan: styled.div`
+    color: #6297ff;
+  `,
+  GreenSpan: styled.div`
+    color: #00b76a;
+    line-height: 95%;
+    font-weight: 500;
+  `,
+  BoldSpan: styled.div`
+    font-size: 1.15rem;
   `,
 };
 

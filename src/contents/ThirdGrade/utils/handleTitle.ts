@@ -113,6 +113,30 @@ export const ThirdGrade5Day5 = {
   subTitle: '글과 그림을 보고 물음에 알맞은 식을 세우고 답을 구하세요.',
   subTitle2: '문제를 읽고 알맞은 식과 답을 쓰고 검산식을 세워 검산해 보세요.',
 };
+export const ThirdGrade6Day1 = {
+  title: '01 전체와 부분',
+  subTitle: '색칠된 부분을 분수로 나타내세요.',
+  subTitle1:
+    '먹은 부분을 왼쪽 빈칸에, 남은 부분을 오른쪽 빈칸에 분수로 나타내세요',
+};
+export const ThirdGrade6Day2 = {
+  title: '02  분수의 크기 비교',
+  subTitle: '분모가 같은 분수의 크기를 비교하여 작은 것부터 차례로 쓰세요.',
+};
+export const ThirdGrade6Day3 = {
+  title: '03 전체를 그림으로 나타내기',
+  subTitle:
+    '분자만큼 윗 줄에 색을 채우고,\n 분모만큼 아래의 줄에 색을 채운 후 전체를 구하세요.',
+};
+export const ThirdGrade6Day4 = {
+  title: '04 전체의 길이 구하기',
+  subTitle: '전체의 길이를 구하세요.',
+};
+export const ThirdGrade6Day5 = {
+  title: '05  전체 구하기',
+  subTitle: '전체를 구하세요.',
+  subTitle2: '전체의 길이를 구하세요.',
+};
 
 export const SubBlank = '빈칸에 알맞은 수를 써넣으세요.';
 export const SubJustCal = '계산을 하세요.';
