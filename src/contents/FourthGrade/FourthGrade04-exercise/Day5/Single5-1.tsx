@@ -5,8 +5,8 @@ import type { Data51QuizProps as QuizProps } from '../../Type/Type4';
 const Single51 = (props: QuizProps) => {
   const { id, quiz1, unit } = props;
   return (
-    <Styled.RowBox6>
-      <Styled.SingleWrapper4>
+    <Styled.RowBox2>
+      <Styled.SingleWrapper1>
         <Styled.IdNumBox>{id}</Styled.IdNumBox>
         <Styled.TextBoxWrapper>
           <Styled.TextBox>{quiz1}</Styled.TextBox>
@@ -22,8 +22,8 @@ const Single51 = (props: QuizProps) => {
             </Styled.RowBox>
           </Styled.TextBoxWrapper>
         </Styled.TextBoxWrapper>
-      </Styled.SingleWrapper4>
-    </Styled.RowBox6>
+      </Styled.SingleWrapper1>
+    </Styled.RowBox2>
   );
 };
 

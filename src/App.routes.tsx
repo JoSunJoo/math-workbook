@@ -11,6 +11,7 @@
 
 import { createEliceExtRoutes } from '@elice/extcontent-utils';
 
+import FourthGradeRoutes from './contents/FourthGrade/FourthGrade.routes';
 //
 // =============== 라우트 경로를 추가하려면 여기 아래를 수정하세요 ===============
 // =============== Edit below to add route paths ===============
@@ -22,6 +23,11 @@ const routes = createEliceExtRoutes([
     path: '/third',
     component: import('./contents/ThirdGrade/ThirdGrade'),
     children: ThirdGradeRoutes,
+  },
+  {
+    path: '/fourth',
+    component: import('./contents/FourthGrade/FourthGrade'),
+    children: FourthGradeRoutes,
   },
 ]);
 //

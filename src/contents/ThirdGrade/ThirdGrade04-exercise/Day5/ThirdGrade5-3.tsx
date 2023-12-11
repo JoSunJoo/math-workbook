@@ -6,7 +6,7 @@ import ConfirmBtn from '../../utils/ConfirmBtn';
 import { SubWay, ThirdGrade4Day5 } from '../../utils/handleTitle';
 import SingleQuiz from './Single5-1';
 
-import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
+import type { Data51QuizProps as QuizProps } from '../../Type/Type4';
 
 const ThirdGrade53Exercise = () => {
   return (
@@ -14,7 +14,12 @@ const ThirdGrade53Exercise = () => {
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
           {QuizData.map((item: QuizProps, idx) => (
-            <SingleQuiz key={idx} id={item.id} quiz1={item.quiz1} />
+            <SingleQuiz
+              key={idx}
+              id={item.id}
+              quiz1={item.quiz1}
+              unit={item.unit}
+            />
           ))}
         </Styled.ColGapBox>
       </Styled.PaddingBox>

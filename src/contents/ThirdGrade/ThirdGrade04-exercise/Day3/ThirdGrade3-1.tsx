@@ -19,6 +19,7 @@ const ThirdGrade31Exercise = () => {
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
           <div>예시 부분 이미지 첨부 예정</div>
+          <div>이미지 적용해서 할 예정</div>
           <Styled.RowWrapBox>
             {QuizData.map((item: Data12QuizProps, idx) => (
               <SingleQuiz

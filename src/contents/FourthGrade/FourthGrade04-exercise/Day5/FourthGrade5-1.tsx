@@ -3,21 +3,17 @@ import { Data51Quiz as QuizData } from '../../Data/Book4';
 import DayLayout from '../../Layout/Day5';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { ThirdGrade4Day5 } from '../../utils/handleTitle';
+import { FourthGrade4Day5 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single5-1';
 
 import type { Data51QuizProps as QuizProps } from '../../Type/Type4';
 
-const ThirdGrade51Exercise = () => {
+const FourthGrade51Exercise = () => {
   return (
-    <DayLayout
-      title={ThirdGrade4Day5.title}
-      subTitle={ThirdGrade4Day5.subTitle}
-    >
+    <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>이미지 첨부 예정</div>
-          {QuizData.map((item: QuizProps, idx) => (
+          {QuizData.map((item: QuizProps, idx: number) => (
             <SingleQuiz
               key={idx}
               id={item.id}
@@ -32,4 +28,4 @@ const ThirdGrade51Exercise = () => {
   );
 };
 
-export default ThirdGrade51Exercise;
+export default FourthGrade51Exercise;

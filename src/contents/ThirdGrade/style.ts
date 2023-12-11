@@ -477,6 +477,7 @@ const Styled = {
     border-bottom: 2px solid #c0c0c0;
     font-size: 1.5rem;
     background-color: transparent;
+    text-align: center;
   `,
   InputBox1: styled.input`
     width: 4.8125rem;

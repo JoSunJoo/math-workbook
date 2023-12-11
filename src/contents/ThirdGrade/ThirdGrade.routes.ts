@@ -310,7 +310,7 @@ export default createEliceExtRoutes([
     component: import('./ThirdGrade05-exercise/Day5/ThirdGrade5-3'),
   },
 
-  //5권
+  //6권
   // {
   //   path: 'quiz6-1-1',
   //   component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-1'),
