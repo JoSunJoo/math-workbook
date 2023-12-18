@@ -127,7 +127,7 @@ const routes = createEliceExtRoutes([
 ]);
 ```
 
-## 앨리스 플랫폼과 콘텐츠 연동 방법
+## 엘리스 플랫폼과 콘텐츠 연동 방법
 
 제작된 콘텐츠가 엘리스 플랫폼에서 동작하기 위해서는 추가적인 과정이 필요로 합니다.
 
@@ -146,8 +146,55 @@ const routes = createEliceExtRoutes([
 콘텐츠를 사용자가 모두 완료하였을 때, 점수를 엘리스 플랫폼으로 전달하도록 구성합니다.
 
 1. 콘텐츠가 왼료되는 시점에 `@elice/extcontent-apis`에서 제공하는 `sendScore()` 함수를 호출합니다. 함수에는 `score`라는 인자 값이 필요로 하며, 일반적으로 콘텐츠를 완료하였을 때에는 `100`을 보내도록 합니다.
+    ```ts
+    import { sendScore } from '@elice/extcontent-apis';
+
+    sendScore({ score: 100 });
+    ```
 1. 상기 설명과 같이 콘텐츠를 엘리스 수업 자료로 설정하였다면, 수업 자료의 점수가 그림과 같이 100점이 되는지 확인합니다.
    ![Alt text](.gitlab/images/readme-sendscore.png)
+
+### 엘리스 플랫폼에 실습 변경사항 저장
+
+학생의 콘텐츠 변경사항을 엘리스 플랫폼에 저장하기 위해서는 `@elice/extcontent-apis`에서 제공하는 `getKeyValue()` 및 `postKeyValue()` 함수를 사용합니다. 해당 함수들은 `key`와 `value`를 저장하고 불러오는 역할을 합니다.
+
+> **⚠️ 실습 변경사항은 각 사용자 및 수업 자료마다 별도로 저장되며, 타 유저 혹은 수업 자료에는 영향을 주지 않습니다.**
+
+> **⚠️ key 및 value 작성 규칙**
+>   - **key**는 항상 **camelCase로 작성**되어야 히며, **영문자 및 숫자로만 작성**되어야 합니다. (`[a-zA-Z0-9]+]`)
+>   - **value**의 가능한 타입은 *string, number, boolean, object, array* 이며, object의 **key는 항상 camelCase**로 작성되어야 합니다.
+
+1. 콘텐츠에서 변경사항을 저장할 때에는 `postKeyValue()` 함수를 사용하여 `key`에 해당하는 `value`를 저장합니다.
+    ```ts
+    import { postKeyValue } from '@elice/extcontent-apis';
+
+    await postKeyValue({
+      key: 'quiz01.answer', // key는 항상 camelCase로 작성되어야 히며,
+                            // 영문자 및 숫자로만 작성되어야 합니다. (`[a-zA-Z0-9]+]`)
+      value: '엘리스' // value의 가능한 타입은 string, number, boolean, object, array 이며,
+                    // object의 key는 항상 camelCase로 작성되어야 합니다.
+    });
+    ```
+
+1. 콘텐츠에서 변경사항을 불러올 때에는 `getKeyValue()` 함수를 사용하여 `key`에 해당하는 `value`를 불러옵니다.
+    ```ts
+    import { getKeyValue } from '@elice/extcontent-apis';
+
+    const value = await getKeyValue({
+      key: 'quiz01.answer',
+    });
+
+    console.log(value); // "엘리스"
+
+    // 혹은 다음과 같이 키의 일부만 입력하여 해당 키의 하위 키들을 모두 불러올 수 있습니다.
+    // 구분자는 항상 '.'(dot)으로 작성되어야 합니다.
+
+    const value = await getKeyValue({
+      key: 'quiz01',
+    });
+
+    console.log(value); // { answer: "엘리스" }
+    ```
 
 ## FAQ
 
@@ -159,7 +206,8 @@ const routes = createEliceExtRoutes([
 - [`@mui`](https://mui.com): 기본적인 UI 라이브러리 이며 theme을 지정하여 빠르게 컴포넌트를 사용할 수 있습니다.
 - [`@tanstack/react-query`](https://tanstack.com/query): API에서 데이터를 편하게 받아 올 수 있습니다.
 - [`react-use`](https://github.com/streamich/react-use): 유용한 react hook들을 모아놓은 라이브러리 입니다.
+- [`zustand`](https://github.com/pmndrs/zustand): 전역 상태 관리를 위한 라이브러리 입니다.
 
 ### 추가적으로 다른 제 3자 라이브러리를 사용할 수 있나요?
 
-라이브러리는 개발을 빠르고 편리하게 도움을 주는 소중한 존재들입니다. 하지만 여러 라이브러리들이 한 프로젝트에 혼재하게 되면 프로젝트를 적절히 유지보수 하는데 큰 어려움으로 작용하게 됩니다. 따라서 **추가적인 라이브러리를 사용하기 위해서는 엘리스의 허가가 필요**로 하며, 하가 없이 임의로 사용한 라이브러리는 콘텐츠 리뷰 과정에서 통과되지 못할 수 있습니다.
+라이브러리는 개발을 빠르고 편리하게 도움을 주는 소중한 존재들입니다. 하지만 여러 라이브러리들이 한 프로젝트에 혼재하게 되면 프로젝트를 적절히 유지보수 하는데 큰 어려움으로 작용하게 됩니다. 따라서 **추가적인 라이브러리를 사용하기 위해서는 엘리스의 허가가 필요**로 하며, 허가 없이 임의로 사용한 라이브러리는 콘텐츠 리뷰 과정에서 반려될 수 있습니다.
