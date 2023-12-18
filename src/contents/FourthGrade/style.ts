@@ -7,6 +7,13 @@ const Styled = {
     align-items: center;
     gap: ${props => (props.gap ? `${props.gap}rem` : '')};
   `,
+  ColGapBox2: styled.div<{ gap?: number }>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: ${props => (props.gap ? `${props.gap}rem` : '')};
+  `,
 
   RowWrapBox: styled.div`
     display: flex;
@@ -61,6 +68,28 @@ const Styled = {
     & > div {
       width: 25%;
       justify-content: center;
+    }
+  `,
+  RowWrapBox6: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    & > div {
+      width: 25%;
+      justify-content: flex-start;
+    }
+  `,
+  RowWrapBox7: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    & > div {
+      width: 40%;
+      justify-content: flex-start;
     }
   `,
   RowBox: styled.div`

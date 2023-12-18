@@ -197,7 +197,7 @@ export default createEliceExtRoutes([
     path: 'quiz4-1-3',
     component: import('./FourthGrade04-exercise/Day1/FourthGrade1-3'),
   },
-  {ad
+  {
     path: 'quiz4-2-1',
     component: import('./FourthGrade04-exercise/Day2/FourthGrade2-1'),
   },

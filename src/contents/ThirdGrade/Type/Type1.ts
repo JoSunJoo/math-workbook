@@ -20,6 +20,11 @@ export interface Data42QuizProps {
   quiz4: string;
   quiz5: string;
 }
+export interface Data51QuizProps {
+  id: string;
+  quiz1: string;
+  unit: string;
+}
 
 export interface Data53QuizProps {
   id: string;

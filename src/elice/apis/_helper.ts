@@ -9,5 +9,31 @@
  * If you have any questions, please contact us via contact point.
  * ======================================================== */
 
-export * from './account';
-export * from './route-helper';
+import { decamelize } from 'humps';
+
+import { __eliceinternal_metadata_store__ } from '../utils/_stores/_metadata';
+
+//
+//
+//
+
+const KVSTORE_KEY_SEPARATOR = '_';
+
+//
+//
+//
+
+/**
+ *
+ */
+export function _kvstore_createKey(key: string | null | undefined) {
+  const materialId =
+    __eliceinternal_metadata_store__.getState().metadata?.materialId;
+  if (!materialId || !key) {
+    throw new Error('material ID and key is required');
+  }
+
+  return decamelize(`material${materialId}.${key}`, {
+    separator: KVSTORE_KEY_SEPARATOR,
+  });
+}

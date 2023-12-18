@@ -1,9 +1,9 @@
 import Styled from '../../style';
 
-import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
+import type { Data51QuizProps as QuizProps } from '../../Type/Type1';
 
 const Single53 = (props: QuizProps) => {
-  const { id, quiz1 } = props;
+  const { id, quiz1, unit } = props;
   return (
     <Styled.RowBox2>
       <Styled.SingleWrapper4>
@@ -16,6 +16,7 @@ const Single53 = (props: QuizProps) => {
               <Styled.LongInput></Styled.LongInput>
               <Styled.TextSize>답:</Styled.TextSize>
               <Styled.ShortInput></Styled.ShortInput>
+              <Styled.TextSize>{unit}</Styled.TextSize>
             </Styled.RowBox3>
           </Styled.TextBoxWrapper>
         </Styled.TextBoxWrapper>

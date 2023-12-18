@@ -1,3 +1,14 @@
+export const Data11Quiz = [
+  { id: '①', quiz1: '80 ÷ 2', url: '' },
+  { id: '②', quiz1: '90 ÷ 3', url: '' },
+  { id: '③', quiz1: '30 ÷ 3', url: '' },
+  { id: '④', quiz1: '40 ÷ 2', url: '' },
+  { id: '⑤', quiz1: '50 ÷ 5', url: '' },
+  { id: '⑥', quiz1: '60 ÷ 2', url: '' },
+  { id: '⑦', quiz1: '40 ÷ 4', url: '' },
+  { id: '⑧', quiz1: '80 ÷ 4', url: '' },
+];
+
 export const Data12Quiz = [
   { id: '①', quiz1: '70 ÷ 2', quiz2: '60 ÷ 2', quiz3: '10 ÷ 2' },
   { id: '②', quiz1: '90 ÷ 2', quiz2: '80 ÷ 2', quiz3: '10 ÷ 2' },
@@ -6,41 +17,68 @@ export const Data12Quiz = [
   { id: '⑤', quiz1: '90 ÷ 5', quiz2: '50 ÷ 5', quiz3: '40 ÷ 5' },
 ];
 
-//데이터미적용
 export const Data13Quiz = [
-  { id: '①', quiz1: 20, quiz2: 4 },
-  { id: '②', quiz1: 30, quiz2: 8 },
-  { id: '③', quiz1: 40, quiz2: 3 },
-  { id: '④', quiz1: 90, quiz2: 3 },
-  { id: '⑤', quiz1: 10, quiz2: 4 },
-  { id: '⑥', quiz1: 60, quiz2: 8 },
-  { id: '⑦', quiz1: 30, quiz2: 2 },
-  { id: '⑧', quiz1: 20, quiz2: 9 },
-  { id: '⑨', quiz1: 50, quiz2: 7 },
-  { id: '⑩', quiz1: 40, quiz2: 3 },
+  { id: '①', quiz1: 60, quiz2: 2 },
+  { id: '②', quiz1: 50, quiz2: 2 },
+  { id: '③', quiz1: 80, quiz2: 4 },
+  { id: '④', quiz1: 60, quiz2: 4 },
+  { id: '⑤', quiz1: 60, quiz2: 3 },
+  { id: '⑥', quiz1: 60, quiz2: 5 },
+  { id: '⑦', quiz1: 50, quiz2: 5 },
+  { id: '⑧', quiz1: 80, quiz2: 5 },
+  { id: '⑨', quiz1: 80, quiz2: 2 },
+  { id: '⑩', quiz1: 30, quiz2: 2 },
 ];
 
-//데이터 미적용
+export const Data21Quiz = [
+  { id: '①', quiz1: '46 ÷ 2', url: '' },
+  { id: '②', quiz1: '39 ÷ 3', url: '' },
+  { id: '③', quiz1: '28 ÷ 2', url: '' },
+  { id: '④', quiz1: '44 ÷ 4', url: '' },
+  { id: '⑤', quiz1: '63 ÷ 3', url: '' },
+];
+
 export const Data22Quiz = [
-  { id: '①', quiz1: '70 ÷ 2', quiz2: '60 ÷ 2', quiz3: '10 ÷ 2' },
-  { id: '②', quiz1: '90 ÷ 2', quiz2: '80 ÷ 2', quiz3: '10 ÷ 2' },
-  { id: '③', quiz1: '80 ÷ 5', quiz2: '50 ÷ 5', quiz3: '30 ÷ 5' },
-  { id: '④', quiz1: '70 ÷ 5', quiz2: '50 ÷ 5', quiz3: '20 ÷ 5' },
-  { id: '⑤', quiz1: '90 ÷ 5', quiz2: '50 ÷ 5', quiz3: '40 ÷ 5' },
+  { id: '①', quiz1: '56 ÷ 4', quiz2: '40 ÷ 4', quiz3: '16 ÷ 4' },
+  { id: '②', quiz1: '81 ÷ 3', quiz2: '60 ÷ 3', quiz3: '21 ÷ 3' },
+  { id: '③', quiz1: '58 ÷ 2', quiz2: '40 ÷ 2', quiz3: '18 ÷ 2' },
+  { id: '④', quiz1: '72 ÷ 6', quiz2: '60 ÷ 6', quiz3: '12 ÷ 6' },
+  { id: '⑤', quiz1: '92 ÷ 4', quiz2: '80 ÷ 4', quiz3: '12 ÷ 4' },
 ];
 
-//데이터미적용
 export const Data23Quiz = [
-  { id: '①', quiz1: 20, quiz2: 4 },
-  { id: '②', quiz1: 30, quiz2: 8 },
-  { id: '③', quiz1: 40, quiz2: 3 },
-  { id: '④', quiz1: 90, quiz2: 3 },
-  { id: '⑤', quiz1: 10, quiz2: 4 },
-  { id: '⑥', quiz1: 60, quiz2: 8 },
-  { id: '⑦', quiz1: 30, quiz2: 2 },
-  { id: '⑧', quiz1: 20, quiz2: 9 },
-  { id: '⑨', quiz1: 50, quiz2: 7 },
-  { id: '⑩', quiz1: 40, quiz2: 3 },
+  { id: '①', quiz1: 48, quiz2: 2 },
+  { id: '②', quiz1: 48, quiz2: 3 },
+  { id: '③', quiz1: 63, quiz2: 3 },
+  { id: '④', quiz1: 54, quiz2: 2 },
+  { id: '⑤', quiz1: 84, quiz2: 2 },
+  { id: '⑥', quiz1: 92, quiz2: 4 },
+  { id: '⑦', quiz1: 96, quiz2: 3 },
+  { id: '⑧', quiz1: 75, quiz2: 5 },
+  { id: '⑨', quiz1: 64, quiz2: 2 },
+  { id: '⑩', quiz1: 64, quiz2: 4 },
+];
+
+export const Data31Quiz = [
+  { id: '①', quiz1: 69, quiz2: 3 },
+  { id: '②', quiz1: 46, quiz2: 2 },
+  { id: '③', quiz1: 77, quiz2: 7 },
+  { id: '④', quiz1: 48, quiz2: 4 },
+  { id: '⑤', quiz1: 68, quiz2: 2 },
+  { id: '⑥', quiz1: 93, quiz2: 3 },
+  { id: '⑦', quiz1: 88, quiz2: 4 },
+  { id: '⑧', quiz1: 28, quiz2: 2 },
+];
+
+export const Data32Quiz = [
+  { id: '①', quiz1: 56, quiz2: 2 },
+  { id: '②', quiz1: 72, quiz2: 4 },
+  { id: '③', quiz1: 60, quiz2: 4 },
+  { id: '④', quiz1: 78, quiz2: 3 },
+  { id: '⑤', quiz1: 80, quiz2: 5 },
+  { id: '⑥', quiz1: 56, quiz2: 4 },
+  { id: '⑦', quiz1: 45, quiz2: 3 },
+  { id: '⑧', quiz1: 72, quiz2: 2 },
 ];
 
 export const Data33Quiz = [

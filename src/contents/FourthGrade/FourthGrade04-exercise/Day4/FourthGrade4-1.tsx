@@ -15,9 +15,10 @@ const FourthGrade41Exercise = () => {
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
-        <Styled.ColGapBox gap={4}>
+        <Styled.ColGapBox2 gap={4}>
           <div>예시 부분 이미지 첨부 예정</div>
-          <Styled.RowWrapBox3>
+
+          <Styled.RowWrapBox6>
             {QuizData1.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -26,6 +27,8 @@ const FourthGrade41Exercise = () => {
                 unit={item.unit}
               />
             ))}
+          </Styled.RowWrapBox6>
+          <Styled.RowWrapBox7>
             {QuizData2.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -35,8 +38,8 @@ const FourthGrade41Exercise = () => {
                 unit2={item.unit2}
               />
             ))}
-          </Styled.RowWrapBox3>
-        </Styled.ColGapBox>
+          </Styled.RowWrapBox7>
+        </Styled.ColGapBox2>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={4} />
     </DayLayout>

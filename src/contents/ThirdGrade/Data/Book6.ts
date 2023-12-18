@@ -16,7 +16,7 @@ export const Data23Quiz = [
   {
     id: '①',
     quiz1_1: '1',
-    quiz1_2: '3',
+    quiz1_2: '5',
     quiz2_1: '3',
     quiz2_2: '5',
     quiz3_1: '3',
@@ -80,7 +80,14 @@ export const Data31Quiz = [
   { id: '⑦', quiz1: 5, quiz2: 7, quiz3: 55 },
   { id: '⑧', quiz1: 3, quiz2: 8, quiz3: 42 },
 ];
-
+export const Data32Quiz = [
+  { id: '①', quiz1: 3, quiz2: 4, quiz3: 9 },
+  { id: '②', quiz1: 4, quiz2: 5, quiz3: 16 },
+  { id: '③', quiz1: 9, quiz2: 10, quiz3: 45 },
+  { id: '④', quiz1: 6, quiz2: 8, quiz3: 54 },
+  { id: '⑤', quiz1: 4, quiz2: 7, quiz3: 32 },
+  { id: '⑥', quiz1: 3, quiz2: 6, quiz3: 21 },
+];
 export const Data33Quiz = [
   { id: '①', quiz1: 2, quiz2: 6, quiz3: 12 },
   { id: '②', quiz1: 3, quiz2: 8, quiz3: 6 },
@@ -103,15 +110,14 @@ export const Data41Quiz = [
   { id: '⑦', method: '휴지', mune: 1, deno: 9, len: 45 },
 ];
 
-//데이터 미적용
 export const Data42Quiz = [
-  { id: '①', method: '신발끈', mune: 1, deno: 10, len: 5 },
-  { id: '②', method: '자', mune: 1, deno: 5, len: 11 },
-  { id: '③', method: '색 테이프', mune: 1, deno: 6, len: 7 },
-  { id: '④', method: '리본', mune: 1, deno: 7, len: 10 },
-  { id: '⑤', method: '털실', mune: 1, deno: 3, len: 21 },
-  { id: '⑥', method: '철사', mune: 1, deno: 8, len: 44 },
-  { id: '⑦', method: '휴지', mune: 1, deno: 9, len: 45 },
+  { id: '①', method: '리본', mune: 7, deno: 12, len: 14 },
+  { id: '②', method: '막대', mune: 3, deno: 8, len: 15 },
+  { id: '③', method: '털실', mune: 4, deno: 5, len: 8 },
+  { id: '④', method: '연필', mune: 2, deno: 4, len: 6 },
+  { id: '⑤', method: '자', mune: 2, deno: 3, len: 6 },
+  { id: '⑥', method: '철사', mune: 7, deno: 9, len: 21 },
+  { id: '⑦', method: '신발끈', mune: 5, deno: 10, len: 35 },
 ];
 
 export const Data43Quiz = [
@@ -208,13 +214,9 @@ export const Data52Quiz = [
   },
 ];
 
-//데이터 미적용
 export const Data53Quiz = [
-  { id: '①', method: '신발끈', mune: 1, deno: 10, len: 5 },
-  { id: '②', method: '자', mune: 1, deno: 5, len: 11 },
-  { id: '③', method: '색 테이프', mune: 1, deno: 6, len: 7 },
-  { id: '④', method: '리본', mune: 1, deno: 7, len: 10 },
-  { id: '⑤', method: '털실', mune: 1, deno: 3, len: 21 },
-  { id: '⑥', method: '철사', mune: 1, deno: 8, len: 44 },
-  { id: '⑦', method: '휴지', mune: 1, deno: 9, len: 45 },
+  { id: '①', method: '색 테이프', mune: 5, deno: 8, len: 15 },
+  { id: '②', method: '리본', mune: 2, deno: 5, len: 21 },
+  { id: '③', method: '철사', mune: 3, deno: 8, len: 60 },
+  { id: '④', method: '털실', mune: 5, deno: 7, len: 2 },
 ];

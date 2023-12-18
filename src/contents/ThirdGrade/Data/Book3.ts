@@ -1,4 +1,8 @@
-//데이터 미적용
+export const Data11Quiz = [
+  { id: '①', quiz1: '20 × 40', quiz2: '20 × 4', url: '' },
+  { id: '②', quiz1: '40 × 30', quiz2: '40 × 3', url: '' },
+];
+
 export const Data12Quiz = [
   { id: '①', quiz1: '30 × 60', quiz2: '30 × 6' },
   { id: '②', quiz1: '70 × 80', quiz2: '70 × 8' },
@@ -9,51 +13,48 @@ export const Data12Quiz = [
   { id: '⑦', quiz1: '80 × 90', quiz2: '80 × 9' },
 ];
 
-//데이터미적용
 export const Data13Quiz = [
-  { id: '①', quiz1: 20, quiz2: 4 },
-  { id: '②', quiz1: 30, quiz2: 8 },
-  { id: '③', quiz1: 40, quiz2: 3 },
-  { id: '④', quiz1: 90, quiz2: 3 },
-  { id: '⑤', quiz1: 10, quiz2: 4 },
-  { id: '⑥', quiz1: 60, quiz2: 8 },
-  { id: '⑦', quiz1: 30, quiz2: 2 },
-  { id: '⑧', quiz1: 20, quiz2: 9 },
-  { id: '⑨', quiz1: 50, quiz2: 7 },
-  { id: '⑩', quiz1: 40, quiz2: 3 },
-  { id: '⑪', quiz1: 20, quiz2: 2 },
-  { id: '⑫', quiz1: 60, quiz2: 4 },
-  { id: '⑬', quiz1: 30, quiz2: 5 },
-  { id: '⑭', quiz1: 70, quiz2: 4 },
+  { id: '①', quiz1: 70, quiz2: 80 },
+  { id: '②', quiz1: 50, quiz2: 50 },
+  { id: '③', quiz1: 50, quiz2: 30 },
+  { id: '④', quiz1: 70, quiz2: 30 },
+  { id: '⑤', quiz1: 60, quiz2: 80 },
+  { id: '⑥', quiz1: 80, quiz2: 30 },
+  { id: '⑦', quiz1: 40, quiz2: 30 },
+  { id: '⑧', quiz1: 40, quiz2: 60 },
+  { id: '⑨', quiz1: 80, quiz2: 40 },
+  { id: '⑩', quiz1: 60, quiz2: 60 },
+  { id: '⑪', quiz1: 90, quiz2: 90 },
+  { id: '⑫', quiz1: 50, quiz2: 90 },
+  { id: '⑬', quiz1: 20, quiz2: 70 },
+  { id: '⑭', quiz1: 50, quiz2: 60 },
 ];
 
-//데이터 미적용
 export const Data21Quiz = [
-  { id: '①', quiz1: 40, quiz2: 30 },
-  { id: '②', quiz1: 70, quiz2: 20 },
-  { id: '③', quiz1: 80, quiz2: 50 },
-  { id: '④', quiz1: 80, quiz2: 80 },
-  { id: '⑤', quiz1: 30, quiz2: 60 },
-  { id: '⑥', quiz1: 20, quiz2: 40 },
-  { id: '⑦', quiz1: 50, quiz2: 70 },
-  { id: '⑧', quiz1: 60, quiz2: 80 },
-  { id: '⑨', quiz1: 50, quiz2: 50 },
+  { id: '①', quiz1: 30, quiz2: 60 },
+  { id: '②', quiz1: 50, quiz2: 90 },
+  { id: '③', quiz1: 40, quiz2: 70 },
+  { id: '④', quiz1: 70, quiz2: 70 },
+  { id: '⑤', quiz1: 50, quiz2: 40 },
+  { id: '⑥', quiz1: 60, quiz2: 80 },
+  { id: '⑦', quiz1: 90, quiz2: 80 },
+  { id: '⑧', quiz1: 30, quiz2: 70 },
+  { id: '⑨', quiz1: 60, quiz2: 40 },
 ];
 
-//데이터 미적용
 export const Data22Quiz = [
-  { id: '①', quiz1: 40, quiz2: 30 },
-  { id: '②', quiz1: 70, quiz2: 20 },
-  { id: '③', quiz1: 80, quiz2: 50 },
-  { id: '④', quiz1: 80, quiz2: 80 },
-  { id: '⑤', quiz1: 30, quiz2: 60 },
-  { id: '⑥', quiz1: 20, quiz2: 40 },
-  { id: '⑦', quiz1: 50, quiz2: 70 },
-  { id: '⑧', quiz1: 60, quiz2: 80 },
-  { id: '⑨', quiz1: 50, quiz2: 50 },
-  { id: '⑩', quiz1: 40, quiz2: 90 },
-  { id: '⑪', quiz1: 60, quiz2: 20 },
-  { id: '⑫', quiz1: 80, quiz2: 30 },
+  { id: '①', quiz1: 40, quiz2: 70 },
+  { id: '②', quiz1: 80, quiz2: 90 },
+  { id: '③', quiz1: 50, quiz2: 30 },
+  { id: '④', quiz1: 60, quiz2: 20 },
+  { id: '⑤', quiz1: 70, quiz2: 80 },
+  { id: '⑥', quiz1: 30, quiz2: 90 },
+  { id: '⑦', quiz1: 80, quiz2: 40 },
+  { id: '⑧', quiz1: 90, quiz2: 90 },
+  { id: '⑨', quiz1: 20, quiz2: 50 },
+  { id: '⑩', quiz1: 90, quiz2: 60 },
+  { id: '⑪', quiz1: 60, quiz2: 40 },
+  { id: '⑫', quiz1: 70, quiz2: 30 },
 ];
 export const Data23Quiz = [
   { id: '①', quiz1: 40, quiz2: 30 },
@@ -70,7 +71,11 @@ export const Data23Quiz = [
   { id: '⑫', quiz1: 80, quiz2: 30 },
 ];
 
-//데이터 미적용
+export const Data31Quiz = [
+  { id: '①', quiz1: '34 × 30', quiz2: '34 × 3', url: '' },
+  { id: '②', quiz1: '28 × 40', quiz2: '28 × 4', url: '' },
+];
+
 export const Data32Quiz = [
   { id: '①', quiz1: '24 × 80', quiz2: '24 × 8' },
   { id: '②', quiz1: '35 × 90', quiz2: '35 × 9' },
@@ -81,61 +86,60 @@ export const Data32Quiz = [
   { id: '⑦', quiz1: '26 × 60', quiz2: '26 × 6' },
 ];
 
-//데이터 미적용
 export const Data33Quiz = [
-  { id: '①', quiz1: 20, quiz2: 4 },
-  { id: '②', quiz1: 30, quiz2: 8 },
-  { id: '③', quiz1: 40, quiz2: 3 },
-  { id: '④', quiz1: 90, quiz2: 3 },
-  { id: '⑤', quiz1: 10, quiz2: 4 },
-  { id: '⑥', quiz1: 60, quiz2: 8 },
-  { id: '⑦', quiz1: 30, quiz2: 2 },
-  { id: '⑧', quiz1: 20, quiz2: 9 },
-  { id: '⑨', quiz1: 50, quiz2: 7 },
-  { id: '⑩', quiz1: 40, quiz2: 3 },
-  { id: '⑪', quiz1: 20, quiz2: 2 },
-  { id: '⑫', quiz1: 60, quiz2: 4 },
-  { id: '⑬', quiz1: 30, quiz2: 5 },
-  { id: '⑭', quiz1: 70, quiz2: 4 },
+  { id: '①', quiz1: 26, quiz2: 30 },
+  { id: '②', quiz1: 48, quiz2: 20 },
+  { id: '③', quiz1: 39, quiz2: 60 },
+  { id: '④', quiz1: 56, quiz2: 30 },
+  { id: '⑤', quiz1: 74, quiz2: 10 },
+  { id: '⑥', quiz1: 68, quiz2: 40 },
+  { id: '⑦', quiz1: 19, quiz2: 70 },
+  { id: '⑧', quiz1: 32, quiz2: 20 },
+  { id: '⑨', quiz1: 55, quiz2: 90 },
+  { id: '⑩', quiz1: 44, quiz2: 50 },
+  { id: '⑪', quiz1: 83, quiz2: 80 },
+  { id: '⑫', quiz1: 18, quiz2: 60 },
+  { id: '⑬', quiz1: 25, quiz2: 40 },
+  { id: '⑭', quiz1: 47, quiz2: 30 },
 ];
-//데이터 미적용
+
 export const Data41Quiz = [
-  { id: '①', quiz1: 40, quiz2: 30 },
-  { id: '②', quiz1: 70, quiz2: 20 },
-  { id: '③', quiz1: 80, quiz2: 50 },
-  { id: '④', quiz1: 80, quiz2: 80 },
-  { id: '⑤', quiz1: 30, quiz2: 60 },
-  { id: '⑥', quiz1: 20, quiz2: 40 },
+  { id: '①', quiz1: 37, quiz2: 60 },
+  { id: '②', quiz1: 68, quiz2: 40 },
+  { id: '③', quiz1: 88, quiz2: 20 },
+  { id: '④', quiz1: 46, quiz2: 30 },
+  { id: '⑤', quiz1: 95, quiz2: 50 },
+  { id: '⑥', quiz1: 34, quiz2: 90 },
 ];
-//데이터 미적용
+
 export const Data42Quiz = [
-  { id: '①', quiz1: 40, quiz2: 30 },
-  { id: '②', quiz1: 70, quiz2: 20 },
-  { id: '③', quiz1: 80, quiz2: 50 },
-  { id: '④', quiz1: 80, quiz2: 80 },
-  { id: '⑤', quiz1: 30, quiz2: 60 },
-  { id: '⑥', quiz1: 20, quiz2: 40 },
-  { id: '⑦', quiz1: 50, quiz2: 70 },
-  { id: '⑧', quiz1: 60, quiz2: 80 },
-  { id: '⑨', quiz1: 50, quiz2: 50 },
-  { id: '⑩', quiz1: 40, quiz2: 90 },
-  { id: '⑪', quiz1: 60, quiz2: 20 },
-  { id: '⑫', quiz1: 80, quiz2: 30 },
+  { id: '①', quiz1: 47, quiz2: 40 },
+  { id: '②', quiz1: 36, quiz2: 50 },
+  { id: '③', quiz1: 78, quiz2: 60 },
+  { id: '④', quiz1: 96, quiz2: 20 },
+  { id: '⑤', quiz1: 34, quiz2: 70 },
+  { id: '⑥', quiz1: 86, quiz2: 80 },
+  { id: '⑦', quiz1: 37, quiz2: 40 },
+  { id: '⑧', quiz1: 29, quiz2: 60 },
+  { id: '⑨', quiz1: 55, quiz2: 40 },
+  { id: '⑩', quiz1: 63, quiz2: 50 },
+  { id: '⑪', quiz1: 46, quiz2: 60 },
+  { id: '⑫', quiz1: 77, quiz2: 90 },
 ];
-//데이터 미적용
+
 export const Data43Quiz = [
-  { id: '①', quiz1: 40, quiz2: 30 },
-  { id: '②', quiz1: 70, quiz2: 20 },
-  { id: '③', quiz1: 80, quiz2: 50 },
-  { id: '④', quiz1: 80, quiz2: 80 },
-  { id: '⑤', quiz1: 30, quiz2: 60 },
-  { id: '⑥', quiz1: 20, quiz2: 40 },
-  { id: '⑦', quiz1: 50, quiz2: 70 },
-  { id: '⑧', quiz1: 60, quiz2: 80 },
-  { id: '⑨', quiz1: 50, quiz2: 50 },
-  { id: '⑩', quiz1: 40, quiz2: 90 },
-  { id: '⑪', quiz1: 60, quiz2: 20 },
-  { id: '⑫', quiz1: 80, quiz2: 30 },
+  { id: '①', quiz1: 55, quiz2: 30 },
+  { id: '②', quiz1: 47, quiz2: 60 },
+  { id: '③', quiz1: 79, quiz2: 30 },
+  { id: '④', quiz1: 55, quiz2: 80 },
+  { id: '⑤', quiz1: 57, quiz2: 90 },
+  { id: '⑥', quiz1: 63, quiz2: 40 },
+  { id: '⑦', quiz1: 27, quiz2: 30 },
+  { id: '⑧', quiz1: 18, quiz2: 50 },
+  { id: '⑨', quiz1: 88, quiz2: 90 },
+  { id: '⑩', quiz1: 49, quiz2: 40 },
+  { id: '⑪', quiz1: 57, quiz2: 70 },
+  { id: '⑫', quiz1: 83, quiz2: 40 },
 ];
 
 export const Data51Quiz = [

@@ -9,5 +9,31 @@
  * If you have any questions, please contact us via contact point.
  * ======================================================== */
 
-export * from './account';
-export * from './route-helper';
+import { createStore } from 'zustand';
+
+//
+//
+//
+
+interface EliceMetadata {
+  courseId: number;
+  materialId: number;
+}
+
+interface EliceMetadataStore {
+  metadata: EliceMetadata | null;
+  setMetadata: (metadata: EliceMetadata | null) => void;
+  clearMetadata: () => void;
+}
+
+//
+//
+//
+
+export const __eliceinternal_metadata_store__ = createStore<EliceMetadataStore>(
+  set => ({
+    metadata: null,
+    setMetadata: metadata => set({ metadata }),
+    clearMetadata: () => set({ metadata: null }),
+  })
+);

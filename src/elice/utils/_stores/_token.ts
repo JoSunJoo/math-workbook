@@ -9,5 +9,26 @@
  * If you have any questions, please contact us via contact point.
  * ======================================================== */
 
-export * from './account';
-export * from './route-helper';
+import { createStore } from 'zustand';
+
+//
+//
+//
+
+interface EliceTokenStore {
+  token: string | null;
+  setToken: (token: string | null) => void;
+  removeToken: () => void;
+}
+
+//
+//
+//
+
+export const __eliceinternal_token_store__ = createStore<EliceTokenStore>(
+  set => ({
+    token: null,
+    setToken: token => set({ token }),
+    removeToken: () => set({ token: null }),
+  })
+);
