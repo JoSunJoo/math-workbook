@@ -6,9 +6,10 @@ import Styled from '../../style';
 import SingleQuiz from '../../ThirdGrade02-exercise/Day3/Single3-2';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { ThirdGrade4Day1 } from '../../utils/handleTitle';
-import ExampleQuiz from './Example1-2';
 
 import type { Data22QuizProps as QuizProps } from '../../Type/Type2';
+
+import img from '../../Image/4-1-2.png';
 
 const ThirdGrade12Exercise: React.FC = () => {
   return (
@@ -18,8 +19,7 @@ const ThirdGrade12Exercise: React.FC = () => {
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={3}>
-          <div>예시 이미치 첨부 예정</div>
-          <ExampleQuiz />
+          <Styled.ImgSize4 src={img} alt="" />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}

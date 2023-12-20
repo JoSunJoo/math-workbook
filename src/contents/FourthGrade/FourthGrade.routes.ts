@@ -2,18 +2,18 @@ import { createEliceExtRoutes } from '@elice/extcontent-utils';
 
 export default createEliceExtRoutes([
   //1권
-  // {
-  //   path: 'quiz1-1-1',
-  //   component: import('./FourthGrade01-exercise/Day1/FourthGrade1-1'),
-  // },
-  // {
-  //   path: 'quiz1-1-2',
-  //   component: import('./FourthGrade01-exercise/Day1/FourthGrade1-2'),
-  // },
-  // {
-  //   path: 'quiz1-1-3',
-  //   component: import('./FourthGrade01-exercise/Day1/FourthGrade1-3'),
-  // },
+  {
+    path: 'quiz1-1-1',
+    component: import('./FourthGrade01-exercise/Day1/FourthGrade1-1'),
+  },
+  {
+    path: 'quiz1-1-2',
+    component: import('./FourthGrade01-exercise/Day1/FourthGrade1-2'),
+  },
+  {
+    path: 'quiz1-1-3',
+    component: import('./FourthGrade01-exercise/Day1/FourthGrade1-3'),
+  },
   // {
   //   path: 'quiz1-2-1',
   //   component: import('./FourthGrade01-exercise/Day2/FourthGrade2-1'),
@@ -189,10 +189,10 @@ export default createEliceExtRoutes([
   //   path: 'quiz4-1-1',
   //   component: import('./FourthGrade04-exercise/Day1/FourthGrade1-1'),
   // },
-  // {
-  //   path: 'quiz4-1-2',
-  //   component: import('./FourthGrade04-exercise/Day1/FourthGrade1-2'),
-  // },
+  {
+    path: 'quiz4-1-2',
+    component: import('./FourthGrade04-exercise/Day1/FourthGrade1-2'),
+  },
   {
     path: 'quiz4-1-3',
     component: import('./FourthGrade04-exercise/Day1/FourthGrade1-3'),

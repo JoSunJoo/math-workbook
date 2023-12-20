@@ -8,12 +8,14 @@ import SingleQuiz from './Single1-3';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
+import img from '../../Image/2-1-3.png';
+
 const ThirdGrade13Exercise = () => {
   return (
     <DayLayout title={ThirdGrade2Day1.title} subTitle={SubJustCal}>
       <Styled.PaddingBox>
-        <Styled.ColGapBox gap={4}>
-          <div>예시 부분 이미지 첨부 예정</div>
+        <Styled.ColGapBox2 gap={4}>
+          <Styled.ImgSize4 src={img} alt="" />
           <Styled.RowWrapBox>
             {QuizData.map((item: Data12QuizProps, idx) => (
               <SingleQuiz
@@ -24,7 +26,7 @@ const ThirdGrade13Exercise = () => {
               />
             ))}
           </Styled.RowWrapBox>
-        </Styled.ColGapBox>
+        </Styled.ColGapBox2>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={1} />
     </DayLayout>

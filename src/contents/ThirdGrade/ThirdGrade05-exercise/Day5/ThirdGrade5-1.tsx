@@ -9,6 +9,8 @@ import SingleQuiz from './Single5-1';
 
 import type { Data51QuizProps as QuizProps } from '../../Type/Type5';
 
+import img from '../../Image/5-5-1.png';
+
 const ThirdGrade51Exercise = () => {
   return (
     <DayLayout
@@ -17,7 +19,14 @@ const ThirdGrade51Exercise = () => {
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>이미지 첨부 예정</div>
+          <Styled.ImgBox1>
+            <Styled.ColGapBox2 gap={2}>
+              <Styled.TextSize>
+                연필이 12자루씩 들어 있는 연필꽂이가 모두 7통 있습니다.
+              </Styled.TextSize>
+              <Styled.ImgSize1 src={img} />
+            </Styled.ColGapBox2>
+          </Styled.ImgBox1>
           <Example2 />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz

@@ -97,15 +97,14 @@ export const Data13Quiz = [
 ];
 
 export const Data21Quiz = [
-  { id: '①', quiz1: 783, quiz2: 439 },
-  { id: '②', quiz1: 527, quiz2: 249 },
-  { id: '③', quiz1: 989, quiz2: 808 },
-  { id: '④', quiz1: 496, quiz2: 285 },
-  { id: '⑤', quiz1: 347, quiz2: 985 },
-  { id: '⑥', quiz1: 396, quiz2: 326 },
-  { id: '⑦', quiz1: 627, quiz2: 481 },
-  { id: '⑧', quiz1: 895, quiz2: 365 },
-  { id: '⑨', quiz1: 788, quiz2: 438 },
+  { id: '①', quiz1: 527, quiz2: 249 },
+  { id: '②', quiz1: 989, quiz2: 808 },
+  { id: '③', quiz1: 496, quiz2: 285 },
+  { id: '④', quiz1: 347, quiz2: 985 },
+  { id: '⑤', quiz1: 396, quiz2: 326 },
+  { id: '⑥', quiz1: 627, quiz2: 481 },
+  { id: '⑦', quiz1: 895, quiz2: 365 },
+  { id: '⑧', quiz1: 788, quiz2: 438 },
 ];
 
 export const Data22Quiz = [
@@ -243,6 +242,7 @@ export const Data41Quiz = [
     quiz6: 6,
     quiz7: 4,
     quiz8: 400,
+    type: 2,
   },
   {
     id: '②',
@@ -254,6 +254,7 @@ export const Data41Quiz = [
     quiz6: 5,
     quiz7: 600,
     quiz8: 5,
+    type: 1,
   },
   {
     id: '③',
@@ -265,6 +266,7 @@ export const Data41Quiz = [
     quiz6: 6,
     quiz7: 6,
     quiz8: 500,
+    type: 2,
   },
   {
     id: '④',
@@ -276,6 +278,7 @@ export const Data41Quiz = [
     quiz6: 6,
     quiz7: 1,
     quiz8: 400,
+    type: 2,
   },
   {
     id: '⑤',
@@ -287,6 +290,7 @@ export const Data41Quiz = [
     quiz6: 7,
     quiz7: 700,
     quiz8: 3,
+    type: 1,
   },
 ];
 

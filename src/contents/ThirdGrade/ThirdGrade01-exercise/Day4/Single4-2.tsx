@@ -5,7 +5,7 @@ import type { Data42QuizProps as QuizProps } from '../../Type/Type1';
 const Single42 = (props: QuizProps) => {
   const { id, quiz1, quiz2, quiz3, quiz4, quiz5 } = props;
   return (
-    <Styled.RowBox2>
+    <Styled.RowBox8>
       <div>{id}</div>
       <Styled.SingleWrapper3>
         <Styled.InputWrapper2>
@@ -31,7 +31,7 @@ const Single42 = (props: QuizProps) => {
           </div>
         </Styled.InputWrapper2>
       </Styled.SingleWrapper3>
-    </Styled.RowBox2>
+    </Styled.RowBox8>
   );
 };
 

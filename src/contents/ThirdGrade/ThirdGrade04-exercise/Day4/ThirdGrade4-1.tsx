@@ -14,10 +14,10 @@ import { ThirdGrade4Day4 } from '../../utils/handleTitle';
 import SingleQuiz from './Single4-1';
 
 const ThirdGrade41Exercise: React.FC = () => {
-  const [isChecked1, setIsChecked1] = useState<number>(0);
-  const [isChecked2, setIsChecked2] = useState<number>(0);
-  const [isChecked3, setIsChecked3] = useState<number>(0);
-  const [isChecked4, setIsChecked4] = useState<number>(0);
+  const [isChecked1, setIsChecked1] = useState<number>();
+  const [isChecked2, setIsChecked2] = useState<number>();
+  const [isChecked3, setIsChecked3] = useState<number>();
+  const [isChecked4, setIsChecked4] = useState<number>();
 
   const Seq = [Data41Quiz1, Data41Quiz2, Data41Quiz3, Data41Quiz4];
   const CheckArray = [isChecked1, isChecked2, isChecked3, isChecked4];

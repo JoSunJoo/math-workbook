@@ -1,3 +1,15 @@
+export interface Data11QuizProps1 {
+  id: string;
+  quiz1: string;
+  quiz2: string;
+}
+export interface Data11QuizProps2 {
+  id: string;
+  quiz1: string;
+  quiz2: string;
+  imgId: number;
+}
+
 export interface Data51QuizProps {
   id: string;
   quiz1: string;

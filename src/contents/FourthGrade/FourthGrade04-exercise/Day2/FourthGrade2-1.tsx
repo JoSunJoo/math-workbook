@@ -8,13 +8,20 @@ import SingleQuiz from './Single2-3';
 
 import type { Data31QuizProps as QuizProps } from '../../Type/Type4';
 
+import img from '../../Image/4-2-1.png';
+
 const FourthGrade21Exercise = () => {
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <div>예시 이미지 첨부 예정</div>
-          <Styled.RowWrapBox>
+          <Styled.ImgBox3>
+            <Styled.ColGapBox gap={2}>
+              <Styled.TextSize>소수 사이의 관계 (1)</Styled.TextSize>
+              <Styled.ImgSize4 src={img} alt="" />
+            </Styled.ColGapBox>
+          </Styled.ImgBox3>
+          <Styled.RowWrapBox8>
             {QuizData.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -24,7 +31,7 @@ const FourthGrade21Exercise = () => {
                 quiz2={item.quiz2}
               />
             ))}
-          </Styled.RowWrapBox>
+          </Styled.RowWrapBox8>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={2} />

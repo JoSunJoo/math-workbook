@@ -2,13 +2,23 @@ import Styled from '../../style';
 
 import type { Data41QuizProps as QuizProps } from '../../Type/Type6';
 
+import img from '../../Image/6-5-3.png';
+
 const Single53 = (props: QuizProps) => {
   const { id, method, mune, deno, len } = props;
   return (
     <Styled.SingleWrapper5>
       <Styled.IdNumBox2>{id}</Styled.IdNumBox2>
+
       <Styled.PaddingBox3>
         <Styled.ColGapBox gap={1}>
+          {id === '①' ? (
+            <Styled.MarginBottomBox2>
+              <Styled.ImgSize6 src={img} alt="" />
+            </Styled.MarginBottomBox2>
+          ) : (
+            <></>
+          )}
           <Styled.TextBox4>
             <div>{method}의</div>
             <Styled.ColGapBox>

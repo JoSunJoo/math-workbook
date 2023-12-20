@@ -1,5 +1,3 @@
-//이미지 필요
-
 import { Data43Quiz as QuizData } from '../../Data/Book2';
 // import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day4';
@@ -10,12 +8,14 @@ import SingleQuiz from '../Day1/Single1-3';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
+import img from '../../Image/2-4-3.png';
+
 const ThirdGrade43Exercise = () => {
   return (
     <DayLayout title={ThirdGrade2Day4.title} subTitle={SubJustCal}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <div>예시 부분 이미지 첨부 예정</div>
+          <Styled.ImgSize4 src={img} alt="" />
           <Styled.RowWrapBox>
             {QuizData.map((item: Data12QuizProps, idx) => (
               <SingleQuiz

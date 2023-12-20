@@ -1,3 +1,30 @@
+export interface Data11QuizProps1 {
+  id: string;
+  quiz1: string;
+  quiz2: number;
+  quiz3: number;
+  quiz4: number;
+}
+export interface Data11QuizProps2 {
+  id: string;
+  quiz1: string;
+  quiz2: number;
+  quiz3: number;
+  quiz4: number;
+  imgId: number;
+}
+export interface Data13QuizProps1 {
+  id: string;
+  quiz1: string;
+  quiz2: string;
+}
+export interface Data13QuizProps2 {
+  id: string;
+  quiz1: string;
+  quiz2: string;
+
+  imgId: number;
+}
 export interface Data21QuizProps {
   id: string;
   quiz1: string;

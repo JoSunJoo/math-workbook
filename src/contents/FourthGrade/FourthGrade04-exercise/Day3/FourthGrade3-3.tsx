@@ -13,7 +13,7 @@ const FourthGrade33Exercise = () => {
     <DayLayout title={Day.title} subTitle={SubBlank}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <Styled.RowWrapBox5>
+          <Styled.RowWrapBox8>
             {QuizData.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -22,7 +22,7 @@ const FourthGrade33Exercise = () => {
                 quiz2={item.quiz2}
               />
             ))}
-          </Styled.RowWrapBox5>
+          </Styled.RowWrapBox8>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={3} />

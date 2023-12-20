@@ -2,11 +2,11 @@ import { Data52Quiz as QuizData } from '../../Data/Book4';
 // import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day5';
 import Styled from '../../style';
+import SingleQuiz from '../../ThirdGrade01-exercise/Day5/Single5-3';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { SubWay, ThirdGrade4Day5 } from '../../utils/handleTitle';
-import SingleQuiz from './Single5-1';
 
-import type { Data51QuizProps as QuizProps } from '../../Type/Type4';
+import type { Data51QuizProps as QuizProps } from '../../Type/Type1';
 
 const ThirdGrade52Exercise = () => {
   return (

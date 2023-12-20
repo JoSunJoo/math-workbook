@@ -16,24 +16,33 @@ import type {
   Data13QuizProps2 as QuizProps2,
 } from '../../Type/Type4';
 
+import img from '../../Image/4-1-3_1.png';
+
 const FourthGrade13Exercise = () => {
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle3}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <div>예제 이미지 첨부 예정</div>
-          <Styled.RowWrapBox5>
-            <Example1 />
-            {QuizData1.map((item: QuizProps1, idx: number) => (
-              <SingleQuiz
-                key={idx}
-                id={item.id}
-                type={1}
-                quiz1={item.quiz1}
-                quiz2={item.quiz2}
-              />
-            ))}
-          </Styled.RowWrapBox5>
+          <Styled.ImgBox2>
+            <Styled.ColGapBox gap={2}>
+              <Styled.TextSize>분수와 소수의 관계 </Styled.TextSize>
+              <Styled.ImgSize4 src={img} alt="" />
+            </Styled.ColGapBox>
+          </Styled.ImgBox2>
+          <Styled.MarginBottomBox2>
+            <Styled.RowWrapBox5>
+              <Example1 />
+              {QuizData1.map((item: QuizProps1, idx: number) => (
+                <SingleQuiz
+                  key={idx}
+                  id={item.id}
+                  type={1}
+                  quiz1={item.quiz1}
+                  quiz2={item.quiz2}
+                />
+              ))}
+            </Styled.RowWrapBox5>
+          </Styled.MarginBottomBox2>
           <Styled.RowWrapBox5>
             <Example2 />
             {QuizData2.map((item: QuizProps2, idx: number) => (

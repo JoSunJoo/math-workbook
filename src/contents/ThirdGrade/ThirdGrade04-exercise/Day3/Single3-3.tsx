@@ -14,7 +14,7 @@ const Single33 = (props: Data12QuizProps) => {
           <Styled.InputBox3 maxLength={1} />
           <Styled.InputBox3 maxLength={1} />
         </Styled.DivTopInputWrapper>
-        <Styled.DivCenterNum>{quiz1}</Styled.DivCenterNum>
+        <Styled.DivCenterNum2>{quiz1}</Styled.DivCenterNum2>
       </Styled.DivWrapper>
     </Styled.DivSingleWrapper>
   );

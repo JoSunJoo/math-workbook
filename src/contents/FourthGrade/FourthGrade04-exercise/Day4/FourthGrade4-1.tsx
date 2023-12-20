@@ -17,17 +17,18 @@ const FourthGrade41Exercise = () => {
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={4}>
           <div>예시 부분 이미지 첨부 예정</div>
-
-          <Styled.RowWrapBox6>
-            {QuizData1.map((item: QuizProps, idx: number) => (
-              <SingleQuiz
-                key={idx}
-                id={item.id}
-                quiz1={item.quiz1}
-                unit={item.unit}
-              />
-            ))}
-          </Styled.RowWrapBox6>
+          <Styled.MarginBottomBox2>
+            <Styled.RowWrapBox6>
+              {QuizData1.map((item: QuizProps, idx: number) => (
+                <SingleQuiz
+                  key={idx}
+                  id={item.id}
+                  quiz1={item.quiz1}
+                  unit={item.unit}
+                />
+              ))}
+            </Styled.RowWrapBox6>
+          </Styled.MarginBottomBox2>
           <Styled.RowWrapBox7>
             {QuizData2.map((item: QuizProps, idx: number) => (
               <SingleQuiz

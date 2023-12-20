@@ -1,6 +1,6 @@
 export const Data11Quiz = [
-  { id: '①', quiz1: '20 × 40', quiz2: '20 × 4', url: '' },
-  { id: '②', quiz1: '40 × 30', quiz2: '40 × 3', url: '' },
+  { id: '①', quiz1: '20 × 40', quiz2: '20 × 4' },
+  { id: '②', quiz1: '40 × 30', quiz2: '40 × 3' },
 ];
 
 export const Data12Quiz = [
@@ -72,8 +72,8 @@ export const Data23Quiz = [
 ];
 
 export const Data31Quiz = [
-  { id: '①', quiz1: '34 × 30', quiz2: '34 × 3', url: '' },
-  { id: '②', quiz1: '28 × 40', quiz2: '28 × 4', url: '' },
+  { id: '①', quiz1: '34 × 30', quiz2: '34 × 3' },
+  { id: '②', quiz1: '28 × 40', quiz2: '28 × 4' },
 ];
 
 export const Data32Quiz = [

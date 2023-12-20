@@ -1,11 +1,34 @@
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
 
-const Matrix = () => {
+interface Props {
+  id: number;
+  placeHolder: string[];
+  inputValue: string[][];
+  setInputValue: React.Dispatch<React.SetStateAction<string[][]>>;
+  toggle: boolean;
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Matrix = (props: Props) => {
+  const { id, placeHolder, inputValue, setInputValue, toggle, setToggle } =
+    props;
+
+  const handleOnchange = (targetId: number, newContent: string) => {
+    const data = inputValue;
+    data[id][targetId] = newContent;
+    setInputValue(data);
+    setToggle(!toggle);
+  };
+
   return (
     <MatrixWrapper>
       <MatrixContainer>
-        {[...Array(12)].map((_, index) => (
-          <MatrixBorder key={index}></MatrixBorder>
+        {[...Array(12)].map((_, idx) => (
+          <MatrixBorder
+            key={idx}
+            onChange={e => handleOnchange(idx, e.target.value)}
+            defaultValue={placeHolder ? placeHolder[idx] : ''}
+          />
         ))}
       </MatrixContainer>
     </MatrixWrapper>
@@ -17,24 +40,26 @@ const MatrixWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
+  padding-right: 0.5rem;
 `;
 
 const MatrixContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 2px dashed black;
-  border-left: 2px dashed black;
+  border-top: 1px dashed #929292;
+  border-left: 1px dashed #929292;
 `;
 
 const MatrixBorder = styled.input`
   width: 20px;
   height: 30px;
-  border-right: 2px dashed black;
-  border-bottom: 2px dashed black;
+  border-right: 1px dashed #929292;
+  border-bottom: 1px dashed #929292;
   border-left: none;
   border-top: none;
   text-align: center;
   color: #ff2e00;
   font-size: 1.25rem;
+  outline: none;
 `;
 export default Matrix;

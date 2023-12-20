@@ -9,15 +9,17 @@ import SingleQuiz from './Single2-1';
 
 import type { Data21QuizProps as QuizProps } from '../../Type/Type5';
 
+import img from '../../Image/5-2-1.png';
+
 const ThirdGrade21Exercise: React.FC = () => {
   return (
     <DayLayout
       title={ThirdGrade5Day2.title}
       subTitle={ThirdGrade5Day2.subTitle}
     >
-      <Styled.PaddingBox>
-        <Styled.ColGapBox2 gap={3}>
-          <div>이미지 첨부 예정</div>
+      <Styled.PaddingBox3>
+        <Styled.ColGapBox2 gap={7}>
+          <Styled.ImgSize4 src={img} alt="" />
           <Styled.RowWrapBox5>
             {QuizData.map((item: QuizProps, idx) => (
               <SingleQuiz
@@ -34,9 +36,9 @@ const ThirdGrade21Exercise: React.FC = () => {
               />
             ))}
           </Styled.RowWrapBox5>
+          <ConfirmBtn type={true} day={2} />
         </Styled.ColGapBox2>
-      </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={2} />
+      </Styled.PaddingBox3>
     </DayLayout>
   );
 };

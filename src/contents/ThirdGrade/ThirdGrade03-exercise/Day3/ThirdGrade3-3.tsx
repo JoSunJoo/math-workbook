@@ -8,12 +8,14 @@ import { SubJustCal, ThirdGrade3Day3 } from '../../utils/handleTitle';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
+import img from '../../Image/3-3-3.png';
+
 const ThirdGrade33Exercise = () => {
   return (
     <DayLayout title={ThirdGrade3Day3.title} subTitle={SubJustCal}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <div>예시 부분 이미지 첨부 예정</div>
+          <Styled.ImgSize4 src={img} alt="" />
           <Styled.RowWrapBox>
             {QuizData.map((item: Data12QuizProps, idx) => (
               <SingleQuiz

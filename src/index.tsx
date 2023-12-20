@@ -12,9 +12,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 // import { IntlProvider } from 'react-intl';
-// import { bootstrap } from '@elice/extcontent-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+// import { __eliceinternal_bootstrap__ } from './elice/utils/_bootstrap';
 import App from './App';
 import AppStylesheet from './App.stylesheet';
 
@@ -43,7 +43,7 @@ const root = createRoot(rootEl);
 //
 //
 
-// bootstrap()
+// __eliceinternal_bootstrap__()
 //   .then(res => {
 //     root.render(
 //       <React.StrictMode>

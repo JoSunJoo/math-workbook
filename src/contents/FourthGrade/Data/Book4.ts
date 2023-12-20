@@ -1,4 +1,16 @@
 //데이터 미적용
+export const Data12Quiz = [
+  { id: '①', quiz1: 0.57, position: 2 },
+  { id: '②', quiz1: 0.086, position: 2 },
+  { id: '③', quiz1: 8.443, position: 2 },
+  { id: '④', quiz1: 4.03, position: 2 },
+  { id: '⑤', quiz1: 8.443, position: 2 },
+  { id: '⑥', quiz1: 4.056, position: 2 },
+  { id: '⑦', quiz1: 2.76, position: 2 },
+  { id: '⑧', quiz1: 1.07, position: 2 },
+];
+
+//데이터 미적용
 export const Data13Quiz1 = [
   { id: '①', quiz1: 0.57, quiz2: 10 },
   { id: '②', quiz1: 0.086, quiz2: 10 },

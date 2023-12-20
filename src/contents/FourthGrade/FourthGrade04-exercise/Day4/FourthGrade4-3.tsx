@@ -8,6 +8,7 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { FourthGrade4Day4 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single4-1';
+import SingleQuiz2 from './Single4-3';
 
 import type { Data41QuizProps as QuizProps } from '../../Type/Type4';
 
@@ -29,11 +30,12 @@ const FourthGrade41Exercise = () => {
           </Styled.RowWrapBox3>
           <Styled.RowWrapBox5>
             {QuizData2.map((item: QuizProps, idx: number) => (
-              <SingleQuiz
+              <SingleQuiz2
                 key={idx}
                 id={item.id}
                 quiz1={item.quiz1}
                 unit={item.unit}
+                imgId={idx}
               />
             ))}
           </Styled.RowWrapBox5>

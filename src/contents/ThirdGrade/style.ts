@@ -21,6 +21,13 @@ const Styled = {
     justify-content: flex-start;
     gap: ${props => (props.gap ? `${props.gap}rem` : '')};
   `,
+  ColGapBox4: styled.div<{ gap?: number }>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: ${props => (props.gap ? `${props.gap}rem` : '')};
+    width: 100%;
+  `,
 
   RowWrapBox: styled.div`
     display: flex;
@@ -71,6 +78,13 @@ const Styled = {
       width: 35%;
       justify-content: center;
     }
+  `,
+  RowWrapBox6: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
   `,
   RowBox: styled.div`
     display: flex;
@@ -137,6 +151,11 @@ const Styled = {
     align-items: center;
     justify-content: center;
     gap: 4rem;
+  `,
+  RowBox13: styled.div`
+    display: flex;
+    width: 100%;
+    gap: 1rem;
   `,
 
   RowBox13Upper: styled.div`
@@ -283,6 +302,22 @@ const Styled = {
     justify-content: center;
     font-weight: 600;
   `,
+  ExampleBox8: styled.div`
+    //height:fit
+    margin-top: 2.938rem;
+    margin-bottom: 0.1875rem;
+    width: 42.5rem;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  `,
   ExampleExplain1: styled.div`
     position: absolute;
     color: #ff2e00;
@@ -365,6 +400,34 @@ const Styled = {
     background-color: rgba(193, 193, 193, 0.2);
     position: relative;
   `,
+  SingleWrapper6: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    width: 100%;
+    min-width: 40rem;
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 2rem 5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(193, 193, 193, 0.2);
+    position: relative;
+  `,
+  SingleWrapper7: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    width: 100%;
+    min-width: 32.5rem;
+    height: fit-content;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  `,
   MiniSingleWrapper: styled.div`
     width: 30%;
     max-width: 16.875rem;
@@ -403,6 +466,30 @@ const Styled = {
     align-items: center;
     justify-content: center;
   `,
+  PaddingBox4: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+  `,
+  PaddingBox5: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    padding: 4rem 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  `,
+  MarginBottomBox: styled.div`
+    margin-bottom: 3rem;
+  `,
+  MarginBottomBox2: styled.div`
+    margin-bottom: 2rem;
+  `,
   InputWrapper: styled.div`
     display: flex;
     gap: 0.75rem;
@@ -422,6 +509,33 @@ const Styled = {
     font-weight: 600;
     height: fit-content;
   `,
+  FitInputWrapper2: styled.div`
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.625rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: fit-content;
+    padding: 2rem 4rem;
+    background-color: rgba(193, 193, 193, 0.2);
+    border-radius: 1.25rem;
+  `,
+  FitInputWrapper3: styled.div`
+    height: 100%;
+    width: 100%;
+    background-color: rgba(193, 193, 193, 0.2);
+    border-radius: 1.25rem;
+    padding: 2rem 0;
+  `,
+  FitBox1: styled.div`
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(255, 98, 145, 0.3); /* 분홍색 */
+    /* background-color: rgba(98, 151, 255, 0.3); */ /* 파란색 */
+    border-radius: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  `,
   InputWrapper3: styled.div`
     display: flex;
     gap: 0.75rem;
@@ -430,6 +544,17 @@ const Styled = {
     font-weight: 600;
     height: fit-content;
     align-items: center;
+  `,
+  InputWrapper4: styled.div`
+    //좌측 정렬
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: fit-content;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
   `,
   RowInputWrapper: styled.div`
     display: flex;
@@ -457,6 +582,9 @@ const Styled = {
     border-bottom: 2px solid #c0c0c0;
     font-size: 1.5rem;
     background-color: transparent;
+    &::placeholder {
+      color: #ff2e00;
+    }
   `,
   MiddleInput: styled.input`
     width: 40%;
@@ -467,6 +595,9 @@ const Styled = {
     border-bottom: 2px solid #c0c0c0;
     font-size: 1.5rem;
     background-color: transparent;
+    &::placeholder {
+      color: #ff2e00;
+    }
   `,
   ShortInput: styled.input`
     width: 13%;
@@ -478,6 +609,9 @@ const Styled = {
     font-size: 1.5rem;
     background-color: transparent;
     text-align: center;
+    &::placeholder {
+      color: #ff2e00;
+    }
   `,
   InputBox1: styled.input`
     width: 4.8125rem;
@@ -593,6 +727,22 @@ const Styled = {
       color: #ff2e00;
     }
   `,
+  BottomLine: styled.div`
+    border: none;
+    border-bottom: 2px solid #c0c0c0;
+    outline: none;
+    background-color: transparent;
+    height: fit-content;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: fit-content;
+    text-align: center;
+    letter-spacing: 0.55rem;
+    box-sizing: border-box;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+  `,
   TopLineInput: styled.div`
     border: none;
     border-top: 2px solid #c0c0c0;
@@ -671,6 +821,9 @@ const Styled = {
   `,
   IdNumBox4: styled.div`
     margin-right: 1rem;
+  `,
+  IdNumBox5: styled.div`
+    margin-right: -1rem;
   `,
   TextBoxWrapper: styled.div`
     display: flex;
@@ -1015,6 +1168,363 @@ const Styled = {
     border-right: 2px dashed #c0c0c0 !important;
   `,
 
+  //1권
+  //1-1-1
+  QuizLines1: styled.img`
+    width: 25rem;
+    height: 15rem;
+  `,
+  QuizLines1Exam: styled.img`
+    width: 25rem;
+    height: 15rem;
+    margin-left: 3.2rem;
+  `,
+  LineExamBox1: styled.div`
+    border: 1px solid #c0c0c0;
+    border-radius: 1.25rem;
+  `,
+  LineQuizBox1: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    position: relative;
+    width: 500px;
+    height: 20rem;
+    margin-top: 5rem;
+    & > div {
+      text-align: center;
+    }
+    & > input {
+      width: 6rem;
+      height: 2.3125rem;
+      border-radius: 0.25rem;
+      border: 1px solid #c1c1c1;
+      background: #fff;
+      color: #2b1840;
+      padding: 0 0.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-sizing: border-box;
+      position: absolute;
+      &::placeholder {
+        color: #ff2e00;
+      }
+    }
+  `,
+  LinesQuiz1: styled.div`
+    position: absolute;
+    width: 23.5rem;
+    top: -2.5rem;
+    margin-left: 3rem;
+    left: 1rem;
+  `,
+  LinesQuiz2: styled.div`
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    width: 5rem;
+  `,
+  LinesQuiz3: styled.div`
+    position: absolute;
+    top: 5rem;
+    left: 7rem;
+    width: 5rem;
+  `,
+  LinesQuiz4: styled.div`
+    position: absolute;
+    top: 8rem;
+    left: 17.5rem;
+    width: 3.4rem;
+  `,
+  LinesQuizInput1: styled.input`
+    top: 10rem;
+    left: 4rem;
+  `,
+  LinesQuizInput2: styled.input`
+    top: 15.6rem;
+    left: 10rem;
+  `,
+  LinesQuizInputExplain1: styled.div`
+    position: absolute;
+    top: 12.7rem;
+    left: 2.5rem;
+    width: 4rem;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  LinesQuizInputExplain2: styled.div`
+    position: absolute;
+    top: 16.4rem;
+    left: 16.7rem;
+    width: 6rem;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  //1-3-1
+  QuizLines2: styled.img`
+    width: 25rem;
+    height: 15rem;
+  `,
+  QuizLines2Exam: styled.img`
+    width: 25rem;
+    height: 15rem;
+    margin-left: 3.2rem;
+  `,
+  LinesQuiz5: styled.div`
+    position: absolute;
+    width: 23rem;
+    top: -2.5rem;
+    margin-left: 3rem;
+    padding-left: 1.6rem;
+    left: 1rem;
+  `,
+  LinesQuiz6: styled.div`
+    position: absolute;
+    top: 1.5rem;
+    left: 3rem;
+    width: 5rem;
+  `,
+  LinesQuiz7: styled.div`
+    position: absolute;
+    top: 1.5rem;
+    left: 11.1rem;
+    width: 5rem;
+  `,
+  LinesQuiz8: styled.div`
+    position: absolute;
+    top: 1.5rem;
+    left: 16.7rem;
+    width: 5rem;
+  `,
+  LinesQuiz9: styled.div`
+    position: absolute;
+    top: 1.5rem;
+    left: 24.4rem;
+    width: 5rem;
+  `,
+  LinesQuizInput3: styled.input`
+    top: 7rem;
+    left: 6rem;
+  `,
+  LinesQuizInput4: styled.input`
+    top: 9rem;
+    left: 17.5rem;
+  `,
+  LinesQuizInput5: styled.input`
+    top: 16rem;
+    left: 12rem;
+  `,
+  LinesQuizInputExplain3: styled.div`
+    position: absolute;
+    top: 10rem;
+    left: 4.5rem;
+    width: 4rem;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  LinesQuizInputExplain4: styled.div`
+    position: absolute;
+    top: 12rem;
+    left: 20.7rem;
+    width: 6rem;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  LinesQuizInputExplain5: styled.div`
+    position: absolute;
+    top: 16.8rem;
+    left: 18.5rem;
+    width: 6rem;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  //1-4-1
+  QuizLines3: styled.img`
+    width: 25rem;
+    height: 12rem;
+  `,
+  QuizLines3Exam: styled.img`
+    width: 25rem;
+    height: 12rem;
+    margin-left: 3.2rem;
+  `,
+  LineQuizBox3: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    position: relative;
+    width: 500px;
+    height: 17rem;
+    margin-top: 5rem;
+    & > div {
+      text-align: center;
+    }
+    & > input {
+      width: 6rem;
+      height: 2.3125rem;
+      border-radius: 0.25rem;
+      border: 1px solid #c1c1c1;
+      background: #fff;
+      color: #2b1840;
+      padding: 0 0.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-sizing: border-box;
+      position: absolute;
+      &::placeholder {
+        color: #ff2e00;
+      }
+    }
+  `,
+  LinesQuiz10: styled.div`
+    position: absolute;
+    width: 23rem;
+    top: -2.5rem;
+    margin-left: 3rem;
+    left: 1rem;
+  `,
+  LinesQuiz11: styled.div`
+    position: absolute;
+    top: 1.6rem;
+    left: 16.2rem;
+    width: 5rem;
+  `,
+  LinesQuiz12: styled.div`
+    position: absolute;
+    top: 1.6rem;
+    left: 24.3rem;
+    width: 5rem;
+  `,
+  LinesQuiz13: styled.div`
+    position: absolute;
+    width: 23rem;
+    top: -2.5rem;
+    margin-left: 3.4rem;
+    left: 1rem;
+  `,
+  LinesQuiz14: styled.div`
+    position: absolute;
+    top: 1.6rem;
+    left: 2.2rem;
+    width: 5rem;
+  `,
+  LinesQuiz15: styled.div`
+    position: absolute;
+    top: 1.6rem;
+    left: 10.3rem;
+    width: 5rem;
+  `,
+  LinesQuizInput6: styled.input`
+    top: 7rem;
+    left: 10rem;
+  `,
+  LinesQuizInput7: styled.input`
+    top: 12.6rem;
+    left: 17rem;
+  `,
+  LinesQuizInput8: styled.input`
+    top: 6.7rem;
+    left: 16rem;
+  `,
+  LinesQuizInput9: styled.input`
+    top: 12.6rem;
+    left: 9rem;
+  `,
+  LinesQuizInputExplain6: styled.div`
+    position: absolute;
+    top: 10rem;
+    left: 7.5rem;
+    width: 4rem;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  LinesQuizInputExplain7: styled.div`
+    position: absolute;
+    top: 13.4rem;
+    left: 10.7rem;
+    width: 6rem;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
+  //1-5-1
+  ImgSize1: styled.img`
+    width: 30vw;
+  `,
+  ImgBox1: styled.div`
+    width: 40vw;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  //1-5-2
+  ImgSize2: styled.img`
+    width: 20vw;
+    background-color: #fff;
+  `,
+  //2권
+  //2-1-1
+  ImgSize3: styled.img`
+    height: 6rem;
+  `,
+  //2-1-3
+  ImgSize4: styled.img`
+    width: 38vw;
+  `,
+  //2-2-1
+  ImgSize5: styled.img`
+    height: 10rem;
+  `,
+  ImgSize6: styled.img`
+    height: 7rem;
+  `,
+  //3권
+  //3-1-1
+  ImgSize7: styled.img`
+    height: 25rem;
+  `,
+  ImgSize8: styled.img`
+    height: 20rem;
+  `,
+  UnderLineBox: styled.div`
+    border: none;
+    border-bottom: 1px solid #ff2e00;
+    background-color: transparent;
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    position: relative;
+  `,
+  InputExplain1: styled.div`
+    position: absolute;
+    top: 2.7rem;
+    left: -0.3rem;
+    font-size: 0.75rem;
+    line-height: 110%;
+    color: #ff2e00;
+  `,
   //4권
   DivSingleWrapper: styled.div`
     font-size: 1.5rem;
@@ -1092,6 +1602,20 @@ const Styled = {
     margin-left: -0.25rem;
     margin-top: 0.2rem;
   `,
+  DivCenterNum2: styled.div`
+    position: absolute;
+    top: 1rem;
+    left: 2.8rem;
+    border-top: 2px solid black;
+    min-width: 5.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-left: -0.25rem;
+    margin-top: 0.2rem;
+    letter-spacing: 1.5rem;
+    padding-left: 1.3rem;
+  `,
   DivTopInputWrapper: styled.div`
     position: absolute;
     top: -1.5rem;
@@ -1107,7 +1631,27 @@ const Styled = {
     width: 70%;
     padding-bottom: 3rem;
   `,
+  //4-5-1
+  ImgBox2: styled.div`
+    width: fit-content;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 3rem;
+  `,
   //5권
+  //5-1-1
+  ImgSize9: styled.img`
+    width: 14.8125rem;
+  `,
+  //5-5-2
+  ImgSize10: styled.img`
+    height: 2rem;
+  `,
+
   BorderBox2: styled.div`
     border-radius: 1rem;
     background-color: rgba(98, 151, 255, 0.4);

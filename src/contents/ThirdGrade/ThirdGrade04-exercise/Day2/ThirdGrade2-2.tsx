@@ -9,6 +9,8 @@ import { ThirdGrade4Day2 } from '../../utils/handleTitle';
 
 import type { Data22QuizProps as QuizProps } from '../../Type/Type2';
 
+import img from '../../Image/4-2-2.png';
+
 const ThirdGrade22Exercise: React.FC = () => {
   return (
     <DayLayout
@@ -16,8 +18,8 @@ const ThirdGrade22Exercise: React.FC = () => {
       subTitle={ThirdGrade4Day2.subTitle}
     >
       <Styled.PaddingBox>
-        <Styled.ColGapBox gap={3}>
-          <div>예시 이미치 첨부 예정</div>
+        <Styled.ColGapBox2 gap={3}>
+          <Styled.ImgSize4 src={img} alt="" />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}
@@ -27,7 +29,7 @@ const ThirdGrade22Exercise: React.FC = () => {
               quiz3={item.quiz3}
             />
           ))}
-        </Styled.ColGapBox>
+        </Styled.ColGapBox2>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={2} />
     </DayLayout>

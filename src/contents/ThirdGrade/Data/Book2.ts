@@ -3,7 +3,7 @@ export const Data11Quiz = [
   { id: '②', quiz1: '40 + 40 + 40 + 40 =', quiz2: '40 ×' },
   { id: '③', quiz1: '20 + 20 + 20 + 20 =', quiz2: '20 ×' },
   { id: '④', quiz1: '70 + 70 =', quiz2: '70 ×' },
-  { id: '⑤', quiz1: '40 + 40 =', quiz2: '90 ×' },
+  { id: '⑤', quiz1: '40 + 40 =', quiz2: '40 ×' },
 ];
 
 export const Data12Quiz = [
@@ -36,8 +36,8 @@ export const Data13Quiz = [
 ];
 
 export const Data21Quiz = [
-  { id: '①', quiz1: '21 × 4', quiz2: '4', url: '2' },
-  { id: '②', quiz1: '12 × 3', quiz2: '3', url: '7' },
+  { id: '①', quiz1: '21 × 4', quiz2: '4' },
+  { id: '②', quiz1: '12 × 3', quiz2: '3' },
 ];
 export const Data22Quiz = [
   { id: '①', quiz1: '43 × 2', quiz2: '2', quiz3: '2' },
@@ -66,9 +66,9 @@ export const Data23Quiz = [
 ];
 
 export const Data31Quiz = [
-  { id: '①', quiz1: '42 × 3 = (40 × 3) + (2 × 3)', url: '' },
-  { id: '②', quiz1: '74 × 2 = (70 × 2) + (4 × 2)', url: '' },
-  { id: '③', quiz1: '31 × 4 = (30 × 4) + (1 × 4)', url: '' },
+  { id: '①', quiz1: '42 × 3 = (40 × 3) + (2 × 3)' },
+  { id: '②', quiz1: '74 × 2 = (70 × 2) + (4 × 2)' },
+  { id: '③', quiz1: '31 × 4 = (30 × 4) + (1 × 4)' },
 ];
 
 export const Data32Quiz = [

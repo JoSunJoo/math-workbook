@@ -6,12 +6,12 @@ export const Data11Quiz = [
 ];
 
 export const Data12Quiz = [
-  { id: '①', url: '' },
-  { id: '②', url: '' },
-  { id: '③', url: '' },
-  { id: '④', url: '' },
-  { id: '⑤', url: '' },
-  { id: '⑥', url: '' },
+  { id: '①' },
+  { id: '②' },
+  { id: '③' },
+  { id: '④' },
+  { id: '⑤' },
+  { id: '⑥' },
 ];
 
 export const Data13Quiz = [
@@ -118,10 +118,7 @@ export const Data123Quiz = [
   },
 ];
 
-export const Data31Quiz1 = [
-  { id: '②', url: '' },
-  { id: '④', url: '' },
-];
+export const Data31Quiz1 = [{ id: '②' }, { id: '④' }];
 
 export const Data31Quiz2 = [
   { id: '①', quiz1: '30만의 10배는' },

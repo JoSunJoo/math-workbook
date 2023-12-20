@@ -5,10 +5,12 @@ import DayLayout from '../../Layout/Day3';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { ThirdGrade6Day3 } from '../../utils/handleTitle';
-import ExampleQuiz from './Example3-2';
+// import ExampleQuiz from './Example3-2';
 import SingleQuiz from './Single3-1';
 
 import type { Data31QuizProps as QuizProps } from '../../Type/Type6';
+
+import img from '../../Image/6-3-2.png';
 
 const ThirdGrade32Exercise: React.FC = () => {
   return (
@@ -18,8 +20,8 @@ const ThirdGrade32Exercise: React.FC = () => {
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={6}>
+          <Styled.ImgSize4 src={img} alt="" />
           <Styled.RowWrapBox>
-            <ExampleQuiz />
             {QuizData.map((item: QuizProps, idx) => (
               <SingleQuiz
                 key={idx}

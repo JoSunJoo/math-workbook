@@ -1,12 +1,12 @@
 export const Data11Quiz = [
-  { id: '①', quiz1: '80 ÷ 2', url: '' },
-  { id: '②', quiz1: '90 ÷ 3', url: '' },
-  { id: '③', quiz1: '30 ÷ 3', url: '' },
-  { id: '④', quiz1: '40 ÷ 2', url: '' },
-  { id: '⑤', quiz1: '50 ÷ 5', url: '' },
-  { id: '⑥', quiz1: '60 ÷ 2', url: '' },
-  { id: '⑦', quiz1: '40 ÷ 4', url: '' },
-  { id: '⑧', quiz1: '80 ÷ 4', url: '' },
+  { id: '①', quiz1: '80 ÷ 2' },
+  { id: '②', quiz1: '90 ÷ 3' },
+  { id: '③', quiz1: '30 ÷ 3' },
+  { id: '④', quiz1: '40 ÷ 2' },
+  { id: '⑤', quiz1: '50 ÷ 5' },
+  { id: '⑥', quiz1: '60 ÷ 2' },
+  { id: '⑦', quiz1: '40 ÷ 4' },
+  { id: '⑧', quiz1: '80 ÷ 4' },
 ];
 
 export const Data12Quiz = [
@@ -31,11 +31,10 @@ export const Data13Quiz = [
 ];
 
 export const Data21Quiz = [
-  { id: '①', quiz1: '46 ÷ 2', url: '' },
-  { id: '②', quiz1: '39 ÷ 3', url: '' },
-  { id: '③', quiz1: '28 ÷ 2', url: '' },
-  { id: '④', quiz1: '44 ÷ 4', url: '' },
-  { id: '⑤', quiz1: '63 ÷ 3', url: '' },
+  { id: '①', quiz1: '39 ÷ 3' },
+  { id: '②', quiz1: '28 ÷ 2' },
+  { id: '③', quiz1: '44 ÷ 4' },
+  { id: '④', quiz1: '63 ÷ 3' },
 ];
 
 export const Data22Quiz = [
@@ -153,16 +152,11 @@ export const Data43Quiz2 = [
 export const Data51Quiz = [
   {
     id: '①',
-    quiz1: '놓여진 의자를 3개씩 한 줄로 놓으면 모두 몇 줄로 놓을 수 있을까요?',
-    unit: '줄',
-  },
-  {
-    id: '②',
     quiz1: '의자를 다시 2개씩 한 줄로 놓는다면 모두 몇 줄로 놓을 수 있을까요?',
     unit: '줄',
   },
   {
-    id: '③',
+    id: '②',
     quiz1: '76개의 의자를 4개씩 한 줄로 놓으면 모두 몇 줄로 놓을 수 있을까요?',
     unit: '줄',
   },

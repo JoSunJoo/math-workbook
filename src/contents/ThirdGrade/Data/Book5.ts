@@ -1,11 +1,10 @@
 export const Data11Quiz = [
   {
     id: '①',
-    quiz1: '12 × 2 = 2',
+    quiz1: '12 × 2 = 24',
     quiz2: 24,
     quiz3: 12,
     quiz4: 2,
-    url: '',
   },
   {
     id: '②',
@@ -13,7 +12,6 @@ export const Data11Quiz = [
     quiz2: 42,
     quiz3: 14,
     quiz4: 3,
-    url: '',
   },
   {
     id: '③',
@@ -21,7 +19,6 @@ export const Data11Quiz = [
     quiz2: 60,
     quiz3: 12,
     quiz4: 5,
-    url: '',
   },
 ];
 
@@ -37,19 +34,16 @@ export const Data13Quiz = [
     id: '①',
     quiz1: '42 ÷ 3 = 14',
     quiz2: '× 14 = 42',
-    url: '',
   },
   {
     id: '②',
     quiz1: '48 ÷ 2 = 24',
     quiz2: '× 24 = 48',
-    url: '',
   },
   {
     id: '③',
     quiz1: '99 ÷ 9 = 11',
     quiz2: '× 11 = 99',
-    url: '',
   },
 ];
 

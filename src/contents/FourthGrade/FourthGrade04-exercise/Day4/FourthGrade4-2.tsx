@@ -14,7 +14,7 @@ const FourthGrade42Exercise = () => {
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
           <div>예시 부분 이미지 첨부 예정</div>
-          <Styled.RowWrapBox3>
+          <Styled.RowWrapBox6>
             {QuizData.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -23,7 +23,7 @@ const FourthGrade42Exercise = () => {
                 unit={item.unit}
               />
             ))}
-          </Styled.RowWrapBox3>
+          </Styled.RowWrapBox6>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
       <ConfirmBtn type={true} day={4} />

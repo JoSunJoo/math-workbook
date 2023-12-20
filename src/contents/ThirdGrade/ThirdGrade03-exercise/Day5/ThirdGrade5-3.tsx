@@ -16,10 +16,10 @@ import Single532 from './Single5-3-2';
 
 const ThirdGrade53Exercise: React.FC = () => {
   const Seq = [Data53Quiz1, Data53Quiz2, Data53Quiz3, Data53Quiz4];
-  const [isChecked1, setIsChecked1] = useState<number>(0);
-  const [isChecked2, setIsChecked2] = useState<number>(0);
-  const [isChecked3, setIsChecked3] = useState<number>(0);
-  const [isChecked4, setIsChecked4] = useState<number>(0);
+  const [isChecked1, setIsChecked1] = useState<number>();
+  const [isChecked2, setIsChecked2] = useState<number>();
+  const [isChecked3, setIsChecked3] = useState<number>();
+  const [isChecked4, setIsChecked4] = useState<number>();
   const CheckArray = [isChecked1, isChecked2, isChecked3, isChecked4];
   const CheckSetArray = [
     setIsChecked1,

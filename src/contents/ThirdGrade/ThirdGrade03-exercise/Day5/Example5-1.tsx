@@ -3,7 +3,7 @@ import SignArrow from '../../utils/SignArrow';
 
 const Example51 = () => {
   return (
-    <Styled.ExampleBox5>
+    <Styled.ExampleBox6>
       <Styled.SetCenter>
         <Styled.TempSize1>
           <SignArrow deg={90} sign="×" />
@@ -27,7 +27,7 @@ const Example51 = () => {
           <Styled.InputBox1 placeholder="1200"></Styled.InputBox1>
         </Styled.ColGapBox3>
       </Styled.SetCenter>
-    </Styled.ExampleBox5>
+    </Styled.ExampleBox6>
   );
 };
 

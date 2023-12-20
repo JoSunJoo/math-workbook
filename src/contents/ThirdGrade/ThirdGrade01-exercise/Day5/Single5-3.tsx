@@ -6,8 +6,8 @@ const Single53 = (props: QuizProps) => {
   const { id, quiz1, unit } = props;
   return (
     <Styled.RowBox2>
+      <div>{id}</div>
       <Styled.SingleWrapper4>
-        <Styled.IdNumBox>{id}</Styled.IdNumBox>
         <Styled.TextBoxWrapper>
           <Styled.TextBox>{quiz1}</Styled.TextBox>
           <Styled.TextBoxWrapper>

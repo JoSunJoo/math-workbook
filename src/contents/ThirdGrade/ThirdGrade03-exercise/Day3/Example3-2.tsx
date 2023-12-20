@@ -4,7 +4,11 @@ const Example32 = () => {
   return (
     <Styled.ExampleBox3>
       <Styled.InputWrapper2>
-        <div>37 × 60</div>
+        <div>37 × </div>
+        <Styled.UnderLineBox>
+          60
+          <Styled.InputExplain1>6 × 10 </Styled.InputExplain1>
+        </Styled.UnderLineBox>
         <div>
           <Styled.InputWrapper>
             <div>=</div>

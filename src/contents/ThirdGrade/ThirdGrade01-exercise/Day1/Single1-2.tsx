@@ -6,8 +6,8 @@ const Single12 = (props: DataProps) => {
   const { id, quiz1, quiz2 } = props;
   return (
     <Styled.SingleWrapper>
-      <div>{id}</div>
-      <Styled.InputWrapper2>
+      <Styled.IdNumBox5>{id}</Styled.IdNumBox5>
+      <Styled.FitInputWrapper2>
         <div>{quiz1}</div>
         <div>+</div>
         <div>{quiz2}</div>
@@ -27,7 +27,7 @@ const Single12 = (props: DataProps) => {
             </Styled.InputWrapper>
           </div>
         </div>
-      </Styled.InputWrapper2>
+      </Styled.FitInputWrapper2>
     </Styled.SingleWrapper>
   );
 };

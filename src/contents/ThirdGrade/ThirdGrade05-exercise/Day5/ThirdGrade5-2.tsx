@@ -12,6 +12,8 @@ import SingleQuiz from './Single5-1';
 
 import type { Data51QuizProps as QuizProps } from '../../Type/Type5';
 
+import img from '../../Image/questionMark.png';
+
 const ThirdGrade52Exercise = () => {
   return (
     <DayLayout
@@ -20,10 +22,11 @@ const ThirdGrade52Exercise = () => {
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>
-            ★ 민규네 학교 남학생 96명이 8명씩 조를 이루어 체육 대회를 하려고
+          <Styled.RowBox7>
+            <Styled.ImgSize10 src={img} alt="" />
+            민규네 학교 남학생 96명이 8명씩 조를 이루어 체육 대회를 하려고
             합니다. 물음에 답하세요.
-          </div>
+          </Styled.RowBox7>
           {QuizData1.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}
@@ -36,10 +39,11 @@ const ThirdGrade52Exercise = () => {
       </Styled.PaddingBox>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>
-            ★ 탁구공 144개를 9개의 상자에 똑같이 나누어 담으려고 합니다. 물음에
+          <Styled.RowBox7>
+            <Styled.ImgSize10 src={img} alt="" />
+            탁구공 144개를 9개의 상자에 똑같이 나누어 담으려고 합니다. 물음에
             답하세요.
-          </div>
+          </Styled.RowBox7>
           {QuizData2.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}

@@ -24,7 +24,7 @@ const Single52 = (props: QuizProps) => {
                   {quiz2}
                 </Styled.NumBox2>
               </Styled.RowBox>
-              <Styled.NumBox2Input noBottom={true}></Styled.NumBox2Input>
+              <Styled.NumBox3Input noBottom={true} />
             </Styled.RowBox>
             <Styled.RowBox>
               <Styled.NumBox2 color="rgba(143, 108, 255, 0.4)">
@@ -33,11 +33,11 @@ const Single52 = (props: QuizProps) => {
               <Styled.NumBox2 color="rgba(255, 117, 19, 0.4)">
                 {quiz4}
               </Styled.NumBox2>
-              <Styled.NumBox2Input></Styled.NumBox2Input>
+              <Styled.NumBox3Input />
             </Styled.RowBox>
             <Styled.RowBox>
-              <Styled.NumBox2Input noRight={true}></Styled.NumBox2Input>
-              <Styled.NumBox2Input></Styled.NumBox2Input>
+              <Styled.NumBox3Input noRight={true} />
+              <Styled.NumBox3Input />
             </Styled.RowBox>
           </Styled.ColGapBox3>
         </Styled.ColGapBox3>

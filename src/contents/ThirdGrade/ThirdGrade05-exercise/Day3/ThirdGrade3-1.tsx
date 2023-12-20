@@ -8,12 +8,16 @@ import SingleQuiz from './Single3-1';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
 
+import img from '../../Image/5-3-1.png';
+
 const ThirdGrade31Exercise = () => {
   return (
     <DayLayout title={ThirdGrade5Day3.title} subTitle={SubGeometry}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <div>예시 이미지 첨부 예정</div>
+          <Styled.MarginBottomBox>
+            <Styled.ImgSize4 src={img} alt="" />
+          </Styled.MarginBottomBox>
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz key={idx} id={item.id} quiz1={item.quiz1} />
           ))}
