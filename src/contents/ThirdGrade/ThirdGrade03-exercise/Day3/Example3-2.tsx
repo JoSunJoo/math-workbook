@@ -2,7 +2,7 @@ import Styled from '../../style';
 
 const Example32 = () => {
   return (
-    <Styled.ExampleBox3>
+    <Styled.ExampleBox3Short>
       <Styled.InputWrapper2>
         <div>37 × </div>
         <Styled.UnderLineBox>
@@ -30,7 +30,7 @@ const Example32 = () => {
           </div>
         </div>
       </Styled.InputWrapper2>
-    </Styled.ExampleBox3>
+    </Styled.ExampleBox3Short>
   );
 };
 

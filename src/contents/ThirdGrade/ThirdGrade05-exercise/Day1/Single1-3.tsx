@@ -5,6 +5,7 @@ import type { Data13QuizProps2 as QuizProps } from '../../Type/Type5';
 import img1 from '../../Image/5-1-3_1.png';
 import img2 from '../../Image/5-1-3_2.png';
 import img3 from '../../Image/5-1-3_3.png';
+import img from '../../Image/redArrow.png';
 
 const Single13 = (props: QuizProps) => {
   const { id, quiz1, quiz2, imgId } = props;
@@ -18,7 +19,7 @@ const Single13 = (props: QuizProps) => {
           <Styled.ColGapBox2 gap={1}>
             <div>{quiz1}</div>
             <Styled.RowBox7>
-              <div>⇒</div>
+              <Styled.HandleImgSize src={img} size={1.5} />
               <Styled.InputBox3 /> {quiz2}
             </Styled.RowBox7>
           </Styled.ColGapBox2>

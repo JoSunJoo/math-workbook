@@ -25,7 +25,7 @@ const FourthGrade13Exercise = () => {
         <Styled.ColGapBox gap={4}>
           <Styled.ImgBox2>
             <Styled.ColGapBox gap={2}>
-              <Styled.TextSize>분수와 소수의 관계 </Styled.TextSize>
+              <Styled.TextSize>• 분수와 소수의 관계 </Styled.TextSize>
               <Styled.ImgSize4 src={img} alt="" />
             </Styled.ColGapBox>
           </Styled.ImgBox2>

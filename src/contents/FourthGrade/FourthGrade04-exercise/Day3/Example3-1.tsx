@@ -2,7 +2,7 @@ import Styled from '../../style';
 
 const Example31 = () => {
   return (
-    <Styled.ExampleBox1>
+    <Styled.ExampleBox8>
       <Styled.RowWrapBox4>
         <Styled.RowBox4>
           <Styled.IdNumBox2>①</Styled.IdNumBox2>
@@ -38,7 +38,7 @@ const Example31 = () => {
           </Styled.ColGapBox>
         </Styled.RowBox4>
       </Styled.RowWrapBox4>
-    </Styled.ExampleBox1>
+    </Styled.ExampleBox8>
   );
 };
 

@@ -86,6 +86,30 @@ const Styled = {
     align-items: center;
     justify-content: center;
   `,
+  RowWrapBox7: styled.div`
+    //절반씩 좌측정렬
+    display: flex;
+    width: 55rem;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: flex-start;
+    & > div {
+      width: 25rem;
+      justify-content: center;
+    }
+  `,
+  RowWrapBox8: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    & > div {
+      width: 40%;
+      justify-content: center;
+    }
+  `,
   RowBox: styled.div`
     display: flex;
   `,
@@ -156,6 +180,11 @@ const Styled = {
     display: flex;
     width: 100%;
     gap: 1rem;
+  `,
+  GapRowBox: styled.div<{ gap: number }>`
+    display: flex;
+    gap: ${props => `${props.gap}rem`};
+    align-items: center;
   `,
 
   RowBox13Upper: styled.div`
@@ -241,6 +270,21 @@ const Styled = {
     justify-content: center;
     font-weight: 600;
   `,
+  ExampleBox3Short: styled.div`
+    margin-top: 2.938rem;
+    margin-bottom: 0.1875rem;
+    width: 30rem;
+    height: 11rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding-top: 1rem;
+  `,
   ExampleBox4: styled.div`
     //길고 낮은 example box
     margin-bottom: 0.1875rem;
@@ -318,6 +362,37 @@ const Styled = {
     justify-content: center;
     font-weight: 600;
   `,
+  ExampleBox9: styled.div`
+    //height:fit
+    margin-top: 2.938rem;
+    margin-bottom: 0.1875rem;
+    width: 42.5rem;
+    height: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  `,
+  FitExampleBox: styled.div`
+    margin-top: 2.938rem;
+    margin-bottom: 0.1875rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 3rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c0c0c0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  `,
   ExampleExplain1: styled.div`
     position: absolute;
     color: #ff2e00;
@@ -351,6 +426,20 @@ const Styled = {
     height: fit-content;
     border-radius: 1rem;
     padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff5ff;
+    position: relative;
+  `,
+  SingleWrapper2Short: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    width: 100%;
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
     align-items: center;
     justify-content: center;
     background-color: #eff5ff;
@@ -426,6 +515,21 @@ const Styled = {
     padding: 2rem;
     align-items: center;
     justify-content: center;
+    position: relative;
+  `,
+  SingleWrapper8: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    width: 100%;
+    min-width: 32.5rem;
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(193, 193, 193, 0.2);
     position: relative;
   `,
   MiniSingleWrapper: styled.div`
@@ -527,6 +631,13 @@ const Styled = {
     background-color: rgba(193, 193, 193, 0.2);
     border-radius: 1.25rem;
     padding: 2rem 0;
+  `,
+  FitInputWrapper4: styled.div`
+    height: 100%;
+    width: 100%;
+    background-color: rgba(193, 193, 193, 0.2);
+    border-radius: 1.25rem;
+    padding: 1rem 0;
   `,
   FitBox1: styled.div`
     height: fit-content;
@@ -1242,9 +1353,43 @@ const Styled = {
     top: 10rem;
     left: 4rem;
   `,
+  SameLinesQuizInput1: styled.div`
+    width: 6rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
+    color: #ff2e00;
+  `,
   LinesQuizInput2: styled.input`
     top: 15.6rem;
     left: 10rem;
+  `,
+  SameLinesQuizInput2: styled.div`
+    width: 6rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    position: absolute;
+    top: 15.6rem;
+    left: 10rem;
+    color: #ff2e00;
   `,
   LinesQuizInputExplain1: styled.div`
     position: absolute;
@@ -1725,6 +1870,46 @@ const Styled = {
   `,
   BoldSpan: styled.div`
     font-size: 1.15rem;
+  `,
+
+  MarginBox: styled.div<{
+    left?: number;
+    right?: number;
+    top?: number;
+    bottom?: number;
+  }>`
+    margin-left: ${props => (props.left ? `${props.left}rem` : '')};
+    margin-right: ${props => (props.right ? `${props.right}rem` : '')};
+    margin-top: ${props => (props.top ? `${props.top}rem` : '')};
+    margin-bottom: ${props => (props.bottom ? `${props.bottom}rem` : '')};
+  `,
+  HandleImgSize: styled.img<{ size?: number }>`
+    height: ${props => (props.size ? `${props.size}rem` : '')};
+  `,
+  HandleImgSize2: styled.img<{ size?: number }>`
+    width: ${props => (props.size ? `${props.size}rem` : '')};
+  `,
+  ColorBox1: styled.div`
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(221, 211, 255, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  ColorBox2: styled.div`
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(208, 224, 255, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   `,
 };
 

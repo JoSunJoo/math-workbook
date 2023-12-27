@@ -4,7 +4,7 @@ import img from '../../Image/4-1-1_1.png';
 
 const Example11 = () => {
   return (
-    <Styled.ExampleBox2>
+    <Styled.FitExampleBox>
       <Styled.SetCenter>
         <Styled.ColGapBox gap={1}>
           <Styled.ImgSize3 src={img} alt="" />
@@ -14,7 +14,7 @@ const Example11 = () => {
           </Styled.RowBox7>
         </Styled.ColGapBox>
       </Styled.SetCenter>
-    </Styled.ExampleBox2>
+    </Styled.FitExampleBox>
   );
 };
 

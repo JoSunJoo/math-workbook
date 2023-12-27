@@ -15,9 +15,7 @@ const ThirdGrade31Exercise = () => {
     <DayLayout title={ThirdGrade5Day3.title} subTitle={SubGeometry}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
-          <Styled.MarginBottomBox>
-            <Styled.ImgSize4 src={img} alt="" />
-          </Styled.MarginBottomBox>
+          <Styled.ImgSize4 src={img} alt="" />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz key={idx} id={item.id} quiz1={item.quiz1} />
           ))}

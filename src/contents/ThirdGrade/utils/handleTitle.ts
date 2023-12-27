@@ -116,8 +116,8 @@ export const ThirdGrade5Day5 = {
 export const ThirdGrade6Day1 = {
   title: '전체와 부분',
   subTitle: '색칠된 부분을 분수로 나타내세요.',
-  subTitle1:
-    '먹은 부분을 왼쪽 빈칸에, 남은 부분을 오른쪽 빈칸에 분수로 나타내세요',
+  subTitle2:
+    '먹은 부분을 왼쪽 빈칸에, 남은 부분을 오른쪽 빈칸에 \n분수로 나타내세요',
 };
 export const ThirdGrade6Day2 = {
   title: '분수의 크기 비교',

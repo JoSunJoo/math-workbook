@@ -43,6 +43,7 @@ const Single21 = (props: DataProps) => {
             setInputValue={setInputValue}
             toggle={toggle}
             setToggle={setToggle}
+            example={true}
           />
         ) : (
           <Matrix

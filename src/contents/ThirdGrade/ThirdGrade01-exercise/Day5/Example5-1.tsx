@@ -12,9 +12,12 @@ const Example51 = () => {
           <Styled.TextBoxWrapper>
             <Styled.RowBox3>
               <Styled.TextSize>식:</Styled.TextSize>
-              <Styled.LongInput placeholder="375 + 453 = 828 " />
+              <Styled.LongInput
+                placeholder="375 + 453 = 828 "
+                disabled={true}
+              />
               <Styled.TextSize>답:</Styled.TextSize>
-              <Styled.ShortInput placeholder="828" />
+              <Styled.ShortInput placeholder="828" disabled={true} />
               <Styled.TextSize>m</Styled.TextSize>
             </Styled.RowBox3>
           </Styled.TextBoxWrapper>

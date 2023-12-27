@@ -5,6 +5,7 @@ import type { Data11QuizProps2 as QuizProps } from '../../Type/Type5';
 import img1 from '../../Image/5-1-1_1.png';
 import img2 from '../../Image/5-1-1_2.png';
 import img3 from '../../Image/5-1-1_3.png';
+import img from '../../Image/redArrow.png';
 
 const Single11 = (props: QuizProps) => {
   const { id, quiz1, quiz2, quiz3, quiz4, imgId } = props;
@@ -19,7 +20,7 @@ const Single11 = (props: QuizProps) => {
           <Styled.ColGapBox2 gap={1}>
             <div>{quiz1}</div>
             <Styled.SetCenter>
-              <div>⇒</div>
+              <Styled.HandleImgSize src={img} size={1.5} />
               <Styled.AngleShapeBox>
                 <Styled.AngleShapeLeft />
               </Styled.AngleShapeBox>

@@ -15,7 +15,7 @@ const Single11 = (props: QuizProps) => {
   return (
     <Styled.RowBox13>
       <div>{id}</div>
-      <Styled.SingleWrapper5>
+      <Styled.SingleWrapper8>
         <Styled.InputWrapper3>
           <Styled.ColGapBox gap={1.5}>
             <Styled.ImgSize3 src={imgUrl[imgId]} alt="" />
@@ -37,7 +37,7 @@ const Single11 = (props: QuizProps) => {
             </Styled.ColGapBox2>
           </Styled.ColGapBox>
         </Styled.InputWrapper3>
-      </Styled.SingleWrapper5>
+      </Styled.SingleWrapper8>
     </Styled.RowBox13>
   );
 };

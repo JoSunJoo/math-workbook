@@ -18,7 +18,15 @@ const Single42 = (props: QuizProps) => {
           </Styled.RowBox7>
           <div>➨</div>
           <Styled.BorderBox2>검산</Styled.BorderBox2>
-          <Styled.MiddleInput></Styled.MiddleInput>
+          <Styled.RowBox7>
+            <Styled.InputBox3 />
+            <div>×</div>
+            <Styled.InputBox3 />
+            <div>+</div>
+            <Styled.InputBox3 />
+            <div>=</div>
+            <Styled.InputBox1 />
+          </Styled.RowBox7>
         </Styled.RowBox8>
       </Styled.SetCenter>
     </Styled.SingleWrapper5>

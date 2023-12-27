@@ -7,7 +7,7 @@ import { FourthGrade4Day1 as Day } from '../../utils/handleTitle';
 import Example from './Example1-2';
 import SingleQuiz from './Single1-2';
 
-import type { Data12QuizProps as QuizProps } from '../../Type/Type4';
+import type { Data12QuizProps1 as QuizProps } from '../../Type/Type4';
 
 const FourthGrade12Exercise = () => {
   return (
@@ -17,12 +17,7 @@ const FourthGrade12Exercise = () => {
           <Example />
           <Styled.RowWrapBox8>
             {QuizData.map((item: QuizProps, idx: number) => (
-              <SingleQuiz
-                key={idx}
-                id={item.id}
-                quiz1={item.quiz1}
-                position={item.position}
-              />
+              <SingleQuiz key={idx} id={item.id} imgId={idx} />
             ))}
           </Styled.RowWrapBox8>
         </Styled.ColGapBox>

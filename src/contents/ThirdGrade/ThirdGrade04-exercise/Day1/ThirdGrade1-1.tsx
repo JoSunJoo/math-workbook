@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Data11Quiz as QuizData } from '../../Data/Book4';
-import DayLayout from '../../Layout/Day5';
+import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { ThirdGrade4Day1 as Day } from '../../utils/handleTitle';

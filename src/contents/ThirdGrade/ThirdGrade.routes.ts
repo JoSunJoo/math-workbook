@@ -311,18 +311,18 @@ export default createEliceExtRoutes([
   },
 
   //6권
-  // {
-  //   path: 'quiz6-1-1',
-  //   component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-1'),
-  // },
-  // {
-  //   path: 'quiz6-1-2',
-  //   component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-2'),
-  // },
-  // {
-  //   path: 'quiz6-1-3',
-  //   component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-3'),
-  // },
+  {
+    path: 'quiz6-1-1',
+    component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-1'),
+  },
+  {
+    path: 'quiz6-1-2',
+    component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-2'),
+  },
+  {
+    path: 'quiz6-1-3',
+    component: import('./ThirdGrade06-exercise/Day1/ThirdGrade1-3'),
+  },
   {
     path: 'quiz6-2-1',
     component: import('./ThirdGrade06-exercise/Day2/ThirdGrade2-1'),

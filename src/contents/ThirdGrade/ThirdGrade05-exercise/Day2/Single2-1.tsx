@@ -12,7 +12,7 @@ const Single21 = (props: QuizProps) => {
       );
   };
   return (
-    <Styled.SingleWrapper5>
+    <Styled.SingleWrapper8>
       <Styled.IdNumBox3>{id}</Styled.IdNumBox3>
       <Styled.SetCenter>
         <Styled.ColGapBox3 gap={1}>
@@ -36,7 +36,7 @@ const Single21 = (props: QuizProps) => {
           </Styled.ColGapBox3>
         </Styled.ColGapBox3>
       </Styled.SetCenter>
-    </Styled.SingleWrapper5>
+    </Styled.SingleWrapper8>
   );
 };
 

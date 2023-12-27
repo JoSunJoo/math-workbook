@@ -8,10 +8,18 @@ interface Props {
   setInputValue: React.Dispatch<React.SetStateAction<string[][]>>;
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+  example?: boolean;
 }
 const Matrix = (props: Props) => {
-  const { id, placeHolder, inputValue, setInputValue, toggle, setToggle } =
-    props;
+  const {
+    id,
+    placeHolder,
+    inputValue,
+    setInputValue,
+    toggle,
+    setToggle,
+    example,
+  } = props;
 
   const handleOnchange = (targetId: number, newContent: string) => {
     const data = inputValue;
@@ -28,6 +36,8 @@ const Matrix = (props: Props) => {
             key={idx}
             onChange={e => handleOnchange(idx, e.target.value)}
             defaultValue={placeHolder ? placeHolder[idx] : ''}
+            disabled={example}
+            example={example}
           />
         ))}
       </MatrixContainer>
@@ -50,7 +60,7 @@ const MatrixContainer = styled.div`
   border-left: 1px dashed #929292;
 `;
 
-const MatrixBorder = styled.input`
+const MatrixBorder = styled.input<{ example?: boolean }>`
   width: 20px;
   height: 30px;
   border-right: 1px dashed #929292;
@@ -58,7 +68,7 @@ const MatrixBorder = styled.input`
   border-left: none;
   border-top: none;
   text-align: center;
-  color: #ff2e00;
+  color: ${props => (props.example ? '#ff2e00' : '')};
   font-size: 1.25rem;
   outline: none;
 `;

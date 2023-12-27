@@ -39,7 +39,6 @@ export const Data21Quiz = [
   { id: '⑥', quiz1: 60, quiz2: 80 },
   { id: '⑦', quiz1: 90, quiz2: 80 },
   { id: '⑧', quiz1: 30, quiz2: 70 },
-  { id: '⑨', quiz1: 60, quiz2: 40 },
 ];
 
 export const Data22Quiz = [

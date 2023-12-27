@@ -21,14 +21,14 @@ const Example11 = () => {
         <Styled.LinesQuiz2>400</Styled.LinesQuiz2>
         <Styled.LinesQuiz3>70</Styled.LinesQuiz3>
         <Styled.LinesQuiz4>7</Styled.LinesQuiz4>
-        <Styled.LinesQuizInput1 placeholder="470" />
+        <Styled.SameLinesQuizInput1>470</Styled.SameLinesQuizInput1>
         <Styled.LinesQuizInputExplain1>
           400+70 =470
         </Styled.LinesQuizInputExplain1>
         <Styled.LinesQuizInputExplain2>
           470+7 =477
         </Styled.LinesQuizInputExplain2>
-        <Styled.LinesQuizInput2 placeholder="477" />
+        <Styled.SameLinesQuizInput2>477</Styled.SameLinesQuizInput2>
       </Styled.LineQuizBox1>
     </Styled.LineExamBox1>
   );

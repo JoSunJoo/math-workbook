@@ -1,13 +1,32 @@
+export const Data11Quiz = [
+  { id: '①' },
+  { id: '②' },
+  { id: '③' },
+  { id: '④' },
+  { id: '⑤' },
+  { id: '⑥' },
+  { id: '⑦' },
+  { id: '⑧' },
+  { id: '⑨' },
+  { id: '⑩' },
+  { id: '⑪' },
+  { id: '⑫' },
+];
+
 //데이터 미적용
 export const Data12Quiz = [
-  { id: '①', quiz1: 0.57, position: 2 },
-  { id: '②', quiz1: 0.086, position: 2 },
-  { id: '③', quiz1: 8.443, position: 2 },
-  { id: '④', quiz1: 4.03, position: 2 },
-  { id: '⑤', quiz1: 8.443, position: 2 },
-  { id: '⑥', quiz1: 4.056, position: 2 },
-  { id: '⑦', quiz1: 2.76, position: 2 },
-  { id: '⑧', quiz1: 1.07, position: 2 },
+  { id: '①' },
+  { id: '②' },
+  { id: '③' },
+  { id: '④' },
+  { id: '⑤' },
+  { id: '⑥' },
+  { id: '⑦' },
+  { id: '⑧' },
+  { id: '⑨' },
+  { id: '⑩' },
+  { id: '⑪' },
+  { id: '⑫' },
 ];
 
 //데이터 미적용

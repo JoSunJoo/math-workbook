@@ -19,13 +19,17 @@ const Example21 = () => {
             setInputValue={setInputValue}
             toggle={toggle}
             setToggle={setToggle}
+            example={true}
           />
           <Styled.InputWrapper2>
             <div>468</div>
             <div>+</div>
             <div>645</div>
             <div>=</div>
-            <Styled.InputBox2 placeholder="645"></Styled.InputBox2>
+            <Styled.InputBox2
+              placeholder="645"
+              disabled={true}
+            ></Styled.InputBox2>
           </Styled.InputWrapper2>
         </Styled.ColGapBox>
         <Styled.ColGapBox gap={0.2}>

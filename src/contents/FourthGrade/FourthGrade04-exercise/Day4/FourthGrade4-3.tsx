@@ -12,7 +12,7 @@ import SingleQuiz2 from './Single4-3';
 
 import type { Data41QuizProps as QuizProps } from '../../Type/Type4';
 
-const FourthGrade41Exercise = () => {
+const FourthGrade43Exercise = () => {
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
@@ -46,4 +46,4 @@ const FourthGrade41Exercise = () => {
   );
 };
 
-export default FourthGrade41Exercise;
+export default FourthGrade43Exercise;

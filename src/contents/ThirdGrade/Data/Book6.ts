@@ -1,3 +1,29 @@
+export const Data11Quiz = [{ id: '①' }, { id: '②' }, { id: '③' }, { id: '④' }];
+
+export const Data12Quiz = [
+  { id: '①' },
+  { id: '②' },
+  { id: '③' },
+  { id: '④' },
+  { id: '⑤' },
+  { id: '⑥' },
+  { id: '⑦' },
+  { id: '⑧' },
+  { id: '⑨' },
+  { id: '⑩' },
+];
+
+export const Data13Quiz = [
+  { id: '①' },
+  { id: '②' },
+  { id: '③' },
+  { id: '④' },
+  { id: '⑤' },
+  { id: '⑥' },
+  { id: '⑦' },
+  { id: '⑧' },
+];
+
 export const Data21Quiz = [
   { id: '①', quiz1: '1', quiz2: '2', quiz3: '3' },
   { id: '②', quiz1: '1', quiz2: '5', quiz3: '3' },

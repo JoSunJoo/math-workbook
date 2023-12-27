@@ -5,7 +5,7 @@ import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
 const Single31 = (props: QuizProps) => {
   const { id, quiz1 } = props;
   return (
-    <Styled.SingleWrapper2>
+    <Styled.SingleWrapper2Short>
       <div>{id}</div>
       <Styled.SetCenter>
         <Styled.RowBox4>
@@ -21,7 +21,7 @@ const Single31 = (props: QuizProps) => {
           </Styled.RowBox7>
         </Styled.RowBox4>
       </Styled.SetCenter>
-    </Styled.SingleWrapper2>
+    </Styled.SingleWrapper2Short>
   );
 };
 

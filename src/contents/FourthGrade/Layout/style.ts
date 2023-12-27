@@ -61,6 +61,7 @@ export const LayoutStyled = {
     left: 14%;
     position: absolute;
     width: 70.67vw;
+    min-width: 62.5rem;
     height: ${props => (props.line === true ? '69.3vh' : '71vh')};
     background-color: white;
     border: 8px solid ${props => props.color}; //'border'
