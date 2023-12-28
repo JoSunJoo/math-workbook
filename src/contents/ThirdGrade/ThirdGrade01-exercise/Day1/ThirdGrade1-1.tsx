@@ -16,7 +16,7 @@ const ThirdGrade11Exercise: React.FC = () => {
     >
       <Styled.PaddingBox2>
         <Styled.ColGapBox gap={3.75}>
-          <Styled.RowWrapBox6>
+          <Styled.RowWrapBox8>
             <ExampleQuiz />
             {QuizData.map((item: DataProps, idx) => (
               <SingleQuiz
@@ -33,7 +33,7 @@ const ThirdGrade11Exercise: React.FC = () => {
                 quiz9={item.quiz9}
               />
             ))}
-          </Styled.RowWrapBox6>
+          </Styled.RowWrapBox8>
           <ConfirmBtn type={true} day={1} />
         </Styled.ColGapBox>
       </Styled.PaddingBox2>

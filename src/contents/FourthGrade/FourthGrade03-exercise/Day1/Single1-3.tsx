@@ -27,7 +27,7 @@ const Single13 = (props: QuizProps) => {
   return (
     <Styled.RowBox5>
       <div>{id}</div>
-      <Styled.FitInputWrapper2>
+      <Styled.FixedWrapper>
         <Styled.RowBox12>
           {handleSize()}
           <Styled.ColGapBox gap={0.1}>
@@ -37,7 +37,7 @@ const Single13 = (props: QuizProps) => {
             <Styled.InputBox3 />
           </Styled.ColGapBox>
         </Styled.RowBox12>
-      </Styled.FitInputWrapper2>
+      </Styled.FixedWrapper>
     </Styled.RowBox5>
   );
 };

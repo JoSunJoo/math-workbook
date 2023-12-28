@@ -10,7 +10,7 @@ const Example51 = () => {
         return (
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
-              <Styled.InputBox3 placeholder="9" />
+              <Styled.InputBox3 placeholder="9" disabled />
             </Styled.FractUnderLine>
             <Styled.FitBox>{quiz1}</Styled.FitBox>
           </Styled.ColGapBox>
@@ -51,7 +51,7 @@ const Example51 = () => {
             <Styled.GapRowBox2 gap={1}>
               {handleFrac(2, 6, 2)}
               <div>=</div>
-              <Styled.InputBox3 placeholder="3" />
+              <Styled.InputBox3 placeholder="3" disabled />
             </Styled.GapRowBox2>
           </Styled.ColGapBox>
         </Styled.MarginBox>

@@ -1,4 +1,4 @@
-import { Data31Quiz as QuizData } from '../../Data/Book4';
+import { Data32Quiz as QuizData } from '../../Data/Book4';
 // import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day3';
 import Styled from '../../style';
@@ -8,8 +8,8 @@ import SingleQuiz from './Single3-1';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
-import img from '../../Image/4-3-1.png';
-const ThirdGrade31Exercise = () => {
+import img from '../../Image/4-3-2.png';
+const ThirdGrade32Exercise = () => {
   return (
     <DayLayout
       title={ThirdGrade4Day3.title}
@@ -35,4 +35,4 @@ const ThirdGrade31Exercise = () => {
   );
 };
 
-export default ThirdGrade31Exercise;
+export default ThirdGrade32Exercise;

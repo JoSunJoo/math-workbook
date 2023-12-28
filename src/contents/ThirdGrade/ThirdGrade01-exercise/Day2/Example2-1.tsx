@@ -24,7 +24,7 @@ const Example21 = () => {
           <Styled.InputWrapper2>
             <div>468</div>
             <div>+</div>
-            <div>645</div>
+            <div>177</div>
             <div>=</div>
             <Styled.InputBox2
               placeholder="645"

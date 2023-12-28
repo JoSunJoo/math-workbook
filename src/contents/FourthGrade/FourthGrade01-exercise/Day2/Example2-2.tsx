@@ -12,27 +12,27 @@ const Example22 = () => {
             <Styled.ImgSize12 src={img} alt="" />
             <Styled.RowBox4>
               <div>10000이 </div>
-              <Styled.InputBox3 placeholder="4" />
+              <Styled.InputBox3 placeholder="4" disabled />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>1000이 </div>
-              <Styled.InputBox3 placeholder="5" />
+              <Styled.InputBox3 placeholder="5" disabled />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>100이 </div>
-              <Styled.InputBox3 placeholder="9" />
+              <Styled.InputBox3 placeholder="9" disabled />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>10이 </div>
-              <Styled.InputBox3 placeholder="7" />
+              <Styled.InputBox3 placeholder="7" disabled />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>1이 </div>
-              <Styled.InputBox3 placeholder="3" />
+              <Styled.InputBox3 placeholder="3" disabled />
               <div> 개</div>
             </Styled.RowBox4>
           </Styled.RowBox5>

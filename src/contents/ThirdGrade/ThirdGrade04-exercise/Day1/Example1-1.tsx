@@ -10,7 +10,7 @@ const Example11 = () => {
           <Styled.ImgSize3 src={img} alt="" />
           <Styled.RowBox7>
             <div>60 ÷ 3 = </div>
-            <Styled.InputBox1 placeholder="20" />
+            <Styled.InputBox1 placeholder="20" disabled />
           </Styled.RowBox7>
         </Styled.ColGapBox>
       </Styled.SetCenter>

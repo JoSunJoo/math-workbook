@@ -10,20 +10,20 @@ const Example21 = () => {
         <Styled.SetCenter>
           <Styled.ColGapBox4 gap={1}>
             <Styled.BetweenBox>
-              <Styled.InputBox4 placeholder="40000" />
+              <Styled.InputBox4 placeholder="40000" disabled />
               <div> + </div>
-              <Styled.InputBox1 placeholder="3000" />
+              <Styled.InputBox1 placeholder="3000" disabled />
               <div> + </div>
-              <Styled.InputBox1 placeholder="500" />
+              <Styled.InputBox1 placeholder="500" disabled />
               <div> + </div>
-              <Styled.InputBox1 placeholder="30" />
+              <Styled.InputBox1 placeholder="30" disabled />
               <div> + </div>
-              <Styled.InputBox3 placeholder="4" />
+              <Styled.InputBox3 placeholder="4" disabled />
             </Styled.BetweenBox>
             <Styled.SetCenter>
               <Styled.RowBox5>
                 <div>=</div>
-                <Styled.InputBox4 placeholder="43534" />
+                <Styled.InputBox4 placeholder="43534" disabled />
               </Styled.RowBox5>
             </Styled.SetCenter>
           </Styled.ColGapBox4>

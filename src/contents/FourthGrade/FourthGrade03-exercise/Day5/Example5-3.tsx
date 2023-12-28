@@ -18,12 +18,12 @@ const Example53 = () => {
               </Styled.ColGapBox>
               <div>=</div>
               <Styled.GapRowBox2 gap={0.5}>
-                <Styled.InputBox3 placeholder="2" />
+                <Styled.InputBox3 placeholder="2" disabled />
                 <Styled.ColGapBox gap={0.1}>
                   <Styled.FractUnderLine>
-                    <Styled.InputBox3 placeholder="1" />
+                    <Styled.InputBox3 placeholder="1" disabled />
                   </Styled.FractUnderLine>
-                  <Styled.InputBox3 placeholder="5" />
+                  <Styled.InputBox3 placeholder="5" disabled />
                 </Styled.ColGapBox>
               </Styled.GapRowBox2>
             </Styled.GapRowBox2>

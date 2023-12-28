@@ -9,9 +9,9 @@ const Example12 = () => {
         <Styled.ImgSize6 src={img} />
         <Styled.ColGapBox gap={0.1}>
           <Styled.FractUnderLine>
-            <Styled.InputBox3 placeholder="2" />
+            <Styled.InputBox3 placeholder="2" disabled />
           </Styled.FractUnderLine>
-          <Styled.InputBox3 placeholder="6" />
+          <Styled.InputBox3 placeholder="6" disabled />
         </Styled.ColGapBox>
       </Styled.RowBox12>
     </Styled.ExampleBox8>

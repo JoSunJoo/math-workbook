@@ -377,6 +377,7 @@ const Styled = {
     width: 100%;
     height: 100%;
   `,
+
   BetweenBox: styled.div`
     display: flex;
     width: 100%;
@@ -493,6 +494,23 @@ const Styled = {
     justify-content: center;
     width: 100%;
     height: 100%;
+  `,
+  PaddingBox8: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 1.875rem;
+    padding: 4rem 0rem;
+    align-items: center;
+    justify-content: center;
+  `,
+  FixedWrapper: styled.div`
+    width: 18.75rem;
+    height: 9.375rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(193, 193, 193, 0.2);
+    border-radius: 1rem;
   `,
   SingleWrapper1: styled.div`
     font-size: 1.5rem;
@@ -1625,51 +1643,19 @@ const Styled = {
   RelativeBox2: styled.div`
     position: relative;
     & > input {
-      width: 2.5rem;
-      height: 2.39rem;
+      width: 2.55rem;
+      height: 2.6rem;
       position: absolute;
     }
   `,
-  AbsoluteBox1: styled.input`
-    top: 0.9rem;
-    left: 15.1rem;
-  `,
-  AbsoluteBox2: styled.input`
-    top: 0.9rem;
-    left: 19.85rem;
-  `,
-  AbsoluteBox3: styled.input`
-    top: 5.65rem;
-    left: 10.3rem;
-  `,
-  AbsoluteBox4: styled.input`
-    top: 5.65rem;
-    left: 15.15rem;
-  `,
-  AbsoluteBox5: styled.input`
-    top: 10.4rem;
-    left: 5.6025rem;
-  `,
-  AbsoluteBox6: styled.input`
-    top: 10.4rem;
-    left: 19.87rem;
-  `,
-  AbsoluteBox7: styled.input`
-    top: 10.4rem;
-    left: 29.4rem;
-  `,
-  AbsoluteBox8: styled.input`
-    top: 10.408rem;
-    left: 34.15rem;
-  `,
-  //여기서부터
-  AbsoluteBox9: styled.input`
-    top: 0.9rem;
-    left: 19.9rem;
-  `,
-  AbsoluteBox10: styled.input`
-    top: 0.9rem;
-    left: 19.9rem;
+  GetAbsoluteBox: styled.input<{ top: number; left: number }>`
+    top: ${props => (props.top ? `${props.top}rem` : '')};
+    left: ${props => (props.left ? `${props.left}rem` : '')};
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
   `,
   //2-4-3
   AsoluteBox6: styled.div`

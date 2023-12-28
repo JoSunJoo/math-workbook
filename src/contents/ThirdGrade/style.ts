@@ -1290,9 +1290,27 @@ const Styled = {
     height: 15rem;
     margin-left: 3.2rem;
   `,
+  Quiz2Lines1: styled.img`
+    width: 18rem;
+    height: 10rem;
+  `,
+  Quiz2Lines1Exam: styled.img`
+    width: 18.5rem;
+    height: 10rem;
+    margin-left: 1.7rem;
+  `,
   LineExamBox1: styled.div`
     border: 1px solid #c0c0c0;
     border-radius: 1.25rem;
+    width: 22rem !important;
+    height: 20rem;
+  `,
+  RelativeBox: styled.div`
+    position: relative;
+  `,
+  RelativeBox2: styled.div`
+    position: relative;
+    padding-left: 2rem;
   `,
   LineQuizBox1: styled.div`
     font-size: 1.5rem;
@@ -1324,6 +1342,19 @@ const Styled = {
       }
     }
   `,
+  LineQuizBox2: styled.div`
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+    width: 25rem;
+    height: 20rem;
+    margin-top: 5rem;
+    padding-right: 3rem;
+    & > div {
+      text-align: center;
+    }
+  `,
   LinesQuiz1: styled.div`
     position: absolute;
     width: 23.5rem;
@@ -1333,25 +1364,88 @@ const Styled = {
   `,
   LinesQuiz2: styled.div`
     position: absolute;
-    top: 2rem;
-    left: 3rem;
+    top: 1.3rem;
+    left: 1.2rem;
     width: 5rem;
   `,
   LinesQuiz3: styled.div`
     position: absolute;
-    top: 5rem;
-    left: 7rem;
+    top: 3.2rem;
+    left: 4rem;
     width: 5rem;
   `,
   LinesQuiz4: styled.div`
     position: absolute;
-    top: 8rem;
-    left: 17.5rem;
+    top: 5rem;
+    left: 11.8rem;
     width: 3.4rem;
   `,
   LinesQuizInput1: styled.input`
     top: 10rem;
     left: 4rem;
+  `,
+  Lines2Quiz1: styled.div`
+    position: absolute;
+    width: 17.5rem;
+    top: -2rem;
+    margin-left: 1.3rem;
+    left: 1rem;
+  `,
+  Lines2Quiz2: styled.div`
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    width: 5rem;
+  `,
+  Lines2Quiz3: styled.div`
+    position: absolute;
+    top: 5rem;
+    left: 7rem;
+    width: 5rem;
+  `,
+  Lines2Quiz4: styled.div`
+    position: absolute;
+    top: 8rem;
+    left: 17.5rem;
+    width: 3.4rem;
+  `,
+  Lines2QuizInput1: styled.input`
+    width: 6rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    position: absolute;
+    &::placeholder {
+      color: #ff2e00;
+    }
+    top: 6.3rem;
+    left: 2rem;
+  `,
+  Lines2QuizInput2: styled.input`
+    width: 6rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    position: absolute;
+    &::placeholder {
+      color: #ff2e00;
+    }
+    top: 10.6rem;
+    left: 6.5rem;
   `,
   SameLinesQuizInput1: styled.div`
     width: 6rem;
@@ -1393,8 +1487,8 @@ const Styled = {
   `,
   LinesQuizInputExplain1: styled.div`
     position: absolute;
-    top: 12.7rem;
-    left: 2.5rem;
+    top: 9rem;
+    left: 0.5rem;
     width: 4rem;
     text-align: center;
     white-space: normal;
@@ -1405,8 +1499,8 @@ const Styled = {
   `,
   LinesQuizInputExplain2: styled.div`
     position: absolute;
-    top: 16.4rem;
-    left: 16.7rem;
+    top: 11.5rem;
+    left: 12.7rem;
     width: 6rem;
     font-size: 0.75rem;
     line-height: 110%;
@@ -1687,12 +1781,28 @@ const Styled = {
     position: relative;
     min-height: 3rem;
   `,
+  DivSingleWrapper3: styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    min-height: 15rem;
+  `,
   DivWrapper: styled.div`
     position: relative;
     font-size: 1.5rem;
     font-weight: 600;
     display: flex;
     margin-right: 9rem;
+  `,
+  DivWrapper3: styled.div`
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    margin-right: 14rem;
+    padding-bottom: 10rem;
   `,
   DivLeftCircle: styled.div`
     width: 4rem;
@@ -1760,6 +1870,57 @@ const Styled = {
     margin-top: 0.2rem;
     letter-spacing: 1.5rem;
     padding-left: 1.3rem;
+  `,
+  DivCenterNum3: styled.div`
+    position: absolute;
+    top: 1rem;
+    left: 2.8rem;
+    border-top: 2px solid black;
+    min-width: 5.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-left: -0.25rem;
+    margin-top: 0.2rem;
+    letter-spacing: 1.5rem;
+    padding-left: 1.3rem;
+    border-bottom: 2px dashed #c0c0c0;
+  `,
+  DashedOrNotBoxWrapper: styled.div`
+    position: absolute;
+    top: 3.6rem;
+    left: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  `,
+  DashedOrNotBox: styled.input<{
+    bottom?: boolean;
+    top?: boolean;
+    right?: boolean;
+  }>`
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-left: 2px dashed #c0c0c0;
+    border-right: ${props => (props.right ? '2px dashed #c0c0c0' : 'none')};
+    border-bottom: ${props =>
+      props.bottom ? '2px dashed #c0c0c0' : '2px solid black'};
+    border-top: ${props => (props.top ? '2px dashed #c0c0c0' : 'none')};
+    width: 2.8rem;
+    height: 2.5rem;
+  `,
+  DashedOrNotBoxEnd: styled.input<{ isLeft: boolean }>`
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    width: 2.9rem;
+    height: 2rem;
+    border-right: ${props => (props.isLeft ? '2px dashed #c0c0c0' : 'none')};
   `,
   DivTopInputWrapper: styled.div`
     position: absolute;

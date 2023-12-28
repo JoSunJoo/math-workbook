@@ -11,11 +11,11 @@ const Example511 = () => {
           </Styled.TextBox>
           <Styled.TextBoxWrapper>
             <Styled.RowBox2>
-              <Styled.InputBox1 placeholder="12" />
+              <Styled.InputBox1 placeholder="12" disabled />
               ×
-              <Styled.InputBox1 placeholder="7" />
+              <Styled.InputBox1 placeholder="7" disabled />
               <div>=</div>
-              <Styled.InputBox1 placeholder="84" />
+              <Styled.InputBox1 placeholder="84" disabled />
             </Styled.RowBox2>
           </Styled.TextBoxWrapper>
         </Styled.TextBoxWrapper>

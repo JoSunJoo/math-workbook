@@ -16,7 +16,7 @@ import img from '../../Image/4-4-1.png';
 const FourthGrade41Exercise = () => {
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
-      <Styled.PaddingBox>
+      <Styled.PaddingBox8>
         <Styled.ColGapBox2 gap={4}>
           <Styled.FitExampleBox>
             <Styled.ImgSize4 src={img} />
@@ -44,9 +44,9 @@ const FourthGrade41Exercise = () => {
               />
             ))}
           </Styled.RowWrapBox7>
+          <ConfirmBtn type={true} day={4} />
         </Styled.ColGapBox2>
-      </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={4} />
+      </Styled.PaddingBox8>
     </DayLayout>
   );
 };
