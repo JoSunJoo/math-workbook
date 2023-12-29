@@ -43,20 +43,29 @@ const root = createRoot(rootEl);
 //
 //
 
-__eliceinternal_bootstrap__()
-  .then(res => {
-    root.render(
-      <React.StrictMode>
-        <QueryClientProvider client={appQueryClient}>
-          <IntlProvider locale={res.locale}>
-            <App />
-            <AppStylesheet />
-          </IntlProvider>
-        </QueryClientProvider>
-      </React.StrictMode>
-    );
-  })
-  .catch(err => {
-    console.warn('failed to bootstrapping external contents app:', err);
-    rootEl.innerHTML = `<h1>Error</h1>`;
-  });
+// __eliceinternal_bootstrap__()
+//   .then(res => {
+//     root.render(
+//       <React.StrictMode>
+//         <QueryClientProvider client={appQueryClient}>
+//           <IntlProvider locale={res.locale}>
+//             <App />
+//             <AppStylesheet />
+//           </IntlProvider>
+//         </QueryClientProvider>
+//       </React.StrictMode>
+//     );
+//   })
+//   .catch(err => {
+//     console.warn('failed to bootstrapping external contents app:', err);
+//     rootEl.innerHTML = `<h1>Error</h1>`;
+//   });
+
+root.render(
+  <React.StrictMode>
+    <QueryClientProvider client={appQueryClient}>
+      <App />
+      <AppStylesheet />
+    </QueryClientProvider>
+  </React.StrictMode>
+);
