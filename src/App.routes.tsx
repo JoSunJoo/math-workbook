@@ -16,10 +16,10 @@ import { createEliceExtRoutes } from '@elice/extcontent-utils';
 // =============== Edit below to add route paths ===============
 //
 import exampleRoutes from './contents/{example}/{example}.routes';
-import ThirdGradeRoutes from './contents/ThirdGrade/ThirdGrade.routes';
-import FourthGradeRoutes from './contents/FourthGrade/FourthGrade.routes';
 import FifthGradeRoutes from './contents/FifthGrade/FifthGrade.routes';
-import SixExample from './contents/six.routes';
+import FourthGradeRoutes from './contents/FourthGrade/FourthGrade.routes';
+import SixExample from './contents/SixthGrade/six.routes';
+import ThirdGradeRoutes from './contents/ThirdGrade/ThirdGrade.routes';
 
 const routes = createEliceExtRoutes([
   {
@@ -44,7 +44,7 @@ const routes = createEliceExtRoutes([
   },
   {
     path: '/sixth',
-    component: import('./contents/six'),
+    component: import('./contents/SixthGrade/SixthGrade'),
     children: SixExample,
   },
 ]);
