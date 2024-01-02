@@ -82,6 +82,7 @@ const divisionProblems = [
     num: 4,
     mom2: 14,
     son2: 4,
+    answer: [12, 3, 14],
     pass: false,
   },
   {
@@ -92,6 +93,7 @@ const divisionProblems = [
     num: 2,
     mom2: 8,
     son2: 2,
+    answer: [6, 3, 8],
     pass: false,
   },
   {
@@ -102,6 +104,7 @@ const divisionProblems = [
     num: 4,
     mom2: 32,
     son2: 4,
+    answer: [20, 5, 32],
     pass: false,
   },
   {
@@ -112,6 +115,7 @@ const divisionProblems = [
     num: 3,
     mom2: 27,
     son2: 3,
+    answer: [24, 8, 27],
     pass: false,
   },
   {
@@ -122,6 +126,7 @@ const divisionProblems = [
     num: 9,
     mom2: 15,
     son2: 9,
+    answer: [18, 2, 15],
     pass: false,
   },
   {
@@ -132,6 +137,7 @@ const divisionProblems = [
     num: 4,
     mom2: 20,
     son2: 4,
+    answer: [28, 7, 20],
     pass: false,
   },
   {
@@ -142,6 +148,7 @@ const divisionProblems = [
     num: 6,
     mom2: 16,
     son2: 6,
+    answer: [30, 5, 16],
     pass: false,
   },
   {
@@ -152,6 +159,7 @@ const divisionProblems = [
     num: 10,
     mom2: 14,
     son2: 10,
+    answer: [30, 3, 14],
     pass: false,
   },
 ];
