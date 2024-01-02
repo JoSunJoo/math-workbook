@@ -63,21 +63,22 @@ export default function C423(props: C423Props) {
             variant="h5"
             fontWeight={600}
             display="flex"
+            gap="0.5rem"
             alignItems="center"
           >
             <VisualFraction momNum={numList[1]} sonNum={numList[0]} />
-            :
+            {' : '}
             <VisualFraction momNum={numList[3]} sonNum={numList[2]} />
-            =(
+            {' = ( '}
             <VisualFraction momNum={numList[1]} sonNum={numList[0]} />
-            ×
+            {' × '}
             <DivisionInput
               son={String(input1)}
               mother={String(input2)}
               onChangeSon={e => setInput1(Number(e.target.value))}
               onChangeMother={e => setInput2(Number(e.target.value))}
             />
-            ): (
+            ) : (
             <VisualFraction momNum={numList[3]} sonNum={numList[2]} />
             ×
             <DivisionInput
@@ -86,7 +87,7 @@ export default function C423(props: C423Props) {
               onChangeSon={e => setInput3(Number(e.target.value))}
               onChangeMother={e => setInput4(Number(e.target.value))}
             />
-            )=
+            ) =
             <NumberInput
               value={String(input5)}
               onChange={e => setInput5(Number(e.target.value))}

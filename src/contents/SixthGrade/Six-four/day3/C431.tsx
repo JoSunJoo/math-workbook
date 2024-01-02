@@ -135,7 +135,12 @@ export default function C431(props: C431Props) {
                 margin: '0rem 0.5rem',
               }}
             />
-            <Typography variant="h5" fontWeight={600} display="flex">
+            <Typography
+              variant="h5"
+              fontWeight={600}
+              display="flex"
+              gap="0.5rem"
+            >
               <NumberInput
                 value={Number(input1)}
                 onChange={e => {

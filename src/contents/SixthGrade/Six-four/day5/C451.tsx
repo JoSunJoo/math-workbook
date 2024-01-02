@@ -36,6 +36,7 @@ export default function C451(props: C451Props) {
     <>
       {qId !== -1 && (
         <StyledCheckbox
+          disabled={isSolved ? true : false}
           type="checkbox"
           onChange={e => {
             setInput(e.target.checked);

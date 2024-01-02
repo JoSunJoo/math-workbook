@@ -56,12 +56,14 @@ export default function C443(props: C443Props) {
               justifyContent="center"
               alignItems="center"
               border="1px solid black"
-              borderRadius="50%"
+              borderRadius="0.5rem"
             >
               {numList[0] === 'blank' ? (
                 <NumberInput
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
+                  width="3rem"
+                  bgColor="#fde3e6"
                 />
               ) : (
                 numList[0]
@@ -76,12 +78,14 @@ export default function C443(props: C443Props) {
               justifyContent="center"
               alignItems="center"
               border="1px solid black"
-              borderRadius="50%"
+              borderRadius="0.5rem"
             >
               {numList[1] === 'blank' ? (
                 <NumberInput
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
+                  width="3rem"
+                  bgColor="#fde3e6"
                 />
               ) : (
                 numList[1]
@@ -96,12 +100,14 @@ export default function C443(props: C443Props) {
               justifyContent="center"
               alignItems="center"
               border="1px solid black"
-              borderRadius="50%"
+              borderRadius="0.5rem"
             >
               {numList[2] === 'blank' ? (
                 <NumberInput
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
+                  width="3rem"
+                  bgColor="#fde3e6"
                 />
               ) : (
                 numList[2]
@@ -116,12 +122,14 @@ export default function C443(props: C443Props) {
               justifyContent="center"
               alignItems="center"
               border="1px solid black"
-              borderRadius="50%"
+              borderRadius="0.5rem"
             >
               {numList[3] === 'blank' ? (
                 <NumberInput
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
+                  width="3rem"
+                  bgColor="#fde3e6"
                 />
               ) : (
                 numList[3]

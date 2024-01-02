@@ -37,7 +37,7 @@ const ExampleExercise: React.FC = () => {
        */}
       <button
         onClick={() => {
-          const score = Math.floor(Math.random() * 100);
+          const score = 100;
           sendScore({ score }).catch(err => {
             console.error('send score failed', err);
           });

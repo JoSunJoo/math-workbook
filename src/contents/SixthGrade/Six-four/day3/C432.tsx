@@ -65,6 +65,7 @@ export default function C432(props: C432Props) {
                   justifyContent="center"
                   alignItems="center"
                   border="1px solid black"
+                  borderRadius="0.5rem"
                 >
                   {leftNumType === '소수' ? (
                     leftNum[0]
@@ -88,6 +89,7 @@ export default function C432(props: C432Props) {
                   justifyContent="center"
                   alignItems="center"
                   border="1px solid black"
+                  borderRadius="0.5rem"
                 >
                   {rightNumType === '소수' ? (
                     rightNum[0]
@@ -107,34 +109,30 @@ export default function C432(props: C432Props) {
                 <Typography
                   variant="h5"
                   fontWeight={600}
-                  bgcolor="#fce3e7"
-                  width="4rem"
-                  height="4rem"
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
-                  border="1px solid black"
                 >
                   <NumberInput
                     value={input1}
                     onChange={e => setInput1(Number(e.target.value))}
+                    width="4rem"
+                    bgColor="#fce3e7"
                   />
                 </Typography>
                 :
                 <Typography
                   variant="h5"
                   fontWeight={600}
-                  bgcolor="#daecf6"
-                  width="4rem"
-                  height="4rem"
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
-                  border="1px solid black"
                 >
                   <NumberInput
                     value={input2}
                     onChange={e => setInput2(Number(e.target.value))}
+                    width="4rem"
+                    bgColor="#daecf6"
                   />
                 </Typography>
               </Typography>

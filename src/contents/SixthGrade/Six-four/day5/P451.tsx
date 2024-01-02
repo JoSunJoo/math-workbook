@@ -55,14 +55,14 @@ export default function P451() {
             display="flex"
             alignItems="center"
             position="absolute"
-            left="35%"
-            top="35%"
+            left="15rem"
+            top="7rem"
           >
             {passArray.slice(0, -1).every(value => value === true) &&
             passArray[passArray.length - 1] === false ? (
-              <CorrectChecker isCorrect={true} $width={20} />
+              <CorrectChecker isCorrect={true} $width={15} />
             ) : (
-              <CorrectChecker isCorrect={false} $width={20} />
+              <CorrectChecker isCorrect={false} $width={15} />
             )}
           </Box>
         )}

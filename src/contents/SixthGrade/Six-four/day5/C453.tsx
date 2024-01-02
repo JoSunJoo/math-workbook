@@ -31,13 +31,19 @@ export default function C453(props: C453Props) {
   const [input6, setInput6] = useState<undefined | number>(undefined);
 
   useEffect(() => {
+    const isDifferent = !(
+      input1 === input4 &&
+      input2 === input5 &&
+      input3 === input6
+    );
     if (
       input1 === answer[0] &&
       input2 === answer[1] &&
       input3 === answer[2] &&
       input4 === answer[3] &&
       input5 === answer[4] &&
-      input6 === answer[5]
+      input6 === answer[5] &&
+      isDifferent
     ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -82,8 +88,10 @@ export default function C453(props: C453Props) {
                 alignItems="center"
                 gap="0.5rem"
                 position="absolute"
+                width="2rem"
                 top="30%"
-                left="38%"
+                left="24%"
+                justifyContent="center"
               >
                 {cardNumList[0]}
               </Typography>
@@ -106,8 +114,10 @@ export default function C453(props: C453Props) {
                 alignItems="center"
                 gap="0.5rem"
                 position="absolute"
+                width="2rem"
                 top="30%"
-                left="38%"
+                left="24%"
+                justifyContent="center"
               >
                 {cardNumList[1]}
               </Typography>
@@ -130,8 +140,10 @@ export default function C453(props: C453Props) {
                 alignItems="center"
                 gap="0.5rem"
                 position="absolute"
+                width="2rem"
                 top="30%"
-                left="28%"
+                left="24%"
+                justifyContent="center"
               >
                 {cardNumList[2]}
               </Typography>

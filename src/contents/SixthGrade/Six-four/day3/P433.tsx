@@ -137,12 +137,4 @@ const problems: ProblemProp[] = [
     rightNum: [2.5],
     answer: [17, 5],
   },
-  {
-    qId: 8,
-    qNum: '⑨',
-    pass: false,
-    leftNum: [4, 15],
-    rightNum: [2, 5],
-    answer: [2, 3],
-  },
 ];

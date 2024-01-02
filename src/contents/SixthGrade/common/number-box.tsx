@@ -7,10 +7,11 @@ interface NumberInputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   width?: string;
+  bgColor?: string;
 }
 
 export function NumberInput(props: NumberInputProps) {
-  const { value, onChange, disabled, width } = props;
+  const { value, onChange, disabled, width, bgColor } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value === '' ? undefined : event.target.value;
@@ -30,6 +31,7 @@ export function NumberInput(props: NumberInputProps) {
       value={value}
       onChange={handleChange}
       disabled={disabled}
+      bgColor={bgColor}
     />
   );
 }
@@ -143,12 +145,14 @@ export function BigDivisionInput(props: BigDivisionInputProps) {
   );
 }
 
-const NumBox = styled.input<{ width?: string }>`
+const NumBox = styled.input<{ width?: string; bgColor?: string }>`
   text-align: center;
-  border: 0.08rem solid gray;
+  border: ${({ bgColor }) =>
+    bgColor ? '0.08rem solid black' : '0.08rem solid gray'};
   border-radius: 0.5rem;
   width: ${({ width }) => (width ? width : '2.5rem')};
-  height: 2rem;
+  height: ${({ width }) => (width ? width : '2rem')};
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : 'white')};
 
   font-size: 1.6rem;
   &::-webkit-outer-spin-button,
