@@ -17,6 +17,7 @@ interface C122Props {
     num: number;
     mom2: number;
     son2: number;
+    answer: number[];
     pass: boolean;
   };
   isSolved: boolean;
@@ -25,7 +26,7 @@ interface C122Props {
 
 export default function C122(props: C122Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, son, mom1, num, mom2, son2 } = problem;
+  const { qId, pass, qNum, son, mom1, num, mom2, son2, answer } = problem;
 
   const [daughter1, setDaughter1] = useState<string | number>('');
   const [daughter2, setDaughter2] = useState<string | number>('');
@@ -35,10 +36,9 @@ export default function C122(props: C122Props) {
   useEffect(() => {
     // TODO 정답 체크
     if (
-      // daughter1 === Math.floor((mom2 / mom1) * son) &&
-      // mother === mom2 &&
-      // daughter2 === Math.floor(daughter1 / son2)
-      true
+      answer[0] === daughter1 &&
+      answer[1] === daughter2 &&
+      answer[2] === mother
     ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);

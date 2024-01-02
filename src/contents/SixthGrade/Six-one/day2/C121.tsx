@@ -16,6 +16,7 @@ interface C121Props {
     son: number;
     num: number;
     rMom: number;
+    answer: number[];
     pass: boolean;
   };
   isSolved: boolean;
@@ -24,7 +25,7 @@ interface C121Props {
 
 export default function C121(props: C121Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, mom, son, num, rMom } = problem;
+  const { qId, qNum, mom, son, num, answer, rMom } = problem;
 
   const [lSon, setLSon] = useState<string | number>('');
   const [rSon, setRSon] = useState<string | number>('');
@@ -34,7 +35,12 @@ export default function C121(props: C121Props) {
 
   useEffect(() => {
     // TODO 정답 체크
-    if (true) {
+    if (
+      answer[0] === lSon &&
+      answer[1] === rSon &&
+      answer[2] === aSon &&
+      answer[3] === aMom
+    ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
