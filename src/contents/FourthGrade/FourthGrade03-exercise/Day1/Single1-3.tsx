@@ -1,9 +1,28 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data13QuizProps2 as QuizProps } from '../../Type/Type3';
 
 const Single13 = (props: QuizProps) => {
-  const { id, size, imgId, imgArray } = props;
+  const {
+    id,
+    size,
+    imgId,
+    imgArray,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   const handleSize = () => {
     switch (size) {
@@ -26,15 +45,17 @@ const Single13 = (props: QuizProps) => {
 
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.FixedWrapper>
         <Styled.RowBox12>
           {handleSize()}
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
-              <Styled.InputBox3 />
+              <Styled.InputBox8
+                onChange={e => handleInput(e.target.value, 0)}
+              />
             </Styled.FractUnderLine>
-            <Styled.InputBox3 />
+            <Styled.InputBox8 onChange={e => handleInput(e.target.value, 1)} />
           </Styled.ColGapBox>
         </Styled.RowBox12>
       </Styled.FixedWrapper>

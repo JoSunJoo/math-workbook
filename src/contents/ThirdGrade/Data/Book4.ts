@@ -8,7 +8,7 @@ export const Data11Quiz = [
   { id: '⑦', quiz1: '40 ÷ 4' },
   { id: '⑧', quiz1: '80 ÷ 4' },
 ];
-
+export const Answer11 = [[40], [30], [10], [20], [10], [30], [10], [20]];
 export const Data12Quiz = [
   { id: '①', quiz1: '70 ÷ 2', quiz2: '60 ÷ 2', quiz3: '10 ÷ 2' },
   { id: '②', quiz1: '90 ÷ 2', quiz2: '80 ÷ 2', quiz3: '10 ÷ 2' },
@@ -16,7 +16,13 @@ export const Data12Quiz = [
   { id: '④', quiz1: '70 ÷ 5', quiz2: '50 ÷ 5', quiz3: '20 ÷ 5' },
   { id: '⑤', quiz1: '90 ÷ 5', quiz2: '50 ÷ 5', quiz3: '40 ÷ 5' },
 ];
-
+export const Answer12 = [
+  [30, 5, 35],
+  [40, 5, 45],
+  [10, 6, 16],
+  [10, 4, 14],
+  [10, 8, 18],
+];
 export const Data13Quiz = [
   { id: '①', quiz1: 60, quiz2: 2 },
   { id: '②', quiz1: 50, quiz2: 2 },
@@ -36,6 +42,7 @@ export const Data21Quiz = [
   { id: '③', quiz1: '44 ÷ 4' },
   { id: '④', quiz1: '63 ÷ 3' },
 ];
+export const Answer21 = [[13], [14], [11], [21]];
 
 export const Data22Quiz = [
   { id: '①', quiz1: '56 ÷ 4', quiz2: '40 ÷ 4', quiz3: '16 ÷ 4' },
@@ -44,7 +51,13 @@ export const Data22Quiz = [
   { id: '④', quiz1: '72 ÷ 6', quiz2: '60 ÷ 6', quiz3: '12 ÷ 6' },
   { id: '⑤', quiz1: '92 ÷ 4', quiz2: '80 ÷ 4', quiz3: '12 ÷ 4' },
 ];
-
+export const Answer22 = [
+  [10, 4, 14],
+  [20, 7, 27],
+  [20, 9, 29],
+  [10, 2, 12],
+  [20, 3, 23],
+];
 export const Data23Quiz = [
   { id: '①', quiz1: 48, quiz2: 2 },
   { id: '②', quiz1: 48, quiz2: 3 },
@@ -68,7 +81,16 @@ export const Data31Quiz = [
   { id: '⑦', quiz1: 88, quiz2: 4 },
   { id: '⑧', quiz1: 28, quiz2: 2 },
 ];
-
+export const Answer31 = [
+  [2, 3, 6, null, null, 9, null, 9, null, 0],
+  [2, 3, 4, null, null, 6, null, 6, null, 0],
+  [1, 1, 7, null, null, 7, null, 7, null, 0],
+  [1, 2, 4, null, null, 8, null, 8, null, 0],
+  [3, 4, 6, null, null, 8, null, 8, null, 0],
+  [3, 1, 9, null, null, 3, null, 3, null, 0],
+  [2, 2, 8, null, null, 8, null, 8, null, 0],
+  [1, 4, 2, null, null, 8, null, 8, null, 0],
+];
 export const Data32Quiz = [
   { id: '①', quiz1: 56, quiz2: 2 },
   { id: '②', quiz1: 72, quiz2: 4 },
@@ -79,7 +101,16 @@ export const Data32Quiz = [
   { id: '⑦', quiz1: 45, quiz2: 3 },
   { id: '⑧', quiz1: 72, quiz2: 2 },
 ];
-
+export const Answer32 = [
+  [2, 8, 4, null, 1, 6, 1, 6, null, 0],
+  [1, 8, 4, null, 3, 2, 3, 2, null, 0],
+  [1, 5, 4, null, 2, 0, 2, 0, null, 0],
+  [2, 6, 6, null, 1, 8, 1, 8, null, 0],
+  [1, 6, 5, null, 3, 0, 3, 0, null, 0],
+  [1, 4, 4, null, 1, 6, 1, 6, null, 0],
+  [1, 5, 3, null, 1, 5, 1, 5, null, 0],
+  [3, 6, 6, null, 1, 2, 1, 2, null, 0],
+];
 export const Data33Quiz = [
   { id: '①', quiz1: 78, quiz2: 6 },
   { id: '②', quiz1: 70, quiz2: 2 },
@@ -98,7 +129,24 @@ export const Data33Quiz = [
   { id: '⑮', quiz1: 54, quiz2: 2 },
   { id: '⑯', quiz1: 64, quiz2: 4 },
 ];
-
+export const Answer33 = [
+  [1, 3],
+  [3, 5],
+  [2, 9],
+  [1, 4],
+  [2, 1],
+  [1, 2],
+  [1, 7],
+  [1, 5],
+  [1, 6],
+  [1, 2],
+  [2, 7],
+  [1, 4],
+  [1, 7],
+  [1, 8],
+  [2, 7],
+  [1, 6],
+];
 export const Data41Quiz1 = [
   { id: '①', quiz1: 64, quiz2: 4 },
   { id: '②', quiz1: 48, quiz2: 3 },
@@ -122,7 +170,7 @@ export const Data41Quiz4 = [
   { id: '⑪', quiz1: 87, quiz2: 3 },
   { id: '⑫', quiz1: 84, quiz2: 7 },
 ];
-
+export const Answer41 = [[2], [0], [0], [0]];
 export const Data42Quiz = [
   { id: '①', quiz1: '72', quiz2: '3', quiz3: '4', sign1: '÷' },
   { id: '②', quiz1: '84', quiz2: '7', quiz3: '3', sign1: '÷' },
@@ -130,7 +178,13 @@ export const Data42Quiz = [
   { id: '④', quiz1: '80', quiz2: '4', quiz3: '8', sign1: '÷' },
   { id: '⑤', quiz1: '78', quiz2: '3', quiz3: '6', sign1: '÷' },
 ];
-
+export const Answer42 = [
+  [24, 18],
+  [12, 28],
+  [27, 18],
+  [20, 10],
+  [26, 13],
+];
 export const Data43Quiz1 = [
   { id: '①', quiz1: 52, quiz2: 4 },
   { id: '②', quiz1: 60, quiz2: 5 },
@@ -148,6 +202,7 @@ export const Data43Quiz2 = [
   { id: '⑤', quiz1: '91 ÷ 7' },
   { id: '⑥', quiz1: '70 ÷ 5' },
 ];
+export const Answer43 = [[3], [5], [2], [6], [1], [4]];
 
 export const Data51Quiz = [
   {
@@ -161,7 +216,7 @@ export const Data51Quiz = [
     unit: '줄',
   },
 ];
-
+export const Answer51 = [[15], [19]];
 export const Data52Quiz = [
   {
     id: '①',
@@ -188,6 +243,7 @@ export const Data52Quiz = [
     unit: '개',
   },
 ];
+export const Answer52 = [[45], [14], [35], [15]];
 
 export const Data53Quiz = [
   {
@@ -215,3 +271,4 @@ export const Data53Quiz = [
     unit: '개',
   },
 ];
+export const Answer53 = [[16], [34], [14], [13]];

@@ -1,14 +1,36 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data41QuizProps as QuizProps } from '../../Type/Type6';
+import type { Data41QuizProps2 as QuizProps } from '../../Type/Type6';
 
 import img from '../../Image/6-5-3.png';
 
 const Single53 = (props: QuizProps) => {
-  const { id, method, mune, deno, len } = props;
+  const {
+    id,
+    method,
+    mune,
+    deno,
+    len,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   return (
     <Styled.SingleWrapper5>
-      <Styled.IdNumBox2>{id}</Styled.IdNumBox2>
+      <Styled.IdNumBox2>
+        <IdSymbol id={id} correct={correct} />
+      </Styled.IdNumBox2>
 
       <Styled.PaddingBox3>
         <Styled.ColGapBox gap={1}>
@@ -31,7 +53,7 @@ const Single53 = (props: QuizProps) => {
           </Styled.TextBox4>
           <Styled.TextBox4>
             전체의 길이는
-            <Styled.InputBox1 />
+            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
             <div>cm 입니다.</div>
           </Styled.TextBox4>
         </Styled.ColGapBox>

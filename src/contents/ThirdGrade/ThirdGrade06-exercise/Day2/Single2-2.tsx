@@ -1,9 +1,28 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data22QuizProps as QuizProps } from '../../Type/Type2';
+import type { Data22QuizProps2 as QuizProps } from '../../Type/Type2';
 
 const Single22 = (props: QuizProps) => {
-  const { id, quiz1, quiz2, quiz3 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    quiz3,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   const handleQuiz = (id: string) => {
     if (id === '①') return 1;
@@ -15,7 +34,9 @@ const Single22 = (props: QuizProps) => {
   const AnswerSeq = [1, 2];
   return (
     <Styled.RowBox>
-      <Styled.IdNumBox4>{id}</Styled.IdNumBox4>
+      <Styled.IdNumBox4>
+        <IdSymbol id={id} correct={correct} />
+      </Styled.IdNumBox4>
       <Styled.ColGapBox gap={2}>
         <Styled.SingleWrapper4>
           <Styled.RowBox11>
@@ -32,18 +53,24 @@ const Single22 = (props: QuizProps) => {
             <Styled.RowBox10 key={seq}>
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
-                  <Styled.InputBox3 />
+                  <Styled.InputBox3
+                    onChange={e => handleInput(e.target.value, (seq - 1) * 2)}
+                  />
                 </Styled.FractUnderLine>
-                <Styled.InputBox3 />
+                <Styled.InputBox3
+                  onChange={e => handleInput(e.target.value, seq * 2 - 1)}
+                />
               </Styled.ColGapBox>
               ＜
             </Styled.RowBox10>
           ))}
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                onChange={e => handleInput(e.target.value, 4)}
+              />
             </Styled.FractUnderLine>
-            <Styled.InputBox3 />
+            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 5)} />
           </Styled.ColGapBox>
         </Styled.RowBox7>
       </Styled.ColGapBox>

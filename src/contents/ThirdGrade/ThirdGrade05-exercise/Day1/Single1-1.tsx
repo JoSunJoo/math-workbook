@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data11QuizProps2 as QuizProps } from '../../Type/Type5';
 
@@ -8,11 +9,30 @@ import img3 from '../../Image/5-1-1_3.png';
 import img from '../../Image/redArrow.png';
 
 const Single11 = (props: QuizProps) => {
-  const { id, quiz1, quiz2, quiz3, quiz4, imgId } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    quiz3,
+    quiz4,
+    imgId,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
   const imgArray = [img1, img2, img3];
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[imgId][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   return (
     <Styled.RowBox13>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
 
       <Styled.RowBox12>
         <Styled.ImgSize9 src={imgArray[imgId]} alt="" />
@@ -26,10 +46,18 @@ const Single11 = (props: QuizProps) => {
               </Styled.AngleShapeBox>
               <Styled.InnerColBox>
                 <Styled.InputWrapper4>
-                  {quiz2} ÷ <Styled.InputBox1 /> = {quiz3}
+                  {quiz2} ÷
+                  <Styled.InputBox1
+                    onChange={e => handleInput(e.target.value, 0)}
+                  />
+                  = {quiz3}
                 </Styled.InputWrapper4>
                 <Styled.InputWrapper4>
-                  {quiz2} ÷ <Styled.InputBox1 /> = {quiz4}
+                  {quiz2} ÷
+                  <Styled.InputBox1
+                    onChange={e => handleInput(e.target.value, 1)}
+                  />
+                  = {quiz4}
                 </Styled.InputWrapper4>
               </Styled.InnerColBox>
             </Styled.SetCenter>

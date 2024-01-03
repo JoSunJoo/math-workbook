@@ -1,11 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data31QuizProps as QuizProps } from '../../Type/Type6';
+import type { Data31QuizProps2 as QuizProps } from '../../Type/Type6';
 
 const Single31 = (props: QuizProps) => {
-  const { id, quiz1, quiz2, quiz3 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    quiz3,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
   const [hoveredStarIndex, setHoveredStarIndex] = useState(0); //분자
   const [clickedStarIndex, setClickedStarIndex] = useState(0); //최종별점
   const [hoveredStarIndex2, setHoveredStarIndex2] = useState(0); //분모
@@ -29,16 +42,32 @@ const Single31 = (props: QuizProps) => {
     }
     return '#E7ECE6';
   };
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+  useEffect(() => {
+    handleInput(clickedStarIndex.toString(), 1);
+    setToggle(!toggle);
+  }, [clickedStarIndex]);
+  useEffect(() => {
+    handleInput(clickedStarIndex2.toString(), 2);
+    setToggle(!toggle);
+  }, [clickedStarIndex2]);
   return (
     <Styled.ColGapBox gap={1.5}>
       <Styled.TextBox4>
-        <Styled.IdNumBox4>{id}</Styled.IdNumBox4>
+        <Styled.IdNumBox4>
+          <IdSymbol id={id} correct={correct} />
+        </Styled.IdNumBox4>
         <Styled.ColGapBox>
           <Styled.FractUnderLine>{quiz1}</Styled.FractUnderLine>
           <Styled.FractUnderNum>{quiz2}</Styled.FractUnderNum>
         </Styled.ColGapBox>
         <div>가 {quiz3}이면 전체는</div>
-        <Styled.InputBox1 />
+        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
         <div>입니다.</div>
       </Styled.TextBox4>
       <Styled.ColGapBox gap={0.6}>

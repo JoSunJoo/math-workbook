@@ -4,7 +4,7 @@ import img from '../../Image/1-4-1_1.png';
 
 const Example41 = () => {
   return (
-    <Styled.LineExamBox1>
+    <Styled.LineExamBox2>
       <Styled.LineQuizBox3>
         <Styled.QuizLines3Exam src={img} />
         <Styled.LinesQuiz10>
@@ -29,7 +29,7 @@ const Example41 = () => {
           652+3 = 655
         </Styled.LinesQuizInputExplain7>
       </Styled.LineQuizBox3>
-    </Styled.LineExamBox1>
+    </Styled.LineExamBox2>
   );
 };
 

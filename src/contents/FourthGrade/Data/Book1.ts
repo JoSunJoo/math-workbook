@@ -4,7 +4,7 @@ export const Data11Quiz = [
   { id: '③', quiz1: 4000 },
   { id: '④', quiz1: 9900 },
 ];
-
+export const Answer11 = [[4000], [1200], [6000], [100]];
 export const Data12Quiz = [
   { id: '①' },
   { id: '②' },
@@ -13,6 +13,7 @@ export const Data12Quiz = [
   { id: '⑤' },
   { id: '⑥' },
 ];
+export const Answer12 = [[40000], [20000], [60000], [60000], [50000], [20000]];
 
 export const Data13Quiz = [
   { id: '①', quiz1: '10000은 1000의', quiz2: '배 입니다.' },
@@ -25,8 +26,24 @@ export const Data13Quiz = [
   { id: '⑧', quiz1: '1000이 80개인 수는', quiz2: '입니다.' },
   { id: '⑨', quiz1: '', quiz2: '은 칠만이라고 읽습니다.' },
 ];
+export const Answer13 = [
+  [10],
+  [30000],
+  [50000],
+  [500],
+  [7],
+  [10],
+  [5],
+  [80000],
+  [70000],
+];
 
 export const Data21Quiz = [{ id: '①' }, { id: '②' }, { id: '③' }];
+export const Answer21 = [
+  [10000, 4000, 600, 20, 3, 14623],
+  [30000, 2000, 300, 50, 6, 32356],
+  [20000, 3000, 400, 50, 5, 23455],
+];
 
 export const Data22Quiz = [
   {
@@ -62,6 +79,13 @@ export const Data22Quiz = [
     type: 1,
     quiz1: 36934,
   },
+];
+export const Answer22 = [
+  [2, 9, 5, 4, 8],
+  [57418],
+  [8, 6, 3, 4, 7],
+  [19344],
+  [3, 6, 9, 3, 4],
 ];
 
 export const Data23Quiz = [
@@ -146,6 +170,16 @@ export const Data23Quiz = [
     quiz7: '18543',
   },
 ];
+export const Answer23 = [
+  [null, null, null, null, 70000, 80000, null],
+  [null, null, null, 55463, null, 75463, null],
+  [null, null, null, 49500, 50500, null, 52500],
+  [null, null, null, 19999, 20000, 20001, 20002],
+  [25000, null, 45000, 55000, null, null, null],
+  [76390, 76400, null, 76420, null, null, null],
+  [92945, null, 93145, 93245, null, null, null],
+  [18537, 18538, 18539, 18540, null, null, null],
+];
 
 export const Data31Quiz = [
   { id: '①', type: 1, quiz1: '30만의 10배는' },
@@ -153,6 +187,13 @@ export const Data31Quiz = [
   { id: '③', type: 1, quiz1: '200만의 10배는' },
   { id: '④', type: 2, quiz1: '1000' },
   { id: '⑤', type: 1, quiz1: '1만의 1000배는' },
+];
+export const Answer31 = [
+  ['300만'],
+  ['100만'],
+  ['2000만'],
+  ['100만'],
+  ['1000만'],
 ];
 
 export const Data32Quiz = [
@@ -165,6 +206,16 @@ export const Data32Quiz = [
   { id: '⑦', type: 1, quiz1: '800만', quiz2: '8000만' },
   { id: '⑧', type: 2, quiz1: '200만', quiz2: '10' },
 ];
+export const Answer32 = [
+  ['10'],
+  ['9000만'],
+  ['1000'],
+  ['7000만'],
+  ['100'],
+  ['5000만'],
+  ['10'],
+  ['2000만'],
+];
 
 export const Data33Quiz = [
   { id: '①' },
@@ -174,6 +225,15 @@ export const Data33Quiz = [
   { id: '⑤' },
   { id: '⑥' },
   { id: '⑦' },
+];
+export const Answer33 = [
+  [300000, 30, 10000],
+  [70000, 70, 1000],
+  [700000, 7000, 100],
+  [500000, 500, 1000],
+  [100000, 100, 1000],
+  [900000, 90, 10000],
+  [80000, 80, 1000],
 ];
 
 export const Data41Quiz = [
@@ -185,6 +245,15 @@ export const Data41Quiz = [
   { id: '⑥', quiz1: 785491, quiz2: 658751, quiz3: 433257, quiz4: 79512 },
   { id: '⑦', quiz1: 295414, quiz2: 754264, quiz3: 754642, quiz4: 295427 },
 ];
+export const Answer41 = [
+  [1, 4],
+  [2, 4],
+  [1, 4],
+  [1, 3],
+  [1, 4],
+  [3, 4],
+  [1, 3],
+];
 
 export const Data42Quiz = [
   { id: '①' },
@@ -192,6 +261,13 @@ export const Data42Quiz = [
   { id: '③' },
   { id: '④' },
   { id: '⑤' },
+];
+export const Answer42 = [
+  [300, 70, 6000, 5, 6000],
+  [30000, 600, 9000, 6000, 30000],
+  [4000, 300, 90, 30, 4000],
+  [5000, 900, 50, 70000, 70000],
+  [10000, 6000, 1000, 40, 10000],
 ];
 
 export const Data43Quiz = [
@@ -207,6 +283,19 @@ export const Data43Quiz = [
   { id: '⑩', quiz1: '781의 100배', quiz2: '8만' },
 ];
 
+export const Answer43 = [
+  ['>'],
+  ['<'],
+  ['<'],
+  ['<'],
+  ['>'],
+  ['>'],
+  ['>'],
+  ['<'],
+  ['<'],
+  ['<'],
+];
+
 export const Data51Quiz = [
   {
     id: '①',
@@ -215,6 +304,7 @@ export const Data51Quiz = [
     unit: 'mm',
   },
 ];
+export const Answer51 = [[148, 14800, 100, 14800]];
 
 export const Data52Quiz = [
   {
@@ -240,6 +330,12 @@ export const Data52Quiz = [
     quiz1: '사탕 한 개에 320원입니다. 사탕 1000개의 가격은 얼마인가요?',
     unit: '원',
   },
+];
+export const Answer52 = [
+  ['92000', '920000', '10', '920000'],
+  ['41만', '4100만', '100', '4100만'],
+  ['51', '51000', '1000', '51000'],
+  ['320', '320000', '1000', '320000'],
 ];
 
 export const Data53Quiz = [
@@ -267,4 +363,10 @@ export const Data53Quiz = [
       '빛은 1초에 30만 km를 갑니다. 빛이 100초 동안 가는 거리는 몇 km인가요?',
     unit: 'km',
   },
+];
+export const Answer53 = [
+  ['40', '40000', '1000', '40000'],
+  ['5만', '5000만', '1000', '5000만'],
+  ['12', '1200', '100', '1200'],
+  ['30만', '3000만', '100', '3000만'],
 ];

@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data42QuizProps2 as QuizProps } from '../../Type/Type1';
 
@@ -25,7 +26,15 @@ import img21 from '../../Image/1-4-2/24.png';
 import img from '../../Image/blueArrow.png';
 
 const Single42 = (props: QuizProps) => {
-  const { id, imgId } = props;
+  const { id, imgId, toggle, setToggle, inputValue, setInputValue, correct } =
+    props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[imgId][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const imgArray = [
     [img2, img3, img4, img5],
     [img6, img7, img8, img9],
@@ -35,15 +44,17 @@ const Single42 = (props: QuizProps) => {
   ];
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.RowWrapBox17>
         <>
-          {imgArray[imgId].map(imgSrc => (
-            <Styled.RowBox16>
+          {imgArray[imgId].map((imgSrc, idx) => (
+            <Styled.RowBox16 key={idx}>
               <Styled.HandleImgSize src={img} size={1.5} />
               <Styled.ColGapBox gap={1}>
                 <Styled.HandleImgSize src={imgSrc} size={2} />
-                <Styled.LongInput3 />
+                <Styled.LongInput3
+                  onChange={e => handleInput(e.target.value, idx)}
+                />
               </Styled.ColGapBox>
             </Styled.RowBox16>
           ))}
@@ -52,7 +63,7 @@ const Single42 = (props: QuizProps) => {
           <Styled.HandleImgSize src={img} size={1.5} />
           <Styled.ColGapBox gap={1}>
             <Styled.TextSize>가장 큰 수: </Styled.TextSize>
-            <Styled.LongInput3 />
+            <Styled.LongInput3 onChange={e => handleInput(e.target.value, 4)} />
           </Styled.ColGapBox>
         </Styled.RowBox16>
       </Styled.RowWrapBox17>

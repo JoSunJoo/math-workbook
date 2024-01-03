@@ -1,17 +1,36 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data13QuizProps as Props } from '../../Type/Type2';
+import type { Data13QuizProps2 as Props } from '../../Type/Type2';
 
 const Single13 = (props: Props) => {
-  const { id, quiz1, quiz2 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   return (
     <Styled.DivSingleWrapper>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.DivWrapper>
         <Styled.DivLeftCircle></Styled.DivLeftCircle>
         <Styled.DivLeftNum>{quiz2}</Styled.DivLeftNum>
         <Styled.DivTopInputWrapper>
-          <Styled.InputBox7 />
+          <Styled.InputBox7 onChange={e => handleInput(e.target.value, 0)} />
         </Styled.DivTopInputWrapper>
         <Styled.DivCenterNum2>{quiz1}</Styled.DivCenterNum2>
       </Styled.DivWrapper>

@@ -1,12 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data12QuizProps as DataProps } from '../../Type/Type1';
+import type { Data12QuizProps2 as DataProps } from '../../Type/Type1';
 
 const Single32 = (props: DataProps) => {
-  const { id, quiz1, quiz2 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    toggle,
+    idx,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   return (
     <Styled.SingleWrapper2>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.InputWrapper3>
         <div>{quiz1}</div>
         <div>+</div>
@@ -14,11 +32,11 @@ const Single32 = (props: DataProps) => {
         <div>
           <Styled.InputWrapper3>
             <div>=</div>
-            <Styled.InputBox1></Styled.InputBox1>
+            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
             <div>+</div>
-            <Styled.InputBox1></Styled.InputBox1>
+            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 1)} />
             <div>=</div>
-            <Styled.InputBox1></Styled.InputBox1>
+            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
           </Styled.InputWrapper3>
         </div>
       </Styled.InputWrapper3>

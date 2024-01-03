@@ -4,7 +4,7 @@ import img from '../../Image/1-3-1.png';
 
 const Example31 = () => {
   return (
-    <Styled.LineExamBox1>
+    <Styled.LineExamBox2>
       <Styled.LineQuizBox1>
         <Styled.QuizLines2Exam src={img} />
         <Styled.LinesQuiz5>
@@ -22,9 +22,9 @@ const Example31 = () => {
         <Styled.LinesQuiz7>45</Styled.LinesQuiz7>
         <Styled.LinesQuiz8>100</Styled.LinesQuiz8>
         <Styled.LinesQuiz9>24</Styled.LinesQuiz9>
-        <Styled.LinesQuizInput3 placeholder="800" />
-        <Styled.LinesQuizInput4 placeholder="69" />
-        <Styled.LinesQuizInput5 placeholder="869" />
+        <Styled.LinesQuizInput3 placeholder="800" disabled />
+        <Styled.LinesQuizInput4 placeholder="69" disabled />
+        <Styled.LinesQuizInput5 placeholder="869" disabled />
         <Styled.LinesQuizInputExplain3>
           700+100 =800
         </Styled.LinesQuizInputExplain3>
@@ -35,7 +35,7 @@ const Example31 = () => {
           800 + 69 = 869
         </Styled.LinesQuizInputExplain5>
       </Styled.LineQuizBox1>
-    </Styled.LineExamBox1>
+    </Styled.LineExamBox2>
   );
 };
 

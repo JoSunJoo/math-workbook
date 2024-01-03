@@ -1,9 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data53QuizProps as QuizProps } from '../../Type/Type2';
+import type { Data53QuizProps2 as QuizProps } from '../../Type/Type2';
 
 const Single51 = (props: QuizProps) => {
-  const { id, type, quiz1, unit1, unit2, unit3 } = props;
+  const {
+    id,
+    type,
+    quiz1,
+    unit1,
+    unit2,
+    unit3,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   const handleType = (type: number) => {
     switch (type) {
@@ -17,7 +38,9 @@ const Single51 = (props: QuizProps) => {
               </Styled.BasicRowBox>
               <Styled.MinWidth1>
                 <Styled.TextSize>답:</Styled.TextSize>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 0)}
+                />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
               </Styled.MinWidth1>
             </Styled.BetweenBox2>
@@ -34,9 +57,13 @@ const Single51 = (props: QuizProps) => {
               </Styled.BasicRowBox>
               <Styled.RowBox>
                 <Styled.TextSize>답:</Styled.TextSize>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 0)}
+                />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 1)}
+                />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
               </Styled.RowBox>
             </Styled.BetweenBox2>
@@ -53,11 +80,17 @@ const Single51 = (props: QuizProps) => {
               </Styled.BasicRowBox>
               <Styled.GapRowBox>
                 <Styled.TextSize>답:</Styled.TextSize>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 0)}
+                />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 1)}
+                />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 2)}
+                />
                 <Styled.TextSize2>{unit3}</Styled.TextSize2>
               </Styled.GapRowBox>
             </Styled.BetweenBox2>
@@ -74,9 +107,13 @@ const Single51 = (props: QuizProps) => {
               </Styled.BasicRowBox>
               <Styled.GapRowBox>
                 <Styled.TextSize2>{unit1}: </Styled.TextSize2>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 0)}
+                />
                 <Styled.TextSize2>{unit2}: </Styled.TextSize2>
-                <Styled.ShortInput2 />
+                <Styled.ShortInput2
+                  onChange={e => handleInput(e.target.value, 1)}
+                />
               </Styled.GapRowBox>
             </Styled.BetweenBox2>
           </Styled.TextBoxWrapper>
@@ -89,7 +126,7 @@ const Single51 = (props: QuizProps) => {
 
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.SingleWrapper5>
         <Styled.TextBoxWrapper>
           {/* 문제 부분 */}

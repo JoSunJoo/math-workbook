@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data41QuizProps2 as QuizProps } from '../../Type/Type3';
 
@@ -17,7 +18,27 @@ import img12 from '../../Image/3-4-1_13.png';
 import img from '../../Image/redArrow.png';
 
 const Single41 = (props: QuizProps) => {
-  const { id, type, imgId, quiz1, quiz2 } = props;
+  const {
+    id,
+    type,
+    imgId,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   const newType = type - 1;
   const imgArray1 = [
     [{ id2: 1, src: img1, src2: img2 }],
@@ -32,7 +53,7 @@ const Single41 = (props: QuizProps) => {
   const typeImg = [imgArray1, imgArray2];
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       {typeImg[newType][imgId].map(item => (
         <Styled.SingleWrapper2>
           <Styled.ColGapBox gap={0.5}>
@@ -44,7 +65,9 @@ const Single41 = (props: QuizProps) => {
                     <Styled.FractUnderLine>
                       <div>{quiz1}</div>
                     </Styled.FractUnderLine>
-                    <Styled.InputBox3 />
+                    <Styled.InputBox8
+                      onChange={e => handleInput(e.target.value, 0)}
+                    />
                   </Styled.ColGapBox>
                 </>
               ) : (
@@ -52,7 +75,9 @@ const Single41 = (props: QuizProps) => {
                   <Styled.HandleImgSize src={item.src} size={5} />
                   <Styled.ColGapBox gap={0.1}>
                     <Styled.FractUnderLine>
-                      <Styled.InputBox3 />
+                      <Styled.InputBox8
+                        onChange={e => handleInput(e.target.value, 0)}
+                      />
                     </Styled.FractUnderLine>
                     <Styled.FitBox>{quiz1}</Styled.FitBox>
                   </Styled.ColGapBox>
@@ -72,7 +97,9 @@ const Single41 = (props: QuizProps) => {
                     <Styled.FractUnderLine>
                       <div>{quiz1}</div>
                     </Styled.FractUnderLine>
-                    <Styled.InputBox3 />
+                    <Styled.InputBox8
+                      onChange={e => handleInput(e.target.value, 1)}
+                    />
                   </Styled.ColGapBox>
                 </>
               ) : (
@@ -80,7 +107,9 @@ const Single41 = (props: QuizProps) => {
                   <Styled.HandleImgSize src={item.src2} size={5} />
                   <Styled.ColGapBox gap={0.1}>
                     <Styled.FractUnderLine>
-                      <Styled.InputBox3 />
+                      <Styled.InputBox8
+                        onChange={e => handleInput(e.target.value, 1)}
+                      />
                     </Styled.FractUnderLine>
                     <Styled.FitBox>{quiz1}</Styled.FitBox>
                   </Styled.ColGapBox>

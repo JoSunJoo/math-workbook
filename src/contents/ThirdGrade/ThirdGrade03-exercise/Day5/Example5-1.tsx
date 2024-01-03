@@ -20,11 +20,11 @@ const Example51 = () => {
                   70
                 </Styled.NumBox1>
               </Styled.RowBox>
-              <Styled.InputBox1 placeholder="2800"></Styled.InputBox1>
+              <Styled.InputBox1 placeholder="2800" disabled />
             </Styled.RowBox2>
             <Styled.NumBox1 color="rgba(143, 108, 255, 0.6)">30</Styled.NumBox1>
           </Styled.ColGapBox3>
-          <Styled.InputBox1 placeholder="1200"></Styled.InputBox1>
+          <Styled.InputBox1 placeholder="1200" disabled />
         </Styled.ColGapBox3>
       </Styled.SetCenter>
     </Styled.ExampleBox6>

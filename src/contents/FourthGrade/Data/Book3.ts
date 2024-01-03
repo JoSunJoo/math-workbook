@@ -12,6 +12,20 @@ export const Data11Quiz = [
   { id: '⑪' },
   { id: '⑫' },
 ];
+export const Answer11 = [
+  [4, 8],
+  [1, 4],
+  [2, 4],
+  [4, 10],
+  [6, 8],
+  [4, 5],
+  [3, 8],
+  [2, 4],
+  [2, 4],
+  [4, 8],
+  [2, 8],
+  [2, 8],
+];
 
 export const Data12Quiz = [
   { id: '①' },
@@ -23,6 +37,16 @@ export const Data12Quiz = [
   { id: '⑦' },
   { id: '⑧' },
 ];
+export const Answer12 = [
+  [1, 9],
+  [1, 8],
+  [1, 4],
+  [1, 6],
+  [3, 8],
+  [2, 12],
+  [3, 10],
+  [3, 9],
+];
 
 export const Data13Quiz = [
   { id: '①', size: 1 },
@@ -33,6 +57,44 @@ export const Data13Quiz = [
   { id: '⑥', size: 3 },
   { id: '⑦', size: 4 },
 ];
+export const Answer13 = [
+  [1, 4],
+  [1, 4],
+  [1, 16],
+  [1, 8],
+  [1, 8],
+  [1, 16],
+  [1, 8],
+];
+
+export const Answer21 = [
+  ['5', '9'],
+  ['4', '9'],
+  ['1', '3'],
+  ['4', '3'],
+  ['3', '4'],
+  ['6', '4'],
+];
+export const Answer22 = [
+  [9, 20],
+  [12, 20],
+  [5, 10],
+  [3, 10],
+  [2, 8],
+  [5, 8],
+  [8, 36],
+  [9, 36],
+  [12, 24],
+  [18, 24],
+];
+export const Answer23 = [
+  [1, 2],
+  [1, 4],
+  [1, 2],
+  [2, 1],
+  [4, 1],
+  [1, 1],
+];
 
 export const Data31Quiz = [
   { id: '①', bread: 3, human: 4 },
@@ -41,6 +103,14 @@ export const Data31Quiz = [
   { id: '④', bread: 4, human: 3 },
   { id: '⑤', bread: 3, human: 3 },
   { id: '⑥', bread: 4, human: 5 },
+];
+export const Answer31 = [
+  [3, 4],
+  [2, 5],
+  [1, 6],
+  [4, 3],
+  [3, 3],
+  [4, 5],
 ];
 
 export const Data32Quiz = [
@@ -60,7 +130,26 @@ export const Data32Quiz = [
   { id: '⑭', quiz1: 14, quiz2: 9 },
   { id: '⑮', quiz1: 9, quiz2: 13 },
   { id: '⑯', quiz1: 1, quiz2: 8 },
-  { id: '⑰', quiz1: 7, quiz2: 5 },
+  { id: '⑰', quiz1: 7, quiz2: 15 },
+];
+export const Answer32 = [
+  [7, 2],
+  [11, 8],
+  [2, 5],
+  [8, 13],
+  [15, 4],
+  [4, 10],
+  [1, 7],
+  [6, 16],
+  [8, 7],
+  [3, 8],
+  [11, 3],
+  [5, 7],
+  [9, 8],
+  [14, 9],
+  [9, 13],
+  [1, 8],
+  [7, 15],
 ];
 
 export const Data33Quiz = [
@@ -82,6 +171,25 @@ export const Data33Quiz = [
   { id: '⑯', quiz1: 4, quiz2: 9 },
   { id: '⑰', quiz1: 4, quiz2: 7 },
 ];
+export const Answer33 = [
+  [6, 7],
+  [5, 3],
+  [11, 6],
+  [2, 9],
+  [13, 11],
+  [2, 10],
+  [1, 7],
+  [8, 2],
+  [11, 13],
+  [5, 8],
+  [9, 7],
+  [13, 7],
+  [9, 8],
+  [5, 6],
+  [15, 14],
+  [4, 9],
+  [4, 7],
+];
 
 export const Data41Quiz1 = [
   { id: '①', quiz1: 8, quiz2: 16 },
@@ -92,6 +200,14 @@ export const Data41Quiz2 = [
   { id: '④', quiz1: 3, quiz2: 6 },
   { id: '⑤', quiz1: 2, quiz2: 6 },
   { id: '⑥', quiz1: 2, quiz2: 4 },
+];
+export const Answer41 = [
+  [3, 6],
+  [3, 9],
+  [2, 4],
+  [4, 8],
+  [3, 9],
+  [5, 10],
 ];
 
 export const Data42Quiz = [
@@ -144,6 +260,15 @@ export const Data42Quiz = [
     quiz2: '4',
     quiz3: '2',
   },
+];
+export const Answer42 = [
+  [8, 4, 2],
+  [4, 2],
+  [8, 4, 2],
+  [8, 4],
+  [8, 4, 2],
+  [12, 4],
+  [20, 10, 5],
 ];
 
 export const Data43Quiz = [
@@ -198,6 +323,16 @@ export const Data43Quiz = [
   },
 ];
 
+export const Answer43 = [
+  [12, 6, 3],
+  [12, 4],
+  [12, 6, 4],
+  [4, 2],
+  [4, 2, 1],
+  [3, 1],
+  [8, 4, 2],
+];
+
 export const Data51Quiz = [
   { id: '①', type: 1, quiz1: 5, quiz2: 5 },
   { id: '②', type: 2, quiz1: 21, quiz2: 3 },
@@ -213,6 +348,22 @@ export const Data51Quiz = [
   { id: '⑫', type: 1, quiz1: 3, quiz2: 11 },
   { id: '⑬', type: 2, quiz1: 24, quiz2: 6 },
   { id: '⑭', type: 1, quiz1: 2, quiz2: 9 },
+];
+export const Answer51 = [
+  [25],
+  [7],
+  [70],
+  [5],
+  [9],
+  [4],
+  [28],
+  [10],
+  [12],
+  [30],
+  [5],
+  [33],
+  [4],
+  [18],
 ];
 
 export const Data52Quiz = [
@@ -230,9 +381,29 @@ export const Data52Quiz = [
   { id: '⑫', quiz1: 33, quiz2: 10 },
   { id: '⑬', quiz1: 16, quiz2: 10 },
   { id: '⑭', quiz1: 30, quiz2: 7 },
-  { id: '⑮', quiz1: 33, quiz2: 10 },
-  { id: '⑯', quiz1: 16, quiz2: 10 },
-  { id: '⑰', quiz1: 30, quiz2: 7 },
+  { id: '⑮', quiz1: 25, quiz2: 2 },
+  { id: '⑯', quiz1: 26, quiz2: 4 },
+  { id: '⑰', quiz1: 59, quiz2: 6 },
+];
+
+export const Answer52 = [
+  [5, 2, 3],
+  [4, 3, 4],
+  [7, 3, 6],
+  [3, 4, 7],
+  [2, 1, 2],
+  [6, 2, 3],
+  [9, 2, 8],
+  [5, 1, 2],
+  [10, 3, 4],
+  [11, 1, 6],
+  [2, 2, 3],
+  [3, 3, 10],
+  [1, 6, 10],
+  [4, 2, 7],
+  [12, 1, 2],
+  [3, 2, 4],
+  [9, 5, 6],
 ];
 
 export const Data53Quiz = [
@@ -253,4 +424,23 @@ export const Data53Quiz = [
   { id: '⑮', quiz1: 5, quiz2: 3, quiz3: 8 },
   { id: '⑯', quiz1: 4, quiz2: 4, quiz3: 9 },
   { id: '⑰', quiz1: 6, quiz2: 5, quiz3: 6 },
+];
+export const Answer53 = [
+  [22, 5],
+  [38, 7],
+  [23, 8],
+  [23, 3],
+  [50, 9],
+  [15, 4],
+  [75, 9],
+  [43, 10],
+  [19, 2],
+  [37, 7],
+  [53, 8],
+  [16, 7],
+  [61, 6],
+  [38, 5],
+  [43, 8],
+  [40, 9],
+  [41, 6],
 ];

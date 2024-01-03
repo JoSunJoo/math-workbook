@@ -6,25 +6,25 @@ const Example14 = () => {
       <Styled.InputWrapper>
         <div>57 ÷ 3</div>
         <div>=</div>
-        <Styled.InputBox1 placeholder="19" />
+        <Styled.InputBox1 placeholder="19" disabled />
         <Styled.AngleShapeBox>
           <Styled.AngleLineLeft />
           <Styled.AngleShapeLeft />
         </Styled.AngleShapeBox>
         <Styled.InnerColBox>
           <Styled.InputWrapper3>
-            <Styled.InputBox1 placeholder="3" />
+            <Styled.InputBox1 placeholder="3" disabled />
             <div>×</div>
-            <Styled.InputBox1 placeholder="19" />
+            <Styled.InputBox1 placeholder="19" disabled />
             <div>=</div>
-            <Styled.InputBox1 placeholder="57" />
+            <Styled.InputBox1 placeholder="57" disabled />
           </Styled.InputWrapper3>
           <Styled.InputWrapper3>
-            <Styled.InputBox1 placeholder="19" />
+            <Styled.InputBox1 placeholder="19" disabled />
             <div>×</div>
-            <Styled.InputBox1 placeholder="3" />
+            <Styled.InputBox1 placeholder="3" disabled />
             <div>=</div>
-            <Styled.InputBox1 placeholder="57" />
+            <Styled.InputBox1 placeholder="57" disabled />
           </Styled.InputWrapper3>
         </Styled.InnerColBox>
       </Styled.InputWrapper>

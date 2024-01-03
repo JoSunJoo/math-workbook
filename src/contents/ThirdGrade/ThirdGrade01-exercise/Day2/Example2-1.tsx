@@ -26,10 +26,7 @@ const Example21 = () => {
             <div>+</div>
             <div>177</div>
             <div>=</div>
-            <Styled.InputBox2
-              placeholder="645"
-              disabled={true}
-            ></Styled.InputBox2>
+            <Styled.InputBox2 placeholder="645" disabled></Styled.InputBox2>
           </Styled.InputWrapper2>
         </Styled.ColGapBox>
         <Styled.ColGapBox gap={0.2}>

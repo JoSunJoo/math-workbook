@@ -14,9 +14,9 @@ const Example32 = () => {
           </Styled.ExampleExplain1>
           <Styled.InputWrapper3>
             <div>=</div>
-            <Styled.InputBox1 placeholder="800"></Styled.InputBox1>
+            <Styled.InputBox1 placeholder="800" disabled></Styled.InputBox1>
             <div>+</div>
-            <Styled.InputBox1 placeholder="69"></Styled.InputBox1>
+            <Styled.InputBox1 placeholder="69" disabled></Styled.InputBox1>
             <div>=</div>
             <Styled.InputBox1></Styled.InputBox1>
           </Styled.InputWrapper3>

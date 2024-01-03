@@ -10,15 +10,15 @@ const Example11 = () => {
         <Styled.ColGapBox2>
           <Styled.InputWrapper3>
             <div>10 + 10 + 10 + 10 + 10 =</div>
-            <Styled.InputBox1 placeholder="50" />
+            <Styled.InputBox1 placeholder="50" disabled />
           </Styled.InputWrapper3>
           <Styled.RowBox3>
             <Styled.SetCenter>
               <Styled.InputWrapper3>
                 <div>10 ×</div>
-                <Styled.InputBox1 placeholder="5" />
+                <Styled.InputBox1 placeholder="5" disabled />
                 <div>=</div>
-                <Styled.InputBox1 placeholder="50" />
+                <Styled.InputBox1 placeholder="50" disabled />
               </Styled.InputWrapper3>
             </Styled.SetCenter>
           </Styled.RowBox3>

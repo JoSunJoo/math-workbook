@@ -1,9 +1,10 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-import { Data12Quiz as QuizData } from '../../Data/Book3';
+import { Answer12 as answer, Data12Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade3Day1 as Day } from '../../utils/handleTitle';
 import ExampleQuiz from './Example1-2';
 import SingleQuiz from './Single1-1';
@@ -21,6 +22,13 @@ import img8 from '../../Image/3-1-2_9.png';
 
 const FourthGrade12Exercise: React.FC = () => {
   const imgArray = [img1, img2, img3, img4, img5, img6, img7, img8];
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(8), () => new Array(2))
+  );
 
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle2}>
@@ -34,12 +42,26 @@ const FourthGrade12Exercise: React.FC = () => {
                 id={item.id}
                 imgId={idx}
                 imgArray={imgArray}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
         </Styled.ColGapBox>
       </Styled.PaddingBox5>
-      <ConfirmBtn type={true} day={1} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={1} />
+      </div>
     </DayLayout>
   );
 };

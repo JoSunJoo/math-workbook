@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data43QuizProps2 as QuizProps } from '../../Type/Type4';
 
@@ -10,16 +11,34 @@ import img5 from '../../Image/4-4-3_9.png';
 import img6 from '../../Image/4-4-3_10.png';
 
 const Single43 = (props: QuizProps) => {
-  const { id, quiz1, unit, imgId } = props;
+  const {
+    id,
+    quiz1,
+    unit,
+    imgId,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const imgArray = [img1, img2, img3, img4, img5, img6];
 
   return (
     <Styled.SingleWrapper2>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.InputWrapper1>
         <Styled.ImgSize6 src={imgArray[imgId]} alt="" />
         <div>=</div>
-        <Styled.InputBox1 />
+        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
         <div>{unit}</div>
       </Styled.InputWrapper1>
     </Styled.SingleWrapper2>

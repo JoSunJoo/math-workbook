@@ -8,7 +8,7 @@ const Example31 = () => {
       <Styled.RowBox4>
         <Styled.ImgSize10 src={img} alt="" />
         <Styled.NonFlexText>이 10장 있으면</Styled.NonFlexText>
-        <Styled.InputBox4 />
+        <Styled.InputBox4 placeholder="10만" disabled />
         <div>원</div>
       </Styled.RowBox4>
     </Styled.RowBox15>

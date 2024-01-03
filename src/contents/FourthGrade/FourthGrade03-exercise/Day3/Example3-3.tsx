@@ -11,14 +11,14 @@ const Example32 = () => {
           <Styled.FractUnderLine>
             <div>3</div>
           </Styled.FractUnderLine>
-          <Styled.FitBox>8</Styled.FitBox>
+          <Styled.FitBox>8</Styled.FitBox>s
         </Styled.ColGapBox>
         <Styled.RelativeBox>
           <Styled.GapRowBox2 gap={0.3}>
             <div>=</div>
-            <Styled.InputBox3 placeholder="3" />
+            <Styled.InputBox3 placeholder="3" disabled />
             <div>÷</div>
-            <Styled.InputBox3 placeholder="8" />
+            <Styled.InputBox3 placeholder="8" disabled />
             <Styled.AbsoluteBox11>
               <Styled.HandleImgSize src={upperImg} size={0.75} />
             </Styled.AbsoluteBox11>

@@ -14,7 +14,7 @@ const Example41 = () => {
         </Styled.TextBox2>
         <Styled.TextBox2>
           전체의 길이는
-          <Styled.InputBox6 placeholder="99" />
+          <Styled.InputBox6 placeholder="99" disabled />
           <div>cm 입니다.</div>
         </Styled.TextBox2>
         <Styled.InnerTextBox>

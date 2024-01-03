@@ -13,6 +13,21 @@ export const Data11Quiz = [
   { id: '⑫', quiz1: 70, quiz2: 350 },
   { id: '⑬', quiz1: 20, quiz2: 100 },
 ];
+export const Answer11 = [
+  [8, 240, 30, 8],
+  [9, 450, 50, 9],
+  [7, 630, 90, 7],
+  [9, 540, 60, 9],
+  [8, 640, 80, 8],
+  [7, 490, 70, 7],
+  [8, 400, 50, 8],
+  [9, 720, 80, 9],
+  [9, 180, 20, 9],
+  [6, 240, 40, 6],
+  [9, 270, 30, 9],
+  [5, 350, 70, 5],
+  [5, 100, 20, 5],
+];
 
 export const Data12Quiz = [
   {
@@ -40,6 +55,12 @@ export const Data12Quiz = [
     rightQuiz1: 380,
     rightQuiz2: 70,
   },
+];
+export const Answer12 = [
+  [0, 3, 25],
+  [2, 8, 20],
+  [1, 5, 25],
+  [0, 5, 30],
 ];
 
 export const Data13Quiz = [
@@ -86,7 +107,12 @@ export const Data21Quiz = [
     rightQuiz2: 15,
   },
 ];
-
+export const Answer21 = [
+  [2, 4],
+  [1, 3],
+  [0, 3],
+  [1, 5],
+];
 export const Data22Quiz = [
   {
     id: '①',
@@ -113,7 +139,12 @@ export const Data22Quiz = [
     rightQuiz2: 14,
   },
 ];
-
+export const Answer22 = [
+  [1, 4, 8],
+  [0, 3, 14],
+  [1, 3, 23],
+  [0, 5, 12],
+];
 export const Data23Quiz = [
   { id: '①', quiz1: 80, quiz2: 16 },
   { id: '②', quiz1: 54, quiz2: 19 },
@@ -143,6 +174,7 @@ export const Data31Quiz = [
   { id: '⑧', quiz1: 13, quiz2: 91 },
   { id: '⑨', quiz1: 36, quiz2: 72 },
 ];
+export const Answer31 = [[3], [4], [3], [5], [2], [5], [4], [7], [2]];
 
 export const Data32Quiz = [
   { id: '①', quiz1: 23, quiz2: 90 },
@@ -156,35 +188,54 @@ export const Data32Quiz = [
   { id: '⑨', quiz1: 17, quiz2: 95 },
 ];
 
-//데이터 미적용
+export const Answer32 = [[3], [2], [3], [4], [3], [3], [5], [3], [5]];
+
 export const Data33Quiz = [
-  { id: '①', quiz1: 80, quiz2: 16 },
-  { id: '②', quiz1: 54, quiz2: 19 },
-  { id: '③', quiz1: 46, quiz2: 13 },
-  { id: '④', quiz1: 67, quiz2: 26 },
-  { id: '⑤', quiz1: 72, quiz2: 24 },
-  { id: '⑥', quiz1: 88, quiz2: 18 },
-  { id: '⑦', quiz1: 85, quiz2: 17 },
-  { id: '⑧', quiz1: 74, quiz2: 14 },
-  { id: '⑨', quiz1: 92, quiz2: 23 },
-  { id: '⑩', quiz1: 78, quiz2: 14 },
-  { id: '⑪', quiz1: 45, quiz2: 16 },
-  { id: '⑫', quiz1: 93, quiz2: 16 },
-  { id: '⑬', quiz1: 90, quiz2: 13 },
-  { id: '⑭', quiz1: 47, quiz2: 12 },
-  { id: '⑮', quiz1: 53, quiz2: 21 },
+  { id: '①', quiz1: 92, quiz2: 32 },
+  { id: '②', quiz1: 93, quiz2: 14 },
+  { id: '③', quiz1: 63, quiz2: 26 },
+  { id: '④', quiz1: 38, quiz2: 13 },
+  { id: '⑤', quiz1: 96, quiz2: 19 },
+  { id: '⑥', quiz1: 64, quiz2: 17 },
+  { id: '⑦', quiz1: 86, quiz2: 12 },
+  { id: '⑧', quiz1: 89, quiz2: 37 },
+  { id: '⑨', quiz1: 60, quiz2: 15 },
+  { id: '⑩', quiz1: 69, quiz2: 31 },
+  { id: '⑪', quiz1: 96, quiz2: 24 },
+  { id: '⑫', quiz1: 55, quiz2: 12 },
+  { id: '⑬', quiz1: 49, quiz2: 13 },
+  { id: '⑭', quiz1: 70, quiz2: 11 },
+  { id: '⑮', quiz1: 68, quiz2: 35 },
+  { id: '⑯', quiz1: 71, quiz2: 13 },
+  { id: '⑰', quiz1: 70, quiz2: 19 },
+  { id: '⑱', quiz1: 80, quiz2: 41 },
+];
+export const Answer41 = [
+  [
+    4, 16, 2, 2, 4, 64, 4, 12, 12, 4, 6, 7, 8, 12, 2, 24, 2, 21, 7, 4, 6, 3, 14,
+    3, 8,
+  ],
 ];
 
-//데이터 미적용
 export const Data43Quiz = [
-  { id: '①', quiz1: 23, quiz2: 90 },
-  { id: '②', quiz1: 14, quiz2: 33 },
-  { id: '③', quiz1: 19, quiz2: 62 },
-  { id: '④', quiz1: 18, quiz2: 84 },
-  { id: '⑤', quiz1: 16, quiz2: 52 },
-  { id: '⑥', quiz1: 15, quiz2: 52 },
-  { id: '⑦', quiz1: 13, quiz2: 76 },
-  { id: '⑧', quiz1: 26, quiz2: 82 },
+  { id: '①', quiz1: 14, quiz2: 68 },
+  { id: '②', quiz1: 15, quiz2: 95 },
+  { id: '③', quiz1: 11, quiz2: 37 },
+  { id: '④', quiz1: 13, quiz2: 59 },
+  { id: '⑤', quiz1: 23, quiz2: 86 },
+  { id: '⑥', quiz1: 17, quiz2: 48 },
+  { id: '⑦', quiz1: 16, quiz2: 74 },
+  { id: '⑧', quiz1: 12, quiz2: 89 },
+];
+export const Answer43 = [
+  [4, 12],
+  [6, 5],
+  [3, 4],
+  [4, 7],
+  [3, 17],
+  [2, 14],
+  [4, 10],
+  [7, 5],
 ];
 
 export const Data51Quiz = [
@@ -210,6 +261,12 @@ export const Data51Quiz = [
     unit2: '',
   },
 ];
+export const Answer51 = [
+  [6, 6],
+  [7, null],
+  [5, null],
+];
+
 export const Data52Quiz = [
   {
     id: '①',
@@ -240,6 +297,8 @@ export const Data52Quiz = [
     unit1: '상자',
   },
 ];
+export const Answer52 = [[5], [6], [5], [4]];
+
 export const Data53Quiz = [
   {
     id: '①',
@@ -275,4 +334,11 @@ export const Data53Quiz = [
     unit2: '일',
     unit3: '',
   },
+];
+
+export const Answer53 = [
+  [4, null, null],
+  [1, 4, 16],
+  [3, 5, 8],
+  [12, 27, null],
 ];

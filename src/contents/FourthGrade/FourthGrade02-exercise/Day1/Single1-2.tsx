@@ -3,7 +3,23 @@ import Styled from '../../style';
 import type { Data12QuizProps2 as QuizProps } from '../../Type/Type2';
 
 const Single12 = (props: QuizProps) => {
-  const { rightQuiz1, rightQuiz2 } = props;
+  const {
+    rightQuiz1,
+    rightQuiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   return (
     <Styled.ColorBox3>
@@ -17,8 +33,9 @@ const Single12 = (props: QuizProps) => {
         </Styled.RowBox>
       </Styled.ColGapBox>
       <Styled.RowBox4>
-        {rightQuiz1} ÷ {rightQuiz2} = <Styled.InputBox3 /> ···
-        <Styled.InputBox1 />
+        {rightQuiz1} ÷ {rightQuiz2} =
+        <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} /> ···
+        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
       </Styled.RowBox4>
     </Styled.ColorBox3>
   );

@@ -9,13 +9,13 @@ const Example41 = () => {
           <div>➨</div>
           <Styled.BorderBox2>검산</Styled.BorderBox2>
           <Styled.RowBox7>
-            <Styled.InputBox3 placeholder="7" />
+            <Styled.InputBox3 placeholder="7" disabled />
             <div>×</div>
-            <Styled.InputBox3 placeholder="6" />
+            <Styled.InputBox3 placeholder="6" disabled />
             <div>+</div>
-            <Styled.InputBox3 placeholder="3" />
+            <Styled.InputBox3 placeholder="3" disabled />
             <div>=</div>
-            <Styled.InputBox1 placeholder="45" />
+            <Styled.InputBox1 placeholder="45" disabled />
           </Styled.RowBox7>
         </Styled.RowBox4>
       </Styled.SetCenter>

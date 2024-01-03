@@ -1,15 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data22QuizProps1 as QuizProps } from '../../Type/Type1';
+import type { Data22QuizProps2 as QuizProps } from '../../Type/Type1';
 
 import img from '../../Image/redArrow.png';
 
 const Single221 = (props: QuizProps) => {
-  const { id, quiz1 } = props;
-
+  const {
+    id,
+    quiz1,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   return (
     <Styled.RowBox13>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.FitSingleWrapper1>
         <Styled.ColGapBox3 gap={1}>
           <div>{quiz1}</div>
@@ -17,27 +32,42 @@ const Single221 = (props: QuizProps) => {
             <Styled.ImgSize12 src={img} alt="" />
             <Styled.RowBox4>
               <div>10000이 </div>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                maxLength={1}
+                onChange={e => handleInput(e.target.value, 0)}
+              />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>1000이 </div>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                maxLength={1}
+                onChange={e => handleInput(e.target.value, 1)}
+              />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>100이 </div>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                maxLength={1}
+                onChange={e => handleInput(e.target.value, 2)}
+              />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>10이 </div>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                maxLength={1}
+                onChange={e => handleInput(e.target.value, 3)}
+              />
               <div> 개, </div>
             </Styled.RowBox4>
             <Styled.RowBox4>
               <div>1이 </div>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                maxLength={1}
+                onChange={e => handleInput(e.target.value, 4)}
+              />
               <div> 개</div>
             </Styled.RowBox4>
           </Styled.RowBox5>

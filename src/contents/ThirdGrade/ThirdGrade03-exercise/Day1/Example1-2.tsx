@@ -18,14 +18,14 @@ const Example12 = () => {
           <div>
             <Styled.InputWrapper>
               <div>=</div>
-              <Styled.InputBox1 placeholder="240"></Styled.InputBox1>
+              <Styled.InputBox1 placeholder="240" disabled />
               <div>× 10</div>
             </Styled.InputWrapper>
           </div>
           <div>
             <Styled.InputWrapper>
               <div>=</div>
-              <Styled.InputBox4 placeholder="2400"></Styled.InputBox4>
+              <Styled.InputBox4 placeholder="2400" disabled />
             </Styled.InputWrapper>
           </div>
         </div>

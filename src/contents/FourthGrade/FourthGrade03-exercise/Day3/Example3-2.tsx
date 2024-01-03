@@ -23,9 +23,9 @@ const Example32 = () => {
         </Styled.RelativeBox>
         <Styled.ColGapBox gap={0.1}>
           <Styled.FractUnderLine>
-            <Styled.InputBox3 placeholder="5" />
+            <Styled.InputBox3 placeholder="5" disabled />
           </Styled.FractUnderLine>
-          <Styled.InputBox3 placeholder="3" />
+          <Styled.InputBox3 placeholder="3" disabled />
         </Styled.ColGapBox>
       </Styled.InputWrapper1>
     </Styled.RowBox18>

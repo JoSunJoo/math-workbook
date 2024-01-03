@@ -1,12 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data31QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data31QuizProps2 as QuizProps } from '../../Type/Type3';
 
 import breadImg from '../../Image/3-3-1_2.png';
 import humanImg from '../../Image/3-3-1_3.png';
 
 const Single31 = (props: QuizProps) => {
-  const { id, bread, human } = props;
+  const {
+    id,
+    bread,
+    human,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const handleImg = (num: number, type: string) => {
     const divs = [];
     switch (type) {
@@ -28,7 +46,7 @@ const Single31 = (props: QuizProps) => {
   };
   return (
     <Styled.RowBox18>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.FitInputWrapper4>
         <Styled.BetweenBox>
           <Styled.RowBox>
@@ -39,9 +57,11 @@ const Single31 = (props: QuizProps) => {
           </Styled.RowBox>
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
-              <Styled.InputBox3 />
+              <Styled.InputBox3
+                onChange={e => handleInput(e.target.value, 0)}
+              />
             </Styled.FractUnderLine>
-            <Styled.InputBox3 />
+            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
           </Styled.ColGapBox>
         </Styled.BetweenBox>
       </Styled.FitInputWrapper4>

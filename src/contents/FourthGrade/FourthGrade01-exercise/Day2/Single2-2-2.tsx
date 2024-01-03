@@ -1,18 +1,38 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data22QuizProps2 as QuizProps } from '../../Type/Type1';
 
 import img from '../../Image/redArrow.png';
 
 const Single222 = (props: QuizProps) => {
-  const { id, quiz1, quiz2, quiz3, quiz4, quiz5 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    quiz3,
+    quiz4,
+    quiz5,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   return (
     <Styled.RowBox13>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.FitSingleWrapper1>
         <Styled.ColGapBox4 gap={1}>
-          <Styled.InputBox4 />
+          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
           <Styled.GapRowBox gap={1}>
             <Styled.ImgSize12 src={img} alt="" />
             <Styled.GapRowBox gap={1}>

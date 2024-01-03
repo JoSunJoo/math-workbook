@@ -758,7 +758,7 @@ const Styled = {
     }
   `,
   InputBox3: styled.input`
-    width: 2.5rem;
+    width: 2.8rem;
     height: 2.3125rem;
     border-radius: 0.25rem;
     border: 1px solid #c1c1c1;
@@ -838,6 +838,24 @@ const Styled = {
       color: #ff2e00;
     }
   `,
+  SpacingInputBox2: styled.input`
+    width: 5.5rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.3rem;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    letter-spacing: 0.3rem;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
+
   BottomLine: styled.div`
     border: none;
     border-bottom: 2px solid #c0c0c0;
@@ -1304,6 +1322,12 @@ const Styled = {
     border-radius: 1.25rem;
     width: 22rem !important;
     height: 20rem;
+  `,
+  LineExamBox2: styled.div`
+    border: 1px solid #c0c0c0;
+    border-radius: 1.25rem;
+    width: fit-content;
+    height: fit-content;
   `,
   RelativeBox: styled.div`
     position: relative;
@@ -2071,6 +2095,22 @@ const Styled = {
     display: flex;
     align-items: center;
     justify-content: center;
+  `,
+  Correct: styled.div`
+    position: absolute;
+    left: -2rem;
+    top: -2.5rem;
+    width: 5rem;
+    height: 7rem;
+    z-index: 1;
+  `,
+  InCorrect: styled.div`
+    position: absolute;
+    left: -2.5rem;
+    top: -3rem;
+    width: 5rem;
+    height: 7rem;
+    z-index: 1;
   `,
 };
 

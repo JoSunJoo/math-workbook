@@ -1,8 +1,10 @@
-import { Data41Quiz as QuizData } from '../../Data/Book5';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { Answer41 as answer, Data41Quiz as QuizData } from '../../Data/Book5';
 import DayLayout from '../../Layout/Day4';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { SubGeometry, ThirdGrade5Day4 } from '../../utils/handleTitle';
 import ExampleQuiz from './Example4-1';
 import SingleQuiz from './Single4-1';
@@ -12,6 +14,13 @@ import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
 import img from '../../Image/5-4-1.png';
 
 const ThirdGrade41Exercise = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(4), () => new Array(4))
+  );
   return (
     <DayLayout title={ThirdGrade5Day4.title} subTitle={SubGeometry}>
       <Styled.PaddingBox>
@@ -21,11 +30,29 @@ const ThirdGrade41Exercise = () => {
           </Styled.MarginBottomBox2>
           <ExampleQuiz />
           {QuizData.map((item: QuizProps, idx) => (
-            <SingleQuiz key={idx} id={item.id} quiz1={item.quiz1} />
+            <SingleQuiz
+              key={idx}
+              id={item.id}
+              quiz1={item.quiz1}
+              idx={idx}
+              toggle={toggle}
+              setToggle={setToggle}
+              inputValue={inputValue}
+              setInputValue={setInputValue}
+              correct={correct[idx]}
+            />
           ))}
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={4} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={4} />
+      </div>
     </DayLayout>
   );
 };

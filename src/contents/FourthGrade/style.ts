@@ -80,6 +80,12 @@ const Styled = {
     align-items: center;
     justify-content: flex-end;
   `,
+  InfoBox: styled.div`
+    display: flex;
+    gap: 1.5rem;
+    width: 80%;
+    align-items: center;
+  `,
   RowWrapBox: styled.div`
     display: flex;
     flex-wrap: wrap;

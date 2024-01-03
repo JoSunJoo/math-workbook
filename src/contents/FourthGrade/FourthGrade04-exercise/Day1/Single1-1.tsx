@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data11QuizProps2 as Props } from '../../Type/Type4';
 
@@ -16,7 +17,23 @@ import img11 from '../../Image/4-1-1_11.png';
 import img12 from '../../Image/4-1-1_12.png';
 
 const Single12 = (props: Props) => {
-  const { id, imgId } = props;
+  const {
+    id,
+    imgId,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const imgArray = [
     img1,
     img2,
@@ -34,13 +51,13 @@ const Single12 = (props: Props) => {
   const leftArray = [15.3, 10, 6.3, 19, 11.7, 13.7, 13.5, 6.5, 10, 17, 5, 17];
   return (
     <Styled.SingleWrapper2>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.ColGapBox2 gap={2}>
         <Styled.RelativeBox>
           <Styled.HandleImgSize src={imgArray[imgId]} size={4} />
         </Styled.RelativeBox>
         <Styled.LeftAbsoluteBox left={leftArray[imgId]}>
-          <Styled.InputBox1 />
+          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
         </Styled.LeftAbsoluteBox>
       </Styled.ColGapBox2>
     </Styled.SingleWrapper2>

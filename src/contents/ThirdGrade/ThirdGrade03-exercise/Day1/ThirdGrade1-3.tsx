@@ -1,18 +1,29 @@
 //이미지 필요
 
+import { useEffect, useState } from 'react';
+
 import { Data13Quiz as QuizData } from '../../Data/Book3';
-// import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import SingleQuiz from '../../ThirdGrade02-exercise/Day1/Single1-3';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { ThirdGrade3Day1 } from '../../utils/handleTitle';
+import makeAnswer from '../../utils/makeAnswer';
 
 import type { Data12QuizProps } from '../../Type/Type1';
 
 import img from '../../Image/3-1-3.png';
 
 const ThirdGrade13Exercise = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(14), () => new Array(1))
+  );
+  const answer = makeAnswer({ type: 1, data: QuizData });
   return (
     <DayLayout
       title={ThirdGrade3Day1.title}
@@ -28,12 +39,26 @@ const ThirdGrade13Exercise = () => {
                 id={item.id}
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={1} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={1} />
+      </div>
     </DayLayout>
   );
 };

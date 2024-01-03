@@ -11,17 +11,17 @@ const Example32 = () => {
         </Styled.AngleShapeBox>
         <Styled.InnerColBox>
           <Styled.InputWrapper3>
-            30 × 6 =<Styled.InputBox1 placeholder="180"></Styled.InputBox1>
+            30 × 6 =<Styled.InputBox1 placeholder="180" disabled />
           </Styled.InputWrapper3>
           <Styled.InputWrapper3>
-            1 × 6 =<Styled.InputBox1 placeholder="6"></Styled.InputBox1>
+            1 × 6 =<Styled.InputBox1 placeholder="6" disabled />
           </Styled.InputWrapper3>
         </Styled.InnerColBox>
         <Styled.AngleShapeBox>
           <Styled.AngleLineRight />
           <Styled.AngleShapeRight />
         </Styled.AngleShapeBox>
-        <Styled.InputBox1 placeholder="186"></Styled.InputBox1>
+        <Styled.InputBox1 placeholder="186" disabled />
       </Styled.InputWrapper>
     </Styled.ExampleBox1>
   );

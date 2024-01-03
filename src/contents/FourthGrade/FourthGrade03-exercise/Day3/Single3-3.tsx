@@ -1,13 +1,31 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data33QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data33QuizProps2 as QuizProps } from '../../Type/Type3';
 
 const Single33 = (props: QuizProps) => {
-  const { id, quiz1, quiz2 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   return (
     <Styled.RowBox18>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.InputWrapper1>
         <Styled.ColGapBox gap={0.1}>
           <Styled.FractUnderLine>
@@ -17,9 +35,9 @@ const Single33 = (props: QuizProps) => {
         </Styled.ColGapBox>
         <Styled.GapRowBox2 gap={0.5}>
           <div>=</div>
-          <Styled.InputBox3 />
+          <Styled.InputBox8 onChange={e => handleInput(e.target.value, 0)} />
           <div>÷</div>
-          <Styled.InputBox3 />
+          <Styled.InputBox8 onChange={e => handleInput(e.target.value, 1)} />
         </Styled.GapRowBox2>
       </Styled.InputWrapper1>
     </Styled.RowBox18>

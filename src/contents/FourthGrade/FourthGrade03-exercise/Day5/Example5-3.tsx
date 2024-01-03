@@ -1,6 +1,6 @@
 import Styled from '../../style';
 
-import img from '../../Image/3-5-2.png';
+import img from '../../Image/3-5-3.png';
 
 const Example53 = () => {
   return (
@@ -10,22 +10,22 @@ const Example53 = () => {
           <Styled.ColGapBox gap={1}>
             <Styled.HandleImgSize src={img} size={2} />
             <Styled.GapRowBox2 gap={1}>
-              <Styled.ColGapBox gap={0.1}>
-                <Styled.FractUnderLine>
-                  <div>11</div>
-                </Styled.FractUnderLine>
-                <Styled.FitBox>5</Styled.FitBox>
-              </Styled.ColGapBox>
-              <div>=</div>
               <Styled.GapRowBox2 gap={0.5}>
-                <Styled.InputBox3 placeholder="2" disabled />
+                <div>3</div>
                 <Styled.ColGapBox gap={0.1}>
                   <Styled.FractUnderLine>
-                    <Styled.InputBox3 placeholder="1" disabled />
+                    <div>1</div>
                   </Styled.FractUnderLine>
-                  <Styled.InputBox3 placeholder="5" disabled />
+                  <Styled.FitBox>2</Styled.FitBox>
                 </Styled.ColGapBox>
               </Styled.GapRowBox2>
+              <div>=</div>
+              <Styled.ColGapBox gap={0.1}>
+                <Styled.FractUnderLine>
+                  <Styled.InputBox3 placeholder="7" disabled />
+                </Styled.FractUnderLine>
+                <Styled.InputBox3 placeholder="2" disabled />
+              </Styled.ColGapBox>
             </Styled.GapRowBox2>
           </Styled.ColGapBox>
         </Styled.MarginBox>

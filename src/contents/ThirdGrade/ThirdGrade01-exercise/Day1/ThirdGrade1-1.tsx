@@ -1,7 +1,10 @@
-import { Data11Quiz as QuizData } from '../../Data/Book1';
+import { useEffect, useState } from 'react';
+
+import { Answer11 as answer, Data11Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { ThirdGrade1Day1 } from '../../utils/handleTitle';
 import ExampleQuiz from './Example1-1';
 import SingleQuiz from './Single1-1';
@@ -9,6 +12,23 @@ import SingleQuiz from './Single1-1';
 import type { Data11QuizProps as DataProps } from '../../Type/Type1';
 
 const ThirdGrade11Exercise: React.FC = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(5), () => new Array(2))
+  );
+
+  // useEffect(() => {
+  //   console.log('inputValue');
+  //   console.log(inputValue);
+  //   console.log('score');
+  //   console.log(score);
+  //   console.log('correct');
+  //   console.log(correct);
+  // }, [toggle]);
+
   return (
     <DayLayout
       title={ThirdGrade1Day1.title}
@@ -31,10 +51,24 @@ const ThirdGrade11Exercise: React.FC = () => {
                 quiz7={item.quiz7}
                 quiz8={item.quiz8}
                 quiz9={item.quiz9}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox8>
-          <ConfirmBtn type={true} day={1} />
+          <div
+            onClick={() => {
+              handleAnswer({ inputValue, answer, setScore, setCorrect });
+              setToggle(!toggle);
+              setConfirmType(false);
+            }}
+          >
+            <ConfirmBtn type={confirmType} day={1} />
+          </div>
         </Styled.ColGapBox>
       </Styled.PaddingBox2>
     </DayLayout>

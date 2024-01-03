@@ -19,7 +19,7 @@ const Example52 = () => {
         </Styled.TextBox2>
         <Styled.TextBox2>
           전체 승희네 반 학생은
-          <Styled.InputBox6 placeholder="30" />
+          <Styled.InputBox6 placeholder="30" disabled />
           <div>명입니다.</div>
           <Styled.RowBox13Lower>6 × {five} = 30</Styled.RowBox13Lower>
         </Styled.TextBox2>

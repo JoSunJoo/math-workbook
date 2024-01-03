@@ -1,8 +1,10 @@
-import { Data43Quiz as QuizData } from '../../Data/Book3';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { Answer43 as answer, Data43Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day4';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade3Day4 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single4-3';
 
@@ -11,6 +13,13 @@ import type { Data42QuizProps1 as QuizProps } from '../../Type/Type3';
 import img from '../../Image/3-4-3_1.png';
 
 const FourthGrade43Exercise = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(7), () => new Array(3))
+  );
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle3}>
       <Styled.PaddingBox>
@@ -28,12 +37,26 @@ const FourthGrade43Exercise = () => {
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
                 quiz3={item.quiz3}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={4} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={4} />
+      </div>
     </DayLayout>
   );
 };

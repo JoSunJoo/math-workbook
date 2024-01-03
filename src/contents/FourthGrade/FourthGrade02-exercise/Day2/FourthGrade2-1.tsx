@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-import { Data21Quiz as QuizData } from '../../Data/Book2';
+import { Answer21 as answer, Data21Quiz as QuizData } from '../../Data/Book2';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade2Day2 as Day } from '../../utils/handleTitle';
+import IdSymbol from '../../utils/IdSymbol';
 import SingleQuiz from './Single2-1';
 
 import type { Data21QuizProps1 as QuizProps } from '../../Type/Type2';
@@ -12,19 +14,19 @@ import type { Data21QuizProps1 as QuizProps } from '../../Type/Type2';
 import img from '../../Image/2-2-1.png';
 
 const FourthGrade21Exercise = () => {
-  const [isChecked1, setIsChecked1] = useState<number>();
-  const [isChecked2, setIsChecked2] = useState<number>();
-  const [isChecked3, setIsChecked3] = useState<number>();
-  const [isChecked4, setIsChecked4] = useState<number>();
-  const CheckArray = [isChecked1, isChecked2, isChecked3, isChecked4];
-  const CheckSetArray = [
-    setIsChecked1,
-    setIsChecked2,
-    setIsChecked3,
-    setIsChecked4,
-  ];
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(4), () => new Array(2))
+  );
   const handleInput = (idx: number, idx2: number) => {
-    CheckSetArray[idx](idx2);
+    const value = inputValue;
+    value[idx][0] = idx2.toString();
+    setInputValue(value);
+    setToggle(!toggle);
   };
 
   return (
@@ -33,8 +35,8 @@ const FourthGrade21Exercise = () => {
         <Styled.ColGapBox gap={6}>
           <Styled.ImgSize4 src={img} />
           {QuizData.map((item: QuizProps, idx) => (
-            <Styled.RowBox13>
-              <div>{item.id}</div>
+            <Styled.RowBox13 key={idx}>
+              <IdSymbol id={item.id} correct={correct[idx]} />
               {/* 왼쪽 클릭 문제 */}
               <Styled.SelectSingleWrapper2 key={idx}>
                 {item.left.map((i: string, idx2: number) => (
@@ -42,7 +44,7 @@ const FourthGrade21Exercise = () => {
                     <input
                       type="radio"
                       id={i}
-                      checked={idx2 === CheckArray[idx]}
+                      checked={idx2.toString() === inputValue[idx][0]}
                       onChange={() => handleInput(idx, idx2)}
                     ></input>
                     <Styled.SelectSingleButton htmlFor={i}>
@@ -56,12 +58,26 @@ const FourthGrade21Exercise = () => {
                 key={idx}
                 rightQuiz1={item.rightQuiz1}
                 rightQuiz2={item.rightQuiz2}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             </Styled.RowBox13>
           ))}
         </Styled.ColGapBox>
       </Styled.PaddingBox5>
-      <ConfirmBtn type={true} day={2} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={2} />
+      </div>
     </DayLayout>
   );
 };

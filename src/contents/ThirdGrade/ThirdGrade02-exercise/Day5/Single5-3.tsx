@@ -1,13 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data12QuizProps as Props } from '../../Type/Type1';
+import type { Data12QuizProps2 as Props } from '../../Type/Type1';
 
 const Single53 = (props: Props) => {
-  const { id, quiz1, quiz2 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   return (
     <Styled.MiniSingleWrapper>
       <Styled.RowBox13>
-        <div>{id}</div>
+        <IdSymbol id={id} correct={correct} />
         <Styled.FitInputWrapper3>
           <Styled.ColGapBox gap={0}>
             <Styled.BottomLine>
@@ -19,7 +36,9 @@ const Single53 = (props: Props) => {
                 </Styled.ColGapBox>
               </Styled.RowBox4>
             </Styled.BottomLine>
-            <Styled.SpacingInputBox1></Styled.SpacingInputBox1>
+            <Styled.SpacingInputBox2
+              onChange={e => handleInput(e.target.value, 0)}
+            />
           </Styled.ColGapBox>
         </Styled.FitInputWrapper3>
       </Styled.RowBox13>

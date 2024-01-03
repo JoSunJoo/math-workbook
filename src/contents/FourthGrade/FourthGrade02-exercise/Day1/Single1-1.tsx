@@ -1,28 +1,46 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data11QuizProps as QuizProps } from '../../Type/Type2';
+import type { Data11QuizProps2 as QuizProps } from '../../Type/Type2';
 
 import arrow from '../../Image/blueArrow.png';
 
 const Single11 = (props: QuizProps) => {
-  const { id, quiz1, quiz2 } = props;
+  const {
+    id,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
 
   return (
     <Styled.RowBox13>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.RowBox17>
         <Styled.RowBox4>
           <div>{quiz1} × </div>
-          <Styled.InputBox3 />
+          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
           <div>= {quiz2}</div>
         </Styled.RowBox4>
         <Styled.ImgSize10 src={arrow} />
         <Styled.RowBox4>
-          <Styled.InputBox1 />
+          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 1)} />
           <div>÷</div>
-          <Styled.InputBox1 />
+          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
           <div>=</div>
-          <Styled.InputBox3 />
+          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
         </Styled.RowBox4>
       </Styled.RowBox17>
     </Styled.RowBox13>

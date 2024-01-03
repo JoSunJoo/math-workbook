@@ -9,7 +9,7 @@ const Example21 = () => {
         <Styled.ImgSize6 src={img} alt="" />
         <Styled.RowBox7>
           <div>46 ÷ 2 = </div>
-          <Styled.InputBox1 placeholder="23" />
+          <Styled.InputBox1 placeholder="23" disabled />
         </Styled.RowBox7>
       </Styled.ColGapBox>
     </Styled.ExampleBox9>

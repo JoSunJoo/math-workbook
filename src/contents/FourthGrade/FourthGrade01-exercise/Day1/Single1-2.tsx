@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data12QuizProps2 as QuizProps } from '../../Type/Type1';
 
@@ -10,17 +11,25 @@ import img5 from '../../Image/1-1-2_5.png';
 import img6 from '../../Image/1-1-2_6.png';
 
 const Single12 = (props: QuizProps) => {
-  const { id, imgId } = props;
+  const { id, imgId, toggle, setToggle, inputValue, setInputValue, correct } =
+    props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[imgId][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const imgArray = [img1, img2, img3, img4, img5, img6];
 
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.SingleWrapper8>
         <Styled.SetCenter2>
           <Styled.ColGapBox gap={2}>
             <Styled.ImgSize9 src={imgArray[imgId]} alt="" />
-            <Styled.InputBox1 />
+            <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
           </Styled.ColGapBox>
         </Styled.SetCenter2>
       </Styled.SingleWrapper8>

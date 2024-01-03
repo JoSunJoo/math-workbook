@@ -1,12 +1,30 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data51QuizProps as QuizProps } from '../../Type/Type1';
+import type { Data51QuizProps2 as QuizProps } from '../../Type/Type1';
 
 const Single53 = (props: QuizProps) => {
-  const { id, quiz1, unit } = props;
+  const {
+    id,
+    quiz1,
+    unit,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   return (
     <Styled.RowBox2>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.SingleWrapper4>
         <Styled.TextBoxWrapper>
           <Styled.TextBox>{quiz1}</Styled.TextBox>
@@ -15,7 +33,9 @@ const Single53 = (props: QuizProps) => {
               <Styled.TextSize>식:</Styled.TextSize>
               <Styled.LongInput></Styled.LongInput>
               <Styled.TextSize>답:</Styled.TextSize>
-              <Styled.ShortInput></Styled.ShortInput>
+              <Styled.ShortInput
+                onChange={e => handleInput(e.target.value, 0)}
+              />
               <Styled.TextSize>{unit}</Styled.TextSize>
             </Styled.RowBox3>
           </Styled.TextBoxWrapper>

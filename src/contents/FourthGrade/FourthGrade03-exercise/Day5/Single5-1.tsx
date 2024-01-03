@@ -1,16 +1,38 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
-import type { Data51QuizProps as QuizProps } from '../../Type/Type3';
+import type { Data51QuizProps2 as QuizProps } from '../../Type/Type3';
 
 const Single51 = (props: QuizProps) => {
-  const { id, type, quiz1, quiz2 } = props;
+  const {
+    id,
+    type,
+    quiz1,
+    quiz2,
+    idx,
+    toggle,
+    setToggle,
+    inputValue,
+    setInputValue,
+    correct,
+  } = props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[idx][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
+
   const handleFrac = (type: number, quiz1: number, quiz2?: number) => {
     switch (type) {
       case 1:
         return (
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
-              <Styled.InputBox3 />
+              <Styled.InputBox8
+                onChange={e => handleInput(e.target.value, 0)}
+              />
             </Styled.FractUnderLine>
             <Styled.FitBox>{quiz1}</Styled.FitBox>
           </Styled.ColGapBox>
@@ -32,7 +54,7 @@ const Single51 = (props: QuizProps) => {
   };
   return (
     <Styled.RowBox5>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
 
       <Styled.GapRowBox2 gap={1}>
         {type === 1 ? <div>{quiz1}</div> : <>{handleFrac(2, quiz1, quiz2)}</>}
@@ -41,7 +63,7 @@ const Single51 = (props: QuizProps) => {
           <>{handleFrac(1, quiz2)}</>
         ) : (
           <>
-            <Styled.InputBox3 />
+            <Styled.InputBox8 onChange={e => handleInput(e.target.value, 0)} />
           </>
         )}
       </Styled.GapRowBox2>

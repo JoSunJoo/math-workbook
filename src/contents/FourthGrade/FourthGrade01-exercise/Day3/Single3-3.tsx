@@ -1,4 +1,5 @@
 import Styled from '../../style';
+import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data33QuizProps2 as QuizProps } from '../../Type/Type1';
 
@@ -14,29 +15,43 @@ import cir from '../../Image/1-3-3_circle.png';
 import tri from '../../Image/1-3-3_triangle.png';
 
 const Single31 = (props: QuizProps) => {
-  const { id, imgId } = props;
+  const { id, imgId, toggle, setToggle, inputValue, setInputValue, correct } =
+    props;
+
+  const handleInput = (e: string, i: number) => {
+    const value = inputValue;
+    value[imgId][i] = e;
+    setInputValue(value);
+    setToggle(!toggle);
+  };
   const imgArray = [img1, img2, img3, img4, img5, img6, img7];
 
   return (
     <Styled.RowBox13>
-      <div>{id}</div>
+      <IdSymbol id={id} correct={correct} />
       <Styled.ColGapBox2 gap={1.5}>
         <Styled.ImgSize15 src={imgArray[imgId]} alt="" />
         <Styled.SetCenter>
           <Styled.ColGapBox gap={1}>
             <Styled.RowBox5>
               <Styled.ImgSize10 src={tri} alt="" />
-              <Styled.MiddleInput2 />
+              <Styled.MiddleInput2
+                onChange={e => handleInput(e.target.value, 0)}
+              />
             </Styled.RowBox5>
             <Styled.RowBox5>
               <Styled.ImgSize10 src={cir} alt="" />
-              <Styled.MiddleInput2 />
+              <Styled.MiddleInput2
+                onChange={e => handleInput(e.target.value, 1)}
+              />
             </Styled.RowBox5>
           </Styled.ColGapBox>
           <Styled.SetBox1>
             <Styled.ImgSize15 src={arrow} alt="" />
             <Styled.RowBox4>
-              <Styled.InputBox1 />
+              <Styled.InputBox4
+                onChange={e => handleInput(e.target.value, 2)}
+              />
               <div>배</div>
             </Styled.RowBox4>
           </Styled.SetBox1>

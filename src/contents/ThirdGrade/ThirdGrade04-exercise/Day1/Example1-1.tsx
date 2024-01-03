@@ -7,7 +7,7 @@ const Example11 = () => {
     <Styled.FitExampleBox>
       <Styled.SetCenter>
         <Styled.ColGapBox gap={1}>
-          <Styled.ImgSize3 src={img} alt="" />
+          <Styled.ImgSize3 src={img} />
           <Styled.RowBox7>
             <div>60 ÷ 3 = </div>
             <Styled.InputBox1 placeholder="20" disabled />

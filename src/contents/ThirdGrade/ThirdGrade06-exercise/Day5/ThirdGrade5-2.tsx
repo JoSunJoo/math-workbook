@@ -1,9 +1,10 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-import { Data52Quiz as QuizData } from '../../Data/Book6';
+import { Answer52 as answer, Data52Quiz as QuizData } from '../../Data/Book6';
 import DayLayout from '../../Layout/Day5';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { SubBlank, ThirdGrade6Day5 as Day } from '../../utils/handleTitle';
 import ExampleQuiz from './Example5-2';
 import SingleQuiz from './Single5-2';
@@ -11,6 +12,13 @@ import SingleQuiz from './Single5-2';
 import type { Data52QuizProps as QuizProps } from '../../Type/Type6';
 
 const ThirdGrade52Exercise: React.FC = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(7), () => new Array(1))
+  );
   return (
     <DayLayout title={Day.title} subTitle={SubBlank}>
       <Styled.PaddingBox>
@@ -27,12 +35,26 @@ const ThirdGrade52Exercise: React.FC = () => {
                 len={item.len}
                 totalText={item.totalText}
                 unit={item.unit}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
         </Styled.ColGapBox2>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={5} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={5} />
+      </div>
     </DayLayout>
   );
 };

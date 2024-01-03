@@ -21,13 +21,19 @@ export const Data11Quiz = [
     quiz4: 5,
   },
 ];
-
+export const Answer11 = [
+  [2, 12],
+  [3, 14],
+  [5, 12],
+];
 export const Data12Quiz = [
   { id: '①', quiz1: '15 × 6' },
   { id: '②', quiz1: '4 × 19' },
   { id: '③', quiz1: '58 × 8' },
   { id: '④', quiz1: '48 × 6' },
 ];
+//답에 또는이 있는 관계로 따로 처리 필요
+export const Answer12 = [['90'], ['76'], ['464'], ['288']];
 
 export const Data13Quiz = [
   {
@@ -46,14 +52,19 @@ export const Data13Quiz = [
     quiz2: '× 11 = 99',
   },
 ];
-
+export const Answer13 = [[3], [2], [9]];
 export const Data14Quiz = [
   { id: '①', quiz1: '85 ÷ 5' },
   { id: '②', quiz1: '98 ÷ 7' },
   { id: '③', quiz1: '116 ÷ 4' },
   { id: '④', quiz1: '68 ÷ 4' },
 ];
-
+export const Answer14 = [
+  ['17', '85', '15'],
+  ['14', '98', '7'],
+  ['29', '116', '4'],
+  ['17', '68', '4'],
+];
 export const Data21Quiz = [
   {
     id: '①',
@@ -100,7 +111,12 @@ export const Data21Quiz = [
     quiz8: '9',
   },
 ];
-
+export const Answer21 = [
+  [null, 8, 2, 4],
+  [2, 16, null, 3],
+  [4, 17, 7, null],
+  [5, null, 9, 11, 2],
+];
 export const Data22Quiz = [
   { id: '①', quiz1: '35', quiz2: '81', quiz3: '63', quiz4: '45' },
   { id: '②', quiz1: '24', quiz2: '14', quiz3: '16', quiz4: '21' },
@@ -109,13 +125,27 @@ export const Data22Quiz = [
   { id: '⑤', quiz1: '56', quiz2: '15', quiz3: '35', quiz4: '24' },
   { id: '⑥', quiz1: '21', quiz2: '60', quiz3: '36', quiz4: '35' },
 ];
-
+export const Answer22 = [
+  [5, 9, 7, 9],
+  [3, 7, 8, 2],
+  [2, 8, 5, 5],
+  [13, 3, 2, 9],
+  [8, 3, 7, 5],
+  [7, 5, 3, 12],
+];
 export const Data31Quiz = [
   { id: '①', quiz1: '54 ÷ 9 = 6 ' },
   { id: '②', quiz1: '25 ÷ 5 = 5' },
   { id: '③', quiz1: '24 ÷ 8 = 3' },
   { id: '④', quiz1: '35 ÷ 5 = 7' },
 ];
+export const Answer31 = [
+  [9, 6, 54],
+  [5, 5, 25],
+  [8, 3, 24],
+  [5, 7, 35],
+];
+
 export const Data32Quiz = [
   { id: '①', quiz1: '24 ÷ 6' },
   { id: '②', quiz1: '48 ÷ 8' },
@@ -126,6 +156,16 @@ export const Data32Quiz = [
   { id: '⑦', quiz1: '49 ÷ 7' },
   { id: '⑧', quiz1: '28 ÷ 4' },
 ];
+export const Answer32 = [
+  [4, 6, 4, 24],
+  [6, 8, 6, 48],
+  [6, 5, 6, 30],
+  [3, 9, 3, 27],
+  [10, 6, 6, 60],
+  [5, 3, 5, 15],
+  [7, 7, 7, 49],
+  [7, 4, 7, 28],
+];
 
 export const Data33Quiz = [
   { id: '①', quiz1: '72 ÷ 9' },
@@ -135,14 +175,32 @@ export const Data33Quiz = [
   { id: '⑤', quiz1: '24 ÷ 4' },
   { id: '⑥', quiz1: '48 ÷ 4' },
   { id: '⑦', quiz1: '18 ÷ 9' },
-  { id: '⑧', quiz1: '36 ÷ 3' },
+  { id: '⑧', quiz1: '36 ÷ 6' },
 ];
+export const Answer33 = [
+  [8, 9, 8, 272],
+  [5, 8, 5, 40],
+  [10, 7, 10, 70],
+  [11, 5, 11, 55],
+  [6, 4, 6, 24],
+  [12, 4, 12, 48],
+  [2, 9, 2, 18],
+  [6, 6, 6, 36],
+];
+
 export const Data41Quiz = [
   { id: '①', quiz1: '38 ÷ 4 = 9 ··· 2' },
   { id: '②', quiz1: '29 ÷ 5 = 5 ··· 4' },
   { id: '③', quiz1: '50 ÷ 6 = 8 ··· 2' },
   { id: '④', quiz1: '31 ÷ 9 = 3 ··· 4' },
 ];
+export const Answer41 = [
+  [4, 9, 2, 38],
+  [5, 5, 4, 29],
+  [6, 8, 2, 50],
+  [9, 3, 4, 31],
+];
+
 export const Data42Quiz = [
   { id: '①', quiz1: '77 ÷ 4' },
   { id: '②', quiz1: '86 ÷ 6' },
@@ -153,6 +211,17 @@ export const Data42Quiz = [
   { id: '⑦', quiz1: '99 ÷ 8' },
   { id: '⑧', quiz1: '58 ÷ 4' },
 ];
+export const Answer42 = [
+  [19, 1, 4, 19, 1, 77],
+  [14, 2, 6, 14, 2, 86],
+  [25, 1, 3, 25, 1, 76],
+  [13, 4, 7, 13, 4, 95],
+  [12, 3, 5, 12, 3, 63],
+  [21, 1, 2, 21, 1, 43],
+  [12, 3, 8, 12, 3, 99],
+  [14, 2, 4, 14, 2, 58],
+];
+
 export const Data43Quiz = [
   { id: '①', quiz1: '63 ÷ 5' },
   { id: '②', quiz1: '97 ÷ 4' },
@@ -163,6 +232,17 @@ export const Data43Quiz = [
   { id: '⑦', quiz1: '74 ÷ 4' },
   { id: '⑧', quiz1: '47 ÷ 3' },
 ];
+export const Answer43 = [
+  [12, 3, 5, 12, 3, 63],
+  [24, 1, 4, 24, 1, 97],
+  [14, 5, 6, 14, 5, 89],
+  [17, 1, 3, 17, 1, 52],
+  [18, 4, 5, 18, 4, 94],
+  [12, 2, 7, 12, 2, 86],
+  [18, 2, 4, 18, 74],
+  [15, 2, 3, 15, 2, 47],
+];
+
 export const Data51Quiz = [
   {
     id: '①',
@@ -176,6 +256,11 @@ export const Data51Quiz = [
     sign1: '÷',
   },
 ];
+export const Answer51 = [
+  [84, 7, 12],
+  [84, 12, 7],
+];
+
 export const Data52Quiz1 = [
   {
     id: '①',
@@ -201,6 +286,12 @@ export const Data52Quiz2 = [
     sign1: '×',
   },
 ];
+export const Answer52 = [
+  [96, 8, 12],
+  [8, 12, 96],
+  [144, 9, 16],
+  [9, 16, 144],
+];
 
 export const Data53Quiz = [
   {
@@ -224,3 +315,4 @@ export const Data53Quiz = [
       '꽃집에서 장미꽃 90송이를 똑같이 나누어 6다발로 만들어 팔고 있습니다. 한 다발에는 장미꽃 몇 송이가 들어 있을까요?',
   },
 ];
+export const Answer53 = [[13], [37], [31], [15]];

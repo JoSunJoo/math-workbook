@@ -1,16 +1,27 @@
+import { useEffect, useState } from 'react';
+
 import { Data22Quiz as QuizData } from '../../Data/Book4';
-// import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade4Day2 as Day } from '../../utils/handleTitle';
+import makeAnswer from '../../utils/makeAnswer2';
 import SingleQuiz from './Single2-3';
 
-import type { Data31QuizProps as QuizProps } from '../../Type/Type4';
+import type { Data32QuizProps as QuizProps } from '../../Type/Type4';
 
 import img from '../../Image/4-2-2.png';
 
 const FourthGrade22Exercise = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
+  const [correct, setCorrect] = useState<boolean[]>([]);
+  const [confirmType, setConfirmType] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string[][]>(
+    Array.from(Array(12), () => new Array(1))
+  );
+  const answer = makeAnswer({ data: QuizData });
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
@@ -29,12 +40,26 @@ const FourthGrade22Exercise = () => {
                 type={2}
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
+                idx={idx}
+                toggle={toggle}
+                setToggle={setToggle}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                correct={correct[idx]}
               />
             ))}
           </Styled.RowWrapBox8>
         </Styled.ColGapBox>
       </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={2} />
+      <div
+        onClick={() => {
+          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          setToggle(!toggle);
+          setConfirmType(false);
+        }}
+      >
+        <ConfirmBtn type={confirmType} day={2} />
+      </div>
     </DayLayout>
   );
 };
