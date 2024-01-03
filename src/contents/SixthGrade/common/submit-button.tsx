@@ -3,12 +3,12 @@ import { Box, Button } from '@mui/material';
 
 interface SubmitButtonProps {
   onClick: () => void;
-  $color: string;
+  mycolor: string;
   isSolved: boolean;
 }
 
 export default function SubmitButton(props: SubmitButtonProps) {
-  const { onClick, $color, isSolved } = props;
+  const { onClick, mycolor, isSolved } = props;
   return (
     <Box
       sx={{
@@ -18,7 +18,7 @@ export default function SubmitButton(props: SubmitButtonProps) {
         marginY: '2rem',
       }}
     >
-      <CustomButton onClick={onClick} $color={$color} $isClicked={isSolved}>
+      <CustomButton onClick={onClick} mycolor={mycolor} isSolved={isSolved}>
         {isSolved ? '다시풀기' : '제출하기'}
       </CustomButton>
     </Box>
@@ -26,8 +26,8 @@ export default function SubmitButton(props: SubmitButtonProps) {
 }
 
 interface CustomButtonProps {
-  $isClicked?: boolean;
-  $color?: string;
+  isSolved?: boolean;
+  mycolor?: string;
 }
 
 const CustomButton = styled(Button)<CustomButtonProps>`
@@ -40,11 +40,11 @@ const CustomButton = styled(Button)<CustomButtonProps>`
 
   /* style */
   border-radius: 0.625rem;
-  background: ${props => (props.$isClicked ? '#ffff' : props.$color)};
-  border: 4px solid ${props => props.$color};
+  background: ${props => (props.isSolved ? '#ffff' : props.mycolor)};
+  border: 4px solid ${props => props.mycolor};
 
   /* font */
-  color: ${props => (props.$isClicked ? props.$color : '#ffff')};
+  color: ${props => (props.isSolved ? props.mycolor : '#ffff')};
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 500;
@@ -53,8 +53,8 @@ const CustomButton = styled(Button)<CustomButtonProps>`
 
   &:hover {
     border-radius: 0.625rem;
-    background: ${props => (props.$isClicked ? '#fffff' : props.$color)};
-    border: 4px solid ${props => props.$color};
-    color: ${props => (props.$isClicked ? props.$color : '#fffff')};
+    background: ${props => (props.isSolved ? '#fffff' : props.mycolor)};
+    border: 4px solid ${props => props.mycolor};
+    color: ${props => (props.isSolved ? props.mycolor : '#fffff')};
   }
 `;

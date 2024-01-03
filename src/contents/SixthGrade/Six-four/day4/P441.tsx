@@ -67,7 +67,7 @@ export default function P441() {
 
       <SubmitButton
         onClick={checkAnswer}
-        $color="#8F6CFF"
+        mycolor="#8F6CFF"
         isSolved={isSolved}
       />
     </Layout>

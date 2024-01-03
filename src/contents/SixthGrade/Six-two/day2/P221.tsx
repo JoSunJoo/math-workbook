@@ -64,7 +64,7 @@ export default function P221() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          $color="#6297FF"
+          mycolor="#6297FF"
           isSolved={isSolved}
         />
       </Box>
