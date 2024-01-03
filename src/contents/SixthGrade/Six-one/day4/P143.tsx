@@ -57,7 +57,7 @@ export default function P143() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          $color="#8F6CFF"
+          mycolor="#8F6CFF"
           isSolved={isSolved}
         />
       </Box>
