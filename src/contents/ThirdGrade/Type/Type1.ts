@@ -7,6 +7,7 @@ export interface LayoutProps {
 }
 
 export interface AnswerProps {
+  key?: string;
   inputValue: string[][] | number[][] | (number | null)[][];
   answer: string[][] | number[][] | (number | null)[][];
   setScore: React.Dispatch<React.SetStateAction<number>>;

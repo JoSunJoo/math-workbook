@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 
 import { Data23Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day2';
@@ -19,7 +20,23 @@ const ThirdGrade23Exercise = () => {
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(10), () => new Array(1))
   );
+  const key = 'third323.answer';
   const answer = makeAnswer({ type: 1, data: QuizData });
+  useEffect(() => {
+    try {
+      getKeyValue({ key })
+        .then(res => {
+          if (res !== null) {
+            setInputValue(res);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <DayLayout
@@ -46,7 +63,7 @@ const ThirdGrade23Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

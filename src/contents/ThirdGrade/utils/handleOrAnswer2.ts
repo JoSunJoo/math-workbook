@@ -1,19 +1,18 @@
 import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+
 // import { useEliceAccount } from '@elice/extcontent-utils';
 
 interface Props {
+  key?: string;
   inputValue: string[][];
   answer: string[][];
   setScore: React.Dispatch<React.SetStateAction<number>>;
   setCorrect: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
-export const handleScore = (score: number, len: number) => {
-  return Math.ceil((score / len) * 100);
-};
-
 export const handleOrAnswer = (props: Props) => {
-  const { inputValue, answer, setScore, setCorrect } = props;
+  const { key, inputValue, answer, setScore, setCorrect } = props;
   let score = 0;
   const correct: boolean[] = [];
   const len = inputValue.length;
@@ -50,4 +49,24 @@ export const handleOrAnswer = (props: Props) => {
   sendScore({ score: totalScore }).catch(err => {
     console.error('send score failed', err);
   });
+  postDataUtil(key, inputValue)
+    .then(response => {
+      console.log('Success:', response);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+};
+
+export const handleScore = (score: number, len: number) => {
+  return Math.ceil((score / len) * 100);
+};
+
+export const postDataUtil = async (key: any, value: any) => {
+  try {
+    const response = await postKeyValue({ key, value });
+    console.log('Success:', response);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };

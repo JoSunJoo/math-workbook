@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 
 import { Answer23 as answer, Data23Quiz as QuizData } from '../../Data/Book1';
-// import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
@@ -19,6 +19,23 @@ const FourthGrade23Exercise = () => {
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(8), () => new Array(7))
   );
+  const key = 'fourth123.answer';
+  useEffect(() => {
+    try {
+      getKeyValue({ key })
+        .then(res => {
+          if (res !== null) {
+            setInputValue(res);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
@@ -46,7 +63,7 @@ const FourthGrade23Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

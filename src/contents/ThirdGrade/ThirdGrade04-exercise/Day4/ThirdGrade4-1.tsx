@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 
 import {
   Answer41 as answer,
@@ -27,6 +27,24 @@ const ThirdGrade41Exercise: React.FC = () => {
   const [inputValue, setInputValue] = useState<number[][]>(
     Array.from(Array(4), () => new Array(1))
   );
+  const key = 'third441.answer';
+  useEffect(() => {
+    try {
+      getKeyValue({ key })
+        .then(res => {
+          console.log(res);
+          if (res !== null) {
+            setInputValue(res);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   const handleInput = (idx: number, idx2: number) => {
     const value = inputValue;
     value[idx][0] = idx2;
@@ -69,7 +87,7 @@ const ThirdGrade41Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({ inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

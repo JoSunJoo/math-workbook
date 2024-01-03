@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { sendScore } from '@elice/extcontent-apis';
-import { useEliceAccount } from '@elice/extcontent-utils';
+import { getKeyValue } from '@elice/extcontent-apis';
 
 import { Answer11 as answer, Data11Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day1';
@@ -14,7 +13,6 @@ import SingleQuiz from './Single1-1';
 import type { Data11QuizProps as DataProps } from '../../Type/Type1';
 
 const ThirdGrade11Exercise: React.FC = () => {
-  const { account } = useEliceAccount();
   const [toggle, setToggle] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -22,15 +20,24 @@ const ThirdGrade11Exercise: React.FC = () => {
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(5), () => new Array(2))
   );
+  const key = 'third111.answer';
 
-  // useEffect(() => {
-  //   console.log('inputValue');
-  //   console.log(inputValue);
-  //   console.log('score');
-  //   console.log(score);
-  //   console.log('correct');
-  //   console.log(correct);
-  // }, [toggle]);
+  useEffect(() => {
+    try {
+      getKeyValue({ key })
+        .then(res => {
+          console.log(res);
+          if (res !== null) {
+            setInputValue(res);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <DayLayout
@@ -65,7 +72,7 @@ const ThirdGrade11Exercise: React.FC = () => {
           </Styled.RowWrapBox8>
           <div
             onClick={() => {
-              handleAnswer({ inputValue, answer, setScore, setCorrect });
+              handleAnswer({ key, inputValue, answer, setScore, setCorrect });
               setToggle(!toggle);
               setConfirmType(false);
             }}
