@@ -1,7 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade03: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', ''],
+    '3': ['', ''],
+    '4': ['', ''],
+    '5': ['', ''],
+    '6': ['', ''],
+    '7': ['', '', ''],
+    '8': ['', '', ''],
+    '9': ['', '', ''],
+    '10': ['', '', ''],
+    '11': ['', '', ''],
+    '12': ['', '', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['3', '20'],
+    '2': ['12', '35'],
+    '3': ['5', '24'],
+    '4': ['14', '27'],
+    '5': ['1', '20'],
+    '6': ['3', '80'],
+    '7': ['5', '4', '9'],
+    '8': ['3', '3', '20'],
+    '9': ['5', '17', '35'],
+    '10': ['10', '17', '20'],
+    '11': ['4', '5', '28'],
+    '12': ['9', '7', '18'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quiz33131">
@@ -175,6 +229,7 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -201,6 +256,7 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -229,6 +285,8 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
+
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -257,6 +315,8 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
+
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -285,6 +345,8 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
+
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -313,6 +375,8 @@ const FifthGrade03: React.FC = () => {
             src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
             alt=""
           />
+          <input type="text" className="averageInput331 marginRight239" />
+
           <div className="fontSize20">
             <input type="text" className="averageInput331" />
             <div className="divlineCSS7"></div>
@@ -320,6 +384,7 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

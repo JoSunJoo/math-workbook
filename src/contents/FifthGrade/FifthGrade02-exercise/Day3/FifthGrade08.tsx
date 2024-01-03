@@ -1,7 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade08: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': [''],
+    '2': [''],
+    '3': [''],
+    '4': [''],
+    '5': [''],
+    '6': [''],
+    '7': [''],
+    '8': [''],
+    '9': [''],
+    '10': [''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['2'],
+    '2': ['3'],
+    '3': ['3'],
+    '4': ['3'],
+    '5': ['3'],
+    '6': ['3'],
+    '7': ['2'],
+    '8': ['3'],
+    '9': ['4'],
+    '10': ['3'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
@@ -19,6 +69,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">21</div>
             </div>
             <input
+              value={answers['1'][0]}
+              onChange={e => handleChange('1', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -37,6 +89,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">36</div>
             </div>
             <input
+              value={answers['2'][0]}
+              onChange={e => handleChange('2', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -55,6 +109,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">77</div>
             </div>
             <input
+              value={answers['3'][0]}
+              onChange={e => handleChange('3', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -73,6 +129,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">95</div>
             </div>
             <input
+              value={answers['4'][0]}
+              onChange={e => handleChange('4', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -91,6 +149,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">90</div>
             </div>
             <input
+              value={answers['5'][0]}
+              onChange={e => handleChange('5', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -109,6 +169,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">72</div>
             </div>
             <input
+              value={answers['6'][0]}
+              onChange={e => handleChange('6', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -127,6 +189,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">180</div>
             </div>
             <input
+              value={answers['7'][0]}
+              onChange={e => handleChange('7', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -145,6 +209,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">160</div>
             </div>
             <input
+              value={answers['8'][0]}
+              onChange={e => handleChange('8', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -163,6 +229,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">220</div>
             </div>
             <input
+              value={answers['9'][0]}
+              onChange={e => handleChange('9', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -181,6 +249,8 @@ const FifthGrade08: React.FC = () => {
               <div className="quiz2131">242</div>
             </div>
             <input
+              value={answers['10'][0]}
+              onChange={e => handleChange('10', 0, e.target.value)}
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
@@ -188,6 +258,7 @@ const FifthGrade08: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={3} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

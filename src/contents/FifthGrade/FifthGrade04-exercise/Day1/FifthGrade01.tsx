@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade01: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', ''],
+    '3': ['', ''],
+    '4': ['', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['1', '6'],
+    '2': ['2', '15'],
+    '3': ['3', '10'],
+    '4': ['4', '9'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="exampleBox312 aewrfawe">
@@ -61,9 +99,19 @@ const FifthGrade01: React.FC = () => {
             </div>
             <div>=&nbsp;</div>
             <div className=" marginRighttic">
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['1'][0]}
+                onChange={e => handleChange('1', 0, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['1'][1]}
+                onChange={e => handleChange('1', 1, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
             </div>
           </div>
         </div>
@@ -83,9 +131,19 @@ const FifthGrade01: React.FC = () => {
             </div>
             <div>=&nbsp;</div>
             <div className=" marginRighttic">
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['2'][0]}
+                onChange={e => handleChange('2', 0, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['2'][1]}
+                onChange={e => handleChange('2', 1, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
             </div>
           </div>
         </div>{' '}
@@ -105,9 +163,19 @@ const FifthGrade01: React.FC = () => {
             </div>
             <div>=&nbsp;</div>
             <div className=" marginRighttic">
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['3'][0]}
+                onChange={e => handleChange('3', 0, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['3'][1]}
+                onChange={e => handleChange('3', 1, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
             </div>
           </div>
         </div>{' '}
@@ -127,13 +195,24 @@ const FifthGrade01: React.FC = () => {
             </div>
             <div>=&nbsp;</div>
             <div className=" marginRighttic">
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['4'][0]}
+                onChange={e => handleChange('4', 0, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />
+              <input
+                value={answers['4'][1]}
+                onChange={e => handleChange('4', 1, e.target.value)}
+                type="text"
+                className="averageInput"
+              />
             </div>
           </div>
         </div>{' '}
       </div>
+      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

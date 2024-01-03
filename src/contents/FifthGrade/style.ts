@@ -732,7 +732,7 @@ const Styled = {
       position: relative;
     }
     .quiz1 {
-      min-width: 800px;
+      min-width: 900px;
       position: relative;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -801,6 +801,9 @@ const Styled = {
       justify-content: center;
       margin-top: 50px;
     }
+    .afwef515 {
+      grid-row-gap: 50px;
+    }
     .abposweewr1 {
       position: absolute;
       left: -10px;
@@ -808,6 +811,9 @@ const Styled = {
     }
     .barfaww {
       margin-bottom: 60px;
+    }
+    .barfaw77w {
+      margin-bottom: 220px;
     }
     .abposweewr2 {
       position: absolute;
@@ -837,7 +843,7 @@ const Styled = {
     }
     .box31145 {
       padding-right: 10px;
-      height: 420px;
+      height: 450px;
     }
     .quiz1211 {
       position: relative;
@@ -846,7 +852,7 @@ const Styled = {
       align-content: center;
       justify-content: center;
       min-width: 770px;
-      margin-top: 50px;
+      margin-top: 0px;
     }
     .quiz2111 {
       min-width: 770px;
@@ -858,7 +864,7 @@ const Styled = {
       margin-top: 50px;
     }
     .afwea {
-      min-width: 880px;
+      min-width: 900px;
       grid-template-columns: 45% 45%;
     }
     .quiz3111 {
@@ -881,6 +887,7 @@ const Styled = {
     }
     .quiz3429 {
       grid-template-columns: 35% 35%;
+      min-width: 1200px;
     }
     .quiz2 {
       position: relative;
@@ -898,7 +905,12 @@ const Styled = {
       align-content: center;
       justify-content: center;
       margin-top: 50px;
-      min-width: 770px;
+      width: 1150px;
+    }
+    .qwe3929398 {
+      min-width: 1150px;
+      max-width: 1150px;
+      margin-left: 5%;
     }
     .quiz333 {
       position: relative;
@@ -951,7 +963,7 @@ const Styled = {
     }
     .absolSetting121 {
       width: 98%;
-      padding: 73px 23px;
+      padding: 73px 23px 20px;
       border: 1px solid #e9e9e9;
       position: relative;
       border-radius: 10px;
@@ -959,6 +971,7 @@ const Styled = {
       flex-direction: column;
       justify-content: center;
       margin: 3%;
+      margin-bottom: 0px;
       white-space: nowrap;
     }
     .quizCard p {
@@ -1377,6 +1390,15 @@ const Styled = {
     .marginleft2421 {
       margin-left: 25px;
     }
+    .marginleft24299 {
+      margin-left: 12px;
+    }
+    .lakwerfj {
+      margin-top: -30px;
+    }
+    .lakwerfj3214 {
+      margin-top: -10px;
+    }
     .marginLeftZero {
       margin-left: -17px;
     }
@@ -1386,6 +1408,9 @@ const Styled = {
     }
     .marginRight231 {
       margin-right: 20px;
+    }
+    .marginRight239 {
+      margin-right: 8px;
     }
     .borderColor233 {
       width: 72px;
@@ -1957,7 +1982,7 @@ const Styled = {
       margin-bottom: 18px;
     }
     .number3113 {
-      margin: -80% 10px 0;
+      margin: -90% 10px 0;
     }
     .imgSize3115 {
       width: 60%;
@@ -2074,6 +2099,10 @@ const Styled = {
     }
     .imgSize3111 {
       width: 80%;
+      padding: 15px;
+    }
+    .imgSize311777 {
+      width: 70%;
       padding: 15px;
     }
     .imgawer {
@@ -2242,7 +2271,7 @@ const Styled = {
       position: absolute;
       transform: rotate(-90deg);
       top: 30%;
-      left: 420px;
+      left: 105px;
     }
 
     .d-line123:before,
@@ -2266,7 +2295,7 @@ const Styled = {
       transform: rotate(0deg);
     }
     .line12222 {
-      left: 400px;
+      left: 105px;
     }
     .line13222 {
       left: 100px;
@@ -2462,7 +2491,7 @@ const Styled = {
     }
     .gagprajgw {
       gap: 60px 0px;
-      height: 850px;
+      height: auto;
     }
     .asfw {
       min-width: 367px;

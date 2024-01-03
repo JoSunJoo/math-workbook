@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade07: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', '', '', '', ''],
+    '2': ['', '', '', '', ''],
+    '3': ['', '', '', '', ''],
+    '4': ['', '', '', '', ''],
+    '5': ['', '', '', '', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['3', '6', '9', '12', '15'],
+    '2': ['4', '8', '12', '16', '20'],
+    '3': ['6', '12', '18', '24', '30'],
+    '4': ['8', '16', '24', '32', '40'],
+    '5': ['10', '20', '30', '40', '50'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
@@ -52,26 +92,36 @@ const FifthGrade07: React.FC = () => {
                 alt=""
               />
               <input
+                value={answers['1'][0]}
+                onChange={e => handleChange('1', 0, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['1'][1]}
+                onChange={e => handleChange('1', 1, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['1'][2]}
+                onChange={e => handleChange('1', 2, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['1'][3]}
+                onChange={e => handleChange('1', 3, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['1'][4]}
+                onChange={e => handleChange('1', 4, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
@@ -87,26 +137,36 @@ const FifthGrade07: React.FC = () => {
                 alt=""
               />
               <input
+                value={answers['2'][0]}
+                onChange={e => handleChange('2', 0, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['2'][1]}
+                onChange={e => handleChange('2', 1, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['2'][2]}
+                onChange={e => handleChange('2', 2, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['2'][3]}
+                onChange={e => handleChange('2', 3, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['2'][4]}
+                onChange={e => handleChange('2', 4, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
@@ -122,26 +182,36 @@ const FifthGrade07: React.FC = () => {
                 alt=""
               />
               <input
+                value={answers['3'][0]}
+                onChange={e => handleChange('3', 0, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['3'][1]}
+                onChange={e => handleChange('3', 1, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['3'][2]}
+                onChange={e => handleChange('3', 2, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['3'][3]}
+                onChange={e => handleChange('3', 3, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['3'][4]}
+                onChange={e => handleChange('3', 4, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
@@ -157,26 +227,36 @@ const FifthGrade07: React.FC = () => {
                 alt=""
               />
               <input
+                value={answers['4'][0]}
+                onChange={e => handleChange('4', 0, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['4'][1]}
+                onChange={e => handleChange('4', 1, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['4'][2]}
+                onChange={e => handleChange('4', 2, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['4'][3]}
+                onChange={e => handleChange('4', 3, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['4'][4]}
+                onChange={e => handleChange('4', 4, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
@@ -192,26 +272,36 @@ const FifthGrade07: React.FC = () => {
                 alt=""
               />
               <input
+                value={answers['5'][0]}
+                onChange={e => handleChange('5', 0, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['5'][1]}
+                onChange={e => handleChange('5', 1, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['5'][2]}
+                onChange={e => handleChange('5', 2, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['5'][3]}
+                onChange={e => handleChange('5', 3, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
               <p className="fontSize25">,</p>
               <input
+                value={answers['5'][4]}
+                onChange={e => handleChange('5', 4, e.target.value)}
                 className="fifthQuiz231Input marginLeft30 fontSize25"
                 type="text"
               />
@@ -221,6 +311,7 @@ const FifthGrade07: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={3} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

@@ -11,7 +11,6 @@ const FifthGrade11Exercise: React.FC = () => {
       subTitle={FifthGrade1Day2.subTitle}
     >
       <FifthGrade04 />
-      <ConfirmBtn type={true} day={2} />
     </DayLayout>
   );
 };

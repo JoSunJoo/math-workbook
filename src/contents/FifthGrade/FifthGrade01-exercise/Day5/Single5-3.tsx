@@ -1,6 +1,7 @@
 import Styled from '../../style';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
+import ConfirmBtn from '../../utils/ConfirmBtn';
 
 const Single53 = (props: QuizProps) => {
   const { id, quiz1, typing } = props;

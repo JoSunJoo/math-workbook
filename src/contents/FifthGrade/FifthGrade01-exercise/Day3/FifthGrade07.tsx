@@ -1,7 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import type { AnswersType } from '../../Type/Type1';
+import ConfirmBtn from '../../utils/ConfirmBtn';
 
 const FifthGrade07: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', '', ''],
+    '2': ['', '', ''],
+    '3': ['', '', ''],
+    '4': ['', '', ''],
+    '5': ['', '', ''],
+    '6': ['', '', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['5', '9', '9'],
+    '2': ['2', '28', '28'],
+    '3': ['20', '5', '5'],
+    '4': ['8', '10', '10'],
+    '5': ['21', '6', '6'],
+    '6': ['60', '420', '420'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAllLine">
@@ -52,11 +94,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">①</p>
                     45 ÷ (15 ÷ 3) =
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['1'][2]}
+                      onChange={e => handleChange('1', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['1'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['1'][1]}
+                  onChange={e => handleChange('1', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -67,11 +124,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">②</p>
                     14 × (12 ÷ 6) =
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['2'][2]}
+                      onChange={e => handleChange('2', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['2'][0]}
+                  onChange={e => handleChange('2', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['2'][1]}
+                  onChange={e => handleChange('2', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -82,11 +154,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">③</p>
                     100 ÷ (5 × 4) ={' '}
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['3'][2]}
+                      onChange={e => handleChange('3', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['3'][0]}
+                  onChange={e => handleChange('3', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -97,11 +184,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">④</p>
                     80 ÷ (24 ÷ 3) ={' '}
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['4'][2]}
+                      onChange={e => handleChange('4', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['4'][0]}
+                  onChange={e => handleChange('4', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['4'][1]}
+                  onChange={e => handleChange('4', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -112,11 +214,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">⑤</p>
                     126 ÷ (3 × 7) ={' '}
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['5'][2]}
+                      onChange={e => handleChange('5', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['5'][0]}
+                  onChange={e => handleChange('5', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['5'][1]}
+                  onChange={e => handleChange('5', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -127,11 +244,26 @@ const FifthGrade07: React.FC = () => {
                   <div className="flexRow">
                     <p className="quizNumber1211 quizMargin1131">⑥</p>
                     7 × (15 × 4) =
-                    <input type="text" className="borderRedInput1211" />
+                    <input
+                      type="text"
+                      className="borderRedInput1211"
+                      value={answers['6'][2]}
+                      onChange={e => handleChange('6', 2, e.target.value)}
+                    />
                   </div>
                 </div>
-                <input type="text" className="borderRedInput2 quizInput1239" />
-                <input type="text" className="borderRedInput3" />
+                <input
+                  type="text"
+                  className="borderRedInput2 quizInput1231"
+                  value={answers['6'][0]}
+                  onChange={e => handleChange('6', 0, e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="borderRedInput3"
+                  value={answers['6'][1]}
+                  onChange={e => handleChange('6', 1, e.target.value)}
+                />
                 <div className="d-line4 quizLine121455"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
@@ -139,6 +271,7 @@ const FifthGrade07: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={3} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

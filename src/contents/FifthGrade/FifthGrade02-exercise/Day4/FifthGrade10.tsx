@@ -1,7 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade10: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': [''],
+    '2': [''],
+    '3': [''],
+    '4': [''],
+    '5': [''],
+    '6': [''],
+    '7': [''],
+    '8': [''],
+    '9': [''],
+    '10': [''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['9'],
+    '2': ['8'],
+    '3': ['6'],
+    '4': ['7'],
+    '5': ['7'],
+    '6': ['6'],
+    '7': ['5'],
+    '8': ['5'],
+    '9': ['6'],
+    '10': ['6'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll asdfasdf242">
@@ -35,7 +85,7 @@ const FifthGrade10: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="quiz1">
+        <div className="quiz1 lakwerfj3214">
           <div className="quizCard11">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">① 50보다 작은 5의 배수의 개수</p>
@@ -45,8 +95,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['1'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -59,8 +113,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['2'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -73,8 +131,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['3'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -87,8 +149,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['4'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -101,8 +167,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['5'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -115,8 +185,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['6'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -129,8 +203,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['7'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -143,8 +221,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['8'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -157,8 +239,12 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['9'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
@@ -171,13 +257,18 @@ const FifthGrade10: React.FC = () => {
                   src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
                   alt=""
                 />
-                <input className="borderColor233 quizNumber1235" /> 개
-                <div></div>
+                <input
+                  value={answers['10'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  className="borderColor233 quizNumber1235"
+                />{' '}
+                개<div></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

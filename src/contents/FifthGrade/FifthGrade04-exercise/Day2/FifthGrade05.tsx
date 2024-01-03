@@ -1,7 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade05: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', ''],
+    '3': ['', ''],
+    '4': ['', ''],
+    '5': ['', ''],
+    '6': ['', ''],
+    '7': ['', ''],
+    '8': ['', '', ''],
+    '9': ['', '', ''],
+    '10': ['', '', ''],
+    '11': [''],
+    '12': [''],
+    '13': ['', '', ''],
+    '14': ['', '', ''],
+    '15': ['', ''],
+    '16': ['', ''],
+    '17': ['', ''],
+    '18': ['', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['1', '54'],
+    '2': ['1', '40'],
+    '3': ['6', '49'],
+    '4': ['1', '20'],
+    '5': ['5', '33'],
+    '6': ['7', '8'],
+    '7': ['5', '14'],
+    '8': ['2', '1', '4'],
+    '9': ['2', '1', '4'],
+    '10': ['2', '4', '7'],
+    '11': ['10'],
+    '12': ['14'],
+    '13': ['1', '5', '6'],
+    '14': ['3', '3', '5'],
+    '15': ['7', '16'],
+    '16': ['8', '45'],
+    '17': ['1', '4'],
+    '18': ['9', '25'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizRow3case fontSize25">
@@ -159,6 +225,7 @@ const FifthGrade05: React.FC = () => {
             <div className="textCenter">8</div>
           </div>
           <div className="marginlR10px">=</div>
+          <input type="text" className="averageInput marginRight239" />
           <div>
             <input type="text" className="averageInput" />
             <div className="divlineCSS15"></div>
@@ -179,6 +246,7 @@ const FifthGrade05: React.FC = () => {
             <div className="textCenter">8</div>{' '}
           </div>
           <div className="marginlR10px">=</div>
+          <input type="text" className="averageInput marginRight239" />
           <div>
             <input type="text" className="averageInput" />
             <div className="divlineCSS15"></div>
@@ -199,6 +267,7 @@ const FifthGrade05: React.FC = () => {
             <div className="textCenter">5</div>
           </div>
           <div className="marginlR10px">=</div>
+          <input type="text" className="averageInput marginRight239" />
           <div>
             <input type="text" className="averageInput" />
             <div className="divlineCSS15"></div>
@@ -221,8 +290,6 @@ const FifthGrade05: React.FC = () => {
           <div className="marginlR10px">=</div>
           <div>
             <input type="text" className="averageInput" />
-            <div className="divlineCSS15"></div>
-            <input type="text" className="averageInput" />
           </div>
         </div>{' '}
         <div className="flexRow fakwefTop barfaww">
@@ -241,8 +308,6 @@ const FifthGrade05: React.FC = () => {
           <div className="marginlR10px">=</div>
           <div>
             <input type="text" className="averageInput" />
-            <div className="divlineCSS15"></div>
-            <input type="text" className="averageInput" />
           </div>
         </div>
         <div className="flexRow fakwefTop barfaww">
@@ -259,6 +324,7 @@ const FifthGrade05: React.FC = () => {
             <div className="textCenter">9</div>
           </div>
           <div className="marginlR10px">=</div>
+          <input type="text" className="averageInput marginRight239" />
           <div>
             <input type="text" className="averageInput" />
             <div className="divlineCSS15"></div>
@@ -279,6 +345,7 @@ const FifthGrade05: React.FC = () => {
             <div className="textCenter">4</div>
           </div>
           <div className="marginlR10px">=</div>
+          <input type="text" className="averageInput marginRight239" />
           <div>
             <input type="text" className="averageInput" />
             <div className="divlineCSS15"></div>
@@ -366,6 +433,7 @@ const FifthGrade05: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

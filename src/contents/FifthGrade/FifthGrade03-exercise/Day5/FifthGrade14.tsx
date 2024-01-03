@@ -1,7 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade14: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': [''],
+    '2': [''],
+    '3': [''],
+    '4': [''],
+    '5': [''],
+    '6': [''],
+    '7': [''],
+    '8': [''],
+    '9': [''],
+    '10': [''],
+    '11': [''],
+    '12': [''],
+    '13': [''],
+    '14': [''],
+    '15': [''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['>'],
+    '2': ['<'],
+    '3': ['>'],
+    '4': ['<'],
+    '5': ['>'],
+    '6': ['<'],
+    '7': ['<'],
+    '8': ['='],
+    '9': ['<'],
+    '10': ['>'],
+    '11': ['>'],
+    '12': ['>'],
+    '13': ['<'],
+    '14': ['<'],
+    '15': ['<'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="exampleBox312">
@@ -86,7 +146,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS10"></div>
             <div className="textCenter">5</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['1'][0]}
+            onChange={e => handleChange('1', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">1</div>
             <div className="divlineCSS10"></div>
@@ -112,7 +177,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">17</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['2'][0]}
+            onChange={e => handleChange('2', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">4</div>
             <div className="divlineCSS1"></div>
@@ -126,7 +196,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS10"></div>
             <div className="textCenter">5</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['3'][0]}
+            onChange={e => handleChange('3', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
@@ -140,7 +215,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">19</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['4'][0]}
+            onChange={e => handleChange('4', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">4</div>
             <div className="divlineCSS1"></div>
@@ -154,7 +234,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">47</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['5'][0]}
+            onChange={e => handleChange('5', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">1</div>
             <div className="divlineCSS10"></div>
@@ -168,7 +253,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">19</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['6'][0]}
+            onChange={e => handleChange('6', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">4</div>
             <div className="divlineCSS10"></div>
@@ -182,7 +272,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS10"></div>
             <div className="textCenter">13</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['7'][0]}
+            onChange={e => handleChange('7', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">1</div>
             <div className="divlineCSS10"></div>
@@ -196,7 +291,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">25</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['8'][0]}
+            onChange={e => handleChange('8', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
@@ -210,7 +310,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">31</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['9'][0]}
+            onChange={e => handleChange('9', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
@@ -224,7 +329,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">19</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['10'][0]}
+            onChange={e => handleChange('10', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">2</div>
             <div className="divlineCSS10"></div>
@@ -238,7 +348,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">31</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['11'][0]}
+            onChange={e => handleChange('11', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">5</div>
             <div className="divlineCSS1"></div>
@@ -252,7 +367,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS10"></div>
             <div className="textCenter">5</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['12'][0]}
+            onChange={e => handleChange('12', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">2</div>
             <div className="divlineCSS1"></div>
@@ -266,7 +386,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">19</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['13'][0]}
+            onChange={e => handleChange('13', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">1</div>
             <div className="divlineCSS10"></div>
@@ -280,7 +405,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">81</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['14'][0]}
+            onChange={e => handleChange('14', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">1</div>
             <div className="divlineCSS1"></div>
@@ -294,7 +424,12 @@ const FifthGrade14: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">28</div>
           </div>
-          <input type="text" className="averageInput redeinptueq" />
+          <input
+            value={answers['15'][0]}
+            onChange={e => handleChange('15', 0, e.target.value)}
+            type="text"
+            className="averageInput redeinptueq"
+          />
           <div className="fontSize17 marginRighttic">
             <div className="textCenter">6</div>
             <div className="divlineCSS1"></div>
@@ -302,6 +437,7 @@ const FifthGrade14: React.FC = () => {
           </div>
         </div>{' '}
       </div>
+      <ConfirmBtn type={true} day={5} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade14: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', '', ''],
+    '3': ['', ''],
+    '4': ['', '', ''],
+    '5': ['', ''],
+    '6': ['', ''],
+    '7': ['', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['28', '81'],
+    '2': ['2', '1', '4'],
+    '3': ['1', '5'],
+    '4': ['1', '1', '3'],
+    '5': ['2', '15'],
+    '6': ['5', '36'],
+    '7': ['3', '8'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quiz fontSize25">
@@ -84,6 +128,8 @@ const FifthGrade14: React.FC = () => {
             />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
+              <input type="text" className="averageInput marginRight239" />
+
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
                 <div className="divlineCSS15"></div>
@@ -170,6 +216,8 @@ const FifthGrade14: React.FC = () => {
             />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
+              <input type="text" className="averageInput marginRight239" />
+
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
                 <div className="divlineCSS15"></div>
@@ -312,6 +360,7 @@ const FifthGrade14: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={5} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

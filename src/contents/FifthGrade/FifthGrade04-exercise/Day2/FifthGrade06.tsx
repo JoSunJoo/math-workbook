@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade06: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', ''],
+    '3': ['', ''],
+    '4': ['', ''],
+    '5': ['', ''],
+    '6': ['', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['1', '6'],
+    '2': ['1', '6'],
+    '3': ['1', '6'],
+    '4': ['3', '7'],
+    '5': ['14', '15'],
+    '6': ['13', '22'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
-      <div className="quiz3 fontSize25">
+      <div className="quiz3 fontSize25 qwe3929398">
         <div className="">
           <p className="iuaoerij">①</p>
           <div className="wef213 justifyCenter">
@@ -234,6 +276,7 @@ const FifthGrade06: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

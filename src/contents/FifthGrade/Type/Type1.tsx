@@ -28,5 +28,5 @@ export interface Data53QuizProps {
 }
 
 export interface AnswersType {
-  [key: string]: string;
+  [key: string]: string[];
 }

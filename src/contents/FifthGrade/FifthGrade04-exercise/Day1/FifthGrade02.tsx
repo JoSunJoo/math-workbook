@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade02: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', '', ''],
+    '2': ['', '', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['3', '11', '15'],
+    '2': ['1', '5', '9'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="exampleBox312 aewrfawe">
@@ -35,6 +69,7 @@ const FifthGrade02: React.FC = () => {
               <div className="textCenter">3</div>
             </div>
             <div className="marginlR10px">=&nbsp;</div>
+            <input type="text" className="averageInput marginRight239" />
             <div className="">
               <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
@@ -61,6 +96,7 @@ const FifthGrade02: React.FC = () => {
               <div className="textCenter">5</div>
             </div>
             <div className="marginlR10px">=&nbsp;</div>
+            <input type="text" className="averageInput marginRight239" />
             <div className="">
               <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
@@ -69,6 +105,7 @@ const FifthGrade02: React.FC = () => {
           </div>
         </div>{' '}
       </div>
+      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

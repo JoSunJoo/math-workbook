@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade15: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', '', ''],
+    '2': ['', ''],
+    '3': ['', '', ''],
+    '4': ['', '', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['2', '1', '2'],
+    '2': ['1', '6'],
+    '3': ['2', '2', '5'],
+    '4': ['2', '14', '25'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
-      <div className="quiz fontSize20">
+      <div className="quiz fontSize20 lakwerfj3214">
         <div className=" quizNumber123887 awefawufiut">
           <div className="flexRow noWrap1">
             ① &nbsp;&nbsp;어떤 정사각형의 가로를&nbsp;&nbsp;
@@ -18,10 +56,11 @@ const FifthGrade15: React.FC = () => {
           <div> 이 직 사각형의 넓이는 처음 정사각형의 몇 배일까요?</div>
           <div className="flexRow">
             정답 : &nbsp;&nbsp;
+            <input type="text" className="averageInput marginRight239" />
             <div className=" ">
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
             </div>
             &nbsp;&nbsp;배
           </div>
@@ -44,16 +83,16 @@ const FifthGrade15: React.FC = () => {
           </div>
           <div className="flexRow noWrap1">
             정호네 반에서 안경 을 쓰지 않은 남학생은 전체의 몇 분의 몇일까요?
-          </div>{' '}
+          </div>
           <div className="flexRow">
             정답 : &nbsp;&nbsp;
             <div className=" ">
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
             </div>
           </div>
-        </div>{' '}
+        </div>
         <div className=" quizNumber123887 awefawufiut">
           <div className="flexRow noWrap1">
             ③ &nbsp;&nbsp;바닥에 떨어뜨리면 튀어 오르는 높이가 떨어진
@@ -70,14 +109,15 @@ const FifthGrade15: React.FC = () => {
           </div>
           <div className="flexRow">
             정답 : &nbsp;&nbsp;
+            <input type="text" className="averageInput marginRight239" />
             <div className=" ">
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
             </div>
             &nbsp;&nbsp;m
           </div>
-        </div>{' '}
+        </div>
         <div className=" quizNumber123887 awefawufiut">
           <div className="flexRow noWrap1">
             ④ &nbsp;&nbsp; 한 변의 길이가&nbsp;
@@ -89,16 +129,18 @@ const FifthGrade15: React.FC = () => {
             &nbsp;cm인 정사각형의 넓이는 몇 cm²일까요?
           </div>
           <div className="flexRow">
-            정답 : &nbsp;&nbsp;{' '}
+            정답 : &nbsp;&nbsp;
+            <input type="text" className="averageInput marginRight239" />
             <div className="">
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
               <div className="divlineCSS15"></div>
-              <input type="text" className="averageInput" />{' '}
+              <input type="text" className="averageInput" />
             </div>
             &nbsp;&nbsp;cm²
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={5} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

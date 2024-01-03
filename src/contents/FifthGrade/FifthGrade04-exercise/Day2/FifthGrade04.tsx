@@ -1,7 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
 
+// 약분되는 인풋 답은 아무거나
 const FifthGrade04: React.FC = () => {
+  const [showResult, setShowResult] = useState(false);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': ['', ''],
+    '2': ['', ''],
+    '3': ['', ''],
+    '4': ['', ''],
+    '5': ['', ''],
+    '6': ['', ''],
+    '7': ['', ''],
+    '8': ['', ''],
+    '9': ['', ''],
+    '10': ['', ''],
+    '11': ['', ''],
+    '12': ['', ''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['5', '18'],
+    '2': ['7', '12'],
+    '3': ['2', '5'],
+    '4': ['5', '8'],
+    '5': ['1', '2'],
+    '6': ['1', '9'],
+    '7': ['1', '6'],
+    '8': ['2', '75'],
+    '9': ['2', '7'],
+    '10': ['1', '15'],
+    '11': ['2', '3'],
+    '12': ['3', '10'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+
+  const handleGrade = () => {
+    setShowResults(true);
+  };
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="exampleBox312">
@@ -11,7 +66,7 @@ const FifthGrade04: React.FC = () => {
         </div>
         <div className="quiz121Ex justifyCenter">
           <img
-            className="imgSize3111"
+            className="imgSize311777"
             src={`${process.env.PUBLIC_URL}/fifthImage/4-2-1.png`}
             alt=""
           />
@@ -22,7 +77,7 @@ const FifthGrade04: React.FC = () => {
           />
         </div>
       </div>
-      <div className="quizRow3case fontSize25">
+      <div className="quizRow3case fontSize25 afwef515">
         <div className="flexRow awefaweTOp">
           <p>① &nbsp;&nbsp;</p>
           <div className="quiz121Ex">
@@ -299,6 +354,7 @@ const FifthGrade04: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };
