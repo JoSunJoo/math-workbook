@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { sendScore } from '@elice/extcontent-apis';
+import { useEliceAccount } from '@elice/extcontent-utils';
 
 import { Answer11 as answer, Data11Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day1';
@@ -12,6 +14,7 @@ import SingleQuiz from './Single1-1';
 import type { Data11QuizProps as DataProps } from '../../Type/Type1';
 
 const ThirdGrade11Exercise: React.FC = () => {
+  const { account } = useEliceAccount();
   const [toggle, setToggle] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);

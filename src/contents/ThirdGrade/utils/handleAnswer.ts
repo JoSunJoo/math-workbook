@@ -1,5 +1,6 @@
 import { sendScore } from '@elice/extcontent-apis';
 
+// import { useEliceAccount } from '@elice/extcontent-utils';
 import type { AnswerProps } from '../Type/Type1';
 
 export const handleAnswer = ({
@@ -24,9 +25,12 @@ export const handleAnswer = ({
     correct.push(flag);
     if (flag) score++;
   }
-  setScore(handleScore(score, len));
+  const totalScore = handleScore(score, len);
+  setScore(totalScore);
   setCorrect(correct);
-  // sendScore({ score: 100 });
+  sendScore({ score: totalScore }).catch(err => {
+    console.error('send score failed', err);
+  });
 };
 
 export const handleScore = (score: number, len: number) => {

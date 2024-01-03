@@ -1,4 +1,5 @@
 import { sendScore } from '@elice/extcontent-apis';
+// import { useEliceAccount } from '@elice/extcontent-utils';
 
 interface Props {
   inputValue: string[][];
@@ -44,7 +45,10 @@ export const handleOrAnswer = (props: Props) => {
     if (flag) score++;
   }
 
-  setScore(handleScore(score, len));
+  const totalScore = handleScore(score, len);
+  setScore(totalScore);
   setCorrect(correct);
-  // sendScore({ score: 100 });
+  sendScore({ score: totalScore }).catch(err => {
+    console.error('send score failed', err);
+  });
 };

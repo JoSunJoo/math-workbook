@@ -11,10 +11,10 @@
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-// import { IntlProvider } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// import { __eliceinternal_bootstrap__ } from './elice/utils/_bootstrap';
+import { __eliceinternal_bootstrap__ } from './elice/utils/_bootstrap';
 import App from './App';
 import AppStylesheet from './App.stylesheet';
 
