@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade03: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
     '2': ['', ''],
@@ -53,10 +58,50 @@ const FifthGrade03: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade33Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade33Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -64,7 +109,31 @@ const FifthGrade03: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quiz31231">
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">①&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('1') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ①&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">1</div>
             <div className="divlineCSS1"></div>
@@ -100,7 +169,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">②&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('2') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ②&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">36</div>
             <div className="divlineCSS"></div>
@@ -136,7 +229,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">③&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('3') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ③&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">1</div>
             <div className="divlineCSS1"></div>
@@ -172,7 +289,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">④&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('4') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ④&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">12</div>
             <div className="divlineCSS"></div>
@@ -208,7 +349,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑤&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('5') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑤&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
@@ -244,7 +409,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑥&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('6') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑥&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">54</div>
             <div className="divlineCSS"></div>
@@ -280,7 +469,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑦&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('7') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑦&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
@@ -316,7 +529,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑧&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('8') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑧&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">30</div>
             <div className="divlineCSS"></div>
@@ -352,7 +589,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑨&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('9') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑨&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">7</div>
             <div className="divlineCSS"></div>
@@ -388,7 +649,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑩&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('10') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑩&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">56</div>
             <div className="divlineCSS"></div>
@@ -424,7 +709,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑪&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('11') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑪&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">5</div>
             <div className="divlineCSS"></div>
@@ -460,7 +769,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑫&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('12') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑫&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">75</div>
             <div className="divlineCSS"></div>
@@ -496,7 +829,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑬&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('13') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑬&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">11</div>
             <div className="divlineCSS"></div>
@@ -532,7 +889,31 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
         <div className="flexRow fontSize25 alignCenter quizMargin1922 marginLeft3121">
-          <p className="margintopbotom5px">⑭&nbsp;&nbsp;&nbsp;</p>
+          <p className="margintopbotom5px afwe3513">
+            {' '}
+            {showResults && (
+              <div>
+                {isCorrect('14') ? (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg50"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+            ⑭&nbsp;&nbsp;&nbsp;
+          </p>
           <div className="fontSize25">
             <div className="textCenter">50</div>
             <div className="divlineCSS"></div>
@@ -568,7 +949,7 @@ const FifthGrade03: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

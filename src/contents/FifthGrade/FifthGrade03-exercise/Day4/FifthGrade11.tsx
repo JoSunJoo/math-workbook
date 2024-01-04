@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade11: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
     '2': ['', ''],
@@ -41,10 +47,50 @@ const FifthGrade11: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade41Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade41Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -52,6 +98,24 @@ const FifthGrade11: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quiz1 quiz3429">
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('1') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">①</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -67,11 +131,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">12</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter">9</div>
@@ -106,6 +166,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('2') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">②</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -121,11 +199,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter asdfawe">★</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter awrfaw">♥</div>
@@ -160,6 +234,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('3') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">③</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -176,11 +268,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">10</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter">8</div>
@@ -215,6 +303,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('4') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">④</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -230,11 +336,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">24</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter">12</div>
@@ -269,6 +371,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('5') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">⑤</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -284,11 +404,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">15</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter awrfaw">♥</div>
@@ -323,6 +439,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('6') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">⑥</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -339,11 +473,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">6</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter">16</div>
@@ -378,6 +508,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('7') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">⑦</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -393,11 +541,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter asdfawe">★</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter awrfaw">♥</div>
@@ -432,6 +576,24 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
         <div className="asfw flexRow fontSize20 wef213">
+          {' '}
+          {showResults && (
+            <div>
+              {isCorrect('8') ? (
+                <div>
+                  <img className="answerImg52" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg52"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           <p className="nuarfwa533">⑧</p>
           <div className="flexRow noWrap1">
             <div>(</div>
@@ -447,11 +609,7 @@ const FifthGrade11: React.FC = () => {
               <div className="textCenter">9</div>
             </div>
             <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <img
-              className="allowRight"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight" src={fifthimg} alt="" />
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(</div>
             <div className="fontSize20 marginLeft10px">
               <div className="textCenter awrfaw">♥</div>
@@ -486,7 +644,7 @@ const FifthGrade11: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={4} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

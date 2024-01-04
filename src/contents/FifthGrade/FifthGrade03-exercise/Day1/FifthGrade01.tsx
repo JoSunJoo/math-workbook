@@ -2,9 +2,29 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg1 from 'src/contents/FifthGrade/fifthImage/3-1-1_1.png';
+import fifthimg2 from 'src/contents/FifthGrade/fifthImage/3-1-1_2.png';
+import fifthimg3 from 'src/contents/FifthGrade/fifthImage/3-1-1_3.png';
+import fifthimg4 from 'src/contents/FifthGrade/fifthImage/3-1-1_4.png';
+import fifthimg5 from 'src/contents/FifthGrade/fifthImage/3-1-1_5.png';
+import fifthimg6 from 'src/contents/FifthGrade/fifthImage/3-1-1_6.png';
+import fifthimg7 from 'src/contents/FifthGrade/fifthImage/3-1-1_7.png';
+import fifthimg8 from 'src/contents/FifthGrade/fifthImage/3-1-1_8.png';
+import fifthimg9 from 'src/contents/FifthGrade/fifthImage/3-1-1_9.png';
+import fifthimg10 from 'src/contents/FifthGrade/fifthImage/3-1-1_10.png';
+import fifthimg11 from 'src/contents/FifthGrade/fifthImage/3-1-1_11.png';
+import fifthimg12 from 'src/contents/FifthGrade/fifthImage/3-1-1_12.png';
+import fifthimg13 from 'src/contents/FifthGrade/fifthImage/3-1-1_13.png';
+import fifthimg14 from 'src/contents/FifthGrade/fifthImage/3-1-1_14.png';
+import fifthimg15 from 'src/contents/FifthGrade/fifthImage/3-1-1_15.png';
 
 const FifthGrade01: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', '', '', '', '', ''],
     '2': ['', '', '', '', '', ''],
@@ -35,10 +55,50 @@ const FifthGrade01: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade31Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade31Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -47,14 +107,33 @@ const FifthGrade01: React.FC = () => {
       <div className="quizAll">
         <div className="quiz3111">
           <div className="flexRow">
-            <p className="fontSize25 number3111">①</p>
+            <p className="fontSize25 number3111">
+              ①{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('1') ? (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}{' '}
+            </p>
             <div className="box311all">
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_1.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg1} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -76,11 +155,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_2.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg2} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -102,11 +177,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_3.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg3} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -130,14 +201,33 @@ const FifthGrade01: React.FC = () => {
             </div>
           </div>
           <div className="flexRow">
-            <p className="fontSize25 number3112">②</p>
+            <p className="fontSize25 number3112">
+              ②{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('2') ? (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}{' '}
+            </p>
             <div className="box311all">
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_4.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg4} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -159,11 +249,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_5.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg5} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -185,11 +271,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_6.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg6} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -213,14 +295,33 @@ const FifthGrade01: React.FC = () => {
             </div>
           </div>
           <div className="flexRow">
-            <p className="fontSize25 number3111">③</p>
+            <p className="fontSize25 number3111">
+              ③{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('3') ? (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}{' '}
+            </p>
             <div className="box311all">
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_7.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg7} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -242,11 +343,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_8.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg8} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -268,11 +365,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_9.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg9} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -298,14 +391,33 @@ const FifthGrade01: React.FC = () => {
         </div>
         <div className="quiz3112">
           <div className="flexRow">
-            <p className="fontSize25 number3113">④</p>
+            <p className="fontSize25 number3113">
+              ④{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('4') ? (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}{' '}
+            </p>
             <div className="box311all box31145 flexCol">
               <div className="flexRow marginBottom18 justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_10.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg10} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -327,11 +439,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow marginBottom18 justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_11.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg11} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -353,11 +461,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow marginBottom18 justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_12.png`}
-                  alt=""
-                  className="imgSize3111"
-                />
+                <img src={fifthimg12} alt="" className="imgSize3111" />
                 <div>
                   <div>
                     <input
@@ -381,14 +485,33 @@ const FifthGrade01: React.FC = () => {
             </div>
           </div>
           <div className="flexRow">
-            <p className="fontSize25 number3113">⑤</p>
+            <p className="fontSize25 number3113">
+              ⑤{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('5') ? (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg47"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}{' '}
+            </p>
             <div className="box311all box31145 flexCol">
               <div className="flexRow marginBottom18 justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_13.png`}
-                  alt=""
-                  className="imgSize3115"
-                />
+                <img src={fifthimg13} alt="" className="imgSize3115" />
                 <div>
                   <div>
                     <input
@@ -410,11 +533,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow marginBottom18 justifyCenter justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_14.png`}
-                  alt=""
-                  className="imgSize3115"
-                />
+                <img src={fifthimg14} alt="" className="imgSize3115" />
                 <div>
                   <div>
                     <input
@@ -436,11 +555,7 @@ const FifthGrade01: React.FC = () => {
                 </div>
               </div>
               <div className="flexRow marginBottom18 justifyCenter justifyCenter">
-                <img
-                  src={`${process.env.PUBLIC_URL}/fifthImage/3-1-1_15.png`}
-                  alt=""
-                  className="imgSize3115"
-                />
+                <img src={fifthimg15} alt="" className="imgSize3115" />
                 <div>
                   <div>
                     <input
@@ -465,7 +580,7 @@ const FifthGrade01: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

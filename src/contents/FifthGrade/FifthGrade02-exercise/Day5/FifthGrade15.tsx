@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade15: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
+
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -61,10 +67,50 @@ const FifthGrade15: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade30Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade30Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -80,6 +126,27 @@ const FifthGrade15: React.FC = () => {
                   <div>58</div>
                   <div>72</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('1') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -100,6 +167,27 @@ const FifthGrade15: React.FC = () => {
                   <div>6</div>
                   <div>78</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('2') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -119,6 +207,27 @@ const FifthGrade15: React.FC = () => {
                   <div>78</div>
                   <div>7</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('3') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -138,6 +247,27 @@ const FifthGrade15: React.FC = () => {
                   <div>63</div>
                   <div>9</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('4') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -157,6 +287,27 @@ const FifthGrade15: React.FC = () => {
                   <div>13</div>
                   <div>65</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('5') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -176,6 +327,27 @@ const FifthGrade15: React.FC = () => {
                   <div>114</div>
                   <div>70</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('6') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -195,6 +367,27 @@ const FifthGrade15: React.FC = () => {
                   <div>18</div>
                   <div>74</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('7') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -214,6 +407,27 @@ const FifthGrade15: React.FC = () => {
                   <div>120</div>
                   <div>15</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('8') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -233,6 +447,27 @@ const FifthGrade15: React.FC = () => {
                   <div>61</div>
                   <div>119</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('9') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -252,6 +487,27 @@ const FifthGrade15: React.FC = () => {
                   <div>25</div>
                   <div>19</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('10') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -271,6 +527,27 @@ const FifthGrade15: React.FC = () => {
                   <div>121</div>
                   <div>11</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('11') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -290,6 +567,27 @@ const FifthGrade15: React.FC = () => {
                   <div>24</div>
                   <div>136</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('12') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -309,6 +607,27 @@ const FifthGrade15: React.FC = () => {
                   <div>120</div>
                   <div>21</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('13') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -328,6 +647,27 @@ const FifthGrade15: React.FC = () => {
                   <div>80</div>
                   <div>25</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('14') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -347,6 +687,27 @@ const FifthGrade15: React.FC = () => {
                   <div>22</div>
                   <div>198</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('15') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -366,6 +727,27 @@ const FifthGrade15: React.FC = () => {
                   <div>30</div>
                   <div>65</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('16') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -385,6 +767,27 @@ const FifthGrade15: React.FC = () => {
                   <div>132</div>
                   <div>34</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('17') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
 
               <div className="justAlignCenter">
@@ -404,6 +807,27 @@ const FifthGrade15: React.FC = () => {
                   <div>266</div>
                   <div>192</div>
                 </div>
+                {showResults && (
+                  <div>
+                    {isCorrect('18') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </div>
               <div className="justAlignCenter">
                 <input
@@ -416,7 +840,7 @@ const FifthGrade15: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={5} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={5} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

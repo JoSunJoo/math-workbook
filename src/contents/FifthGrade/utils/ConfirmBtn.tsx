@@ -18,7 +18,9 @@ const ConfirmBtn = (props: Props) => {
           제출하기
         </ConfirmBox>
       ) : (
-        <RetryButton color={color}>다시풀기</RetryButton>
+        <RetryButton color={color} onClick={handleGrade}>
+          다시풀기
+        </RetryButton>
       )}
     </ButtonWrappr>
   );

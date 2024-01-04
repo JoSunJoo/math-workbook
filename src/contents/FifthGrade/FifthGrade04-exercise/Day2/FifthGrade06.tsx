@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg1 from 'src/contents/FifthGrade/fifthImage/4-2-3.png';
 
 const FifthGrade06: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
     '2': ['', ''],
@@ -37,10 +43,50 @@ const FifthGrade06: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade51Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade51Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -48,13 +94,32 @@ const FifthGrade06: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quiz3 fontSize25 qwe3929398">
         <div className="">
-          <p className="iuaoerij">①</p>
+          <p className="iuaoerij afwe3513">
+            ①{' '}
+            {showResults && (
+              <div>
+                {isCorrect('1') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp1">
               <div>
                 <div className="textCenter">3</div>
@@ -78,21 +143,50 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['1'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['1'][1]}
+                  onChange={e => handleChange('1', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>
         <div className="">
-          <p className="iuaoerij">②</p>
+          <p className="iuaoerij afwe3513">
+            ②{' '}
+            {showResults && (
+              <div>
+                {isCorrect('2') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp1">
               <div>
                 <div className="textCenter">2</div>
@@ -116,21 +210,50 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['2'][0]}
+                  onChange={e => handleChange('2', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['2'][1]}
+                  onChange={e => handleChange('2', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="">
-          <p className="iuaoerij">③</p>
+          <p className="iuaoerij afwe3513">
+            ③{' '}
+            {showResults && (
+              <div>
+                {isCorrect('3') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp1">
               <div>
                 <div className="textCenter">3</div>
@@ -154,21 +277,50 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['3'][0]}
+                  onChange={e => handleChange('3', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="">
-          <p className="iuaoerij">④</p>
+          <p className="iuaoerij afwe3513">
+            ④{' '}
+            {showResults && (
+              <div>
+                {isCorrect('4') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp1">
               <div>
                 <div className="textCenter">2</div>
@@ -192,21 +344,50 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['4'][0]}
+                  onChange={e => handleChange('4', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['4'][1]}
+                  onChange={e => handleChange('4', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="">
-          <p className="iuaoerij">⑤</p>
+          <p className="iuaoerij afwe3513">
+            ⑤{' '}
+            {showResults && (
+              <div>
+                {isCorrect('5') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp5">
               <div>
                 <div className="textCenter">7</div>
@@ -230,21 +411,50 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['5'][0]}
+                  onChange={e => handleChange('5', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['5'][1]}
+                  onChange={e => handleChange('5', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="">
-          <p className="iuaoerij">⑥</p>
+          <p className="iuaoerij afwe3513">
+            ⑥{' '}
+            {showResults && (
+              <div>
+                {isCorrect('6') ? (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg23"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
+          </p>
           <div className="wef213 justifyCenter">
-            <img
-              className="awefaSize"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-2-3.png`}
-              alt=""
-            />
+            <img className="awefaSize" src={fifthimg1} alt="" />
             <div className="awefawrpos imgAbp5">
               <div>
                 <div className="textCenter">13</div>
@@ -268,15 +478,25 @@ const FifthGrade06: React.FC = () => {
             </div>
             <div className="awefawrpos imgAbp4">
               <div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['6'][0]}
+                  onChange={e => handleChange('6', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['6'][1]}
+                  onChange={e => handleChange('6', 1, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

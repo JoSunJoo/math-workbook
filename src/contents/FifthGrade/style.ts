@@ -1387,6 +1387,9 @@ const Styled = {
     .marginTop231 {
       margin-top: 35px;
     }
+    .fawef3532 {
+      position: relative;
+    }
     .marginleft2421 {
       margin-left: 25px;
     }
@@ -1932,6 +1935,7 @@ const Styled = {
       height: 60px;
       font-size: 25px;
       padding-inline-start: 7px;
+      text-align: center;
     }
 
     .imgInput1 {
@@ -2422,9 +2426,13 @@ const Styled = {
     }
     .posiAbAb {
       transform: rotate(-45deg);
+      white-space: nowrap;
       display: block;
       font-size: 25px;
       font-weight: bold;
+    }
+    .asfwae {
+      transform: rotate(-45deg);
     }
     .fontSize17 {
       font-size: 17px;
@@ -2626,6 +2634,274 @@ const Styled = {
     .eaf4517 {
       position: absolute;
       left: 325px;
+    }
+    .answerImg1 {
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg11 {
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg1221 {
+      position: absolute;
+      top: 0.5rem;
+      left: 3rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg2 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg22 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -3rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg23 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg3 {
+      position: absolute;
+      top: 77px;
+      right: 161px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg33 {
+      position: absolute;
+      z-index: 5;
+      top: 7rem;
+      left: 7rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg4 {
+      position: absolute;
+      top: 224px;
+      right: 307px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg44 {
+      position: absolute;
+      z-index: 5;
+      top: 4rem;
+      left: 6.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg104 {
+      position: absolute;
+      z-index: 5;
+      top: 0rem;
+      left: -1.2rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg45 {
+      position: absolute;
+      z-index: 5;
+      top: 2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .afwe3513 {
+      position: relative;
+    }
+    .answerImg46 {
+      position: absolute;
+      z-index: 5;
+      top: 2.5rem;
+      left: 0rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg101 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 3rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg181 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 0rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg47 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 1.2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg50 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -1rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg71 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg52 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -4rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg80 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -12rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg81 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -20rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg62 {
+      position: absolute;
+      z-index: 5;
+      top: -1.7rem;
+      left: -1.7rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg53 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -1.5rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg51 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg13 {
+      position: absolute;
+      z-index: 5;
+      top: -0.5rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg14 {
+      position: absolute;
+      z-index: 5;
+      top: 1.5rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg48 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+
+    .answerImg5 {
+      position: absolute;
+      top: 367px;
+      right: 17px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg55 {
+      position: absolute;
+      z-index: 5;
+      top: 0rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg6 {
+      position: absolute;
+      top: 513px;
+      right: 172px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg7 {
+      position: absolute;
+      top: 660px;
+      right: 462px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg8 {
+      position: absolute;
+      top: 659px;
+      right: 18px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg9 {
+      position: absolute;
+      top: 803px;
+      right: 598px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg10 {
+      position: absolute;
+      top: 803px;
+      right: 308px;
+      width: 3rem;
+      height: 3rem;
     }
   `,
 };

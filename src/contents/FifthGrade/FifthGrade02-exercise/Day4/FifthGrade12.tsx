@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade12: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -45,10 +51,50 @@ const FifthGrade12: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade27Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade27Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -60,11 +106,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ①&nbsp;&nbsp;&nbsp;&nbsp; 9 ＜ ★ ＜ 65
+                {showResults && (
+                  <div>
+                    {isCorrect('1') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">4의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -81,11 +148,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ②&nbsp;&nbsp;&nbsp;&nbsp; 18 ＜ ★ ＜ 75
+                {showResults && (
+                  <div>
+                    {isCorrect('2') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">5의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -102,11 +190,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ③&nbsp;&nbsp;&nbsp;&nbsp; 26 ＜ ★ ＜ 96
+                {showResults && (
+                  <div>
+                    {isCorrect('3') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">6의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -123,11 +232,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ④&nbsp;&nbsp;&nbsp;&nbsp; 32 ＜ ★ ＜ 88
+                {showResults && (
+                  <div>
+                    {isCorrect('4') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">7의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -144,11 +274,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑤&nbsp;&nbsp;&nbsp;&nbsp; 30 ＜ ★ ＜ 90
+                {showResults && (
+                  <div>
+                    {isCorrect('5') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">9의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -165,11 +316,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑥&nbsp;&nbsp;&nbsp;&nbsp; 20 ＜ ★ ＜ 70
+                {showResults && (
+                  <div>
+                    {isCorrect('6') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">
@@ -188,11 +360,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑦&nbsp;&nbsp;&nbsp;&nbsp; 20 ＜ ★ ＜ 89
+                {showResults && (
+                  <div>
+                    {isCorrect('7') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">3의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -209,11 +402,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑧&nbsp;&nbsp;&nbsp;&nbsp; 17 ＜ ★ ＜ 100
+                {showResults && (
+                  <div>
+                    {isCorrect('8') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">
@@ -232,11 +446,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑨&nbsp;&nbsp;&nbsp;&nbsp; 10 ＜ ★ ＜ 90
+                {showResults && (
+                  <div>
+                    {isCorrect('9') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">2의 배수의 개수 : &nbsp;&nbsp;</div>
@@ -253,11 +488,32 @@ const FifthGrade12: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ⑩&nbsp;&nbsp;&nbsp;&nbsp; 5 ＜ ★ ＜ 70
+                {showResults && (
+                  <div>
+                    {isCorrect('10') ? (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg47"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow alignCenter">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="fontSize20">
@@ -274,7 +530,7 @@ const FifthGrade12: React.FC = () => {
           </div>
         </div>
       </div>{' '}
-      <ConfirmBtn type={true} day={4} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

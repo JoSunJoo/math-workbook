@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade04: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -35,10 +41,50 @@ const FifthGrade04: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade34Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade34Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -59,11 +105,7 @@ const FifthGrade04: React.FC = () => {
             <div className="margintopbotom5px fontSize17 marginRight231">
               약분하기
             </div>
-            <img
-              className="allowRight marginRight231"
-              src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
-              alt=""
-            />
+            <img className="allowRight marginRight231" src={fifthimg} alt="" />
             <div className="fontSize25">
               <div className="justifyCenter flexRow">
                 8 <div className="colorRedOnly">÷ 2</div>
@@ -164,7 +206,28 @@ const FifthGrade04: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="afwe3513">
+            {showResults && (
+              <div>
+                {isCorrect('1') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <input
               value={answers['1'][0]}
               onChange={e => handleChange('1', 0, e.target.value)}
@@ -225,7 +288,28 @@ const FifthGrade04: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="afwe3513">
+            {showResults && (
+              <div>
+                {isCorrect('2') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <input
               value={answers['2'][0]}
               onChange={e => handleChange('2', 0, e.target.value)}
@@ -286,7 +370,28 @@ const FifthGrade04: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="afwe3513">
+            {showResults && (
+              <div>
+                {isCorrect('3') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <input
               value={answers['3'][0]}
               onChange={e => handleChange('3', 0, e.target.value)}
@@ -347,7 +452,28 @@ const FifthGrade04: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="afwe3513">
+            {showResults && (
+              <div>
+                {isCorrect('4') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <input
               value={answers['4'][0]}
               onChange={e => handleChange('4', 0, e.target.value)}
@@ -408,7 +534,28 @@ const FifthGrade04: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="afwe3513">
+            {showResults && (
+              <div>
+                {isCorrect('5') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <input
               value={answers['5'][0]}
               onChange={e => handleChange('5', 0, e.target.value)}
@@ -419,7 +566,7 @@ const FifthGrade04: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

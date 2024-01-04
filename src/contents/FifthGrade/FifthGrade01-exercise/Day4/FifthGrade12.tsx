@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade12: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -45,10 +50,50 @@ const FifthGrade12: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade12Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade12Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -57,7 +102,30 @@ const FifthGrade12: React.FC = () => {
       <div className="quizAll">
         <div className="quiz1">
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">①</p>
+            <p className="quizNumber1433">
+              ①{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('1') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               72 - (13 + 39) ={' '}
               <input
@@ -69,7 +137,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">②</p>
+            <p className="quizNumber1433">
+              ②{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('2') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               36 ÷ (6 ÷ 3) ={' '}
               <input
@@ -81,7 +172,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">③</p>
+            <p className="quizNumber1433">
+              ③{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('3') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               112 ÷ (8 × 7) ={' '}
               <input
@@ -93,7 +207,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">④</p>
+            <p className="quizNumber1433">
+              ④{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('4') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               61 - (33 - 16) ={' '}
               <input
@@ -106,7 +243,30 @@ const FifthGrade12: React.FC = () => {
           </div>
 
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑤</p>
+            <p className="quizNumber1433">
+              ⑤{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('5') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               120 + (32 - 87) ={' '}
               <input
@@ -118,7 +278,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑥</p>
+            <p className="quizNumber1433">
+              ⑥{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('6') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               6 + (75 + 26) ={' '}
               <input
@@ -130,7 +313,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑦</p>
+            <p className="quizNumber1433">
+              ⑦{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('7') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               26 ÷ (13 × 15) ={' '}
               <input
@@ -142,7 +348,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑧</p>
+            <p className="quizNumber1433">
+              ⑧{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('8') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               37 + (13 - 9) ={' '}
               <input
@@ -155,7 +384,30 @@ const FifthGrade12: React.FC = () => {
           </div>
 
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑨</p>
+            <p className="quizNumber1433">
+              ⑨{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('9') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               96 ÷ (3 ÷ 4) ={' '}
               <input
@@ -167,7 +419,30 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
           <div className="quizCard1 mpijo">
-            <p className="quizNumber1433">⑩</p>
+            <p className="quizNumber1433">
+              ⑩{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('10') ? (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg1221"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="marginTop18">
               72 × (8 ÷ 4) ={' '}
               <input
@@ -180,7 +455,7 @@ const FifthGrade12: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={4} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

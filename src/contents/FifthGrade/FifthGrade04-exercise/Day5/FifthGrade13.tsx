@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg1 from 'src/contents/FifthGrade/fifthImage/4-5-1_1.png';
+import fifthimg2 from 'src/contents/FifthGrade/fifthImage/4-5-1_2.png';
 
 const FifthGrade13: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', '', ''],
     '2': ['', '', ''],
@@ -39,10 +46,50 @@ const FifthGrade13: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade58Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade58Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -50,26 +97,35 @@ const FifthGrade13: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quiz fontSize25">
         <div className="quizNumber125787">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>①&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('1') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">3</div>
             <div className="eaf4512">5</div>
             <div className="eaf4513">7</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <input type="text" className="averageInput" />
               <div className="marginlR10px">×</div>
@@ -79,37 +135,61 @@ const FifthGrade13: React.FC = () => {
                 <input type="text" className="averageInput" />
               </div>
               <div className="marginlR10px">=</div>
-              <input type="text" className="averageInput marginRight239" />
+              <input
+                value={answers['1'][0]}
+                onChange={e => handleChange('1', 0, e.target.value)}
+                type="text"
+                className="averageInput marginRight239"
+              />
 
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['1'][1]}
+                  onChange={e => handleChange('1', 1, e.target.value)}
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  value={answers['1'][2]}
+                  onChange={e => handleChange('1', 2, e.target.value)}
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>②&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('2') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">2</div>
             <div className="eaf4512">6</div>
             <div className="eaf4513">5</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />
             <div className="flexRow marginLeft3121">
               <input type="text" className="averageInput" />
               <div className="marginlR10px">×</div>
@@ -119,37 +199,61 @@ const FifthGrade13: React.FC = () => {
                 <input type="text" className="averageInput" />
               </div>
               <div className="marginlR10px">=</div>
-              <input type="text" className="averageInput marginRight239" />
+              <input
+                value={answers['2'][0]}
+                onChange={e => handleChange('2', 0, e.target.value)}
+                type="text"
+                className="averageInput marginRight239"
+              />
 
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['2'][1]}
+                  onChange={e => handleChange('2', 1, e.target.value)}
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  value={answers['2'][2]}
+                  onChange={e => handleChange('2', 2, e.target.value)}
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>③&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('3') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">9</div>
             <div className="eaf4512">4</div>
             <div className="eaf4513">8</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <input type="text" className="averageInput" />
               <div className="marginlR10px">×</div>
@@ -159,43 +263,63 @@ const FifthGrade13: React.FC = () => {
                 <input type="text" className="averageInput" />
               </div>
               <div className="marginlR10px">=</div>
-              <input type="text" className="averageInput marginRight239" />
+              <input
+                value={answers['3'][0]}
+                onChange={e => handleChange('3', 0, e.target.value)}
+                type="text"
+                className="averageInput marginRight239"
+              />
 
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  value={answers['3'][2]}
+                  onChange={e => handleChange('3', 2, e.target.value)}
+                  className="averageInput"
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>④&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('4') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">3</div>
             <div className="eaf4512">5</div>
             <div className="eaf4513">7</div>
             <div className="eaf4514">8</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />
+            <img className="imgawer" src={fifthimg2} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
@@ -210,40 +334,55 @@ const FifthGrade13: React.FC = () => {
               </div>
               <div className="marginlR10px">=</div>
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['4'][0]}
+                  onChange={e => handleChange('4', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['4'][1]}
+                  onChange={e => handleChange('4', 1, e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>⑤&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('5') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">2</div>
             <div className="eaf4512">3</div>
             <div className="eaf4513">4</div>
             <div className="eaf4514">6</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
@@ -258,40 +397,55 @@ const FifthGrade13: React.FC = () => {
               </div>
               <div className="marginlR10px">=</div>
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['5'][0]}
+                  onChange={e => handleChange('5', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['5'][1]}
+                  onChange={e => handleChange('5', 1, e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>⑥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('6') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">2</div>
             <div className="eaf4512">4</div>
             <div className="eaf4513">6</div>
             <div className="eaf4514">7</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_2.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />{' '}
+            <img className="imgawer" src={fifthimg2} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
@@ -306,40 +460,55 @@ const FifthGrade13: React.FC = () => {
               </div>
               <div className="marginlR10px">=</div>
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['6'][0]}
+                  onChange={e => handleChange('6', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['6'][1]}
+                  onChange={e => handleChange('6', 1, e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>{' '}
         <div className="quizNumber123887">
-          <div className="flexRow wef213">
+          <div className="flexRow wef213 afwe3513">
             <p>⑦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            {showResults && (
+              <div>
+                {isCorrect('7') ? (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg53"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
             <div className="eaf4511">1</div>
             <div className="eaf4512">5</div>
             <div className="eaf4513">8</div>
             <div className="eaf4514">9</div>
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />{' '}
-            <img
-              className="imgawer"
-              src={`${process.env.PUBLIC_URL}/fifthImage/4-5-1_1.png`}
-              alt=""
-            />
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />{' '}
+            <img className="imgawer" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="quiz121Ex flexCol">
                 <input type="text" className="averageInput" />
@@ -354,15 +523,25 @@ const FifthGrade13: React.FC = () => {
               </div>
               <div className="marginlR10px">=</div>
               <div className="quiz121Ex">
-                <input type="text" className="averageInput" />
+                <input
+                  value={answers['7'][0]}
+                  onChange={e => handleChange('7', 0, e.target.value)}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="divlineCSS15"></div>
-                <input type="text" className="averageInput" />
+                <input
+                  type="text"
+                  className="averageInput"
+                  value={answers['7'][1]}
+                  onChange={e => handleChange('7', 1, e.target.value)}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={5} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={5} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

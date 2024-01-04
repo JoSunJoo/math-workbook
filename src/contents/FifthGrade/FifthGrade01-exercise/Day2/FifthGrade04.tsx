@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg from 'src/contents/FifthGrade/fifthImage/1-2-1_1.png';
+import fifthimg2 from 'src/contents/FifthGrade/fifthImage/1-2-1_2.png';
 
 const FifthGrade04: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', '', ''],
     '2': ['', '', ''],
@@ -37,10 +44,50 @@ const FifthGrade04: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade04Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade04Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -61,11 +108,7 @@ const FifthGrade04: React.FC = () => {
                   </div>
                   <div className="marginLeft7">12</div>
                   <div className="marginLeft8">18</div>
-                  <img
-                    className="img1211"
-                    src={`${process.env.PUBLIC_URL}/fifthImage/1-2-1_1.png`}
-                    alt=""
-                  />
+                  <img className="img1211" src={fifthimg} alt="" />
                 </div>
                 <div className="quiz121Ex">
                   <div className="flexrow">
@@ -73,11 +116,7 @@ const FifthGrade04: React.FC = () => {
                   </div>
                   <div className="marginLeft10">11</div>
                   <div className="marginLeft11">6</div>
-                  <img
-                    className="img1212"
-                    src={`${process.env.PUBLIC_URL}/fifthImage/1-2-1_2.png`}
-                    alt=""
-                  />
+                  <img className="img1212" src={fifthimg2} alt="" />
                 </div>
                 <p className="explain2">
                   두 식을 비교해보면 ( )가 있을 때와 없을 때 계산 순서가 달라서
@@ -92,7 +131,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">①</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ①{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('1') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     23 - (16 - 3) ={' '}
                     <input
                       type="text"
@@ -122,7 +184,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">②</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ②{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('2') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     14 + (32 - 7) ={' '}
                     <input
                       type="text"
@@ -152,7 +237,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">③</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ③{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('3') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     103 - (35 + 26) ={' '}
                     <input
                       type="text"
@@ -182,7 +290,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">④</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ④{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('4') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     89 - (54 - 38) ={' '}
                     <input
                       type="text"
@@ -212,7 +343,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">⑤</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ⑤{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('5') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     127 - (65 + 36) ={' '}
                     <input
                       type="text"
@@ -242,7 +396,30 @@ const FifthGrade04: React.FC = () => {
               <div className="lineStyleCss">
                 <div className="flexrow">
                   <div className="flexRow">
-                    <p className="quizNumber1211 quizMargin1131">⑥</p>
+                    <p className="quizNumber1211 quizMargin1131">
+                      ⑥{' '}
+                      {showResults && (
+                        <div>
+                          {isCorrect('6') ? (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={correctimg}
+                                alt="Correct"
+                              />
+                            </div>
+                          ) : (
+                            <div>
+                              <img
+                                className="answerImg101"
+                                src={incorrectimg}
+                                alt="Incorrect"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </p>
                     71 + (15 + 27) ={' '}
                     <input
                       type="text"
@@ -271,7 +448,7 @@ const FifthGrade04: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={2} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

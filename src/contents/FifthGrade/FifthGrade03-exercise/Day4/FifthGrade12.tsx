@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade12: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -35,17 +40,74 @@ const FifthGrade12: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade42Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade42Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="fontSize25 flexCol">
-        <div className="flexRow marginTop231">
+        <div className="flexRow marginTop231 afwe3513">
+          {showResults && (
+            <div>
+              {isCorrect('1') ? (
+                <div>
+                  <img className="answerImg62" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg62"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           ①&nbsp;&nbsp; 분모가 40보다 크고 50보다 작은 분수 중에서
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">3</div>
@@ -64,7 +126,24 @@ const FifthGrade12: React.FC = () => {
           />{' '}
           &nbsp;개
         </div>
-        <div className="flexRow marginTop231">
+        <div className="flexRow marginTop231 afwe3513">
+          {showResults && (
+            <div>
+              {isCorrect('2') ? (
+                <div>
+                  <img className="answerImg62" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg62"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           ②&nbsp;&nbsp; 분모가 60보다 크고 90보다 작은 분수 중에서
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">5</div>
@@ -83,7 +162,24 @@ const FifthGrade12: React.FC = () => {
           />{' '}
           &nbsp;개
         </div>
-        <div className="flexRow marginTop231">
+        <div className="flexRow marginTop231 afwe3513">
+          {showResults && (
+            <div>
+              {isCorrect('3') ? (
+                <div>
+                  <img className="answerImg62" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg62"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           ③&nbsp;&nbsp; 분모가 30보다 크고 40보다 작은 분수 중에서
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">1</div>
@@ -102,7 +198,24 @@ const FifthGrade12: React.FC = () => {
           />{' '}
           &nbsp;개
         </div>
-        <div className="flexRow marginTop231">
+        <div className="flexRow marginTop231 afwe3513">
+          {showResults && (
+            <div>
+              {isCorrect('4') ? (
+                <div>
+                  <img className="answerImg62" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg62"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           ④&nbsp;&nbsp; 분모가 50보다 크고 60보다 작은 분수 중에서
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">1</div>
@@ -121,7 +234,24 @@ const FifthGrade12: React.FC = () => {
           />{' '}
           &nbsp;개
         </div>
-        <div className="flexRow marginTop231">
+        <div className="flexRow marginTop231 afwe3513">
+          {showResults && (
+            <div>
+              {isCorrect('5') ? (
+                <div>
+                  <img className="answerImg62" src={correctimg} alt="Correct" />
+                </div>
+              ) : (
+                <div>
+                  <img
+                    className="answerImg62"
+                    src={incorrectimg}
+                    alt="Incorrect"
+                  />
+                </div>
+              )}
+            </div>
+          )}{' '}
           ⑤&nbsp;&nbsp; 분모가 20보다 크고 60보다 작은 분수 중에서
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">7</div>
@@ -141,7 +271,7 @@ const FifthGrade12: React.FC = () => {
           &nbsp;개
         </div>
       </div>
-      <ConfirmBtn type={true} day={4} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

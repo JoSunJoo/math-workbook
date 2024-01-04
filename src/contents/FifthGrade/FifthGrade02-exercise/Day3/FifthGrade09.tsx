@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
+import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade09: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -47,10 +53,50 @@ const FifthGrade09: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade24Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade24Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -67,7 +113,7 @@ const FifthGrade09: React.FC = () => {
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231 quizMargin1422"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <div className="borderColor233 Red233">30</div>
@@ -82,11 +128,32 @@ const FifthGrade09: React.FC = () => {
             <div className="flexcol">
               <p className="quizNumber1231">
                 ① 30보다 작은 4의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('1') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -102,11 +169,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ② 37보다 큰 5의 배수 중 가장 작은 수
+                {showResults && (
+                  <div>
+                    {isCorrect('2') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -122,11 +210,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ③ 48보다 작은 6의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('3') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -142,11 +251,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ④ 55보다 큰 11의 배수 중 가장 작은 수
+                {showResults && (
+                  <div>
+                    {isCorrect('4') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -162,11 +292,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑤ 70보다 작은 16의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('5') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -182,11 +333,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑥ 70보다 큰 14의 배수 중 가장 작은 수
+                {showResults && (
+                  <div>
+                    {isCorrect('6') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -202,11 +374,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑦ 90보다 작은 20의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('7') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -222,11 +415,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑧ 80보다 큰 30의 배수 중 가장 작은 수
+                {showResults && (
+                  <div>
+                    {isCorrect('8') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -242,11 +456,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑨ 100보다 작은 19의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('9') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -262,11 +497,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑩ 70보다 큰 36의 배수 중 가장 작은 수
+                {showResults && (
+                  <div>
+                    {isCorrect('10') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -282,11 +538,32 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑪ 140보다 작은 35의 배수 중 가장 큰 수
+                {showResults && (
+                  <div>
+                    {isCorrect('11') ? (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={correctimg}
+                          alt="Correct"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          className="answerImg45"
+                          src={incorrectimg}
+                          alt="Incorrect"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}{' '}
               </p>
               <div className="flexRow">
                 <img
                   className="allowRight marginRight231"
-                  src={`${process.env.PUBLIC_URL}/fifthImage/화살표.png`}
+                  src={fifthimg}
                   alt=""
                 />
                 <input
@@ -300,7 +577,7 @@ const FifthGrade09: React.FC = () => {
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={3} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={3} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

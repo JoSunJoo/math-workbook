@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade03: React.FC = () => {
-  const [showResult, setShowResult] = useState(false);
+  const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
     '2': [''],
@@ -45,10 +50,50 @@ const FifthGrade03: React.FC = () => {
       (answer, index) => answer === answers[questionId][index]
     );
   };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
 
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
   const handleGrade = () => {
     setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
   };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade18Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade18Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
+  }, [answers]);
   useEffect(() => {
     setShowResults(false);
   }, [answers]);
@@ -58,7 +103,28 @@ const FifthGrade03: React.FC = () => {
         <div className="quiz1 quizMargin3 fontSize25">
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">4</span>
+              <span className="posiAbAb">4</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('1') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -74,11 +140,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">6</span>
+              <span className="posiAbAb">6</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('2') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -94,11 +181,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">9</span>
+              <span className="posiAbAb">9</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('3') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -114,11 +222,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">13</span>
+              <span className="posiAbAb">13</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('4') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -134,11 +263,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">18</span>
+              <span className="posiAbAb">18</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('5') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -154,11 +304,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">27</span>
+              <span className="posiAbAb">27</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('6') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">2</div>
@@ -174,11 +345,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">36</span>
+              <span className="posiAbAb">36</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('7') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">1</div>
@@ -194,11 +386,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">45</span>
+              <span className="posiAbAb">45</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('8') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">3</div>
@@ -214,11 +427,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">51</span>
+              <span className="posiAbAb">51</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('9') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">2</div>
@@ -234,11 +468,32 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
           <div className="flexCol marginbottom666">
             <div className="quiz2131 add2131">
-              <span className="posiAbAb">63</span>
+              <span className="posiAbAb">63</span>{' '}
+              {showResults && (
+                <div>
+                  {isCorrect('10') ? (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg33 asfwae"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
             <div className="flexRow marginTop213">
               <div className="quiz2131">2</div>
@@ -254,11 +509,11 @@ const FifthGrade03: React.FC = () => {
               className="averageInput marginbottom666"
               type="text"
               placeholder=""
-            />
+            />{' '}
           </div>
         </div>
       </div>
-      <ConfirmBtn type={true} day={1} handleGrade={handleGrade} />
+      <ConfirmBtn type={type} day={1} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };
