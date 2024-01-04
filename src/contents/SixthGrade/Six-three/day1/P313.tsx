@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { sendScore } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { calculateTruePercentage } from '../../utils/ture-percentage';
 import C313 from './C313';
 
 import FirstImg from '../../assets/image/P313/3-1-3_1.png';
@@ -24,9 +26,13 @@ export default function P313() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
     setIsSolved(prev => !prev);
+    const score = calculateTruePercentage(passArray);
+    sendScore({ score }).catch(err => {
+      console.error('send score failed', err);
+    });
   };
+
   return (
     <Layout
       day="day1"

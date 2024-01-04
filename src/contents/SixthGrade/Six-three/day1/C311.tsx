@@ -54,7 +54,7 @@ export default function C311(props: C311Props) {
               {leftItem} ÷ {rightItem} =
             </Typography>
             <TextUnderBar
-              width="4rem"
+              width="3rem"
               value={firstInput ? firstInput : ''}
               onChange={e => setFirstInput(e.target.value)}
             />
@@ -73,7 +73,7 @@ export default function C311(props: C311Props) {
               {leftItem}는 {rightItem}의
             </Typography>
             <TextUnderBar
-              width="4rem"
+              width="3rem"
               value={secondInput ? secondInput : ''}
               onChange={e => setSecondInput(e.target.value)}
             />
@@ -81,7 +81,7 @@ export default function C311(props: C311Props) {
               배, {rightItem}는 {leftItem}의
             </Typography>
             <TextUnderBar
-              width="4rem"
+              width="3rem"
               value={thirdInput ? thirdInput : ''}
               onChange={e => setThirdInput(e.target.value)}
             />
