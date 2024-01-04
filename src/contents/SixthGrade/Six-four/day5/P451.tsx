@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { sendScore } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { calculateTruePercentage } from '../../utils/ture-percentage';
 import C451 from './C451';
 
 import Img from '../../assets/image/P451/img.png';
@@ -23,8 +25,11 @@ export default function P451() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
     setIsSolved(prev => !prev);
+    const score = calculateTruePercentage(passArray);
+    sendScore({ score }).catch(err => {
+      console.error('send score failed', err);
+    });
   };
 
   return (

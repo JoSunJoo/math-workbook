@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { sendScore } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { calculateTruePercentage } from '../../utils/ture-percentage';
 import C321 from './C321';
 
 import ImgExample from '../../assets/image/P321/ImgExample.png';
@@ -26,9 +28,13 @@ export default function P321() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
     setIsSolved(prev => !prev);
+    const score = calculateTruePercentage(passArray);
+    sendScore({ score }).catch(err => {
+      console.error('send score failed', err);
+    });
   };
+
   return (
     <Layout day="day2" title="비" question={'□에 알맞은 수를 써넣으세요.'}>
       <Avatar

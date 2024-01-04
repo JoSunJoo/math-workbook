@@ -44,7 +44,7 @@ export default function C323(props: C323Props) {
             src={imgSrc}
             variant="square"
             style={{
-              width: 'max-content',
+              width: '10rem',
               height: 'max-content',
             }}
           />
