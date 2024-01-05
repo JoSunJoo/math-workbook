@@ -57,7 +57,7 @@ export default function P432() {
 
       <SubmitButton
         onClick={checkAnswer}
-        mycolor="#FF7613"
+        myColor="#FF7613"
         isSolved={isSolved}
       />
     </Layout>

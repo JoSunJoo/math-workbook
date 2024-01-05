@@ -3,6 +3,8 @@ import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C113 from './C112';
 
 export default function P112() {
@@ -18,11 +20,14 @@ export default function P112() {
       return newPassArray;
     });
   };
+
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
-
   return (
     <Layout
       title="자연수 나눗셈의 몫과 분수"
@@ -59,7 +64,7 @@ export default function P112() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          mycolor="#FF6291"
+          myColor="#FF6291"
           isSolved={isSolved}
         />
       </Box>

@@ -59,7 +59,7 @@ export default function P233() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          mycolor="#FF7613"
+          myColor="#FF7613"
           isSolved={isSolved}
         />
       </Box>

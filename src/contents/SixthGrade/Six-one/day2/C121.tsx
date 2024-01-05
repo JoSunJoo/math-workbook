@@ -47,7 +47,7 @@ export default function C121(props: C121Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [lSon, rSon, aSon, aMom, qId]);
 
   return (
     <Box

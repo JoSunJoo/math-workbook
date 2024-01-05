@@ -35,7 +35,7 @@ export default function C111(props: C111Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [son, mother, qId]);
 
   return (
     <Box position="relative" minHeight="10rem">

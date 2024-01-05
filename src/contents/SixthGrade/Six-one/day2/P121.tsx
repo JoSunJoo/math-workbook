@@ -4,6 +4,8 @@ import { Box } from '@mui/material';
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C121 from './C121';
 
 import e121Image from 'src/contents/SixthGrade/assets/image/P121/e_1-2-1.png';
@@ -22,7 +24,10 @@ export default function Page13() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
 
@@ -65,7 +70,7 @@ export default function Page13() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          mycolor="#6297FF"
+          myColor="#6297FF"
           isSolved={isSolved}
         />
       </Box>
@@ -77,8 +82,8 @@ const divisionProblems = [
   {
     qId: 0,
     qNum: '①',
-    mom: 8,
-    son: 9,
+    mom: 9,
+    son: 8,
     num: 4,
     rMom: 9,
     answer: [8, 4, 2, 9],
@@ -87,8 +92,8 @@ const divisionProblems = [
   {
     qId: 1,
     qNum: '②',
-    mom: 5,
-    son: 6,
+    mom: 6,
+    son: 5,
     num: 5,
     rMom: 6,
     answer: [5, 5, 1, 6],
@@ -97,7 +102,7 @@ const divisionProblems = [
   {
     qId: 2,
     qNum: '③',
-    mom: 5,
+    mom: 7,
     son: 6,
     num: 3,
     rMom: 7,

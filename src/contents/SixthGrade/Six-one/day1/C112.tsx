@@ -45,7 +45,7 @@ export default function C113(props: C113Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [mother, son, num1, num2, qId]);
 
   return (
     <>

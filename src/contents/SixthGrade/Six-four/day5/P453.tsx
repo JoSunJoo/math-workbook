@@ -57,7 +57,7 @@ export default function P453() {
 
       <SubmitButton
         onClick={checkAnswer}
-        mycolor="#00B76A"
+        myColor="#00B76A"
         isSolved={isSolved}
       />
     </Layout>

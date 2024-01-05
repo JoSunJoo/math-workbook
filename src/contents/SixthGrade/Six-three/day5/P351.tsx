@@ -69,7 +69,7 @@ export default function P351() {
 
       <SubmitButton
         onClick={checkAnswer}
-        mycolor="#00B76A"
+        myColor="#00B76A"
         isSolved={isSolved}
       />
     </Layout>
