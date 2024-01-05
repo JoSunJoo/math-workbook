@@ -33,7 +33,7 @@ export default function C113(props: C113Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [son, mother, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" alignItems="center" position="relative">
