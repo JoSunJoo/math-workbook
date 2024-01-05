@@ -23,14 +23,14 @@ export default function C253(props: C253Props) {
   const [enter, setEnter] = useState<string | number>('');
 
   useEffect(() => {
-    if (enter == answer) {
+    if (enter === answer) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, qId]);
 
   return (
     <Box

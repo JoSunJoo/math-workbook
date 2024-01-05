@@ -3,6 +3,8 @@ import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C253 from './C253';
 
 export default function P253() {
@@ -20,9 +22,13 @@ export default function P253() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="연산 퍼즐"

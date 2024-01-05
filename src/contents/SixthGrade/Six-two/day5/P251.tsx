@@ -6,6 +6,8 @@ import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C251 from './C251';
 
 export default function P251() {
@@ -23,13 +25,17 @@ export default function P251() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="연산퍼즐"
-      question={'몫이 같은 알파벳을 입력하십시오.'}
+      question={'몫이 같은 숫자를 입력하십시오.'}
       day="day5"
     >
       <Box display="flex" flexDirection="column" alignItems="center">

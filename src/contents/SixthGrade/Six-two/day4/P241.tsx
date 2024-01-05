@@ -31,6 +31,7 @@ export default function P241() {
     }
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="소수를 분수로 고치기"

@@ -31,7 +31,7 @@ export default function C252(props: C253Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, qId]);
 
   return (
     <Box
