@@ -41,7 +41,7 @@ export default function C141(props: C141Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [aMom, aSon, qId]);
 
   return (
     <Box
