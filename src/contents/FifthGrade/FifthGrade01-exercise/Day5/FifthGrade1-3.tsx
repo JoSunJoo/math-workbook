@@ -1,31 +1,16 @@
-import { DataFifth153 as QuizData } from '../../Data/Book1';
-// import { useEffect, useState } from 'react';
 import DayLayout from '../../Layout/Day5';
-import Styled from '../../style';
-import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubWay, FifthGrade1Day5 } from '../../utils/handleTitle';
-import SingleQuiz from './Single5-3';
+import { FifthGrade4Day53 } from '../../utils/handleTitle';
+import FifthGrade15 from './FifthGrade15';
 
-import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
-
-const FifthGrade53Exercise = () => {
+const FifthGrade13Exercise: React.FC = () => {
   return (
-    <DayLayout title={FifthGrade1Day5.title} subTitle={SubWay}>
-      <Styled.PaddingBox>
-        <Styled.ColGapBox gap={2.4}>
-          {QuizData.map((item: QuizProps, idx) => (
-            <SingleQuiz
-              key={idx}
-              id={item.id}
-              quiz1={item.quiz1}
-              typing={item.typing}
-            />
-          ))}
-        </Styled.ColGapBox>
-      </Styled.PaddingBox>
-      <ConfirmBtn type={true} day={5} />
+    <DayLayout
+      title={FifthGrade4Day53.title}
+      subTitle={FifthGrade4Day53.subTitle}
+    >
+      <FifthGrade15 />
     </DayLayout>
   );
 };
 
-export default FifthGrade53Exercise;
+export default FifthGrade13Exercise;

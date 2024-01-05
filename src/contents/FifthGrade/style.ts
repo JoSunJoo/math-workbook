@@ -732,7 +732,7 @@ const Styled = {
       position: relative;
     }
     .quiz1 {
-      min-width: 800px;
+      min-width: 900px;
       position: relative;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -801,6 +801,9 @@ const Styled = {
       justify-content: center;
       margin-top: 50px;
     }
+    .afwef515 {
+      grid-row-gap: 50px;
+    }
     .abposweewr1 {
       position: absolute;
       left: -10px;
@@ -808,6 +811,9 @@ const Styled = {
     }
     .barfaww {
       margin-bottom: 60px;
+    }
+    .barfaw77w {
+      margin-bottom: 220px;
     }
     .abposweewr2 {
       position: absolute;
@@ -837,7 +843,7 @@ const Styled = {
     }
     .box31145 {
       padding-right: 10px;
-      height: 420px;
+      height: 450px;
     }
     .quiz1211 {
       position: relative;
@@ -846,7 +852,7 @@ const Styled = {
       align-content: center;
       justify-content: center;
       min-width: 770px;
-      margin-top: 50px;
+      margin-top: 0px;
     }
     .quiz2111 {
       min-width: 770px;
@@ -858,7 +864,7 @@ const Styled = {
       margin-top: 50px;
     }
     .afwea {
-      min-width: 880px;
+      min-width: 900px;
       grid-template-columns: 45% 45%;
     }
     .quiz3111 {
@@ -881,6 +887,7 @@ const Styled = {
     }
     .quiz3429 {
       grid-template-columns: 35% 35%;
+      min-width: 1200px;
     }
     .quiz2 {
       position: relative;
@@ -898,7 +905,12 @@ const Styled = {
       align-content: center;
       justify-content: center;
       margin-top: 50px;
-      min-width: 770px;
+      width: 1150px;
+    }
+    .qwe3929398 {
+      min-width: 1150px;
+      max-width: 1150px;
+      margin-left: 5%;
     }
     .quiz333 {
       position: relative;
@@ -951,7 +963,7 @@ const Styled = {
     }
     .absolSetting121 {
       width: 98%;
-      padding: 73px 23px;
+      padding: 73px 23px 20px;
       border: 1px solid #e9e9e9;
       position: relative;
       border-radius: 10px;
@@ -959,6 +971,7 @@ const Styled = {
       flex-direction: column;
       justify-content: center;
       margin: 3%;
+      margin-bottom: 0px;
       white-space: nowrap;
     }
     .quizCard p {
@@ -1374,8 +1387,20 @@ const Styled = {
     .marginTop231 {
       margin-top: 35px;
     }
+    .fawef3532 {
+      position: relative;
+    }
     .marginleft2421 {
       margin-left: 25px;
+    }
+    .marginleft24299 {
+      margin-left: 12px;
+    }
+    .lakwerfj {
+      margin-top: -30px;
+    }
+    .lakwerfj3214 {
+      margin-top: -10px;
     }
     .marginLeftZero {
       margin-left: -17px;
@@ -1386,6 +1411,9 @@ const Styled = {
     }
     .marginRight231 {
       margin-right: 20px;
+    }
+    .marginRight239 {
+      margin-right: 8px;
     }
     .borderColor233 {
       width: 72px;
@@ -1907,6 +1935,7 @@ const Styled = {
       height: 60px;
       font-size: 25px;
       padding-inline-start: 7px;
+      text-align: center;
     }
 
     .imgInput1 {
@@ -1957,7 +1986,7 @@ const Styled = {
       margin-bottom: 18px;
     }
     .number3113 {
-      margin: -80% 10px 0;
+      margin: -90% 10px 0;
     }
     .imgSize3115 {
       width: 60%;
@@ -2074,6 +2103,10 @@ const Styled = {
     }
     .imgSize3111 {
       width: 80%;
+      padding: 15px;
+    }
+    .imgSize311777 {
+      width: 70%;
       padding: 15px;
     }
     .imgawer {
@@ -2242,7 +2275,7 @@ const Styled = {
       position: absolute;
       transform: rotate(-90deg);
       top: 30%;
-      left: 420px;
+      left: 105px;
     }
 
     .d-line123:before,
@@ -2266,7 +2299,7 @@ const Styled = {
       transform: rotate(0deg);
     }
     .line12222 {
-      left: 400px;
+      left: 105px;
     }
     .line13222 {
       left: 100px;
@@ -2393,9 +2426,13 @@ const Styled = {
     }
     .posiAbAb {
       transform: rotate(-45deg);
+      white-space: nowrap;
       display: block;
       font-size: 25px;
       font-weight: bold;
+    }
+    .asfwae {
+      transform: rotate(-45deg);
     }
     .fontSize17 {
       font-size: 17px;
@@ -2462,7 +2499,7 @@ const Styled = {
     }
     .gagprajgw {
       gap: 60px 0px;
-      height: 850px;
+      height: auto;
     }
     .asfw {
       min-width: 367px;
@@ -2597,6 +2634,274 @@ const Styled = {
     .eaf4517 {
       position: absolute;
       left: 325px;
+    }
+    .answerImg1 {
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg11 {
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg1221 {
+      position: absolute;
+      top: 0.5rem;
+      left: 3rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
+    .answerImg2 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg22 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -3rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg23 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg3 {
+      position: absolute;
+      top: 77px;
+      right: 161px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg33 {
+      position: absolute;
+      z-index: 5;
+      top: 7rem;
+      left: 7rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg4 {
+      position: absolute;
+      top: 224px;
+      right: 307px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg44 {
+      position: absolute;
+      z-index: 5;
+      top: 4rem;
+      left: 6.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg104 {
+      position: absolute;
+      z-index: 5;
+      top: 0rem;
+      left: -1.2rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg45 {
+      position: absolute;
+      z-index: 5;
+      top: 2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .afwe3513 {
+      position: relative;
+    }
+    .answerImg46 {
+      position: absolute;
+      z-index: 5;
+      top: 2.5rem;
+      left: 0rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg101 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 3rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg181 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 0rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg47 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 1.2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg50 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -1rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg71 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg52 {
+      position: absolute;
+      z-index: 5;
+      top: -2rem;
+      left: -4rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg80 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -12rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg81 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -20rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg62 {
+      position: absolute;
+      z-index: 5;
+      top: -1.7rem;
+      left: -1.7rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg53 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -1.5rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .answerImg51 {
+      position: absolute;
+      z-index: 5;
+      top: -1rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg13 {
+      position: absolute;
+      z-index: 5;
+      top: -0.5rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg14 {
+      position: absolute;
+      z-index: 5;
+      top: 1.5rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg48 {
+      position: absolute;
+      z-index: 5;
+      top: 1rem;
+      left: 2rem;
+      width: 5rem;
+      height: 7rem;
+    }
+
+    .answerImg5 {
+      position: absolute;
+      top: 367px;
+      right: 17px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg55 {
+      position: absolute;
+      z-index: 5;
+      top: 0rem;
+      left: -1rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg6 {
+      position: absolute;
+      top: 513px;
+      right: 172px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg7 {
+      position: absolute;
+      top: 660px;
+      right: 462px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg8 {
+      position: absolute;
+      top: 659px;
+      right: 18px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg9 {
+      position: absolute;
+      top: 803px;
+      right: 598px;
+      width: 3rem;
+      height: 3rem;
+    }
+    .answerImg10 {
+      position: absolute;
+      top: 803px;
+      right: 308px;
+      width: 3rem;
+      height: 3rem;
     }
   `,
 };

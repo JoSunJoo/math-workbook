@@ -27,14 +27,10 @@ const Single21 = (props: DataProps) => {
     value[idx][12] = e;
     setInputValue(value);
     setToggle(!toggle);
-    console.log(value);
   };
   useEffect(() => {
     setToggle(data => data);
     setInputValue(data => data);
-    console.log('correct');
-    console.log(correct);
-    console.log('인식!');
   }, [toggle, inputValue]);
 
   return (

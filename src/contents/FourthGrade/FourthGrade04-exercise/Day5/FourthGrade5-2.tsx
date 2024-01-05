@@ -24,16 +24,16 @@ const FourthGrade52Exercise = () => {
     try {
       getKeyValue({ key })
         .then(res => {
-          console.log(res);
+          // console.log(res);
           if (res !== null) {
             setInputValue(res);
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 

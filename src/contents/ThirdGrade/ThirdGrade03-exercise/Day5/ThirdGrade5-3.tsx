@@ -37,10 +37,10 @@ const ThirdGrade53Exercise: React.FC = () => {
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 
@@ -57,10 +57,6 @@ const ThirdGrade53Exercise: React.FC = () => {
     setInputValue(value);
     setToggle(!toggle);
   };
-  useEffect(() => {
-    console.log('CheckArray');
-    console.log(inputValue);
-  }, [inputValue]);
   return (
     <DayLayout
       title={ThirdGrade3Day5.title}

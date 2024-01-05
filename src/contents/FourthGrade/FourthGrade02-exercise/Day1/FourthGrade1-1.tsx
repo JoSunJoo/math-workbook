@@ -28,10 +28,10 @@ const FourthGrade11Exercise: React.FC = () => {
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 

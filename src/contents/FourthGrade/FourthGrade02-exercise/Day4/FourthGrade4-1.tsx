@@ -23,16 +23,16 @@ const FourthGrade41Exercise = () => {
     try {
       getKeyValue({ key })
         .then(res => {
-          console.log(res);
+          // console.log(res);
           if (res !== null) {
             setInputValue(res);
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 
@@ -55,10 +55,6 @@ const FourthGrade41Exercise = () => {
           handleAnswer({ key, inputValue, answer, setScore, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
-          console.log('answer');
-          console.log(answer);
-          console.log('inputValue');
-          console.log(inputValue);
         }}
       >
         <ConfirmBtn type={confirmType} day={4} />

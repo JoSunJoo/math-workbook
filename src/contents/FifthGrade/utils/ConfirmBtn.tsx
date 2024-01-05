@@ -5,16 +5,22 @@ import { handleColor } from './handleColor';
 interface Props {
   type: boolean;
   day: number;
+  handleGrade: () => void;
 }
+
 const ConfirmBtn = (props: Props) => {
-  const { type, day } = props;
+  const { type, day, handleGrade } = props;
   const color = handleColor('title', day);
   return (
     <ButtonWrappr>
       {type ? (
-        <ConfirmBox color={color}>제출하기</ConfirmBox>
+        <ConfirmBox color={color} onClick={handleGrade}>
+          제출하기
+        </ConfirmBox>
       ) : (
-        <RetryButton color={color}>다시풀기</RetryButton>
+        <RetryButton color={color} onClick={handleGrade}>
+          다시풀기
+        </RetryButton>
       )}
     </ButtonWrappr>
   );

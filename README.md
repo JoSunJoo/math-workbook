@@ -183,8 +183,7 @@ const routes = createEliceExtRoutes([
     const value = await getKeyValue({
       key: 'quiz01.answer',
     });
-
-    console.log(value); // "엘리스"
+    // "엘리스"
 
     // 혹은 다음과 같이 키의 일부만 입력하여 해당 키의 하위 키들을 모두 불러올 수 있습니다.
     // 구분자는 항상 '.'(dot)으로 작성되어야 합니다.
@@ -193,7 +192,7 @@ const routes = createEliceExtRoutes([
       key: 'quiz01',
     });
 
-    console.log(value); // { answer: "엘리스" }
+    // { answer: "엘리스" }
     ```
 
 ## FAQ

@@ -1,13 +1,127 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade06: React.FC = () => {
+  const [type, setType] = useState(true);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': [''],
+    '2': [''],
+    '3': [''],
+    '4': [''],
+    '5': [''],
+    '6': [''],
+    '7': [''],
+    '8': [''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['3'],
+    '2': ['3'],
+    '3': ['3'],
+    '4': ['3'],
+    '5': ['4'],
+    '6': ['2'],
+    '7': ['4'],
+    '8': ['3'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
+
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
+  const handleGrade = () => {
+    setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
+  };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade21Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges();
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade21Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges();
+  }, [answers]);
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
         <div className="quiz">
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">①</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ①
+              {showResults && (
+                <div>
+                  {isCorrect('1') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>12</div>
               <div>28</div>
@@ -18,10 +132,39 @@ const FifthGrade06: React.FC = () => {
               <div>8</div>
               <div>37</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['1'][0]}
+              onChange={e => handleChange('1', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">②</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ②
+              {showResults && (
+                <div>
+                  {isCorrect('2') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>6</div>
               <div>23</div>
@@ -32,10 +175,39 @@ const FifthGrade06: React.FC = () => {
               <div>97</div>
               <div>66</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['2'][0]}
+              onChange={e => handleChange('2', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">③</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ③
+              {showResults && (
+                <div>
+                  {isCorrect('3') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>50</div>
               <div>53</div>
@@ -46,10 +218,39 @@ const FifthGrade06: React.FC = () => {
               <div>27</div>
               <div>11</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['3'][0]}
+              onChange={e => handleChange('3', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">④</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ④
+              {showResults && (
+                <div>
+                  {isCorrect('4') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>35</div>
               <div>29</div>
@@ -60,10 +261,39 @@ const FifthGrade06: React.FC = () => {
               <div>80</div>
               <div>24</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['4'][0]}
+              onChange={e => handleChange('4', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">⑤</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ⑤
+              {showResults && (
+                <div>
+                  {isCorrect('5') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>71</div>
               <div>25</div>
@@ -74,10 +304,39 @@ const FifthGrade06: React.FC = () => {
               <div>32</div>
               <div>47</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['5'][0]}
+              onChange={e => handleChange('5', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">⑥</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ⑥
+              {showResults && (
+                <div>
+                  {isCorrect('6') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>13</div>
               <div>30</div>
@@ -88,10 +347,39 @@ const FifthGrade06: React.FC = () => {
               <div>4</div>
               <div>58</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['6'][0]}
+              onChange={e => handleChange('6', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">⑦</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ⑦
+              {showResults && (
+                <div>
+                  {isCorrect('7') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>26</div>
               <div>89</div>
@@ -102,10 +390,39 @@ const FifthGrade06: React.FC = () => {
               <div>7</div>
               <div>64</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['7'][0]}
+              onChange={e => handleChange('7', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
           <div className="quizCard223 flexRow">
-            <p className="quizNumber1433 marginleft2231">⑧</p>
+            <p className="quizNumber1433 marginleft2231 afwe3513">
+              ⑧
+              {showResults && (
+                <div>
+                  {isCorrect('8') ? (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={correctimg}
+                        alt="Correct"
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <img
+                        className="answerImg104"
+                        src={incorrectimg}
+                        alt="Incorrect"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+            </p>
             <div className="fifthGrade223Grid">
               <div>52</div>
               <div>43</div>
@@ -116,10 +433,17 @@ const FifthGrade06: React.FC = () => {
               <div>49</div>
               <div>10</div>
             </div>
-            <input className="fifthGrade223Input" type="text" />개
+            <input
+              value={answers['8'][0]}
+              onChange={e => handleChange('8', 0, e.target.value)}
+              className="fifthGrade223Input"
+              type="text"
+            />
+            개
           </div>
         </div>
       </div>
+      <ConfirmBtn type={type} day={2} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };

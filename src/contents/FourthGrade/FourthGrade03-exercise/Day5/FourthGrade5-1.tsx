@@ -21,6 +21,22 @@ const FourthGrade51Exercise = () => {
     Array.from(Array(14), () => new Array(1))
   );
   const key = 'fourth351.answer';
+  useEffect(() => {
+    try {
+      getKeyValue({ key })
+        .then(res => {
+          if (res !== null) {
+            setInputValue(res);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>

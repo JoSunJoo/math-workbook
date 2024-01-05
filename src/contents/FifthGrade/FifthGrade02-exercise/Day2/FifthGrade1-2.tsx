@@ -13,7 +13,6 @@ const FifthGrade12Exercise: React.FC = () => {
       <Styled.RowWrapBox10>
         <FifthGrade05 />
       </Styled.RowWrapBox10>
-      <ConfirmBtn type={true} day={2} />
     </DayLayout>
   );
 };

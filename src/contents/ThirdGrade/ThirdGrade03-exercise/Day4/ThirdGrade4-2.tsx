@@ -29,10 +29,10 @@ const ThirdGrade41Exercise = () => {
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 

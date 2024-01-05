@@ -119,7 +119,7 @@ export const FifthGrade2Day13 = {
 
 export const FifthGrade2Day21 = {
   title: '약수가 2개인 수',
-  subTitle: '약수의 개수를 빈칸에 써넣으세요.',
+  subTitle: '주어진 수 중 약수의 갯수를 구하세요.',
 };
 
 export const FifthGrade2Day22 = {
@@ -132,7 +132,8 @@ export const FifthGrade2Day31 = {
 };
 export const FifthGrade2Day32 = {
   title: '배수',
-  subTitle: '큰 마름모 수의 배수의 갯수를 쓰세요',
+  subTitle:
+    '주어진 수 중 큰 마름모 안에 주어진 수의 배수에 해당하는 수의 갯수를 써넣으세요.',
 };
 export const FifthGrade2Day33 = {
   title: '배수',
@@ -201,8 +202,7 @@ export const FifthGrade3Day33 = {
 };
 export const FifthGrade3Day41 = {
   title: '연산 퍼즐',
-  subTitle:
-    '전체에서 색칠된 부분을 분수로 나타낸 것입니다. 빈칸에 알맞은 수를 써넣으세요.',
+  subTitle: '◇ 안의 분수와 크기가 같은 분수를 찾아 갯수를 적으세요',
 };
 export const FifthGrade3Day42 = {
   title: '연산 퍼즐',

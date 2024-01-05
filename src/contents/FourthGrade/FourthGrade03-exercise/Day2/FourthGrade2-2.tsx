@@ -9,7 +9,6 @@ import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade3Day2 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single2-2';
 
-// import type { Data22QuizProps as QuizProps } from '../../Type/Type3';
 const FourthGrade22Exercise = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
@@ -23,16 +22,16 @@ const FourthGrade22Exercise = () => {
     try {
       getKeyValue({ key })
         .then(res => {
-          console.log(res);
+          // console.log(res);
           if (res !== null) {
             setInputValue(res);
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
   const idxArray = [

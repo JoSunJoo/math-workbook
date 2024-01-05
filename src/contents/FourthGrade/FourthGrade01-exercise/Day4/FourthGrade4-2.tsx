@@ -30,10 +30,10 @@ const FourthGrade42Exercise = () => {
           }
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
 
@@ -61,8 +61,6 @@ const FourthGrade42Exercise = () => {
           handleAnswer({ key, inputValue, answer, setScore, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
-          console.log('inputValue');
-          console.log(inputValue);
         }}
       >
         <ConfirmBtn type={confirmType} day={4} />

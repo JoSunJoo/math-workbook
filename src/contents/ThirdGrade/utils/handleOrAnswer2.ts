@@ -51,7 +51,7 @@ export const handleOrAnswer = (props: Props) => {
   });
   postDataUtil(key, inputValue)
     .then(response => {
-      console.log('Success:', response);
+      // console.log('Success:', response);
     })
     .catch(error => {
       console.error('Error:', error);
@@ -65,7 +65,7 @@ export const handleScore = (score: number, len: number) => {
 export const postDataUtil = async (key: any, value: any) => {
   try {
     const response = await postKeyValue({ key, value });
-    console.log('Success:', response);
+    // console.log('Success:', response);
   } catch (error) {
     console.error('Error:', error);
   }

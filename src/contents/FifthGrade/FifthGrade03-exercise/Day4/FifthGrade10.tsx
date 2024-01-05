@@ -1,7 +1,96 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+import type { AnswersType } from '../../Type/Type1';
+import { sendScore } from '@elice/extcontent-apis';
+import { postKeyValue } from '@elice/extcontent-apis';
+import { getKeyValue } from '@elice/extcontent-apis';
+import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
+import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade10: React.FC = () => {
+  const [type, setType] = useState(true);
+  const [answers, setAnswers] = useState<AnswersType>({
+    '1': [''],
+    '2': [''],
+    '3': [''],
+    '4': [''],
+    '5': [''],
+    '6': [''],
+    '7': [''],
+  });
+  const correctAnswers: AnswersType = {
+    '1': ['3'],
+    '2': ['2'],
+    '3': ['3'],
+    '4': ['3'],
+    '5': ['2'],
+    '6': ['2'],
+    '7': ['1'],
+  };
+  const handleChange = (questionId: string, index: number, value: string) => {
+    setAnswers({
+      ...answers,
+      [questionId]: answers[questionId].map((item, i) =>
+        i === index ? value : item
+      ),
+    });
+  };
+
+  const [showResults, setShowResults] = useState(false);
+
+  const isCorrect = (questionId: string) => {
+    return correctAnswers[questionId].every(
+      (answer, index) => answer === answers[questionId][index]
+    );
+  };
+  const calculateScore = () => {
+    const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
+    const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
+
+    let correctCount = 0;
+    Object.keys(correctAnswers).forEach(questionId => {
+      if (isCorrect(questionId)) {
+        correctCount++;
+      }
+    });
+
+    return correctCount * scorePerQuestion; // 총점 계산
+  };
+  const handleGrade = () => {
+    setShowResults(true);
+    setType(false);
+    const totalScore = calculateScore();
+    sendScore({ score: totalScore });
+  };
+  useEffect(() => {
+    const loadChanges = async () => {
+      try {
+        const savedAnswers = await getKeyValue({ key: 'fifthGrade40Answers' });
+        if (savedAnswers) {
+          setAnswers(savedAnswers);
+        }
+      } catch (error) {
+        console.error('Error loading saved answers:', error);
+      }
+    };
+
+    loadChanges();
+  }, []);
+  useEffect(() => {
+    // answers 상태가 변경될 때마다 실행
+    const saveChanges = async () => {
+      await postKeyValue({
+        key: 'fifthGrade40Answers',
+        value: answers,
+      });
+    };
+
+    saveChanges();
+  }, [answers]);
+  useEffect(() => {
+    setShowResults(false);
+  }, [answers]);
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizCard11 fontSize25 flexCol gagprajgw">
@@ -40,8 +129,34 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">120</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['1'][0]}
+              onChange={e => handleChange('1', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('1') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
@@ -79,8 +194,34 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">72</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['2'][0]}
+              onChange={e => handleChange('2', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('2') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
@@ -118,8 +259,34 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">120</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['3'][0]}
+              onChange={e => handleChange('3', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('3') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
@@ -157,8 +324,34 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">150</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['4'][0]}
+              onChange={e => handleChange('4', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('4') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
@@ -196,15 +389,41 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">140</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['5'][0]}
+              onChange={e => handleChange('5', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('5') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
           <div className="add2131 sqerqrmairign cororo">
             <div className="posiAbAb">
               <div className="textCenter heieeiei341">24</div>
-              <div className="divlineCSS1"></div>
+              <div className="divlineCSS7"></div>
               <div className="textCenter heiwerlin">80</div>
             </div>
           </div>
@@ -235,15 +454,41 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">180</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['6'][0]}
+              onChange={e => handleChange('6', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('6') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
         <div className="flexRow">
           <div className="add2131 sqerqrmairign cororo">
             <div className="posiAbAb">
               <div className="textCenter heieeiei341">25</div>
-              <div className="divlineCSS1"></div>
+              <div className="divlineCSS7"></div>
               <div className="textCenter heiwerlin">60</div>
             </div>
           </div>
@@ -274,11 +519,38 @@ const FifthGrade10: React.FC = () => {
               <div className="textCenter">120</div>
             </div>
           </div>
-          <div>
-            <input type="text" className="averageInput" />
+          <div className="afwe3513">
+            <input
+              value={answers['7'][0]}
+              onChange={e => handleChange('7', 0, e.target.value)}
+              type="text"
+              className="averageInput"
+            />{' '}
+            {showResults && (
+              <div>
+                {isCorrect('7') ? (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={correctimg}
+                      alt="Correct"
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      className="answerImg51"
+                      src={incorrectimg}
+                      alt="Incorrect"
+                    />
+                  </div>
+                )}
+              </div>
+            )}{' '}
           </div>
         </div>
       </div>
+      <ConfirmBtn type={type} day={4} handleGrade={handleGrade} />
     </Styled.OneToNine>
   );
 };
