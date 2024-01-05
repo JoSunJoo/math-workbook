@@ -4,16 +4,18 @@ import styled from '@emotion/styled';
 interface NumberUnderBarProps {
   value: string | number;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled: boolean;
 }
 
 export function NumberUnderBar(props: NumberUnderBarProps) {
-  const { value, onChange } = props;
+  const { value, onChange, disabled } = props;
   return (
     <UnderBar
       type="number"
       inputMode="numeric"
       value={value}
       onChange={onChange}
+      disabled={disabled}
     />
   );
 }

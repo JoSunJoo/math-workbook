@@ -78,6 +78,7 @@ export default function C313(props: C313Props) {
                   width="2.5rem"
                   value={a1}
                   onChange={e => setA1(e.target.value)}
+                  disabled={isSolved}
                 />
               </Box>
               <Box
@@ -89,6 +90,7 @@ export default function C313(props: C313Props) {
                   width="2.5rem"
                   value={a2}
                   onChange={e => setA2(e.target.value)}
+                  disabled={isSolved}
                 />
               </Box>
               <Box
@@ -100,6 +102,7 @@ export default function C313(props: C313Props) {
                   width="2.5rem"
                   value={a3}
                   onChange={e => setA3(e.target.value)}
+                  disabled={isSolved}
                 />
               </Box>
               <Box
@@ -111,6 +114,7 @@ export default function C313(props: C313Props) {
                   width="2.5rem"
                   value={a4}
                   onChange={e => setA4(e.target.value)}
+                  disabled={isSolved}
                 />
               </Box>
               <Box
@@ -122,6 +126,7 @@ export default function C313(props: C313Props) {
                   width="2.5rem"
                   value={a5}
                   onChange={e => setA5(e.target.value)}
+                  disabled={isSolved}
                 />
               </Box>
             </Box>
@@ -136,6 +141,7 @@ export default function C313(props: C313Props) {
                   width="4rem"
                   value={a6 ? a6 : ''}
                   onChange={e => setA6(e.target.value)}
+                  disabled={isSolved}
                 />
                 <Typography variant="h5" fontWeight={600}>
                   배예요.
@@ -151,6 +157,7 @@ export default function C313(props: C313Props) {
                   width="4rem"
                   value={a7 ? a7 : ''}
                   onChange={e => setA7(e.target.value)}
+                  disabled={isSolved}
                 />
                 <Typography variant="h5" fontWeight={600}>
                   배예요.

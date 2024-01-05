@@ -144,6 +144,7 @@ export default function C343(props: C343Props) {
                 width="3rem"
                 value={input ? input : ''}
                 onChange={e => setInput(e.target.value)}
+                disabled={isSolved}
               />
               배
             </Typography>

@@ -63,6 +63,7 @@ export default function C443(props: C443Props) {
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
                   bgColor="#fde3e6"
+                  disabled={isSolved}
                 />
               ) : (
                 numList[0]
@@ -85,6 +86,7 @@ export default function C443(props: C443Props) {
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
                   bgColor="#fde3e6"
+                  disabled={isSolved}
                 />
               ) : (
                 numList[1]
@@ -107,6 +109,7 @@ export default function C443(props: C443Props) {
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
                   bgColor="#fde3e6"
+                  disabled={isSolved}
                 />
               ) : (
                 numList[2]
@@ -129,6 +132,7 @@ export default function C443(props: C443Props) {
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
                   bgColor="#fde3e6"
+                  disabled={isSolved}
                 />
               ) : (
                 numList[3]

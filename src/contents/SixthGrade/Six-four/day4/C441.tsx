@@ -69,6 +69,7 @@ export default function C441(props: C441Props) {
               onChange={e => {
                 setInput1(Number(e.target.value));
               }}
+              disabled={isSolved}
             />
             {qId % 2 === 0 ? '×' : '÷'} {numList2[1]}
             {') = '}
@@ -78,6 +79,7 @@ export default function C441(props: C441Props) {
               onChange={e => {
                 setInput2(Number(e.target.value));
               }}
+              disabled={isSolved}
             />
           </Typography>
         </Box>

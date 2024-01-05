@@ -133,6 +133,7 @@ export default function C432(props: C432Props) {
                     onChange={e => setInput2(Number(e.target.value))}
                     width="4rem"
                     bgColor="#daecf6"
+                    disabled={isSolved}
                   />
                 </Typography>
               </Typography>

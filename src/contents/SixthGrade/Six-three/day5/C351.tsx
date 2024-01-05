@@ -86,6 +86,7 @@ export default function C351(props: C351Props) {
                 onChange={e => {
                   setFirstMom(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
               :
               <NumberInput
@@ -93,6 +94,7 @@ export default function C351(props: C351Props) {
                 onChange={e => {
                   setFirstSon(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             </Box>
             <Box display="flex" gap="0.3rem" alignItems="center">
@@ -113,6 +115,7 @@ export default function C351(props: C351Props) {
                 onChange={e => {
                   setSecondMom(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
               :
               <NumberInput
@@ -120,6 +123,7 @@ export default function C351(props: C351Props) {
                 onChange={e => {
                   setSecondSon(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             </Box>
           </Box>

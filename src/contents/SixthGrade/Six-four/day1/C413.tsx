@@ -71,6 +71,7 @@ export default function C413(props: C413Props) {
               onChange={e => {
                 setInput1(Number(e.target.value));
               }}
+              disabled={isSolved}
             />
             <Avatar
               src={ArrowBottomLeft}
@@ -152,6 +153,7 @@ export default function C413(props: C413Props) {
                       onChange={e => {
                         setInput3(Number(e.target.value));
                       }}
+                      disabled={isSolved}
                     />
                   </Typography>
                 )}
@@ -189,6 +191,7 @@ export default function C413(props: C413Props) {
                       onChange={e => {
                         setInput3(Number(e.target.value));
                       }}
+                      disabled={isSolved}
                     />
                   </Typography>
                 )}
@@ -227,6 +230,7 @@ export default function C413(props: C413Props) {
                       onChange={e => {
                         setInput3(Number(e.target.value));
                       }}
+                      disabled={isSolved}
                     />
                   </Typography>
                 )}
@@ -249,6 +253,7 @@ export default function C413(props: C413Props) {
               onChange={e => {
                 setInput2(Number(e.target.value));
               }}
+              disabled={isSolved}
             />
           </Box>
           <Box
@@ -279,6 +284,7 @@ export default function C413(props: C413Props) {
                   onChange={e => {
                     setInput4(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
               <Typography variant="h4" fontWeight={600}>
@@ -295,6 +301,7 @@ export default function C413(props: C413Props) {
                   onChange={e => {
                     setInput4(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
               <Typography variant="h4" fontWeight={600}>
@@ -311,6 +318,7 @@ export default function C413(props: C413Props) {
                   onChange={e => {
                     setInput4(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
               <Typography variant="h4" fontWeight={600}>
@@ -327,6 +335,7 @@ export default function C413(props: C413Props) {
                   onChange={e => {
                     setInput4(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
             </Box>

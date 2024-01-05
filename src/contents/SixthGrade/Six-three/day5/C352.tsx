@@ -61,6 +61,7 @@ export default function C352(props: C352Props) {
                 onChange={e => {
                   setInput1(e.target.value);
                 }}
+                disabled={isSolved}
               />
             </Box>
             <Box
@@ -82,6 +83,7 @@ export default function C352(props: C352Props) {
                 onChange={e => {
                   setInput2(e.target.value);
                 }}
+                disabled={isSolved}
               />
             </Box>
           </Box>

@@ -124,6 +124,7 @@ export default function C342(props: C342Props) {
                 width="4rem"
                 value={firstInput ? firstInput : ''}
                 onChange={e => setFirstInput(e.target.value)}
+                disabled={isSolved}
               />
               배,
               <Avatar
@@ -150,6 +151,7 @@ export default function C342(props: C342Props) {
                 width="4rem"
                 value={secondInput ? secondInput : ''}
                 onChange={e => setSecondInput(e.target.value)}
+                disabled={isSolved}
               />
               배
             </Typography>

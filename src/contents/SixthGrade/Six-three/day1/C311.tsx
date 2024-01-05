@@ -64,6 +64,7 @@ export default function C311(props: C311Props) {
               width="3rem"
               value={firstInput ? firstInput : ''}
               onChange={e => setFirstInput(e.target.value)}
+              disabled={isSolved}
             />
           </Box>
           <Box display="flex" marginLeft="-2.5rem">
@@ -83,6 +84,7 @@ export default function C311(props: C311Props) {
               width="3rem"
               value={secondInput ? secondInput : ''}
               onChange={e => setSecondInput(e.target.value)}
+              disabled={isSolved}
             />
             <Typography variant="h5" fontWeight={600}>
               배, {rightItem}는 {leftItem}의
@@ -91,6 +93,7 @@ export default function C311(props: C311Props) {
               width="3rem"
               value={thirdInput ? thirdInput : ''}
               onChange={e => setThirdInput(e.target.value)}
+              disabled={isSolved}
             />
             <Typography variant="h5" fontWeight={600}>
               배

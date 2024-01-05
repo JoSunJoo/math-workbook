@@ -146,6 +146,7 @@ export default function C431(props: C431Props) {
                 onChange={e => {
                   setInput1(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
               :
               <NumberInput
@@ -153,6 +154,7 @@ export default function C431(props: C431Props) {
                 onChange={e => {
                   setInput2(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             </Typography>
           </Box>

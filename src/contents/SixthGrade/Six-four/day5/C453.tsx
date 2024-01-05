@@ -185,16 +185,19 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input1}
                       onChange={e => setInput1(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     <NumberInput
                       value={input2}
                       onChange={e => setInput2(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input3}
                       onChange={e => setInput3(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                   <Box display="flex" gap="0.5rem">
@@ -203,16 +206,19 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input4}
                       onChange={e => setInput4(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     <NumberInput
                       value={input5}
                       onChange={e => setInput5(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input6}
                       onChange={e => setInput6(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                 </Box>
@@ -222,6 +228,7 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input1}
                       onChange={e => setInput1(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     {num}
@@ -229,17 +236,20 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input2}
                       onChange={e => setInput2(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input3}
                       onChange={e => setInput3(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                   <Box display="flex" gap="0.5rem">
                     <NumberInput
                       value={input4}
                       onChange={e => setInput4(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     {num}
@@ -247,11 +257,13 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input5}
                       onChange={e => setInput5(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input6}
                       onChange={e => setInput6(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                 </Box>
@@ -261,12 +273,14 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input1}
                       onChange={e => setInput1(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
 
                     <NumberInput
                       value={input2}
                       onChange={e => setInput2(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     {num}
@@ -276,18 +290,21 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input3}
                       onChange={e => setInput3(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                   <Box display="flex" gap="0.5rem">
                     <NumberInput
                       value={input4}
                       onChange={e => setInput4(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
 
                     <NumberInput
                       value={input5}
                       onChange={e => setInput5(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     {num}
@@ -297,6 +314,7 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input6}
                       onChange={e => setInput6(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                   </Box>
                 </Box>
@@ -306,16 +324,19 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input1}
                       onChange={e => setInput1(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input2}
                       onChange={e => setInput2(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     <NumberInput
                       value={input3}
                       onChange={e => setInput3(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     {num}
@@ -324,16 +345,19 @@ export default function C453(props: C453Props) {
                     <NumberInput
                       value={input4}
                       onChange={e => setInput4(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     <NumberInput
                       value={input5}
                       onChange={e => setInput5(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' = '}
                     <NumberInput
                       value={input6}
                       onChange={e => setInput6(Number(e.target.value))}
+                      disabled={isSolved}
                     />
                     {' : '}
                     {num}

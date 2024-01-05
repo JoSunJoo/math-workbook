@@ -5,12 +5,19 @@ interface NumberUnderBarProps {
   width?: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled: boolean;
 }
 
 export function TextUnderBar(props: NumberUnderBarProps) {
-  const { value, onChange, width } = props;
+  const { value, onChange, width, disabled } = props;
   return (
-    <UnderBar width={width} type="text" value={value} onChange={onChange} />
+    <UnderBar
+      width={width}
+      type="text"
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+    />
   );
 }
 

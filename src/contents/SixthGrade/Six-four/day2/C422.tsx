@@ -72,6 +72,7 @@ export default function C422(props: C422Props) {
             onChange={e => {
               setInput1(Number(e.target.value));
             }}
+            disabled={isSolved}
           />
           <Avatar
             src={ArrowRight}
@@ -98,6 +99,7 @@ export default function C422(props: C422Props) {
             onChange={e => {
               setInput2(Number(e.target.value));
             }}
+            disabled={isSolved}
           />
 
           <Typography
@@ -115,6 +117,7 @@ export default function C422(props: C422Props) {
             onChange={e => {
               setInput3(Number(e.target.value));
             }}
+            disabled={isSolved}
           />
           <Typography variant="h5" fontWeight={600}>
             {')='}
@@ -124,6 +127,7 @@ export default function C422(props: C422Props) {
             onChange={e => {
               setInput4(Number(e.target.value));
             }}
+            disabled={isSolved}
           />
           <Typography variant="h5" fontWeight={600}>
             :
@@ -133,6 +137,7 @@ export default function C422(props: C422Props) {
             onChange={e => {
               setInput5(Number(e.target.value));
             }}
+            disabled={isSolved}
           />
         </Box>
       </Box>

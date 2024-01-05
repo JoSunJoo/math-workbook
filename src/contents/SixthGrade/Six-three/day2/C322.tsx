@@ -109,6 +109,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a1)}
                             onChange={e => setA1(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             대
@@ -117,6 +118,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a2)}
                             onChange={e => setA2(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                         </Box>
                         <Box display="flex" gap="0.2rem">
@@ -124,6 +126,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a3)}
                             onChange={e => setA3(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한
@@ -132,6 +135,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a4)}
                             onChange={e => setA4(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -142,6 +146,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a5)}
                             onChange={e => setA5(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의
@@ -150,6 +155,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a6)}
                             onChange={e => setA6(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한 비
@@ -160,6 +166,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a7)}
                             onChange={e => setA7(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             와
@@ -168,6 +175,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a8)}
                             onChange={e => setA8(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -194,6 +202,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a1)}
                         onChange={e => setA1(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                       <Typography fontWeight={600} variant="h5">
                         :
@@ -202,6 +211,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a2)}
                         onChange={e => setA2(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                     </Typography>
                     <Box display="flex" alignItems="center">
@@ -223,6 +233,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a3)}
                             onChange={e => setA3(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             대
@@ -231,6 +242,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a4)}
                             onChange={e => setA4(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                         </Box>
                         <Box display="flex" gap="0.2rem">
@@ -243,6 +255,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a5)}
                             onChange={e => setA5(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의
@@ -251,6 +264,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a6)}
                             onChange={e => setA6(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한 비
@@ -261,6 +275,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a7)}
                             onChange={e => setA7(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             와
@@ -269,6 +284,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a8)}
                             onChange={e => setA8(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -295,6 +311,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a1)}
                         onChange={e => setA1(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                       <Typography fontWeight={600} variant="h5">
                         :
@@ -303,6 +320,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a2)}
                         onChange={e => setA2(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                     </Typography>
                     <Box display="flex" alignItems="center">
@@ -324,6 +342,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a3)}
                             onChange={e => setA3(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             대
@@ -332,6 +351,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a4)}
                             onChange={e => setA4(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                         </Box>
                         <Box display="flex" gap="0.2rem">
@@ -339,6 +359,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a5)}
                             onChange={e => setA5(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한
@@ -347,6 +368,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a6)}
                             onChange={e => setA6(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -362,6 +384,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a7)}
                             onChange={e => setA7(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             와
@@ -370,6 +393,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a8)}
                             onChange={e => setA8(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -396,6 +420,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a1)}
                         onChange={e => setA1(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                       <Typography fontWeight={600} variant="h5">
                         :
@@ -404,6 +429,7 @@ export default function C322(props: C321Props) {
                         width={'2rem'}
                         value={Number(a2)}
                         onChange={e => setA2(Number(e.target.value))}
+                        disabled={isSolved}
                       />
                     </Typography>
                     <Box display="flex" alignItems="center">
@@ -425,6 +451,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a3)}
                             onChange={e => setA3(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             대
@@ -433,6 +460,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a4)}
                             onChange={e => setA4(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                         </Box>
                         <Box display="flex" gap="0.2rem">
@@ -440,6 +468,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a5)}
                             onChange={e => setA5(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한
@@ -448,6 +477,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a6)}
                             onChange={e => setA6(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의 비
@@ -458,6 +488,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a7)}
                             onChange={e => setA7(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             의
@@ -466,6 +497,7 @@ export default function C322(props: C321Props) {
                             width={'2rem'}
                             value={Number(a8)}
                             onChange={e => setA8(Number(e.target.value))}
+                            disabled={isSolved}
                           />
                           <Typography fontWeight={600} variant="h5">
                             에 대한 비

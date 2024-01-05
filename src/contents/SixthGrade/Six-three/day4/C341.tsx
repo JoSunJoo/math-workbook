@@ -80,6 +80,7 @@ export default function C341(props: C341Props) {
               width="5rem"
               value={input ? input : ''}
               onChange={e => setInput(e.target.value)}
+              disabled={isSolved}
             />
             <Typography variant="h5" fontWeight={600}>
               배

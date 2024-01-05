@@ -43,6 +43,7 @@ export default function C452(props: C452Props) {
           <NumberInput
             value={input}
             onChange={e => setInput(Number(e.target.value))}
+            disabled={isSolved}
           />
         </Box>
       </Box>

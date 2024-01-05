@@ -51,6 +51,7 @@ export default function C323(props: C323Props) {
           <TextUnderBar
             value={input}
             onChange={e => setInput(e.target.value)}
+            disabled={isSolved}
           />
         </Box>
       </Box>

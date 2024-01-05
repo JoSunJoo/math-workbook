@@ -55,6 +55,7 @@ export default function C442(props: C442Props) {
                 onChange={e => {
                   setInput1(e.target.value);
                 }}
+                disabled={isSolved}
               />
             ) : Array.isArray(num1) ? (
               <VisualFraction momNum={num1[1]} sonNum={num1[0]} />
@@ -69,6 +70,7 @@ export default function C442(props: C442Props) {
                 onChange={e => {
                   setInput1(e.target.value);
                 }}
+                disabled={isSolved}
               />
             ) : Array.isArray(num2) ? (
               <VisualFraction momNum={num2[1]} sonNum={num2[0]} />
@@ -83,6 +85,7 @@ export default function C442(props: C442Props) {
                 onChange={e => {
                   setInput1(e.target.value);
                 }}
+                disabled={isSolved}
               />
             ) : Array.isArray(num3) ? (
               <VisualFraction momNum={num3[1]} sonNum={num3[0]} />
@@ -97,6 +100,7 @@ export default function C442(props: C442Props) {
                 onChange={e => {
                   setInput1(e.target.value);
                 }}
+                disabled={isSolved}
               />
             ) : Array.isArray(num4) ? (
               <VisualFraction momNum={num4[1]} sonNum={num4[0]} />

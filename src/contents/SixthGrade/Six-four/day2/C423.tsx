@@ -84,6 +84,7 @@ export default function C423(props: C423Props) {
               mother={String(input2)}
               onChangeSon={e => setInput1(Number(e.target.value))}
               onChangeMother={e => setInput2(Number(e.target.value))}
+              disabled={isSolved}
             />
             ) : (
             <VisualFraction momNum={numList[3]} sonNum={numList[2]} />
@@ -93,16 +94,19 @@ export default function C423(props: C423Props) {
               mother={String(input4)}
               onChangeSon={e => setInput3(Number(e.target.value))}
               onChangeMother={e => setInput4(Number(e.target.value))}
+              disabled={isSolved}
             />
             ) =
             <NumberInput
               value={String(input5)}
               onChange={e => setInput5(Number(e.target.value))}
+              disabled={isSolved}
             />
             :
             <NumberInput
               value={String(input6)}
               onChange={e => setInput6(Number(e.target.value))}
+              disabled={isSolved}
             />
           </Typography>
         </Box>

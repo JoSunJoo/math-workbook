@@ -62,6 +62,7 @@ export default function C411(props: C411Props) {
                   onChange={e => {
                     setInput1(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
               <UnderBar />
@@ -76,6 +77,7 @@ export default function C411(props: C411Props) {
                   onChange={e => {
                     setInput1(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
             </Box>
@@ -99,6 +101,7 @@ export default function C411(props: C411Props) {
                   onChange={e => {
                     setInput1(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
               <UnderBar />
@@ -113,6 +116,7 @@ export default function C411(props: C411Props) {
                   onChange={e => {
                     setInput1(Number(e.target.value));
                   }}
+                  disabled={isSolved}
                 />
               )}
             </Box>
@@ -138,6 +142,7 @@ export default function C411(props: C411Props) {
                 onChange={e => {
                   setInput2(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             )}
             <Typography variant="h5" fontWeight={600}>
@@ -154,6 +159,7 @@ export default function C411(props: C411Props) {
                 onChange={e => {
                   setInput2(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             )}
             <Typography variant="h5" fontWeight={600}>
@@ -170,6 +176,7 @@ export default function C411(props: C411Props) {
                 onChange={e => {
                   setInput2(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             )}
             <Typography variant="h5" fontWeight={600}>
@@ -186,6 +193,7 @@ export default function C411(props: C411Props) {
                 onChange={e => {
                   setInput2(Number(e.target.value));
                 }}
+                disabled={isSolved}
               />
             )}
           </Box>
