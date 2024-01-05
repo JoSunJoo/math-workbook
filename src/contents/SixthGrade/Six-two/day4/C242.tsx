@@ -32,7 +32,7 @@ export default function C242(props: C242Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [aMom, aSon, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

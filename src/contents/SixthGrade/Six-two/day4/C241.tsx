@@ -28,18 +28,14 @@ export default function C241(props: C241Props) {
   const [aNature, setANature] = useState<number | string>('');
 
   useEffect(() => {
-    if (aMom === momNum && aSon === sonNum) {
+    if (aMom === momNum && aSon === sonNum && aNature === nature) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
-      if (aNature === nature) {
-        setIsCorrect(true);
-        handleCorrectChange(qId, true);
-      }
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [aMom, aSon, aNature, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
