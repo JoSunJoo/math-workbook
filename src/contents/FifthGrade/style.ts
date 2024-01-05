@@ -2643,6 +2643,14 @@ const Styled = {
       height: 7rem;
       z-index: 5;
     }
+    .answerImg999 {
+      position: absolute;
+      top: 1rem;
+      left: 0rem;
+      width: 5rem;
+      height: 7rem;
+      z-index: 5;
+    }
     .answerImg11 {
       position: absolute;
       top: 0.5rem;

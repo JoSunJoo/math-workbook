@@ -1,5 +1,4 @@
 import DayLayout from '../../Layout/Day2';
-import ConfirmBtn from '../../utils/ConfirmBtn';
 import { FifthGrade2Day22 } from '../../utils/handleTitle';
 import FifthGrade06 from './FifthGrade06';
 

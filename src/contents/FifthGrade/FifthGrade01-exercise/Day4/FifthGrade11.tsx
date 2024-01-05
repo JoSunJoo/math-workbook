@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Styled from '../../style';
-import type { AnswersType } from '../../Type/Type1';
+import React, { useState } from 'react';
 import { sendScore } from '@elice/extcontent-apis';
 import { postKeyValue } from '@elice/extcontent-apis';
 import { getKeyValue } from '@elice/extcontent-apis';
+
+import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+
+import type { AnswersType } from '../../Type/Type1';
+
 import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
@@ -59,40 +62,34 @@ const FifthGrade11: React.FC = () => {
 
     return correctCount * scorePerQuestion; // 총점 계산
   };
-  const handleGrade = () => {
+  const handleGrade = async () => {
     setShowResults(true);
     setType(false);
     const totalScore = calculateScore();
-    sendScore({ score: totalScore });
+    sendScore({ score: totalScore }).catch(error => {
+      console.error('Error with sendScore:', error);
+    });
+    postKeyValue({
+      key: 'fifthGrade11Answers',
+      value: answers,
+    }).catch(error => {
+      console.error('Error saving answers:', error);
+    });
   };
-  useEffect(() => {
-    const loadChanges = async () => {
-      try {
-        const savedAnswers = await getKeyValue({ key: 'fifthGrade11Answers' });
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  if (!isDataLoaded) {
+    getKeyValue({ key: 'fifthGrade11Answers' })
+      .then(savedAnswers => {
         if (savedAnswers) {
           setAnswers(savedAnswers);
         }
-      } catch (error) {
+        setIsDataLoaded(true);
+      })
+      .catch(error => {
         console.error('Error loading saved answers:', error);
-      }
-    };
-
-    loadChanges().catch(error => console.error('Failed to save changes:', error));
-  }, []);
-  useEffect(() => {
-    // answers 상태가 변경될 때마다 실행
-    const saveChanges = async () => {
-      await postKeyValue({
-        key: 'fifthGrade11Answers',
-        value: answers,
       });
-    };
-
-    saveChanges().catch(error => console.error('Failed to save changes:', error));
-  }, [answers]);
-  useEffect(() => {
-    setShowResults(false);
-  }, [answers]);
+  }
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
