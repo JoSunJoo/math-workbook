@@ -76,7 +76,7 @@ const FifthGrade14: React.FC = () => {
       }
     };
 
-    loadChanges();
+    loadChanges().catch(error => console.error('Failed to save changes:', error));
   }, []);
   useEffect(() => {
     // answers 상태가 변경될 때마다 실행
@@ -87,7 +87,7 @@ const FifthGrade14: React.FC = () => {
       });
     };
 
-    saveChanges();
+    saveChanges().catch(error => console.error('Failed to save changes:', error));
   }, [answers]);
   useEffect(() => {
     setShowResults(false);

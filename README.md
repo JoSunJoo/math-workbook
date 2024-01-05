@@ -183,7 +183,8 @@ const routes = createEliceExtRoutes([
     const value = await getKeyValue({
       key: 'quiz01.answer',
     });
-    // "엘리스"
+
+    console.log(value); // "엘리스"
 
     // 혹은 다음과 같이 키의 일부만 입력하여 해당 키의 하위 키들을 모두 불러올 수 있습니다.
     // 구분자는 항상 '.'(dot)으로 작성되어야 합니다.
@@ -192,8 +193,40 @@ const routes = createEliceExtRoutes([
       key: 'quiz01',
     });
 
-    // { answer: "엘리스" }
+    console.log(value); // { answer: "엘리스" }
     ```
+
+## 엘리스에 개발 파일 전달 전 체크사항
+1. `yarn lint` 명령어를 실행하여 lint 오류가 없는지 확인합니다.   
+* lint 오류가 있으면 수정합니다.    
+
+    ❌ Bad   
+    ![Bad](.gitlab/images/readme-lint-error.png)
+
+    ✅ Good   
+    ![Good](.gitlab/images/readme-lint-success.png)
+
+2. `yarn build` 명령어를 실행하여 빌드가 정상적으로 되는지 확인합니다.
+
+3. src/contents 폴더명은 유니크한 이름으로 변경합니다.
+* 엘리스에서 지정한 이름을 사용하여 Root 폴더명을 변경합니다.
+* **Root 폴더명**만 kebab-case(케밥 케이스)로 작성합니다.
+
+    ```
+    // 엘리스에서 지정한 이름: my-quiz
+
+    src
+    ├── contents
+    │   ├── my-quiz
+    │   └── {example}
+    ```
+4. 실습 주소는 작업한 Root 폴더명(엘리스에서 지정한 이름)으로 시작합니다.
+    ```
+    - 엘리스에서 지정한 이름: my-quiz
+    - 작업한 실습: my-quiz/.../quiz01
+    - 실습 주소: http://localhost:8000/my-quiz/.../quiz01
+    ```
+
 
 ## FAQ
 

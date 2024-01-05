@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Styled from '../../style';
-import ConfirmBtn from '../../utils/ConfirmBtn';
-import type { AnswersType } from '../../Type/Type1';
+import React, { useEffect, useState } from 'react';
 import { sendScore } from '@elice/extcontent-apis';
 import { postKeyValue } from '@elice/extcontent-apis';
 import { getKeyValue } from '@elice/extcontent-apis';
+
+import Styled from '../../style';
+import ConfirmBtn from '../../utils/ConfirmBtn';
+
+import type { AnswersType } from '../../Type/Type1';
+
 import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
@@ -57,7 +60,9 @@ const FifthGrade12: React.FC = () => {
     setShowResults(true);
     setType(false);
     const totalScore = calculateScore();
-    sendScore({ score: totalScore });
+    sendScore({ score: totalScore }).catch(err => {
+      console.error('send score failed', err);
+    });
   };
   useEffect(() => {
     const loadChanges = async () => {
@@ -71,7 +76,9 @@ const FifthGrade12: React.FC = () => {
       }
     };
 
-    loadChanges();
+    loadChanges().catch(error =>
+      console.error('Failed to save changes:', error)
+    );
   }, []);
   useEffect(() => {
     // answers 상태가 변경될 때마다 실행
@@ -82,7 +89,9 @@ const FifthGrade12: React.FC = () => {
       });
     };
 
-    saveChanges();
+    saveChanges().catch(error =>
+      console.error('Failed to save changes:', error)
+    );
   }, [answers]);
   useEffect(() => {
     setShowResults(false);
