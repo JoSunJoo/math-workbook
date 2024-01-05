@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import Styled from '../../style';
 import IdSymbol from '../../utils/IdSymbol';
 import Matrix from '../../utils/Matrix';
@@ -26,10 +24,6 @@ const Single22 = (props: DataProps) => {
     setInputValue(value);
     setToggle(!toggle);
   };
-  useEffect(() => {
-    setToggle(data => data);
-    setInputValue(data => data);
-  }, [toggle, inputValue]);
 
   return (
     <Styled.SingleWrapper>

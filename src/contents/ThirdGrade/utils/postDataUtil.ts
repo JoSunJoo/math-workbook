@@ -14,10 +14,11 @@ import { postKeyValue } from '@elice/extcontent-apis';
 // };
 
 export const postDataUtil = async (key: any, value: any) => {
-  try {
-    const response = await postKeyValue({ key, value });
-    // console.log('Success:', response);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  postKeyValue({ key, value })
+    .then(response => {
+      // console.log('Success:', response);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 };

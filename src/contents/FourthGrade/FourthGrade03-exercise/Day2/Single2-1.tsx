@@ -15,7 +15,6 @@ import img9 from '../../Image/3-2-1_10.png';
 
 const Single21 = (props: Props) => {
   const {
-    id,
     idx,
     toggle,
     setToggle,

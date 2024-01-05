@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getKeyValue } from '@elice/extcontent-apis';
+import { useState } from 'react';
 
 import { Answer12 as answer, Data12Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { SubBlank, ThirdGrade1Day1 } from '../../utils/handleTitle';
 import ExampleQuiz from './Example1-2';
@@ -18,25 +18,12 @@ const ThirdGrade12Exercise = () => {
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(5), () => new Array(4))
   );
-  const [score, setScore] = useState<number>(0);
+  // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
   const key = 'third112.answer';
-  useEffect(() => {
-    try {
-      getKeyValue({ key })
-        .then(res => {
-          // console.log(res);
-          if (res !== null) {
-            setInputValue(res);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  GetData({ setInputValue, key }).catch(error => {
+    console.error('Error:', error);
+  });
   return (
     <DayLayout title={ThirdGrade1Day1.title} subTitle={SubBlank}>
       <Styled.ColGapBox gap={3.75}>
@@ -58,7 +45,7 @@ const ThirdGrade12Exercise = () => {
       </Styled.ColGapBox>
       <div
         onClick={() => {
-          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

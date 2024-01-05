@@ -3,8 +3,6 @@ import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data12QuizProps2 as DataProps } from '../../Type/Type1';
 
-import correctImg from '../../Image/Correct.svg';
-import inCorrectImg from '../../Image/inCorrect.svg';
 const Single13 = (props: DataProps) => {
   const {
     id,

@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getKeyValue } from '@elice/extcontent-apis';
+import { useState } from 'react';
 
 import { Answer13 as answer, Data13Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { GetData } from '../../utils/getData';
 import { handleOrAnswer as handleAnswer } from '../../utils/handleOrAnswer';
 import { FourthGrade3Day1 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single1-3';
@@ -23,29 +23,16 @@ import img8 from '../../Image/3-1-3_8.png';
 const FourthGrade13Exercise: React.FC = () => {
   const imgArray = [img2, img3, img4, img5, img6, img7, img8];
   const [toggle, setToggle] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
+  // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(7), () => new Array(2))
   );
   const key = 'fourth313.answer';
-  useEffect(() => {
-    try {
-      getKeyValue({ key })
-        .then(res => {
-          // console.log(res);
-          if (res !== null) {
-            setInputValue(res);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  GetData({ setInputValue, key }).catch(error => {
+    console.error('Error:', error);
+  });
 
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle2}>
@@ -78,7 +65,6 @@ const FourthGrade13Exercise: React.FC = () => {
             key,
             inputValue,
             answer,
-            setScore,
             setCorrect,
           });
           setToggle(!toggle);

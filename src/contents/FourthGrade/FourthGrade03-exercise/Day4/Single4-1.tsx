@@ -23,7 +23,6 @@ const Single41 = (props: QuizProps) => {
     type,
     imgId,
     quiz1,
-    quiz2,
     idx,
     toggle,
     setToggle,

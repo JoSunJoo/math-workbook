@@ -11,7 +11,6 @@ const Single12 = (props: QuizProps) => {
     setToggle,
     inputValue,
     setInputValue,
-    correct,
   } = props;
 
   const handleInput = (e: string, i: number) => {

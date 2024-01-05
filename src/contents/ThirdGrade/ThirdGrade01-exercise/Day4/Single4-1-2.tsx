@@ -16,7 +16,6 @@ const Single41 = (props: Props) => {
     quiz6,
     quiz7,
     quiz8,
-    type,
     idx,
     toggle,
     setToggle,

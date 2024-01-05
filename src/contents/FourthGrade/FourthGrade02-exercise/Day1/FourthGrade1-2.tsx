@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getKeyValue } from '@elice/extcontent-apis';
+import { useState } from 'react';
 
 import { Answer12 as answer, Data12Quiz as QuizData } from '../../Data/Book2';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade2Day1 as Day } from '../../utils/handleTitle';
 import IdSymbol from '../../utils/IdSymbol';
@@ -13,7 +13,7 @@ import SingleQuiz from './Single1-2';
 import type { Data12QuizProps1 as QuizProps } from '../../Type/Type2';
 const FourthGrade12Exercise: React.FC = () => {
   const [toggle, setToggle] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
+  // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
 
@@ -21,21 +21,9 @@ const FourthGrade12Exercise: React.FC = () => {
     Array.from(Array(4), () => new Array(3))
   );
   const key = 'fourth212.answer';
-  useEffect(() => {
-    try {
-      getKeyValue({ key })
-        .then(res => {
-          if (res !== null) {
-            setInputValue(res);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  GetData({ setInputValue, key }).catch(error => {
+    console.error('Error:', error);
+  });
 
   const handleInput = (idx: number, idx2: number) => {
     const value = inputValue;
@@ -85,7 +73,7 @@ const FourthGrade12Exercise: React.FC = () => {
       </Styled.PaddingBox5>
       <div
         onClick={() => {
-          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

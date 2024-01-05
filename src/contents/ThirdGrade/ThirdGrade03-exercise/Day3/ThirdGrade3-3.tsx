@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { getKeyValue } from '@elice/extcontent-apis';
+import { useState } from 'react';
 
 import { Data33Quiz as QuizData } from '../../Data/Book3';
 import DayLayout from '../../Layout/Day3';
 import Styled from '../../style';
 import SingleQuiz from '../../ThirdGrade02-exercise/Day1/Single1-3';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { SubJustCal, ThirdGrade3Day3 } from '../../utils/handleTitle';
 import makeAnswer from '../../utils/makeAnswer';
@@ -16,7 +16,7 @@ import img from '../../Image/3-3-3.png';
 
 const ThirdGrade33Exercise = () => {
   const [toggle, setToggle] = useState<boolean>(false);
-  const [score, setScore] = useState<number>(0);
+  // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string[][]>(
@@ -24,21 +24,9 @@ const ThirdGrade33Exercise = () => {
   );
   const key = 'third333.answer';
   const answer = makeAnswer({ type: 1, data: QuizData });
-  useEffect(() => {
-    try {
-      getKeyValue({ key })
-        .then(res => {
-          if (res !== null) {
-            setInputValue(res);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  GetData({ setInputValue, key }).catch(error => {
+    console.error('Error:', error);
+  });
 
   return (
     <DayLayout title={ThirdGrade3Day3.title} subTitle={SubJustCal}>
@@ -65,7 +53,7 @@ const ThirdGrade33Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

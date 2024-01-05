@@ -7,16 +7,16 @@ export interface LayoutProps {
 }
 
 export interface AnswerProps {
-  key?: string;
+  key: string;
   inputValue: string[][] | number[][] | (number | null)[][];
   answer: string[][] | number[][] | (number | null)[][];
-  setScore: React.Dispatch<React.SetStateAction<number>>;
+  //   setScore: React.Dispatch<React.SetStateAction<number>>;
   setCorrect: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 export interface AnswerOrProps {
   inputValue: string[][] | number[][];
   answer: string[][] | number[][];
-  setScore: React.Dispatch<React.SetStateAction<number>>;
+  //   setScore: React.Dispatch<React.SetStateAction<number>>;
   setCorrect: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 export interface Data11QuizProps {

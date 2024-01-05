@@ -13,7 +13,6 @@ import img6 from '../../Image/4-4-3_10.png';
 const Single43 = (props: QuizProps) => {
   const {
     id,
-    quiz1,
     unit,
     imgId,
     idx,

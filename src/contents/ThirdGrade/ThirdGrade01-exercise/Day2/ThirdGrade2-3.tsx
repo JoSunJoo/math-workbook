@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getKeyValue } from '@elice/extcontent-apis';
+import { useState } from 'react';
 
 import { Answer23 as answer, Data23Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
+import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { SubJustCal, ThirdGrade1Day2 } from '../../utils/handleTitle';
 import SingleQuiz from '../Day1/Single1-3';
@@ -17,25 +17,12 @@ const ThirdGrade23Exercise = () => {
   const [inputValue, setInputValue] = useState<string[][]>(
     Array.from(Array(14), () => new Array(1))
   );
-  const [score, setScore] = useState<number>(0);
+  // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
   const key = 'third123.answer';
-  useEffect(() => {
-    try {
-      getKeyValue({ key })
-        .then(res => {
-          // console.log(res);
-          if (res !== null) {
-            setInputValue(res);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  GetData({ setInputValue, key }).catch(error => {
+    console.error('Error:', error);
+  });
   return (
     <DayLayout title={ThirdGrade1Day2.title} subTitle={SubJustCal}>
       <Styled.PaddingBox>
@@ -58,7 +45,7 @@ const ThirdGrade23Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({ key, inputValue, answer, setScore, setCorrect });
+          handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
           setConfirmType(false);
         }}

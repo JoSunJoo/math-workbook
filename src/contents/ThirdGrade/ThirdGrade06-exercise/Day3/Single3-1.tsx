@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Styled from '../../style';
 import IdSymbol from '../../utils/IdSymbol';
@@ -48,14 +48,6 @@ const Single31 = (props: QuizProps) => {
     setInputValue(value);
     setToggle(!toggle);
   };
-  useEffect(() => {
-    handleInput(clickedStarIndex.toString(), 1);
-    setToggle(!toggle);
-  }, [clickedStarIndex]);
-  useEffect(() => {
-    handleInput(clickedStarIndex2.toString(), 2);
-    setToggle(!toggle);
-  }, [clickedStarIndex2]);
   return (
     <Styled.ColGapBox gap={1.5}>
       <Styled.TextBox4>
@@ -85,6 +77,8 @@ const Single31 = (props: QuizProps) => {
                 onMouseLeave={() => setHoveredStarIndex(0)}
                 onClick={() => {
                   setClickedStarIndex(num);
+                  handleInput(num.toString(), 1);
+                  setToggle(!toggle);
                 }}
               />
             ))}
@@ -104,6 +98,8 @@ const Single31 = (props: QuizProps) => {
                 onMouseLeave={() => setHoveredStarIndex2(0)}
                 onClick={() => {
                   setClickedStarIndex2(num);
+                  handleInput(num.toString(), 2);
+                  setToggle(!toggle);
                 }}
               />
             ))}

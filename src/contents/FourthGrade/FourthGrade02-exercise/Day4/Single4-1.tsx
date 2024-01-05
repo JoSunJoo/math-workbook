@@ -5,7 +5,7 @@ import type { Data41QuizProps as Props } from '../../Type/Type2';
 import img from '../../Image/2-4-1.png';
 
 const Single41 = (props: Props) => {
-  const { toggle, setToggle, inputValue, setInputValue, correct } = props;
+  const { toggle, setToggle, inputValue, setInputValue } = props;
 
   const handleInput = (e: string, i: number) => {
     const value = inputValue;

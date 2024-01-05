@@ -7,12 +7,12 @@ interface Props {
   key?: string;
   inputValue: string[][];
   answer: string[][];
-  setScore: React.Dispatch<React.SetStateAction<number>>;
+  //   setScore: React.Dispatch<React.SetStateAction<number>>;
   setCorrect: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
 export const handleOrAnswer = (props: Props) => {
-  const { key, inputValue, answer, setScore, setCorrect } = props;
+  const { key, inputValue, answer, setCorrect } = props;
   let score = 0;
   const correct: boolean[] = [];
   const len = inputValue.length;
@@ -44,7 +44,7 @@ export const handleOrAnswer = (props: Props) => {
   }
 
   const totalScore = handleScore(score, len);
-  setScore(totalScore);
+
   setCorrect(correct);
   sendScore({ score: totalScore }).catch(err => {
     console.error('send score failed', err);
@@ -63,10 +63,11 @@ export const handleScore = (score: number, len: number) => {
 };
 
 export const postDataUtil = async (key: any, value: any) => {
-  try {
-    const response = await postKeyValue({ key, value });
-    // console.log('Success:', response);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  postKeyValue({ key, value })
+    .then(response => {
+      // console.log('Success:', response);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 };
