@@ -1,17 +1,16 @@
-import { useState } from 'react';
-import { sendScore } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
-import Layout from 'src/contents/SixthGrade/common/layout';
-import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/ture-percentage';
 import C321 from './C321';
-
 import ImgExample from '../../assets/image/P321/ImgExample.png';
+import Layout from 'src/contents/SixthGrade/common/layout';
 import N1 from '../../assets/image/P321/N1.png';
 import N2 from '../../assets/image/P321/N2.png';
 import N3 from '../../assets/image/P321/N3.png';
 import N4 from '../../assets/image/P321/N4.png';
+import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { useState } from 'react';
 
 export default function P321() {
   const [isSolved, setIsSolved] = useState(false);
@@ -28,11 +27,11 @@ export default function P321() {
   };
 
   const checkAnswer = () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
-    const score = calculateTruePercentage(passArray);
-    sendScore({ score }).catch(err => {
-      console.error('send score failed', err);
-    });
   };
 
   return (

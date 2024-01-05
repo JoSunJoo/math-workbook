@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { sendScore } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/ture-percentage';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C311 from './C311';
 
 export default function P311() {
@@ -23,11 +23,11 @@ export default function P311() {
   };
 
   const checkAnswer = () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
-    const score = calculateTruePercentage(passArray);
-    sendScore({ score }).catch(err => {
-      console.error('send score failed', err);
-    });
   };
 
   return (

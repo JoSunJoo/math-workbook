@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { sendScore } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/ture-percentage';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C352 from './C352';
 
 import Img11 from '../../assets/image/P352/Img1-1.png';
@@ -34,11 +34,11 @@ export default function P352() {
   };
 
   const checkAnswer = () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
-    const score = calculateTruePercentage(passArray);
-    sendScore({ score }).catch(err => {
-      console.error('send score failed', err);
-    });
   };
 
   return (

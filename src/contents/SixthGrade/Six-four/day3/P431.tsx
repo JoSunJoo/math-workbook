@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { sendScore } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
+import C431 from './C431';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/ture-percentage';
-import C431 from './C431';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { useState } from 'react';
 
 export default function P431() {
   const [isSolved, setIsSolved] = useState(false);
@@ -22,11 +22,11 @@ export default function P431() {
   };
 
   const checkAnswer = () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
-    const score = calculateTruePercentage(passArray);
-    sendScore({ score }).catch(err => {
-      console.error('send score failed', err);
-    });
   };
 
   return (
