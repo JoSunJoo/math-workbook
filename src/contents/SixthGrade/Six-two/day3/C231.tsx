@@ -39,7 +39,7 @@ export default function C231(props: C231Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, rSon, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

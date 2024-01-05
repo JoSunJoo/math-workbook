@@ -4,6 +4,8 @@ import { Box } from '@mui/material';
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C231 from './C231';
 
 import e231Image from 'src/contents/SixthGrade/assets/image/P231/2-3-1.png';
@@ -22,9 +24,13 @@ export default function P231() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="분모를 바꾸어 대분수를 소수로 고치기"
@@ -90,9 +96,9 @@ const divisionProblems = [
     natureNum: 4,
     sonNum: 2,
     momNum: 25,
-    rSon: 36,
+    rSon: 8,
     rMom: 100,
-    answer: 4.36,
+    answer: 4.08,
     pass: false,
   },
   {
