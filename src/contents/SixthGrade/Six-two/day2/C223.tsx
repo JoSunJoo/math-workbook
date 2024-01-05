@@ -31,7 +31,7 @@ export default function C223(props: C223Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

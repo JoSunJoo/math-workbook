@@ -52,7 +52,6 @@ export default function C152(props: C152Props) {
   const [answerSonValue, setAnswerSonValue] = useState<string | number>('');
 
   useEffect(() => {
-    // TODO 정답 체크
     if (
       answerMom === answerMomValue &&
       answerSon === answerSonValue &&
