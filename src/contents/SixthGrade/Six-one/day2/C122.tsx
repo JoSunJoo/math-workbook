@@ -46,7 +46,7 @@ export default function C122(props: C122Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [daughter1, daughter2, mother, qId]);
 
   return (
     <Box

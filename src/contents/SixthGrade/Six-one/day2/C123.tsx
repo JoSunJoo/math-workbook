@@ -38,7 +38,7 @@ export default function C123(props: C123Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [answerMom, answerSon, qId]);
 
   return (
     <Box
