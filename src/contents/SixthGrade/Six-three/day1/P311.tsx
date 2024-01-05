@@ -63,7 +63,7 @@ export default function P311() {
 
       <SubmitButton
         onClick={checkAnswer}
-        $color="#FF6291"
+        myColor="#FF6291"
         isSolved={isSolved}
       />
     </Layout>

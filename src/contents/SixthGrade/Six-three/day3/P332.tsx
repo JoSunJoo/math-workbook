@@ -70,7 +70,7 @@ export default function P332() {
 
       <SubmitButton
         onClick={checkAnswer}
-        $color="#FF7613"
+        myColor="#FF7613"
         isSolved={isSolved}
       />
     </Layout>

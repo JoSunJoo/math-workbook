@@ -60,7 +60,7 @@ export default function P443() {
 
       <SubmitButton
         onClick={checkAnswer}
-        $color="#8F6CFF"
+        myColor="#8F6CFF"
         isSolved={isSolved}
       />
     </Layout>

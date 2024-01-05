@@ -75,7 +75,7 @@ export default function P422() {
 
       <SubmitButton
         onClick={checkAnswer}
-        $color="#6297FF"
+        myColor="#6297FF"
         isSolved={isSolved}
       />
     </Layout>
