@@ -50,14 +50,27 @@ export default function C151(props: C151Props) {
   const [answerSonValue, setAnswerSonValue] = useState<string | number>('');
   useEffect(() => {
     // TODO 정답 체크
-    if (true) {
+    if (
+      equationMom === equationMomValue &&
+      equationSon === equationSonValue &&
+      equationDiv === equationDivValue &&
+      answerMom === answerMomValue &&
+      answerSon === answerSonValue
+    ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [
+    equationMomValue,
+    equationSonValue,
+    equationDivValue,
+    answerMomValue,
+    answerSonValue,
+    qId,
+  ]);
 
   return (
     <Box width="90%" gap="0.2rem" marginBottom="1rem" position="relative">
@@ -84,6 +97,7 @@ export default function C151(props: C151Props) {
               onChangeNum={e => setEquationNatureValue(Number(e.target.value))}
               onChangeMother={e => setEquationMomValue(Number(e.target.value))}
               onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+              disabled={isSolved}
             />
           ) : (
             <DivisionInput
@@ -91,6 +105,7 @@ export default function C151(props: C151Props) {
               son={equationSonValue}
               onChangeMother={e => setEquationMomValue(Number(e.target.value))}
               onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+              disabled={isSolved}
             />
           )}
           <CustomTypo marginX="1rem">÷</CustomTypo>
@@ -98,6 +113,7 @@ export default function C151(props: C151Props) {
             width="2.5rem"
             value={equationDivValue}
             onChange={e => setEquationDivValue(Number(e.target.value))}
+            disabled={isSolved}
           />
         </Box>
         <Box display="flex" alignItems="center">
@@ -107,6 +123,7 @@ export default function C151(props: C151Props) {
             son={answerSonValue}
             onChangeMother={e => setAnswerMomValue(Number(e.target.value))}
             onChangeSon={e => setAnswerSonValue(Number(e.target.value))}
+            disabled={isSolved}
           />
         </Box>
       </Box>

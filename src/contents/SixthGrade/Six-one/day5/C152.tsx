@@ -53,14 +53,19 @@ export default function C152(props: C152Props) {
 
   useEffect(() => {
     // TODO 정답 체크
-    if (answerMom === answerMomValue && answerSon === answerSonValue) {
+    if (
+      answerMom === answerMomValue &&
+      answerSon === answerSonValue &&
+      equationSon === equationSonValue &&
+      equationDiv === equationDivValue
+    ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [answerMomValue, answerSonValue, equationSonValue, equationDivValue, qId]);
 
   const renderInputComponent = () => {
     if (equationNature) {
@@ -72,6 +77,7 @@ export default function C152(props: C152Props) {
           onChangeNum={e => setEquationNatureValue(Number(e.target.value))}
           onChangeMother={e => setEquationMomValue(Number(e.target.value))}
           onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
         />
       );
     } else if (equationMom) {
@@ -81,6 +87,7 @@ export default function C152(props: C152Props) {
           son={equationSonValue}
           onChangeMother={e => setEquationMomValue(Number(e.target.value))}
           onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
         />
       );
     }
