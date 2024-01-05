@@ -118,7 +118,7 @@ interface EXC251Props {
 }
 export function EXC251(props: EXC251Props) {
   const { examples } = props;
-  const { qId, qNum, sonNum, momNum } = examples;
+  const { qNum, sonNum, momNum } = examples;
   return (
     <Box
       display="flex"

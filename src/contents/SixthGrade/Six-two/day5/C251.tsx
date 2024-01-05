@@ -23,7 +23,7 @@ interface C251Props {
 export default function C251(props: C251Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, sonNum, momNum, answer, pass } = problem;
+  const { qId, qNum, sonNum, momNum, answer } = problem;
   const [enter, setEnter] = useState<number | string>('');
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function C251(props: C251Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [enter, qId]);
+  }, [answer, enter, handleCorrectChange, qId]);
 
   return (
     <Box

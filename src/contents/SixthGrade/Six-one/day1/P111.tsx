@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';

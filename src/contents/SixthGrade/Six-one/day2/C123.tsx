@@ -23,7 +23,7 @@ interface C123Props {
 
 export default function C123(props: C123Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, mom, son, nature, pass, aMom, aSon } = problem;
+  const { qId, qNum, mom, son, nature, aMom, aSon } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
   const [answerMom, setAnswerMom] = useState<string | number>('');
@@ -38,7 +38,7 @@ export default function C123(props: C123Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [answerMom, answerSon, qId]);
+  }, [aMom, aSon, answerMom, answerSon, handleCorrectChange, qId]);
 
   return (
     <Box

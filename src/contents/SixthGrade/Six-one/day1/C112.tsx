@@ -24,7 +24,7 @@ interface C113Props {
 
 export default function C113(props: C113Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, orangeNum, peopleNum } = problem;
+  const { qId, qNum, orangeNum, peopleNum } = problem;
 
   const [son, setSon] = useState<string | number>('');
   const [mother, setMother] = useState<string | number>('');
@@ -45,7 +45,7 @@ export default function C113(props: C113Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [mother, son, num1, num2, qId]);
+  }, [mother, son, num1, num2, qId, orangeNum, peopleNum, handleCorrectChange]);
 
   return (
     <>

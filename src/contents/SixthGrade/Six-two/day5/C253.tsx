@@ -19,7 +19,7 @@ interface C253Props {
 export default function C253(props: C253Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, q, answer, pass, unit } = problem;
+  const { qId, qNum, q, answer, unit } = problem;
   const [enter, setEnter] = useState<string | number>('');
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function C253(props: C253Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [enter, qId]);
+  }, [answer, enter, handleCorrectChange, qId]);
 
   return (
     <Box

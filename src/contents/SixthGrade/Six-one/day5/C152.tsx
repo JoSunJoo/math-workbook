@@ -30,7 +30,6 @@ export default function C152(props: C152Props) {
   const { problem, isSolved, handleCorrectChange } = props;
   const {
     qId,
-    pass,
     qNum,
     qString,
     equationNature,
@@ -64,7 +63,18 @@ export default function C152(props: C152Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [answerMomValue, answerSonValue, equationSonValue, equationDivValue, qId]);
+  }, [
+    answerMomValue,
+    answerSonValue,
+    equationSonValue,
+    equationDivValue,
+    qId,
+    answerMom,
+    answerSon,
+    equationSon,
+    equationDiv,
+    handleCorrectChange,
+  ]);
 
   const renderInputComponent = () => {
     if (equationNature) {

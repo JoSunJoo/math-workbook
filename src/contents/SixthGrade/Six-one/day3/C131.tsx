@@ -40,7 +40,7 @@ export default function C131(props: C131Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, qId]);
+  }, [aMom, aSon, cMom, cSon, handleCorrectChange, qId]);
 
   return (
     <Box

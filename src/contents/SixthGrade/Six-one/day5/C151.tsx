@@ -29,7 +29,6 @@ export default function C151(props: C151Props) {
   const { problem, isSolved, handleCorrectChange } = props;
   const {
     qId,
-    pass,
     qNum,
     qString,
     equationNature,
@@ -70,6 +69,12 @@ export default function C151(props: C151Props) {
     answerMomValue,
     answerSonValue,
     qId,
+    equationMom,
+    equationSon,
+    equationDiv,
+    answerMom,
+    answerSon,
+    handleCorrectChange,
   ]);
 
   return (

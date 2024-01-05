@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
@@ -19,7 +20,7 @@ interface C113Props {
 
 export default function C113(props: C113Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, lNum, rNum } = problem;
+  const { qId, qNum, lNum, rNum } = problem;
 
   const [son, setSon] = useState<string | number>('');
   const [mother, setMother] = useState<string | number>('');

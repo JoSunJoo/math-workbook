@@ -185,6 +185,4 @@ const Answer = styled.input<{ width?: string }>`
     outline: none;
     box-shadow: none;
   }
-
-  -moz-appearance: textfield;
 `;

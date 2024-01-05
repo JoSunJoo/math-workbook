@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -20,7 +19,7 @@ interface C242Props {
 export default function C242(props: C242Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, sonNum, momNum, answer, pass } = problem;
+  const { qId, qNum, sonNum, momNum, answer } = problem;
   const [aMom, setAMom] = useState<number | string>('');
   const [aSon, setASon] = useState<number | string>('');
 
@@ -32,7 +31,7 @@ export default function C242(props: C242Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, qId]);
+  }, [aMom, aSon, handleCorrectChange, momNum, qId, sonNum]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

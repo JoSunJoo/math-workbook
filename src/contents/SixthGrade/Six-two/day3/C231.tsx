@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import DivisionInput, {
+import {
   AnswerInput,
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
@@ -26,8 +26,7 @@ interface C231Props {
 export default function C231(props: C231Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, natureNum, sonNum, momNum, answer, pass, rSon, rMom } =
-    problem;
+  const { qId, qNum, natureNum, sonNum, momNum, answer, rSon, rMom } = problem;
   const [enter, setEnter] = useState<number | string>('');
   const [answerSon, setAnswerSon] = useState<string | number>('');
 
@@ -39,7 +38,7 @@ export default function C231(props: C231Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [enter, rSon, qId]);
+  }, [enter, rSon, qId, answer, answerSon, handleCorrectChange]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
@@ -62,6 +61,7 @@ export default function C231(props: C231Props) {
               width="4rem"
               value={answerSon}
               onChange={e => setAnswerSon(Number(e.target.value))}
+              disabled={isSolved}
             />
           }
         />

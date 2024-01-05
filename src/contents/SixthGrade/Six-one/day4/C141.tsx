@@ -26,8 +26,7 @@ interface C141Props {
 
 export default function C141(props: C141Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, lMom, lSon, rMom, rSon, cMom, cSon, lNature, rNature } =
-    problem;
+  const { qId, qNum, lMom, lSon, rMom, rSon, cMom, cSon, lNature } = problem;
 
   const [aMom, setAMom] = useState<string | number>('');
   const [aSon, setASon] = useState<string | number>('');
@@ -41,7 +40,7 @@ export default function C141(props: C141Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, qId]);
+  }, [aMom, aSon, cMom, cSon, handleCorrectChange, qId]);
 
   return (
     <Box

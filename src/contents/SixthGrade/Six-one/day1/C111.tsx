@@ -22,7 +22,7 @@ interface C111Props {
 
 export default function C111(props: C111Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, apples, people } = problem;
+  const { qId, qNum, apples, people } = problem;
   const [mother, setMother] = useState<string | number>('');
   const [son, setSon] = useState<string | number>('');
   const [isCorrect, setIsCorrect] = useState(false);
@@ -35,7 +35,7 @@ export default function C111(props: C111Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [son, mother, qId]);
+  }, [son, mother, qId, apples, people, handleCorrectChange]);
 
   return (
     <Box position="relative" minHeight="10rem">

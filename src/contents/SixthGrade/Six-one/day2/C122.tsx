@@ -26,7 +26,7 @@ interface C122Props {
 
 export default function C122(props: C122Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, son, mom1, num, mom2, son2, answer } = problem;
+  const { qId, qNum, son, mom1, num, mom2, son2, answer } = problem;
 
   const [daughter1, setDaughter1] = useState<string | number>('');
   const [daughter2, setDaughter2] = useState<string | number>('');
@@ -46,7 +46,7 @@ export default function C122(props: C122Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [daughter1, daughter2, mother, qId]);
+  }, [answer, daughter1, daughter2, handleCorrectChange, mother, qId]);
 
   return (
     <Box

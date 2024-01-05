@@ -22,7 +22,7 @@ interface C241Props {
 export default function C241(props: C241Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, sonNum, momNum, answer, pass, nature } = problem;
+  const { qId, qNum, sonNum, momNum, answer, nature } = problem;
   const [aMom, setAMom] = useState<number | string>('');
   const [aSon, setASon] = useState<number | string>('');
   const [aNature, setANature] = useState<number | string>('');
@@ -35,7 +35,7 @@ export default function C241(props: C241Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, aNature, qId]);
+  }, [aMom, aSon, aNature, qId, momNum, sonNum, nature, handleCorrectChange]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

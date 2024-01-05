@@ -25,7 +25,7 @@ interface C221Props {
 export default function C221(props: C221Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, sonNum, momNum, answer, pass, rSon, rMom } = problem;
+  const { qId, qNum, sonNum, momNum, answer, rSon, rMom } = problem;
   const [enter, setEnter] = useState<number | string>('');
   const [answerSon, setAnswerSon] = useState<string | number>('');
 
@@ -37,7 +37,7 @@ export default function C221(props: C221Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [enter, answerSon, qId]);
+  }, [enter, answerSon, qId, answer, rSon, handleCorrectChange]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
