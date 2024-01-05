@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// import { getKeyValue } from '@elice/extcontent-apis';
 import { Answer11 as answer, Data11Quiz as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
@@ -26,21 +25,6 @@ const ThirdGrade11Exercise: React.FC = () => {
   GetData({ setInputValue, key }).catch(error => {
     console.error('Error:', error);
   });
-
-  // (async () => {
-  //   try {
-  //     const savedAnswers = await getKeyValue({
-  //       key: key,
-  //     });
-  //     if (savedAnswers) {
-  //       // savedAnswers를 사용하는 코드
-  //     }
-  //   } catch (error) {
-  //     console.error('Error loading saved answers:', error);
-  //   }
-  // })().catch(error => {
-  //   console.error('Error:', error);
-  // });
 
   return (
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
