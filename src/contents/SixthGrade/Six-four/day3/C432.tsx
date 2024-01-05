@@ -15,7 +15,7 @@ interface C432Props {
 
 export default function C432(props: C432Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, leftNum, rightNum, answer } = problem;
+  const { qId, qNum, leftNum, rightNum, answer } = problem;
 
   const leftNumType =
     leftNum.length === 1 ? '소수' : leftNum.length === 2 ? '분수' : '대분수';
@@ -35,7 +35,7 @@ export default function C432(props: C432Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box display="flex" mb="5rem">

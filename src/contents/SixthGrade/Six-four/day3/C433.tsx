@@ -20,7 +20,7 @@ interface C433Props {
 
 export default function C433(props: C433Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, leftNum, rightNum, answer } = problem;
+  const { qId, qNum, leftNum, rightNum, answer } = problem;
 
   const leftNumType = leftNum.length === 1 ? '소수' : '분수';
   const rightNumType = rightNum.length === 1 ? '소수' : '분수';
@@ -38,7 +38,7 @@ export default function C433(props: C433Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box display="flex" mb="5rem">

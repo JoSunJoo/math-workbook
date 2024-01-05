@@ -14,7 +14,7 @@ interface C352Props {
 
 export default function C352(props: C352Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, imgSrc1, imgSrc2, answer } = problem;
+  const { qId, qNum, imgSrc1, imgSrc2, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -29,7 +29,7 @@ export default function C352(props: C352Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box>

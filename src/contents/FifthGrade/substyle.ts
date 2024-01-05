@@ -1,8 +1,5 @@
 import styled from '@emotion/styled';
 
-const Styled = {
-
-    };
-
+const Styled = {};
 
 export default Styled;

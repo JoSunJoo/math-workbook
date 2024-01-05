@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import { NumberInput } from 'src/contents/SixthGrade/common/number-box';
 import { TextUnderBar } from 'src/contents/SixthGrade/common/text-underbar';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
@@ -18,7 +17,7 @@ interface C341Props {
 
 export default function C341(props: C341Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, isFraction, leftItem, rightItem, answer } = problem;
+  const { qId, qNum, isFraction, leftItem, rightItem, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -31,7 +30,7 @@ export default function C341(props: C341Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input]);
 
   return (
     <Box>

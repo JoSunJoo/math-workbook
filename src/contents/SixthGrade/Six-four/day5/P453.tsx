@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { Box } from '@mui/material';
-import C453 from './C453';
+
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C453 from './C453';
 
 export default function P453() {
   const [isSolved, setIsSolved] = useState(false);

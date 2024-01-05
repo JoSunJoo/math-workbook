@@ -3,7 +3,7 @@ import { DataFifth153 as QuizData } from '../../Data/Book1';
 import DayLayout from '../../Layout/Day5';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
-import { SubWay, FifthGrade1Day5 } from '../../utils/handleTitle';
+import { FifthGrade1Day5, SubWay } from '../../utils/handleTitle';
 import SingleQuiz from './Single5-3';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';

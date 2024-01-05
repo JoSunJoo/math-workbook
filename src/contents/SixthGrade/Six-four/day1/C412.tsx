@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -17,7 +16,7 @@ interface C412Props {
 
 export default function C412(props: C412Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList, answer } = problem;
+  const { qId, qNum, numList, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -33,7 +32,7 @@ export default function C412(props: C412Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2, input3]);
 
   return (
     <Box>

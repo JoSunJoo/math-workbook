@@ -17,7 +17,7 @@ interface C431Props {
 
 export default function C431(props: C431Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList, answer } = problem;
+  const { qId, qNum, numList, answer } = problem;
 
   const type =
     numList.length === 2 ? '소수' : numList.length === 4 ? '분수' : '대분수';
@@ -35,7 +35,7 @@ export default function C431(props: C431Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box display="flex" mb="5rem">

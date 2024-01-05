@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import { NumberInput } from 'src/contents/SixthGrade/common/number-box';
-import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
 import type { ProblemProp } from './P443';
 
@@ -15,7 +14,7 @@ interface C443Props {
 
 export default function C443(props: C443Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList, answer } = problem;
+  const { qId, qNum, numList, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -29,7 +28,7 @@ export default function C443(props: C443Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1]);
 
   return (
     <Box display="flex">

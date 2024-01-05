@@ -15,7 +15,7 @@ interface C312Props {
 
 export default function C312(props: C312Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, answer, imgSrc } = problem;
+  const { qId, qNum, answer, imgSrc } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -43,7 +43,7 @@ export default function C312(props: C312Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, a1, a2, a3, a4, a5, a6, a7, answer, handleCorrectChange]);
 
   return (
     <Box>

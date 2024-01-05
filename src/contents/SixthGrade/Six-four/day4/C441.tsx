@@ -15,7 +15,7 @@ interface C441Props {
 
 export default function C441(props: C441Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList1, numList2, answer } = problem;
+  const { qId, qNum, numList1, numList2, answer } = problem;
 
   const numList1Type = numList1.length === 2 ? '정수' : '분수';
 
@@ -32,7 +32,7 @@ export default function C441(props: C441Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box display="flex" mb="5rem">

@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
 
-import C452 from './C452';
-import Img from '../../assets/image/P452/4-5-2.png';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C452 from './C452';
+
+import Img from '../../assets/image/P452/4-5-2.png';
 
 export default function P452() {
   const [isSolved, setIsSolved] = useState(false);

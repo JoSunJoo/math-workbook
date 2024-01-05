@@ -15,7 +15,7 @@ interface C313Props {
 
 export default function C313(props: C313Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, answer, imgSrc } = problem;
+  const { qId, qNum, answer, imgSrc } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -43,7 +43,7 @@ export default function C313(props: C313Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, a1, a2, a3, a4, a5, a6, a7]);
 
   return (
     <Box>

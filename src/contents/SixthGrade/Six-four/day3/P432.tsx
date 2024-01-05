@@ -1,11 +1,11 @@
-import { Avatar, Box } from '@mui/material';
+import { useState } from 'react';
+import { Box } from '@mui/material';
 
-import C432 from './C432';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C432 from './C432';
 
 export default function P432() {
   const [isSolved, setIsSolved] = useState(false);

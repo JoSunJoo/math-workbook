@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import Styled from '../../style';
+
 import type { AnswersType } from '../../Type/Type1';
 
 const FifthGrade01: React.FC = () => {

@@ -17,7 +17,7 @@ interface C411Props {
 
 export default function C411(props: C411Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList, answer } = problem;
+  const { qId, qNum, numList, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -32,7 +32,7 @@ export default function C411(props: C411Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
 
   return (
     <Box>

@@ -16,7 +16,7 @@ interface C353Props {
 
 export default function C353(props: C353Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, imgSrc, candyNum, answer } = problem;
+  const { qId, qNum, imgSrc, candyNum, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -38,7 +38,16 @@ export default function C353(props: C353Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [
+    isSolved,
+    qId,
+    answer,
+    handleCorrectChange,
+    firstMom,
+    firstSon,
+    secondMom,
+    secondSon,
+  ]);
 
   return (
     <Box>

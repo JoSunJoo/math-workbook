@@ -1,13 +1,14 @@
+import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
 
-import C451 from './C451';
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import Img from '../../assets/image/P451/img.png';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C451 from './C451';
+
+import Img from '../../assets/image/P451/img.png';
 
 export default function P451() {
   const [isSolved, setIsSolved] = useState(false);
@@ -59,7 +60,7 @@ export default function P451() {
             display="flex"
             alignItems="center"
             position="absolute"
-            left="15rem"
+            left="3rem"
             top="7rem"
           >
             {passArray.slice(0, -1).every(value => value === true) &&

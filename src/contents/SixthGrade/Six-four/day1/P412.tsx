@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
 
-import C412 from './C412';
-import ImgExample from '../../assets/image/P412/ImgExample.png';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C412 from './C412';
+
+import ImgExample from '../../assets/image/P412/ImgExample.png';
 
 export default function P412() {
   const [isSolved, setIsSolved] = useState(false);

@@ -1,12 +1,12 @@
-import { Avatar, Box } from '@mui/material';
+import { useState } from 'react';
+import { Box } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import C442 from './C442';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { Typography } from '@mui/material';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C442 from './C442';
 
 export default function P442() {
   const [isSolved, setIsSolved] = useState(false);

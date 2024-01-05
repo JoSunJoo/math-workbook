@@ -15,7 +15,7 @@ interface C442Props {
 
 export default function C442(props: C442Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, num1, num2, num3, num4, answer } = problem;
+  const { qId, qNum, num1, num2, num3, num4, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -29,7 +29,7 @@ export default function C442(props: C442Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [isSolved, qId, answer, handleCorrectChange, input1]);
 
   return (
     <Box display="flex">

@@ -1,17 +1,13 @@
 import { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
-import { Avatar, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
-import { NumberUnderBar } from 'src/contents/SixthGrade/common/number-underbar';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
 import type { ProblemProp } from './P423';
-
-import ArrowRight from '../../assets/icon/arrowRight.svg';
 
 interface C423Props {
   problem: ProblemProp;
@@ -21,7 +17,7 @@ interface C423Props {
 
 export default function C423(props: C423Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, numList, answer } = problem;
+  const { qId, qNum, numList, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -47,7 +43,18 @@ export default function C423(props: C423Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [
+    isSolved,
+    qId,
+    answer,
+    handleCorrectChange,
+    input1,
+    input2,
+    input3,
+    input4,
+    input5,
+    input6,
+  ]);
 
   return (
     <Box display="flex" mb="5rem">

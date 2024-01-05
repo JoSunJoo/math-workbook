@@ -7,11 +7,6 @@ import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
 import C322 from './C322';
 
-import N1 from '../../assets/image/P321/N1.png';
-import N2 from '../../assets/image/P321/N2.png';
-import N3 from '../../assets/image/P321/N3.png';
-import N4 from '../../assets/image/P321/N4.png';
-
 export default function P322() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(

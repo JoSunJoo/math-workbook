@@ -19,7 +19,7 @@ interface C453Props {
 
 export default function C453(props: C453Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, cardNumList, index, num, answer } = problem;
+  const { qId, qNum, cardNumList, index, num, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -51,7 +51,18 @@ export default function C453(props: C453Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [
+    isSolved,
+    qId,
+    answer,
+    handleCorrectChange,
+    input1,
+    input2,
+    input3,
+    input4,
+    input5,
+    input6,
+  ]);
 
   return (
     <Box display="flex">

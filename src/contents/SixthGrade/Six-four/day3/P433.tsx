@@ -1,11 +1,11 @@
-import { Avatar, Box } from '@mui/material';
+import { useState } from 'react';
+import { Box } from '@mui/material';
 
-import C433 from './C433';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { useState } from 'react';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C433 from './C433';
 
 export default function P433() {
   const [isSolved, setIsSolved] = useState(false);
