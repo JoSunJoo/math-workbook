@@ -60,7 +60,7 @@ export default function P152() {
         </Box>
         <SubmitButton
           onClick={checkAnswer}
-          mycolor="#00B76A"
+          myColor="#00B76A"
           isSolved={isSolved}
         />
       </Box>

@@ -65,7 +65,7 @@ export default function P412() {
 
       <SubmitButton
         onClick={checkAnswer}
-        mycolor="#FF6291"
+        myColor="#FF6291"
         isSolved={isSolved}
       />
     </Layout>

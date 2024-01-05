@@ -61,7 +61,7 @@ export default function P111() {
       </Box>
       <SubmitButton
         onClick={checkAnswer}
-        mycolor="#FF6291"
+        myColor="#FF6291"
         isSolved={isSolved}
       />
     </Layout>
