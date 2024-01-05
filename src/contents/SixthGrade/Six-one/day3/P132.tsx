@@ -3,10 +3,11 @@ import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C131 from './C131';
 
 export default function P131() {
-  // 색칠문제
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
@@ -21,7 +22,10 @@ export default function P131() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
 

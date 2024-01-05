@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 
-import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C131 from './C131';
 
-import e131Image from 'src/contents/assets/image/e_1-3-1.png';
 export default function P133() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
@@ -20,12 +20,13 @@ export default function P133() {
       return newPassArray;
     });
   };
-
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
-
   return (
     <Layout title="÷(자연수)의 계산" question={`계산을 하세요.`} day="day3">
       <Box display="flex" flexDirection="column" alignItems="center">
