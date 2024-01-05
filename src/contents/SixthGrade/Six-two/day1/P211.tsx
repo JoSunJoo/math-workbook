@@ -4,6 +4,8 @@ import { Box, Typography } from '@mui/material';
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C211 from './C211';
 
 import e211Image from 'src/contents/SixthGrade/assets/image/P211/e_2-1-1.png';
@@ -23,7 +25,10 @@ export default function P211() {
   };
 
   const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) {
+      void sendScoreUtil(currentScore);
+    }
     setIsSolved(prev => !prev);
   };
   return (

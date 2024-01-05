@@ -21,7 +21,6 @@ interface C212Props {
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 export default function C212(props: C212Props) {
-  //P21도 같은 컴포넌트 사용
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange } = props;
   const { qId, qNum, sonNum, momNum, answer, pass } = problem;
@@ -35,7 +34,7 @@ export default function C212(props: C212Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" paddingY="1rem" position="relative">

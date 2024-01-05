@@ -34,7 +34,7 @@ export default function C211(props: C211Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [enter, qId]);
 
   return (
     <Box display="flex" gap="0.2rem" paddingY="1rem" position="relative">
