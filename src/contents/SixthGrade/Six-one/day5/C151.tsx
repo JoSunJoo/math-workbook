@@ -97,14 +97,16 @@ export default function C151(props: C151Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz151.answer' });
-    setInput({
-      equationSonValue: value[qId].equationSonValue,
-      equationMomValue: value[qId].equationMomValue,
-      equationNatureValue: value[qId].equationNatureValue,
-      equationDivValue: value[qId].equationDivValue,
-      answerMomValue: value[qId].answerMomValue,
-      answerSonValue: value[qId].answerSonValue,
-    });
+    if (value) {
+      setInput({
+        equationSonValue: value[qId].equationSonValue,
+        equationMomValue: value[qId].equationMomValue,
+        equationNatureValue: value[qId].equationNatureValue,
+        equationDivValue: value[qId].equationDivValue,
+        answerMomValue: value[qId].answerMomValue,
+        answerSonValue: value[qId].answerSonValue,
+      });
+    }
   };
 
   useEffect(() => {

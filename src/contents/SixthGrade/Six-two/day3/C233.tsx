@@ -40,9 +40,11 @@ export default function C233(props: C233Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz233.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

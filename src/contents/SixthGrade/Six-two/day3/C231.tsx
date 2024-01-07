@@ -50,10 +50,12 @@ export default function C231(props: C231Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz231.answer' });
-    setInput({
-      enter: value[qId].enter,
-      answerSon: value[qId].answerSon,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+        answerSon: value[qId].answerSon,
+      });
+    }
   };
   useEffect(() => {
     void renderGetData();

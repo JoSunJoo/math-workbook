@@ -55,7 +55,9 @@ export default function C111(props: C111Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz111.answer' });
-    setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    if (value) {
+      setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    }
   };
 
   useEffect(() => {

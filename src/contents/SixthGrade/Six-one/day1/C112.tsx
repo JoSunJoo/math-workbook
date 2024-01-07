@@ -77,12 +77,14 @@ export default function C113(props: C113Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz112.answer' });
-    setAnswer({
-      mother: value[qId].mother,
-      son: value[qId].son,
-      num1: value[qId].num1,
-      num2: value[qId].num2,
-    });
+    if (value) {
+      setAnswer({
+        mother: value[qId].mother,
+        son: value[qId].son,
+        num1: value[qId].num1,
+        num2: value[qId].num2,
+      });
+    }
   };
 
   useEffect(() => {

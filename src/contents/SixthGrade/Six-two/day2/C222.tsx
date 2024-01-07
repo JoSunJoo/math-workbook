@@ -39,9 +39,11 @@ export default function C222(props: C222Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz222.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

@@ -40,9 +40,11 @@ export default function C252(props: C253Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz252.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

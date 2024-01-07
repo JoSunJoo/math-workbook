@@ -79,12 +79,14 @@ export default function C121(props: C121Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz121.answer' });
-    setInput({
-      lSon: value[qId].lSon,
-      rSon: value[qId].rSon,
-      aSon: value[qId].aSon,
-      aMom: value[qId].aMom,
-    });
+    if (value) {
+      setInput({
+        lSon: value[qId].lSon,
+        rSon: value[qId].rSon,
+        aSon: value[qId].aSon,
+        aMom: value[qId].aMom,
+      });
+    }
   };
 
   useEffect(() => {

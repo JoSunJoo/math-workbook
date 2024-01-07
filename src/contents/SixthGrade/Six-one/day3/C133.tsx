@@ -8,8 +8,6 @@ import DivisionInput from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
-// C133 공통사용
-
 export interface Input133Type {
   aMom: string | number;
   aSon: string | number;
@@ -59,10 +57,12 @@ export default function C133(props: C133Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz133.answer' });
-    setInput({
-      aSon: value[qId].aSon,
-      aMom: value[qId].aMom,
-    });
+    if (value) {
+      setInput({
+        aSon: value[qId].aSon,
+        aMom: value[qId].aMom,
+      });
+    }
   };
 
   useEffect(() => {

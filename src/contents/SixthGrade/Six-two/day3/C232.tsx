@@ -40,9 +40,11 @@ export default function C232(props: C232Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz232.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

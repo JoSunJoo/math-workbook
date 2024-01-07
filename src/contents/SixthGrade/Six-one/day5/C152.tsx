@@ -99,14 +99,16 @@ export default function C152(props: C152Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz152.answer' });
-    setInput({
-      equationSonValue: value[qId].equationSonValue,
-      equationMomValue: value[qId].equationMomValue,
-      equationNatureValue: value[qId].equationNatureValue,
-      equationDivValue: value[qId].equationDivValue,
-      answerMomValue: value[qId].answerMomValue,
-      answerSonValue: value[qId].answerSonValue,
-    });
+    if (value) {
+      setInput({
+        equationSonValue: value[qId].equationSonValue,
+        equationMomValue: value[qId].equationMomValue,
+        equationNatureValue: value[qId].equationNatureValue,
+        equationDivValue: value[qId].equationDivValue,
+        answerMomValue: value[qId].answerMomValue,
+        answerSonValue: value[qId].answerSonValue,
+      });
+    }
   };
 
   useEffect(() => {

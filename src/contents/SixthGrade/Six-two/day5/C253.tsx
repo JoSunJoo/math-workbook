@@ -38,9 +38,11 @@ export default function C253(props: C253Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz253.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

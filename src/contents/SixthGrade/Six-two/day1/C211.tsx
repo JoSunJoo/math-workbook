@@ -44,9 +44,11 @@ export default function C211(props: C211Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz211.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

@@ -39,9 +39,11 @@ export default function C223(props: C223Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz223.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

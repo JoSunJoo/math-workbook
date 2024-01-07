@@ -55,11 +55,13 @@ export default function C241(props: C241Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz241.answer' });
-    setInput({
-      aMom: value[qId].aMom,
-      aSon: value[qId].aSon,
-      aNature: value[qId].aNature,
-    });
+    if (value) {
+      setInput({
+        aMom: value[qId].aMom,
+        aSon: value[qId].aSon,
+        aNature: value[qId].aNature,
+      });
+    }
   };
   useEffect(() => {
     void renderGetData();

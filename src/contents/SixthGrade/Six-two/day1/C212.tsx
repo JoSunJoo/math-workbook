@@ -42,9 +42,11 @@ export default function C212(props: C212Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz212.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

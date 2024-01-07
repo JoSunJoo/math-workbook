@@ -56,10 +56,12 @@ export default function C141(props: C141Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz141.answer' });
-    setInput({
-      aSon: value[qId].aSon,
-      aMom: value[qId].aMom,
-    });
+    if (value) {
+      setInput({
+        aSon: value[qId].aSon,
+        aMom: value[qId].aMom,
+      });
+    }
   };
 
   useEffect(() => {

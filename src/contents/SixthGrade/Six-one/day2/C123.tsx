@@ -53,10 +53,12 @@ export default function C123(props: C123Props) {
   };
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz123.answer' });
-    setAnswer({
-      answerMom: value[qId].answerMom,
-      answerSon: value[qId].answerSon,
-    });
+    if (value) {
+      setAnswer({
+        answerMom: value[qId].answerMom,
+        answerSon: value[qId].answerSon,
+      });
+    }
   };
 
   useEffect(() => {

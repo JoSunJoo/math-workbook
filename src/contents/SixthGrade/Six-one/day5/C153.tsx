@@ -99,14 +99,16 @@ export default function C153(props: C153Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz153.answer' });
-    setInput({
-      equationSonValue: value[qId].equationSonValue,
-      equationMomValue: value[qId].equationMomValue,
-      equationNatureValue: value[qId].equationNatureValue,
-      equationDivValue: value[qId].equationDivValue,
-      answerMomValue: value[qId].answerMomValue,
-      answerSonValue: value[qId].answerSonValue,
-    });
+    if (value) {
+      setInput({
+        equationSonValue: value[qId].equationSonValue,
+        equationMomValue: value[qId].equationMomValue,
+        equationNatureValue: value[qId].equationNatureValue,
+        equationDivValue: value[qId].equationDivValue,
+        answerMomValue: value[qId].answerMomValue,
+        answerSonValue: value[qId].answerSonValue,
+      });
+    }
   };
 
   useEffect(() => {

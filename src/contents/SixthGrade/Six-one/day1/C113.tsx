@@ -52,13 +52,13 @@ export default function C113(props: C113Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz113.answer' });
-    setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    if (value) {
+      setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    }
   };
 
   useEffect(() => {
-    if (renderGetData) {
-      void renderGetData();
-    }
+    void renderGetData();
   }, []);
 
   useEffect(() => {

@@ -45,10 +45,12 @@ export default function C242(props: C242Props) {
   };
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz242.answer' });
-    setInput({
-      aMom: value[qId].aMom,
-      aSon: value[qId].aSon,
-    });
+    if (value) {
+      setInput({
+        aMom: value[qId].aMom,
+        aSon: value[qId].aSon,
+      });
+    }
   };
   useEffect(() => {
     void renderGetData();

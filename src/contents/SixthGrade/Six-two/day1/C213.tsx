@@ -42,9 +42,11 @@ export default function C213(props: C213Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz213.answer' });
-    setInput({
-      enter: value[qId].enter,
-    });
+    if (value) {
+      setInput({
+        enter: value[qId].enter,
+      });
+    }
   };
 
   useEffect(() => {

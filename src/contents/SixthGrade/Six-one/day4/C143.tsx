@@ -56,10 +56,12 @@ export default function C143(props: C143Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz143.answer' });
-    setInput({
-      aSon: value[qId].aSon,
-      aMom: value[qId].aMom,
-    });
+    if (value) {
+      setInput({
+        aSon: value[qId].aSon,
+        aMom: value[qId].aMom,
+      });
+    }
   };
 
   useEffect(() => {

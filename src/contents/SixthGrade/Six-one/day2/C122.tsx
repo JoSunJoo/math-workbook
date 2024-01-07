@@ -62,11 +62,13 @@ export default function C122(props: C122Props) {
 
   const renderGetData = async () => {
     const value = await getKeyValue({ key: 'quiz122.answer' });
-    setInput({
-      daughter1: value[qId].daughter1,
-      daughter2: value[qId].daughter2,
-      mother: value[qId].mother,
-    });
+    if (value) {
+      setInput({
+        daughter1: value[qId].daughter1,
+        daughter2: value[qId].daughter2,
+        mother: value[qId].mother,
+      });
+    }
   };
 
   useEffect(() => {
