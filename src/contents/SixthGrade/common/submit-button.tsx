@@ -53,6 +53,7 @@ const CustomButton = styled.button<CustomButtonProps>`
   letter-spacing: 0rem;
 
   &:hover {
+    cursor: pointer;
     border-radius: 0.625rem;
     background: ${props => (props.isSolved ? '#fffff' : props.myColor)};
     border: 4px solid ${props => props.myColor};
