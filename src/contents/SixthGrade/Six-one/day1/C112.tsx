@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -18,21 +20,83 @@ interface C113Props {
     orangeNum: number;
     peopleNum: number;
   };
+  allAnswers: {
+    son: string | number;
+    mother: string | number;
+    num1: string | number;
+    num2: string | number;
+  }[];
+  setAllAnswers: React.Dispatch<
+    React.SetStateAction<
+      {
+        son: string | number;
+        mother: string | number;
+        num1: string | number;
+        num2: string | number;
+      }[]
+    >
+  >;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C113(props: C113Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, orangeNum, peopleNum } = problem;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
+  const { qId, qNum, orangeNum, peopleNum } = problem;
+  const [answer, setAnswer] = useState<{
+    son: string | number;
+    mother: string | number;
+    num1: string | number;
+    num2: string | number;
+  }>({
+    son: '',
+    mother: '',
+    num1: '',
+    num2: '',
+  });
 
-  const [son, setSon] = useState<string | number>('');
-  const [mother, setMother] = useState<string | number>('');
-  const [num1, setNum1] = useState<string | number>('');
-  const [num2, setNum2] = useState<string | number>('');
+  const { son, mother, num1, num2 } = answer;
+
   const [isCorrect, setIsCorrect] = useState(true);
 
+  const setSon = (value: number) => {
+    setAnswer({ ...answer, son: value });
+  };
+
+  const setMother = (value: number) => {
+    setAnswer({ ...answer, mother: value });
+  };
+
+  const setNum1 = (value: number) => {
+    setAnswer({ ...answer, num1: value });
+  };
+
+  const setNum2 = (value: number) => {
+    setAnswer({ ...answer, num2: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz112.answer' });
+    if (value) {
+      setAnswer({
+        mother: value[qId].mother,
+        son: value[qId].son,
+        num1: value[qId].num1,
+        num2: value[qId].num2,
+      });
+    }
+  };
+
   useEffect(() => {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = answer;
+      return updatedAnswers;
+    });
     if (
       mother === num2 &&
       son === num1 &&
@@ -45,7 +109,7 @@ export default function C113(props: C113Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [mother, son, num1, num2, qId]);
+  }, [mother, son, num1, num2, qId, orangeNum, peopleNum]);
 
   return (
     <>

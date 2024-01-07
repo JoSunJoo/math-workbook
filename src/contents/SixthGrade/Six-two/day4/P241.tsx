@@ -1,10 +1,15 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C241 from './C241';
+
+import type { Input241Props } from './C241';
 
 import e241Image from '../../assets/image/P241/2-4-1.png';
 
@@ -13,6 +18,7 @@ export default function P241() {
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input241Props[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -22,10 +28,13 @@ export default function P241() {
     });
   };
 
-  const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+  const checkAnswer = async () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz241.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="소수를 분수로 고치기"
@@ -57,6 +66,8 @@ export default function P241() {
               }}
             >
               <C241
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

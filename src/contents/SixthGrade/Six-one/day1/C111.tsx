@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -16,18 +18,59 @@ interface C111Props {
     apples: number;
     people: number;
   };
+  allAnswers: {
+    son: string | number;
+    mother: string | number;
+  }[];
+  setAllAnswers: React.Dispatch<
+    React.SetStateAction<
+      {
+        son: string | number;
+        mother: string | number;
+      }[]
+    >
+  >;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C111(props: C111Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, pass, qNum, apples, people } = problem;
-  const [mother, setMother] = useState<string | number>('');
-  const [son, setSon] = useState<string | number>('');
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
+  const { qId, qNum, apples, people } = problem;
+  const [answer, setAnswer] = useState<{
+    son: string | number;
+    mother: string | number;
+  }>({ son: '', mother: '' });
+  const { son, mother } = answer;
+
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const setSon = (value: number) => {
+    setAnswer({ ...answer, son: value });
+  };
+
+  const setMother = (value: number) => {
+    setAnswer({ ...answer, mother: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz111.answer' });
+    if (value) {
+      setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    }
+  };
+
   useEffect(() => {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = answer;
+      return updatedAnswers;
+    });
+
     if (son === apples && mother === people) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -35,7 +78,7 @@ export default function C111(props: C111Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [son, mother, qId]);
+  }, [son, mother, qId, apples, people]);
 
   return (
     <Box position="relative" minHeight="10rem">

@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -7,6 +9,15 @@ import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+
+export interface Input152Type {
+  equationSonValue: string | number;
+  equationMomValue: string | number;
+  equationNatureValue: string | number;
+  equationDivValue: string | number;
+  answerMomValue: string | number;
+  answerSonValue: string | number;
+}
 
 interface C152Props {
   problem: {
@@ -22,15 +33,16 @@ interface C152Props {
     unit: string;
     pass: boolean;
   };
+  allAnswers: Input152Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input152Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C152(props: C152Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const {
     qId,
-    pass,
     qNum,
     qString,
     equationNature,
@@ -42,25 +54,96 @@ export default function C152(props: C152Props) {
     unit,
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
-  const [equationSonValue, setEquationSonValue] = useState<string | number>('');
-  const [equationMomValue, setEquationMomValue] = useState<string | number>('');
-  const [equationNatureValue, setEquationNatureValue] = useState<
-    string | number
-  >('');
-  const [equationDivValue, setEquationDivValue] = useState<string | number>('');
-  const [answerMomValue, setAnswerMomValue] = useState<string | number>('');
-  const [answerSonValue, setAnswerSonValue] = useState<string | number>('');
+
+  const [input, setInput] = useState<Input152Type>({
+    equationSonValue: '',
+    equationMomValue: '',
+    equationNatureValue: '',
+    equationDivValue: '',
+    answerMomValue: '',
+    answerSonValue: '',
+  });
+
+  const {
+    equationSonValue,
+    equationMomValue,
+    equationNatureValue,
+    equationDivValue,
+    answerMomValue,
+    answerSonValue,
+  } = input;
+
+  const setEquationSonValue = (value: string | number) => {
+    setInput({ ...input, equationSonValue: value });
+  };
+
+  const setEquationMomValue = (value: string | number) => {
+    setInput({ ...input, equationMomValue: value });
+  };
+
+  const setEquationNatureValue = (value: string | number) => {
+    setInput({ ...input, equationNatureValue: value });
+  };
+
+  const setEquationDivValue = (value: string | number) => {
+    setInput({ ...input, equationDivValue: value });
+  };
+
+  const setAnswerMomValue = (value: string | number) => {
+    setInput({ ...input, answerMomValue: value });
+  };
+
+  const setAnswerSonValue = (value: string | number) => {
+    setInput({ ...input, answerSonValue: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz152.answer' });
+    if (value) {
+      setInput({
+        equationSonValue: value[qId].equationSonValue,
+        equationMomValue: value[qId].equationMomValue,
+        equationNatureValue: value[qId].equationNatureValue,
+        equationDivValue: value[qId].equationDivValue,
+        answerMomValue: value[qId].answerMomValue,
+        answerSonValue: value[qId].answerSonValue,
+      });
+    }
+  };
 
   useEffect(() => {
-    // TODO 정답 체크
-    if (answerMom === answerMomValue && answerSon === answerSonValue) {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = input;
+      return updatedAnswers;
+    });
+    if (
+      answerMom === answerMomValue &&
+      answerSon === answerSonValue &&
+      equationSon === equationSonValue &&
+      equationDiv === equationDivValue
+    ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [
+    answerMomValue,
+    answerSonValue,
+    equationSonValue,
+    equationDivValue,
+    qId,
+    answerMom,
+    answerSon,
+    equationSon,
+    equationDiv,
+  ]);
 
   const renderInputComponent = () => {
     if (equationNature) {
@@ -72,6 +155,7 @@ export default function C152(props: C152Props) {
           onChangeNum={e => setEquationNatureValue(Number(e.target.value))}
           onChangeMother={e => setEquationMomValue(Number(e.target.value))}
           onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
         />
       );
     } else if (equationMom) {
@@ -81,6 +165,7 @@ export default function C152(props: C152Props) {
           son={equationSonValue}
           onChangeMother={e => setEquationMomValue(Number(e.target.value))}
           onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
         />
       );
     }

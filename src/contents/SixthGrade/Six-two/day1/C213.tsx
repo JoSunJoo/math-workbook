@@ -8,8 +8,11 @@ import { AnswerInput } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
-import type { Input211Type } from '../day1/C211';
-interface C222Props {
+import type { Input211Type } from './C211';
+
+import fractionBar from 'src/contents/SixthGrade/assets/icon/fraction-bar.png';
+
+interface C213Props {
   problem: {
     qId: number;
     qNum: string;
@@ -23,7 +26,7 @@ interface C222Props {
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
-export default function C222(props: C222Props) {
+export default function C213(props: C213Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, sonNum, momNum, answer } = problem;
@@ -38,7 +41,7 @@ export default function C222(props: C222Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz222.answer' });
+    const value = await getKeyValue({ key: 'quiz213.answer' });
     if (value) {
       setInput({
         enter: value[qId].enter,
@@ -66,12 +69,19 @@ export default function C222(props: C222Props) {
   }, [answer, enter, qId]);
 
   return (
-    <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
+    <Box display="flex" gap="0.2rem" paddingY="1rem" position="relative">
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo> {qNum} </CustomTypo>
       <Box display="flex" alignItems="center">
+        <CustomTypo mt="1.7rem">{momNum}</CustomTypo>
+        <Box ml="0.2rem" mt="2rem" mr="1rem" position="relative">
+          <img width="60rem" height="30rem" src={fractionBar} alt="icon" />
+          <Box position="absolute" left="0.8rem" top="0rem">
+            <CustomTypo>{sonNum}</CustomTypo>
+          </Box>
+        </Box>
         <VisualFraction momNum={momNum} sonNum={sonNum} />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.4rem"> = </CustomTypo>
         <AnswerInput
           value={enter}
           onChange={e => setEnter(Number(e.target.value))}

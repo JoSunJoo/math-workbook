@@ -4,12 +4,14 @@ import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import { AnswerInput } from 'src/contents/SixthGrade/common/number-box';
+import DivisionInput from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
-import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
-import type { Input211Type } from '../day1/C211';
-interface C222Props {
+export interface Input243Props {
+  aMom: number | string;
+  aSon: number | string;
+}
+interface C243Props {
   problem: {
     qId: number;
     qNum: string;
@@ -18,34 +20,38 @@ interface C222Props {
     answer: number;
     pass: boolean;
   };
-  allAnswers: Input211Type[];
-  setAllAnswers: React.Dispatch<React.SetStateAction<Input211Type[]>>;
+  allAnswers: Input243Props[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input243Props[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
-export default function C222(props: C222Props) {
+export default function C243(props: C243Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, sonNum, momNum, answer } = problem;
-  const [input, setInput] = useState<Input211Type>({
-    enter: '',
+  const [input, setInput] = useState<Input243Props>({
+    aMom: '',
+    aSon: '',
   });
 
-  const { enter } = input;
+  const { aMom, aSon } = input;
 
-  const setEnter = (value: string | number) => {
-    setInput({ ...input, enter: value });
+  const setAMom = (value: string | number) => {
+    setInput({ ...input, aMom: value });
   };
 
+  const setASon = (value: string | number) => {
+    setInput({ ...input, aSon: value });
+  };
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz222.answer' });
+    const value = await getKeyValue({ key: 'quiz243.answer' });
     if (value) {
       setInput({
-        enter: value[qId].enter,
+        aMom: value[qId].aMom,
+        aSon: value[qId].aSon,
       });
     }
   };
-
   useEffect(() => {
     void renderGetData();
   }, []);
@@ -56,25 +62,27 @@ export default function C222(props: C222Props) {
       updatedAnswers[qId] = input;
       return updatedAnswers;
     });
-    if (enter === answer) {
+    if (aMom === momNum && aSon === sonNum) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [answer, enter, qId]);
+  }, [aMom, aSon, momNum, qId, sonNum]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo> {qNum} </CustomTypo>
       <Box display="flex" alignItems="center">
-        <VisualFraction momNum={momNum} sonNum={sonNum} />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
-        <AnswerInput
-          value={enter}
-          onChange={e => setEnter(Number(e.target.value))}
+        <CustomTypo>{answer}</CustomTypo>
+        <CustomTypo marginRight="1rem"> = </CustomTypo>
+        <DivisionInput
+          mother={aMom}
+          son={aSon}
+          onChangeMother={e => setAMom(Number(e.target.value))}
+          onChangeSon={e => setASon(Number(e.target.value))}
           disabled={isSolved}
         />
       </Box>

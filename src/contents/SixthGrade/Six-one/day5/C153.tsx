@@ -10,7 +10,7 @@ import DivisionInput, {
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 
-export interface Input151Type {
+export interface Input153Type {
   equationSonValue: string | number;
   equationMomValue: string | number;
   equationNatureValue: string | number;
@@ -19,26 +19,27 @@ export interface Input151Type {
   answerSonValue: string | number;
 }
 
-interface C151Props {
+interface C153Props {
   problem: {
     qId: number;
     qNum: string;
     qString: string;
     equationNature?: number | string;
-    equationMom: number;
+    equationMom?: number;
     equationSon: number;
     equationDiv: number;
     answerMom: number;
     answerSon: number;
+    unit: string;
     pass: boolean;
   };
-  allAnswers: Input151Type[];
-  setAllAnswers: React.Dispatch<React.SetStateAction<Input151Type[]>>;
+  allAnswers: Input153Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input153Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
-export default function C151(props: C151Props) {
+export default function C153(props: C153Props) {
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const {
     qId,
@@ -50,10 +51,11 @@ export default function C151(props: C151Props) {
     equationDiv,
     answerMom,
     answerSon,
+    unit,
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState<Input151Type>({
+  const [input, setInput] = useState<Input153Type>({
     equationSonValue: '',
     equationMomValue: '',
     equationNatureValue: '',
@@ -96,7 +98,7 @@ export default function C151(props: C151Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz151.answer' });
+    const value = await getKeyValue({ key: 'quiz153.answer' });
     if (value) {
       setInput({
         equationSonValue: value[qId].equationSonValue,
@@ -120,11 +122,10 @@ export default function C151(props: C151Props) {
       return updatedAnswers;
     });
     if (
-      equationMom === equationMomValue &&
-      equationSon === equationSonValue &&
-      equationDiv === equationDivValue &&
       answerMom === answerMomValue &&
-      answerSon === answerSonValue
+      answerSon === answerSonValue &&
+      equationSon === equationSonValue &&
+      equationDiv === equationDivValue
     ) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -133,21 +134,58 @@ export default function C151(props: C151Props) {
       handleCorrectChange(qId, false);
     }
   }, [
-    equationMomValue,
-    equationSonValue,
-    equationDivValue,
     answerMomValue,
     answerSonValue,
+    equationSonValue,
+    equationDivValue,
     qId,
-    equationMom,
-    equationSon,
-    equationDiv,
     answerMom,
     answerSon,
+    equationSon,
+    equationDiv,
   ]);
 
+  const renderInputComponent = () => {
+    if (equationNature) {
+      return (
+        <BigDivisionInput
+          num={equationNatureValue}
+          mother={equationMomValue}
+          son={equationSonValue}
+          onChangeNum={e => setEquationNatureValue(Number(e.target.value))}
+          onChangeMother={e => setEquationMomValue(Number(e.target.value))}
+          onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
+        />
+      );
+    } else if (equationMom) {
+      return (
+        <DivisionInput
+          mother={equationMomValue}
+          son={equationSonValue}
+          onChangeMother={e => setEquationMomValue(Number(e.target.value))}
+          onChangeSon={e => setEquationSonValue(Number(e.target.value))}
+          disabled={isSolved}
+        />
+      );
+    }
+    return (
+      <NumberInput
+        value={equationSonValue}
+        onChange={e => setEquationSonValue(Number(e.target.value))}
+      />
+    );
+  };
+
   return (
-    <Box width="90%" gap="0.2rem" marginBottom="1rem" position="relative">
+    <Box
+      minWidth="30rem"
+      width="100%"
+      alignItems="left"
+      gap="0.2rem"
+      marginBottom="1rem"
+      position="relative"
+    >
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <Box>
         <CustomTypo marginRight="0.5rem">{qNum}</CustomTypo>
@@ -163,31 +201,12 @@ export default function C151(props: C151Props) {
       >
         <Box display="flex" alignItems="center">
           <CustomTypo paddingX="1rem">식: </CustomTypo>
-          {equationNature ? (
-            <BigDivisionInput
-              num={equationNatureValue}
-              mother={equationMomValue}
-              son={equationSonValue}
-              onChangeNum={e => setEquationNatureValue(Number(e.target.value))}
-              onChangeMother={e => setEquationMomValue(Number(e.target.value))}
-              onChangeSon={e => setEquationSonValue(Number(e.target.value))}
-              disabled={isSolved}
-            />
-          ) : (
-            <DivisionInput
-              mother={equationMomValue}
-              son={equationSonValue}
-              onChangeMother={e => setEquationMomValue(Number(e.target.value))}
-              onChangeSon={e => setEquationSonValue(Number(e.target.value))}
-              disabled={isSolved}
-            />
-          )}
+          {renderInputComponent()}
           <CustomTypo marginX="1rem">÷</CustomTypo>
           <NumberInput
             width="2.5rem"
             value={equationDivValue}
             onChange={e => setEquationDivValue(Number(e.target.value))}
-            disabled={isSolved}
           />
         </Box>
         <Box display="flex" alignItems="center">
@@ -197,8 +216,8 @@ export default function C151(props: C151Props) {
             son={answerSonValue}
             onChangeMother={e => setAnswerMomValue(Number(e.target.value))}
             onChangeSon={e => setAnswerSonValue(Number(e.target.value))}
-            disabled={isSolved}
           />
+          <CustomTypo paddingX="1rem">{unit}</CustomTypo>
         </Box>
       </Box>
     </Box>
