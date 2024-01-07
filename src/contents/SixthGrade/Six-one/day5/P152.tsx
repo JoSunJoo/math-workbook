@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -7,11 +8,14 @@ import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
 import C152 from './C152';
 
+import type { Input151Type } from './C151';
+
 export default function P152() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input151Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -21,13 +25,13 @@ export default function P152() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz151.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="문장제"
@@ -53,6 +57,8 @@ export default function P152() {
               }}
             >
               <C152
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

@@ -1,17 +1,21 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
-import C141 from './C141';
+import C142 from './C142';
+
+import type { Input132Type } from '../day3/C132';
 export default function P142() {
   // 색칠 문제
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input132Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -21,13 +25,13 @@ export default function P142() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz142.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="÷(자연수)의 계산"
@@ -53,7 +57,9 @@ export default function P142() {
                 margin: '0.5rem',
               }}
             >
-              <C141
+              <C142
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

@@ -10,7 +10,7 @@ import DivisionInput, {
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 
-export interface Input152Type {
+export interface Input153Type {
   equationSonValue: string | number;
   equationMomValue: string | number;
   equationNatureValue: string | number;
@@ -19,7 +19,7 @@ export interface Input152Type {
   answerSonValue: string | number;
 }
 
-interface C152Props {
+interface C153Props {
   problem: {
     qId: number;
     qNum: string;
@@ -33,13 +33,13 @@ interface C152Props {
     unit: string;
     pass: boolean;
   };
-  allAnswers: Input152Type[];
-  setAllAnswers: React.Dispatch<React.SetStateAction<Input152Type[]>>;
+  allAnswers: Input153Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input153Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
-export default function C152(props: C152Props) {
+export default function C153(props: C153Props) {
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const {
     qId,
@@ -55,7 +55,7 @@ export default function C152(props: C152Props) {
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState<Input152Type>({
+  const [input, setInput] = useState<Input153Type>({
     equationSonValue: '',
     equationMomValue: '',
     equationNatureValue: '',
@@ -98,7 +98,7 @@ export default function C152(props: C152Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz152.answer' });
+    const value = await getKeyValue({ key: 'quiz153.answer' });
     setInput({
       equationSonValue: value[qId].equationSonValue,
       equationMomValue: value[qId].equationMomValue,

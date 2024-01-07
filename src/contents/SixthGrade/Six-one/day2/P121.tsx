@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
@@ -14,6 +15,14 @@ export default function Page13() {
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<
+    {
+      lSon: string | number;
+      rSon: string | number;
+      aMom: string | number;
+      aSon: string | number;
+    }[]
+  >([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -23,11 +32,10 @@ export default function Page13() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz121.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -59,6 +67,8 @@ export default function Page13() {
               }}
             >
               <C121
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

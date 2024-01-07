@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -7,6 +9,11 @@ import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
 // C133 공통사용
+
+export interface Input131Type {
+  aMom: string | number;
+  aSon: string | number;
+}
 
 interface C131Props {
   problem: {
@@ -20,19 +27,54 @@ interface C131Props {
     cSon: number;
     pass: boolean;
   };
+  allAnswers: Input131Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input131Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C131(props: C131Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, lMom, lSon, rMom, rSon, cMom, cSon } = problem;
 
-  const [aMom, setAMom] = useState<string | number>('');
-  const [aSon, setASon] = useState<string | number>('');
+  const [input, setInput] = useState<{
+    aMom: string | number;
+    aSon: string | number;
+  }>({
+    aMom: '',
+    aSon: '',
+  });
+
+  const { aMom, aSon } = input;
+
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const setAMom = (value: number | string) => {
+    setInput({ ...input, aMom: value });
+  };
+
+  const setASon = (value: number | string) => {
+    setInput({ ...input, aSon: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz131.answer' });
+    setInput({
+      aSon: value[qId].aSon,
+      aMom: value[qId].aMom,
+    });
+  };
+
   useEffect(() => {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = input;
+      return updatedAnswers;
+    });
     if (aMom === cMom && aSon === cSon) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -40,8 +82,6 @@ export default function C131(props: C131Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aMom, aSon, cMom, cSon, qId]);
 
   return (

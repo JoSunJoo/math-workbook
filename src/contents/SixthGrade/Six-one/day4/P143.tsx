@@ -1,17 +1,21 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
-import C141 from './C141';
+import C143 from './C143';
+
+import type { Input131Type } from '../day3/C131';
 
 export default function P143() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input131Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -21,11 +25,10 @@ export default function P143() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz143.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -50,7 +53,9 @@ export default function P143() {
                 margin: '0.5rem',
               }}
             >
-              <C141
+              <C143
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

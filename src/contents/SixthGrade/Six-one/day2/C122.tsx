@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -20,21 +22,63 @@ interface C122Props {
     answer: number[];
     pass: boolean;
   };
+  allAnswers: Input122Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input122Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
+export interface Input122Type {
+  daughter1: string | number;
+  daughter2: string | number;
+  mother: string | number;
+}
+
 export default function C122(props: C122Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, son, mom1, num, mom2, son2, answer } = problem;
 
-  const [daughter1, setDaughter1] = useState<string | number>('');
-  const [daughter2, setDaughter2] = useState<string | number>('');
-  const [mother, setMother] = useState<string | number>('');
+  const [input, setInput] = useState<Input122Type>({
+    daughter1: '',
+    daughter2: '',
+    mother: '',
+  });
+
+  const { daughter1, daughter2, mother } = input;
+
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const setDaughter1 = (value: string | number) => {
+    setInput({ ...input, daughter1: value });
+  };
+
+  const setDaughter2 = (value: string | number) => {
+    setInput({ ...input, daughter2: value });
+  };
+
+  const setMother = (value: string | number) => {
+    setInput({ ...input, mother: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz122.answer' });
+    setInput({
+      daughter1: value[qId].daughter1,
+      daughter2: value[qId].daughter2,
+      mother: value[qId].mother,
+    });
+  };
+
   useEffect(() => {
-    // TODO 정답 체크
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = input;
+      return updatedAnswers;
+    });
     if (
       answer[0] === daughter1 &&
       answer[1] === daughter2 &&
@@ -46,7 +90,6 @@ export default function C122(props: C122Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [answer, daughter1, daughter2, mother, qId]);
 
   return (

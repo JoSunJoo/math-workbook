@@ -1,17 +1,21 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
-import C131 from './C131';
+import C133 from './C133';
+
+import type { Input131Type } from './C131';
 
 export default function P133() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input131Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -20,13 +24,14 @@ export default function P133() {
       return newPassArray;
     });
   };
-  const checkAnswer = () => {
+
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz133.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout title="÷(자연수)의 계산" question={`계산을 하세요.`} day="day3">
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -48,7 +53,9 @@ export default function P133() {
                 margin: '0.5rem',
               }}
             >
-              <C131
+              <C133
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

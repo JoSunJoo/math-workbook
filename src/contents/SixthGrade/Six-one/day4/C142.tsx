@@ -4,70 +4,47 @@ import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import DivisionInput, {
-  NumberInput,
-} from 'src/contents/SixthGrade/common/number-box';
+import DivisionInput from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
-interface C121Props {
+import type { Input131Type } from '../day3/C131';
+
+interface C142Props {
   problem: {
     qId: number;
     qNum: string;
-    mom: number;
-    son: number;
-    num: number;
-    rMom: number;
-    answer: number[];
+    lNature?: number;
+    rNature?: number;
+    lMom?: number;
+    lSon: number;
+    rMom?: number;
+    rSon: number;
+    cMom: number;
+    cSon: number;
     pass: boolean;
   };
-  allAnswers: {
-    lSon: string | number;
-    rSon: string | number;
-    aMom: string | number;
-    aSon: string | number;
-  }[];
-  setAllAnswers: React.Dispatch<
-    React.SetStateAction<
-      {
-        lSon: string | number;
-        rSon: string | number;
-        aMom: string | number;
-        aSon: string | number;
-      }[]
-    >
-  >;
+  allAnswers: Input131Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input131Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
-export default function C121(props: C121Props) {
+export default function C142(props: C142Props) {
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
-  const { qId, qNum, mom, son, num, rMom, answer } = problem;
+  const { qId, qNum, lMom, lSon, rMom, rSon, cMom, cSon, lNature } = problem;
 
   const [input, setInput] = useState<{
-    lSon: string | number;
-    rSon: string | number;
     aMom: string | number;
     aSon: string | number;
   }>({
-    lSon: '',
-    rSon: '',
     aMom: '',
     aSon: '',
   });
 
-  const { lSon, rSon, aMom, aSon } = input;
+  const { aMom, aSon } = input;
 
   const [isCorrect, setIsCorrect] = useState(false);
-
-  const setLSon = (value: number | string) => {
-    setInput({ ...input, lSon: value });
-  };
-
-  const setRSon = (value: number | string) => {
-    setInput({ ...input, rSon: value });
-  };
 
   const setAMom = (value: number | string) => {
     setInput({ ...input, aMom: value });
@@ -78,10 +55,8 @@ export default function C121(props: C121Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz121.answer' });
+    const value = await getKeyValue({ key: 'quiz142.answer' });
     setInput({
-      lSon: value[qId].lSon,
-      rSon: value[qId].rSon,
       aSon: value[qId].aSon,
       aMom: value[qId].aMom,
     });
@@ -97,19 +72,14 @@ export default function C121(props: C121Props) {
       updatedAnswers[qId] = input;
       return updatedAnswers;
     });
-    if (
-      answer[0] === lSon &&
-      answer[1] === rSon &&
-      answer[2] === aSon &&
-      answer[3] === aMom
-    ) {
+    if (aMom === cMom && aSon === cSon) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [lSon, rSon, aSon, aMom, qId, answer]);
+  }, [aMom, aSon, cMom, cSon, qId]);
 
   return (
     <Box
@@ -118,34 +88,21 @@ export default function C121(props: C121Props) {
       alignItems="center"
       margin="1rem"
       position="relative"
-      minWidth="22rem"
     >
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo marginRight="0.5rem">{qNum}</CustomTypo>
-      <VisualFraction momNum={mom} sonNum={son} />
-      <CustomTypo> ÷ {num} = </CustomTypo>
-      <VisualFraction
-        width="6.1rem"
-        momNum={rMom}
-        sonNum={
-          <Box display="flex" alignItems="center">
-            <NumberInput
-              value={lSon}
-              onChange={e => setLSon(Number(e.target.value))}
-              disabled={isSolved}
-            />
-            <CustomTypo marginLeft="0.2rem">
-              ÷
-              <NumberInput
-                value={rSon}
-                onChange={e => setRSon(Number(e.target.value))}
-                disabled={isSolved}
-              />
-            </CustomTypo>
-          </Box>
-        }
-      />
-      <CustomTypo fontSize="20px"> = </CustomTypo>
+      {lMom === undefined ? (
+        <CustomTypo>{lSon}</CustomTypo>
+      ) : (
+        <VisualFraction natureNum={lNature} momNum={lMom} sonNum={lSon} />
+      )}
+      <CustomTypo> ÷ </CustomTypo>
+      {rMom === undefined ? (
+        <CustomTypo>{rSon}</CustomTypo>
+      ) : (
+        <VisualFraction momNum={rMom} sonNum={rSon} />
+      )}
+      <CustomTypo> = </CustomTypo>
       <DivisionInput
         son={aSon}
         mother={aMom}

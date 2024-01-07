@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -7,6 +9,15 @@ import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+
+export interface Input151Type {
+  equationSonValue: string | number;
+  equationMomValue: string | number;
+  equationNatureValue: string | number;
+  equationDivValue: string | number;
+  answerMomValue: string | number;
+  answerSonValue: string | number;
+}
 
 interface C151Props {
   problem: {
@@ -21,12 +32,14 @@ interface C151Props {
     answerSon: number;
     pass: boolean;
   };
+  allAnswers: Input151Type[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input151Type[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C151(props: C151Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const {
     qId,
     qNum,
@@ -39,16 +52,71 @@ export default function C151(props: C151Props) {
     answerSon,
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
-  const [equationSonValue, setEquationSonValue] = useState<string | number>('');
-  const [equationMomValue, setEquationMomValue] = useState<string | number>('');
-  const [equationNatureValue, setEquationNatureValue] = useState<
-    string | number
-  >('');
-  const [equationDivValue, setEquationDivValue] = useState<string | number>('');
-  const [answerMomValue, setAnswerMomValue] = useState<string | number>('');
-  const [answerSonValue, setAnswerSonValue] = useState<string | number>('');
+
+  const [input, setInput] = useState<Input151Type>({
+    equationSonValue: '',
+    equationMomValue: '',
+    equationNatureValue: '',
+    equationDivValue: '',
+    answerMomValue: '',
+    answerSonValue: '',
+  });
+
+  const {
+    equationSonValue,
+    equationMomValue,
+    equationNatureValue,
+    equationDivValue,
+    answerMomValue,
+    answerSonValue,
+  } = input;
+
+  const setEquationSonValue = (value: string | number) => {
+    setInput({ ...input, equationSonValue: value });
+  };
+
+  const setEquationMomValue = (value: string | number) => {
+    setInput({ ...input, equationMomValue: value });
+  };
+
+  const setEquationNatureValue = (value: string | number) => {
+    setInput({ ...input, equationNatureValue: value });
+  };
+
+  const setEquationDivValue = (value: string | number) => {
+    setInput({ ...input, equationDivValue: value });
+  };
+
+  const setAnswerMomValue = (value: string | number) => {
+    setInput({ ...input, answerMomValue: value });
+  };
+
+  const setAnswerSonValue = (value: string | number) => {
+    setInput({ ...input, answerSonValue: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz151.answer' });
+    setInput({
+      equationSonValue: value[qId].equationSonValue,
+      equationMomValue: value[qId].equationMomValue,
+      equationNatureValue: value[qId].equationNatureValue,
+      equationDivValue: value[qId].equationDivValue,
+      answerMomValue: value[qId].answerMomValue,
+      answerSonValue: value[qId].answerSonValue,
+    });
+  };
+
   useEffect(() => {
-    // TODO 정답 체크
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = input;
+      return updatedAnswers;
+    });
     if (
       equationMom === equationMomValue &&
       equationSon === equationSonValue &&
@@ -62,7 +130,6 @@ export default function C151(props: C151Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     equationMomValue,
     equationSonValue,

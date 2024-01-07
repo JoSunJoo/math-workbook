@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
@@ -8,12 +9,15 @@ import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
 import C122 from './C122';
 
+import type { Input122Type } from './C122';
+
 import e122Image from 'src/contents/SixthGrade/assets/image/P122/e_1-2-2.png';
 export default function P122() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input122Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -23,11 +27,10 @@ export default function P122() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz122.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -59,6 +62,8 @@ export default function P122() {
               }}
             >
               <C122
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

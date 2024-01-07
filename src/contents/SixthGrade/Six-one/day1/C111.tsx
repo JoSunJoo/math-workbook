@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -16,18 +18,57 @@ interface C111Props {
     apples: number;
     people: number;
   };
+  allAnswers: {
+    son: string | number;
+    mother: string | number;
+  }[];
+  setAllAnswers: React.Dispatch<
+    React.SetStateAction<
+      {
+        son: string | number;
+        mother: string | number;
+      }[]
+    >
+  >;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 
 export default function C111(props: C111Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, apples, people } = problem;
-  const [mother, setMother] = useState<string | number>('');
-  const [son, setSon] = useState<string | number>('');
+  const [answer, setAnswer] = useState<{
+    son: string | number;
+    mother: string | number;
+  }>({ son: '', mother: '' });
+  const { son, mother } = answer;
+
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const setSon = (value: number) => {
+    setAnswer({ ...answer, son: value });
+  };
+
+  const setMother = (value: number) => {
+    setAnswer({ ...answer, mother: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz111.answer' });
+    setAnswer({ mother: value[qId].mother, son: value[qId].son });
+  };
+
   useEffect(() => {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = answer;
+      return updatedAnswers;
+    });
+
     if (son === apples && mother === people) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -35,7 +76,6 @@ export default function C111(props: C111Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [son, mother, qId, apples, people]);
 
   return (

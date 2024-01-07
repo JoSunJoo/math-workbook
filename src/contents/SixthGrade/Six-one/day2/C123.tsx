@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -17,20 +19,56 @@ interface C123Props {
     nature: number;
     pass: boolean;
   };
+  allAnswers: Input123Props[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input123Props[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
+export interface Input123Props {
+  answerMom: string | number;
+  answerSon: string | number;
+}
 
 export default function C123(props: C123Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, mom, son, nature, aMom, aSon } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
-  const [answerMom, setAnswerMom] = useState<string | number>('');
-  const [answerSon, setAnswerSon] = useState<string | number>('');
+
+  const [answer, setAnswer] = useState<{
+    answerMom: string | number;
+    answerSon: string | number;
+  }>({
+    answerMom: '',
+    answerSon: '',
+  });
+  const { answerMom, answerSon } = answer;
+
+  const setAnswerMom = (value: string | number) => {
+    setAnswer({ ...answer, answerMom: value });
+  };
+
+  const setAnswerSon = (value: string | number) => {
+    setAnswer({ ...answer, answerSon: value });
+  };
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz123.answer' });
+    setAnswer({
+      answerMom: value[qId].answerMom,
+      answerSon: value[qId].answerSon,
+    });
+  };
 
   useEffect(() => {
-    // TODO 정답 체크
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = answer;
+      return updatedAnswers;
+    });
     if (aMom === answerMom && aSon === answerSon) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -38,7 +76,6 @@ export default function C123(props: C123Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aMom, aSon, answerMom, answerSon, qId]);
 
   return (
