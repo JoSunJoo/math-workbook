@@ -33,7 +33,8 @@ export default function C342(props: C342Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId, answer, handleCorrectChange, firstInput, secondInput]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, firstInput, secondInput]);
 
   return (
     <Box>

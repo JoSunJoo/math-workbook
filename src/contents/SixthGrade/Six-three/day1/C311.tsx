@@ -36,15 +36,8 @@ export default function C311(props: C311Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [
-    isSolved,
-    qId,
-    firstInput,
-    secondInput,
-    thirdInput,
-    answer,
-    handleCorrectChange,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, firstInput, secondInput, thirdInput, answer]);
 
   return (
     <Box>

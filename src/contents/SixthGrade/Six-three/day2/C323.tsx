@@ -28,7 +28,8 @@ export default function C323(props: C323Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId, answer, handleCorrectChange, input]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, input]);
 
   return (
     <Box>

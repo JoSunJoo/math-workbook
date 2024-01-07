@@ -32,7 +32,8 @@ export default function C412(props: C412Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId, answer, handleCorrectChange, input1, input2, input3]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, input1, input2, input3]);
 
   return (
     <Box>

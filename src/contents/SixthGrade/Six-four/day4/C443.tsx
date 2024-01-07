@@ -28,7 +28,8 @@ export default function C443(props: C443Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId, answer, handleCorrectChange, input1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, input1]);
 
   return (
     <Box display="flex">

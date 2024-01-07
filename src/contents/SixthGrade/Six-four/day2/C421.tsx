@@ -41,17 +41,8 @@ export default function C421(props: C421Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [
-    isSolved,
-    qId,
-    answer,
-    handleCorrectChange,
-    input1,
-    input2,
-    input3,
-    input4,
-    input5,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, input1, input2, input3, input4, input5]);
 
   return (
     <Box display="flex" mb="5rem">

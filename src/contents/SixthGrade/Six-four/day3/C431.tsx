@@ -35,7 +35,8 @@ export default function C431(props: C431Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId, answer, handleCorrectChange, input1, input2]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, input1, input2]);
 
   return (
     <Box display="flex" mb="5rem">

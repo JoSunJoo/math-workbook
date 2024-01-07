@@ -38,16 +38,8 @@ export default function C353(props: C353Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [
-    isSolved,
-    qId,
-    answer,
-    handleCorrectChange,
-    firstMom,
-    firstSon,
-    secondMom,
-    secondSon,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSolved, qId, answer, firstMom, firstSon, secondMom, secondSon]);
 
   return (
     <Box>
