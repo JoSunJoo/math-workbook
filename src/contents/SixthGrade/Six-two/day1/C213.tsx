@@ -12,7 +12,7 @@ import type { Input211Type } from './C211';
 
 import fractionBar from 'src/contents/SixthGrade/assets/icon/fraction-bar.png';
 
-interface C212Props {
+interface C213Props {
   problem: {
     qId: number;
     qNum: string;
@@ -26,7 +26,7 @@ interface C212Props {
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
-export default function C212(props: C212Props) {
+export default function C213(props: C213Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
   const { qId, qNum, sonNum, momNum, answer } = problem;
@@ -41,7 +41,7 @@ export default function C212(props: C212Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz212.answer' });
+    const value = await getKeyValue({ key: 'quiz213.answer' });
     setInput({
       enter: value[qId].enter,
     });
