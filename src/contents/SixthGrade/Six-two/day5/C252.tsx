@@ -31,7 +31,8 @@ export default function C252(props: C253Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [answer, enter, handleCorrectChange, qId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answer, enter, qId]);
 
   return (
     <Box

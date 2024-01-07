@@ -47,7 +47,8 @@ export default function C121(props: C121Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [lSon, rSon, aSon, aMom, qId, answer, handleCorrectChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lSon, rSon, aSon, aMom, qId, answer]);
 
   return (
     <Box

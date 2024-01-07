@@ -35,7 +35,8 @@ export default function C111(props: C111Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [son, mother, qId, apples, people, handleCorrectChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [son, mother, qId, apples, people]);
 
   return (
     <Box position="relative" minHeight="10rem">

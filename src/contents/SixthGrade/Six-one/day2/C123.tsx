@@ -38,7 +38,8 @@ export default function C123(props: C123Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, answerMom, answerSon, handleCorrectChange, qId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aMom, aSon, answerMom, answerSon, qId]);
 
   return (
     <Box

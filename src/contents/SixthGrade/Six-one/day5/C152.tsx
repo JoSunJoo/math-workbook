@@ -63,6 +63,8 @@ export default function C152(props: C152Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     answerMomValue,
     answerSonValue,
@@ -73,7 +75,6 @@ export default function C152(props: C152Props) {
     answerSon,
     equationSon,
     equationDiv,
-    handleCorrectChange,
   ]);
 
   const renderInputComponent = () => {

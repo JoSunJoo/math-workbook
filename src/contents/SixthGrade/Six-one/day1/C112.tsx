@@ -45,7 +45,8 @@ export default function C113(props: C113Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [mother, son, num1, num2, qId, orangeNum, peopleNum, handleCorrectChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mother, son, num1, num2, qId, orangeNum, peopleNum]);
 
   return (
     <>

@@ -35,7 +35,8 @@ export default function C241(props: C241Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, aNature, qId, momNum, sonNum, nature, handleCorrectChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aMom, aSon, aNature, qId, momNum, sonNum, nature]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

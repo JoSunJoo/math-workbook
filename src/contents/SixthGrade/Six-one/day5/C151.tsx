@@ -62,6 +62,7 @@ export default function C151(props: C151Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     equationMomValue,
     equationSonValue,
@@ -74,7 +75,6 @@ export default function C151(props: C151Props) {
     equationDiv,
     answerMom,
     answerSon,
-    handleCorrectChange,
   ]);
 
   return (

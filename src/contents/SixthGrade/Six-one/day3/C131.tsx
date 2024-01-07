@@ -40,7 +40,9 @@ export default function C131(props: C131Props) {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, cMom, cSon, handleCorrectChange, qId]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aMom, aSon, cMom, cSon, qId]);
 
   return (
     <Box
