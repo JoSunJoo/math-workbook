@@ -4,17 +4,14 @@ import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
-import DivisionInput, {
-  NumberInput,
-} from 'src/contents/SixthGrade/common/number-box';
+import DivisionInput from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 
-export interface Input241Props {
+export interface Input243Props {
   aMom: number | string;
   aSon: number | string;
-  aNature: number | string;
 }
-interface C241Props {
+interface C243Props {
   problem: {
     qId: number;
     qNum: string;
@@ -22,24 +19,22 @@ interface C241Props {
     momNum: number;
     answer: number;
     pass: boolean;
-    nature?: number;
   };
-  allAnswers: Input241Props[];
-  setAllAnswers: React.Dispatch<React.SetStateAction<Input241Props[]>>;
+  allAnswers: Input243Props[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input243Props[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
-export default function C241(props: C241Props) {
+export default function C243(props: C243Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
-  const { qId, qNum, sonNum, momNum, answer, nature } = problem;
-  const [input, setInput] = useState<Input241Props>({
+  const { qId, qNum, sonNum, momNum, answer } = problem;
+  const [input, setInput] = useState<Input243Props>({
     aMom: '',
     aSon: '',
-    aNature: '',
   });
 
-  const { aMom, aSon, aNature } = input;
+  const { aMom, aSon } = input;
 
   const setAMom = (value: string | number) => {
     setInput({ ...input, aMom: value });
@@ -48,17 +43,11 @@ export default function C241(props: C241Props) {
   const setASon = (value: string | number) => {
     setInput({ ...input, aSon: value });
   };
-
-  const setANature = (value: string | number) => {
-    setInput({ ...input, aNature: value });
-  };
-
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz241.answer' });
+    const value = await getKeyValue({ key: 'quiz243.answer' });
     setInput({
       aMom: value[qId].aMom,
       aSon: value[qId].aSon,
-      aNature: value[qId].aNature,
     });
   };
   useEffect(() => {
@@ -71,14 +60,14 @@ export default function C241(props: C241Props) {
       updatedAnswers[qId] = input;
       return updatedAnswers;
     });
-    if (aMom === momNum && aSon === sonNum && aNature === nature) {
+    if (aMom === momNum && aSon === sonNum) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [aMom, aSon, aNature, qId, momNum, sonNum, nature]);
+  }, [aMom, aSon, momNum, qId, sonNum]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
@@ -86,18 +75,8 @@ export default function C241(props: C241Props) {
       <CustomTypo> {qNum} </CustomTypo>
       <Box display="flex" alignItems="center">
         <CustomTypo>{answer}</CustomTypo>
-        <CustomTypo marginX="0.3rem"> = </CustomTypo>
-        {nature && (
-          <Box marginRight="0.3rem">
-            <NumberInput
-              value={aNature}
-              onChange={e => setANature(Number(e.target.value))}
-              disabled={isSolved}
-            />
-          </Box>
-        )}
+        <CustomTypo marginRight="1rem"> = </CustomTypo>
         <DivisionInput
-          width="3rem"
           mother={aMom}
           son={aSon}
           onChangeMother={e => setAMom(Number(e.target.value))}

@@ -29,7 +29,7 @@ export default function P212() {
   const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
     if (!isSolved) await sendScoreUtil(currentScore);
-    await postKeyValue({ key: 'quiz211.answer', value: allAnswer });
+    await postKeyValue({ key: 'quiz212.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 

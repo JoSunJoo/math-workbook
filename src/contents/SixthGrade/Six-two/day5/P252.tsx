@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -6,6 +7,8 @@ import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
 import { calculateTruePercentage } from '../../utils/true-percentage';
 import C252 from './C252';
+
+import type { Input211Type } from '../day1/C211';
 
 export default function P252() {
   const [isSolved, setIsSolved] = useState(false);
@@ -20,12 +23,12 @@ export default function P252() {
       return newPassArray;
     });
   };
+  const [allAnswer, setAllAnswer] = useState<Input211Type[]>([]);
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz252.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -56,6 +59,8 @@ export default function P252() {
               }}
             >
               <C252
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

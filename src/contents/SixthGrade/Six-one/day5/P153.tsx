@@ -29,7 +29,7 @@ export default function P153() {
   const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
     if (!isSolved) await sendScoreUtil(currentScore);
-    await postKeyValue({ key: 'quiz151.answer', value: allAnswer });
+    await postKeyValue({ key: 'quiz153.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
