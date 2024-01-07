@@ -9,10 +9,11 @@ import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import VisualFraction from 'src/contents/SixthGrade/common/visual-fraction';
 
 import type { Input211Type } from '../day1/C211';
-interface C223Props {
+interface C233Props {
   problem: {
     qId: number;
     qNum: string;
+    natureNum: number;
     sonNum: number;
     momNum: number;
     answer: number;
@@ -23,10 +24,10 @@ interface C223Props {
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
-export default function C223(props: C223Props) {
+export default function C233(props: C233Props) {
   const [isCorrect, setIsCorrect] = useState(false);
   const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
-  const { qId, qNum, sonNum, momNum, answer } = problem;
+  const { qId, qNum, natureNum, sonNum, momNum, answer } = problem;
   const [input, setInput] = useState<Input211Type>({
     enter: '',
   });
@@ -38,7 +39,7 @@ export default function C223(props: C223Props) {
   };
 
   const renderGetData = async () => {
-    const value = await getKeyValue({ key: 'quiz223.answer' });
+    const value = await getKeyValue({ key: 'quiz233.answer' });
     setInput({
       enter: value[qId].enter,
     });
@@ -67,8 +68,13 @@ export default function C223(props: C223Props) {
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo> {qNum} </CustomTypo>
-      <Box display="flex" alignItems="center">
-        <VisualFraction momNum={momNum} sonNum={sonNum} />
+      <Box display="flex" alignItems="center" marginX="0.5rem">
+        <VisualFraction
+          width="2.2rem"
+          natureNum={natureNum}
+          momNum={momNum}
+          sonNum={sonNum}
+        />
         <CustomTypo marginX="1rem"> = </CustomTypo>
         <AnswerInput
           value={enter}

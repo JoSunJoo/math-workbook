@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
