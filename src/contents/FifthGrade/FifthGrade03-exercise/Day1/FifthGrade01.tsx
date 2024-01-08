@@ -27,6 +27,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade01: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', '', '', '', '', ''],
@@ -72,9 +73,12 @@ const FifthGrade01: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -134,6 +138,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][0]}
                       onChange={e => handleChange('1', 0, e.target.value)}
                       type="text"
@@ -143,6 +148,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][1]}
                       onChange={e => handleChange('1', 1, e.target.value)}
                       type="text"
@@ -156,6 +162,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][2]}
                       onChange={e => handleChange('1', 2, e.target.value)}
                       type="text"
@@ -165,6 +172,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][3]}
                       onChange={e => handleChange('1', 3, e.target.value)}
                       type="text"
@@ -178,6 +186,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][4]}
                       onChange={e => handleChange('1', 4, e.target.value)}
                       type="text"
@@ -187,6 +196,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['1'][5]}
                       onChange={e => handleChange('1', 5, e.target.value)}
                       type="text"
@@ -228,6 +238,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][0]}
                       onChange={e => handleChange('2', 0, e.target.value)}
                       type="text"
@@ -237,6 +248,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][1]}
                       onChange={e => handleChange('2', 1, e.target.value)}
                       type="text"
@@ -250,6 +262,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][2]}
                       onChange={e => handleChange('2', 2, e.target.value)}
                       type="text"
@@ -259,6 +272,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][3]}
                       onChange={e => handleChange('2', 3, e.target.value)}
                       type="text"
@@ -272,6 +286,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][4]}
                       onChange={e => handleChange('2', 4, e.target.value)}
                       type="text"
@@ -281,6 +296,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['2'][5]}
                       onChange={e => handleChange('2', 5, e.target.value)}
                       type="text"
@@ -322,6 +338,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][0]}
                       onChange={e => handleChange('3', 0, e.target.value)}
                       type="text"
@@ -331,6 +348,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][1]}
                       onChange={e => handleChange('3', 1, e.target.value)}
                       type="text"
@@ -344,6 +362,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][2]}
                       onChange={e => handleChange('3', 2, e.target.value)}
                       type="text"
@@ -353,6 +372,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][3]}
                       onChange={e => handleChange('3', 3, e.target.value)}
                       type="text"
@@ -366,6 +386,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][4]}
                       onChange={e => handleChange('3', 4, e.target.value)}
                       type="text"
@@ -375,6 +396,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['3'][5]}
                       onChange={e => handleChange('3', 5, e.target.value)}
                       type="text"
@@ -418,6 +440,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][0]}
                       onChange={e => handleChange('4', 0, e.target.value)}
                       type="text"
@@ -427,6 +450,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][1]}
                       onChange={e => handleChange('4', 1, e.target.value)}
                       type="text"
@@ -440,6 +464,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][2]}
                       onChange={e => handleChange('4', 2, e.target.value)}
                       type="text"
@@ -449,6 +474,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][3]}
                       onChange={e => handleChange('4', 3, e.target.value)}
                       type="text"
@@ -462,6 +488,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][4]}
                       onChange={e => handleChange('4', 4, e.target.value)}
                       type="text"
@@ -471,6 +498,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['4'][5]}
                       onChange={e => handleChange('4', 5, e.target.value)}
                       type="text"
@@ -512,6 +540,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][0]}
                       onChange={e => handleChange('5', 0, e.target.value)}
                       type="text"
@@ -521,6 +550,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][1]}
                       onChange={e => handleChange('5', 1, e.target.value)}
                       type="text"
@@ -534,6 +564,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][2]}
                       onChange={e => handleChange('5', 2, e.target.value)}
                       type="text"
@@ -543,6 +574,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][3]}
                       onChange={e => handleChange('5', 3, e.target.value)}
                       type="text"
@@ -556,6 +588,7 @@ const FifthGrade01: React.FC = () => {
                 <div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][4]}
                       onChange={e => handleChange('5', 4, e.target.value)}
                       type="text"
@@ -565,6 +598,7 @@ const FifthGrade01: React.FC = () => {
                   <div className="divlineCSS"></div>
                   <div>
                     <input
+                      disabled={isInputDisabled}
                       value={answers['5'][5]}
                       onChange={e => handleChange('5', 5, e.target.value)}
                       type="text"

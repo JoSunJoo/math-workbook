@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade06: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
@@ -87,9 +88,12 @@ const FifthGrade06: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -176,12 +180,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][0]}
                     onChange={e => handleChange('1', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][1]}
                     onChange={e => handleChange('1', 1, e.target.value)}
                     className="averageInput"
@@ -227,12 +233,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['2'][0]}
                     onChange={e => handleChange('2', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['2'][1]}
                     onChange={e => handleChange('2', 1, e.target.value)}
                     className="averageInput"
@@ -278,12 +286,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['3'][0]}
                     onChange={e => handleChange('3', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['3'][1]}
                     onChange={e => handleChange('3', 1, e.target.value)}
                     className="averageInput"
@@ -329,12 +339,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['4'][0]}
                     onChange={e => handleChange('4', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['4'][1]}
                     onChange={e => handleChange('4', 1, e.target.value)}
                     className="averageInput"
@@ -380,12 +392,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['5'][0]}
                     onChange={e => handleChange('5', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['5'][1]}
                     onChange={e => handleChange('5', 1, e.target.value)}
                     className="averageInput"
@@ -431,12 +445,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['6'][0]}
                     onChange={e => handleChange('6', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['6'][1]}
                     onChange={e => handleChange('6', 1, e.target.value)}
                     className="averageInput"
@@ -482,12 +498,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['7'][0]}
                     onChange={e => handleChange('7', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['7'][1]}
                     onChange={e => handleChange('7', 1, e.target.value)}
                     className="averageInput"
@@ -533,12 +551,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['8'][0]}
                     onChange={e => handleChange('8', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['8'][1]}
                     onChange={e => handleChange('8', 1, e.target.value)}
                     className="averageInput"
@@ -584,12 +604,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['9'][0]}
                     onChange={e => handleChange('9', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['9'][1]}
                     onChange={e => handleChange('9', 1, e.target.value)}
                     className="averageInput"
@@ -635,12 +657,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['10'][0]}
                     onChange={e => handleChange('10', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['10'][1]}
                     onChange={e => handleChange('10', 1, e.target.value)}
                     className="averageInput"
@@ -686,12 +710,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['11'][0]}
                     onChange={e => handleChange('11', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['11'][1]}
                     onChange={e => handleChange('11', 1, e.target.value)}
                     className="averageInput"
@@ -737,12 +763,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['12'][0]}
                     onChange={e => handleChange('12', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['12'][1]}
                     onChange={e => handleChange('12', 1, e.target.value)}
                     className="averageInput"
@@ -788,12 +816,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['13'][0]}
                     onChange={e => handleChange('13', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['13'][1]}
                     onChange={e => handleChange('13', 1, e.target.value)}
                     className="averageInput"
@@ -839,12 +869,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['14'][0]}
                     onChange={e => handleChange('14', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['14'][1]}
                     onChange={e => handleChange('14', 1, e.target.value)}
                     className="averageInput"
@@ -890,12 +922,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['15'][0]}
                     onChange={e => handleChange('15', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['15'][1]}
                     onChange={e => handleChange('15', 1, e.target.value)}
                     className="averageInput"
@@ -941,12 +975,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['16'][0]}
                     onChange={e => handleChange('16', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['16'][1]}
                     onChange={e => handleChange('16', 1, e.target.value)}
                     className="averageInput"
@@ -992,12 +1028,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['17'][0]}
                     onChange={e => handleChange('17', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['17'][1]}
                     onChange={e => handleChange('17', 1, e.target.value)}
                     className="averageInput"
@@ -1043,12 +1081,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['18'][0]}
                     onChange={e => handleChange('18', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['18'][1]}
                     onChange={e => handleChange('18', 1, e.target.value)}
                     className="averageInput"
@@ -1094,12 +1134,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][0]}
                     onChange={e => handleChange('1', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][0]}
                     onChange={e => handleChange('1', 0, e.target.value)}
                     className="averageInput"
@@ -1145,12 +1187,14 @@ const FifthGrade06: React.FC = () => {
               <div>
                 <div className="fontSize25 colorRedOnly322">
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][0]}
                     onChange={e => handleChange('1', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
+                    disabled={isInputDisabled}
                     value={answers['1'][0]}
                     onChange={e => handleChange('1', 0, e.target.value)}
                     className="averageInput"

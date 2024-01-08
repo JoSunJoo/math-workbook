@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade12: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -57,9 +58,12 @@ const FifthGrade12: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -116,6 +120,7 @@ const FifthGrade12: React.FC = () => {
         <div>
           {' '}
           <input
+            disabled={isInputDisabled}
             value={answers['1'][0]}
             onChange={e => handleChange('1', 0, e.target.value)}
             type="text"
@@ -152,6 +157,7 @@ const FifthGrade12: React.FC = () => {
         <div>
           {' '}
           <input
+            disabled={isInputDisabled}
             value={answers['2'][0]}
             onChange={e => handleChange('2', 0, e.target.value)}
             type="text"
@@ -188,6 +194,7 @@ const FifthGrade12: React.FC = () => {
         <div>
           {' '}
           <input
+            disabled={isInputDisabled}
             value={answers['3'][0]}
             onChange={e => handleChange('3', 0, e.target.value)}
             type="text"
@@ -224,6 +231,7 @@ const FifthGrade12: React.FC = () => {
         <div>
           {' '}
           <input
+            disabled={isInputDisabled}
             value={answers['4'][0]}
             onChange={e => handleChange('4', 0, e.target.value)}
             type="text"
@@ -260,6 +268,7 @@ const FifthGrade12: React.FC = () => {
         <div>
           {' '}
           <input
+            disabled={isInputDisabled}
             value={answers['5'][0]}
             onChange={e => handleChange('5', 0, e.target.value)}
             type="text"

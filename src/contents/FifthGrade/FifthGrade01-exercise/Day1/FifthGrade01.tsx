@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade01: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
@@ -63,9 +64,11 @@ const FifthGrade01: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -123,6 +126,7 @@ const FifthGrade01: React.FC = () => {
               <div>
                 25 + 43 - 19 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['1'][0]}
@@ -132,6 +136,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="textRight">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['1'][1]}
@@ -170,6 +175,7 @@ const FifthGrade01: React.FC = () => {
               <div>
                 31 - 16 + 23 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['2'][0]}
@@ -179,6 +185,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="textRight111">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['2'][1]}
@@ -217,6 +224,7 @@ const FifthGrade01: React.FC = () => {
               <div>
                 19 - 13 + 7 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['3'][0]}
@@ -226,6 +234,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="textRight">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['3'][1]}
@@ -264,6 +273,7 @@ const FifthGrade01: React.FC = () => {
               <div>
                 16 + 23 - 9 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['4'][0]}
@@ -273,6 +283,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="textRight1112">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['4'][1]}
@@ -311,6 +322,7 @@ const FifthGrade01: React.FC = () => {
               <div className="elementAbsol1">35 - 27 + 9 - 14</div>
               <div className="elementAbsol2">
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['5'][0]}
@@ -318,6 +330,7 @@ const FifthGrade01: React.FC = () => {
                 />
                 + 9 - 14 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['5'][1]}
@@ -327,6 +340,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="elementAbsol3">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['5'][2]}
@@ -365,6 +379,7 @@ const FifthGrade01: React.FC = () => {
               <div className="elementAbsol1">28 + 15 - 17 - 20</div>
               <div className="elementAbsol2">
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['6'][0]}
@@ -372,6 +387,7 @@ const FifthGrade01: React.FC = () => {
                 />
                 - 17 - 20 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['6'][1]}
@@ -381,6 +397,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="elementAbsol3">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['6'][2]}
@@ -419,6 +436,7 @@ const FifthGrade01: React.FC = () => {
               <div className="elementAbsol1">15 + 4 - 16 + 11</div>
               <div className="elementAbsol6">
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['7'][0]}
@@ -426,6 +444,7 @@ const FifthGrade01: React.FC = () => {
                 />
                 - 16 + 11 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['7'][1]}
@@ -435,6 +454,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="elementAbsol4">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['7'][2]}
@@ -473,6 +493,7 @@ const FifthGrade01: React.FC = () => {
               <div className="elementAbsol1">35 + 8 - 26 + 9</div>
               <div className="elementAbsol2">
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['8'][0]}
@@ -480,6 +501,7 @@ const FifthGrade01: React.FC = () => {
                 />
                 - 26 + 9 =
                 <input
+                  disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
                   value={answers['8'][1]}
@@ -489,6 +511,7 @@ const FifthGrade01: React.FC = () => {
                 <div className="elementAbsol5">
                   =
                   <input
+                    disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
                     value={answers['8'][2]}

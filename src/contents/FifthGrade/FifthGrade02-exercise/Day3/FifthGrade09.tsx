@@ -13,6 +13,7 @@ import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade09: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -70,9 +71,12 @@ const FifthGrade09: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -154,6 +158,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['1'][0]}
                   onChange={e => handleChange('1', 0, e.target.value)}
                   className="borderColor233"
@@ -195,6 +200,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['2'][0]}
                   onChange={e => handleChange('2', 0, e.target.value)}
                   className="borderColor233"
@@ -236,6 +242,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['3'][0]}
                   onChange={e => handleChange('3', 0, e.target.value)}
                   className="borderColor233"
@@ -277,6 +284,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['4'][0]}
                   onChange={e => handleChange('4', 0, e.target.value)}
                   className="borderColor233"
@@ -318,6 +326,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['5'][0]}
                   onChange={e => handleChange('5', 0, e.target.value)}
                   className="borderColor233"
@@ -359,6 +368,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['6'][0]}
                   onChange={e => handleChange('6', 0, e.target.value)}
                   className="borderColor233"
@@ -400,6 +410,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['7'][0]}
                   onChange={e => handleChange('7', 0, e.target.value)}
                   className="borderColor233"
@@ -441,6 +452,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['8'][0]}
                   onChange={e => handleChange('8', 0, e.target.value)}
                   className="borderColor233"
@@ -482,6 +494,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['9'][0]}
                   onChange={e => handleChange('9', 0, e.target.value)}
                   className="borderColor233"
@@ -523,6 +536,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['10'][0]}
                   onChange={e => handleChange('10', 0, e.target.value)}
                   className="borderColor233"
@@ -564,6 +578,7 @@ const FifthGrade09: React.FC = () => {
                   alt=""
                 />
                 <input
+                  disabled={isInputDisabled}
                   value={answers['11'][0]}
                   onChange={e => handleChange('11', 0, e.target.value)}
                   className="borderColor233"

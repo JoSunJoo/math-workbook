@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade09: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -75,9 +76,12 @@ const FifthGrade09: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -134,6 +138,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               36 ÷ (9 × 2) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['1'][0]}
                 onChange={e => handleChange('1', 0, e.target.value)}
                 className="inputSize1"
@@ -169,6 +174,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               88 ÷ (8 ÷ 4) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['2'][0]}
                 onChange={e => handleChange('2', 0, e.target.value)}
                 className="inputSize1"
@@ -204,6 +210,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               9 × (12 ÷ 3) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['3'][0]}
                 onChange={e => handleChange('3', 0, e.target.value)}
                 className="inputSize1"
@@ -239,6 +246,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               3 × (6 × 5) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['4'][0]}
                 onChange={e => handleChange('4', 0, e.target.value)}
                 className="inputSize1"
@@ -275,6 +283,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               24 ÷ (6 × 2) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['5'][0]}
                 onChange={e => handleChange('5', 0, e.target.value)}
                 className="inputSize1"
@@ -310,6 +319,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               56 ÷ (42 ÷ 3) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['6'][0]}
                 onChange={e => handleChange('6', 0, e.target.value)}
                 className="inputSize1"
@@ -345,6 +355,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               45 ÷ (3 × 5) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['7'][0]}
                 onChange={e => handleChange('7', 0, e.target.value)}
                 className="inputSize1"
@@ -380,6 +391,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               6 × (60 ÷ 15) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['8'][0]}
                 onChange={e => handleChange('8', 0, e.target.value)}
                 className="inputSize1"
@@ -416,6 +428,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               60 ÷ (30 ÷ 5) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['9'][0]}
                 onChange={e => handleChange('9', 0, e.target.value)}
                 className="inputSize1"
@@ -451,6 +464,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               12 × (56 ÷ 7) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['10'][0]}
                 onChange={e => handleChange('10', 0, e.target.value)}
                 className="inputSize1"
@@ -486,6 +500,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               98 ÷ (7 × 2) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['11'][0]}
                 onChange={e => handleChange('11', 0, e.target.value)}
                 className="inputSize1"
@@ -521,6 +536,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               27 ÷ (72 ÷ 8) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['12'][0]}
                 onChange={e => handleChange('12', 0, e.target.value)}
                 className="inputSize1"
@@ -556,6 +572,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               81 ÷ (54 ÷ 2) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['13'][0]}
                 onChange={e => handleChange('13', 0, e.target.value)}
                 className="inputSize1"
@@ -591,6 +608,7 @@ const FifthGrade09: React.FC = () => {
             <div className="marginTop18">
               68 ÷ (2 × 2) ={' '}
               <input
+                disabled={isInputDisabled}
                 value={answers['14'][0]}
                 onChange={e => handleChange('14', 0, e.target.value)}
                 className="inputSize1"

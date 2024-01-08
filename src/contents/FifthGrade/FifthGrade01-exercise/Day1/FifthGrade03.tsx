@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade03: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -71,9 +72,12 @@ const FifthGrade03: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -130,6 +134,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               37 + 15 + 28 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['1'][0]}
@@ -165,6 +170,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               17 + 12 - 8 - 15 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['2'][0]}
@@ -200,6 +206,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               15 - 8 + 23 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['3'][0]}
@@ -235,6 +242,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               45 - 16 + 55 - 7 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['4'][0]}
@@ -271,6 +279,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               4 + 17 - 8 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['5'][0]}
@@ -306,6 +315,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               110 - 56 -7 + 35 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['6'][0]}
@@ -341,6 +351,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               15 × 6 ÷ 9 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['7'][0]}
@@ -376,6 +387,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               48 ÷ 4 × 5 ÷ 2 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['8'][0]}
@@ -412,6 +424,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               8 × 12 ÷ 4 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['9'][0]}
@@ -447,6 +460,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               56 ÷ 7 × 8 × 4 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['10'][0]}
@@ -482,6 +496,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               36 ÷ 6 × 5 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['11'][0]}
@@ -517,6 +532,7 @@ const FifthGrade03: React.FC = () => {
               </p>
               5 × 14 × 3 ÷ 70 ={' '}
               <input
+                disabled={isInputDisabled}
                 className="inputSize1"
                 type="text"
                 value={answers['12'][0]}

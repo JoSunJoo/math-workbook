@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade05: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', '', '', ''],
@@ -55,9 +56,12 @@ const FifthGrade05: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -115,6 +119,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 17 + 33 + 47 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['1'][0]}
                   onChange={e => handleChange('1', 0, e.target.value)}
@@ -126,6 +131,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwtt">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['1'][1]}
                   onChange={e => handleChange('1', 1, e.target.value)}
@@ -137,6 +143,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 17 + (33 + 47) = 17 +{' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['1'][2]}
                   onChange={e => handleChange('1', 2, e.target.value)}
@@ -147,6 +154,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwt">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['1'][3]}
                   onChange={e => handleChange('1', 3, e.target.value)}
@@ -186,6 +194,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 68 - 29 - 16 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['2'][0]}
                   onChange={e => handleChange('2', 0, e.target.value)}
@@ -197,6 +206,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwt123t">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['2'][1]}
                   onChange={e => handleChange('2', 1, e.target.value)}
@@ -209,6 +219,7 @@ const FifthGrade05: React.FC = () => {
                 68 - (29 - 16) = 68 -{' '}
                 <div className="d-line123 line12222"></div>
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['2'][2]}
                   onChange={e => handleChange('2', 2, e.target.value)}
@@ -218,6 +229,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwtt12">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['2'][3]}
                   onChange={e => handleChange('2', 3, e.target.value)}
@@ -257,6 +269,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 75 - 35 + 26 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['3'][0]}
                   onChange={e => handleChange('3', 0, e.target.value)}
@@ -268,6 +281,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwtt">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['3'][1]}
                   onChange={e => handleChange('3', 1, e.target.value)}
@@ -279,6 +293,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 75 - (35 + 26) = 75 -{' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['3'][2]}
                   onChange={e => handleChange('3', 2, e.target.value)}
@@ -289,6 +304,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwt">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['3'][3]}
                   onChange={e => handleChange('3', 3, e.target.value)}
@@ -329,6 +345,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 13 + 27 - 19 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['4'][0]}
                   onChange={e => handleChange('4', 0, e.target.value)}
@@ -340,6 +357,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwtt13">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['4'][1]}
                   onChange={e => handleChange('4', 1, e.target.value)}
@@ -351,6 +369,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123">
                 13 + (27 - 19) = 13 +{' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['4'][2]}
                   onChange={e => handleChange('4', 2, e.target.value)}
@@ -361,6 +380,7 @@ const FifthGrade05: React.FC = () => {
               <div className="nottt1123 marginwtwtt12">
                 ={' '}
                 <input
+                  disabled={isInputDisabled}
                   type="text"
                   value={answers['4'][3]}
                   onChange={e => handleChange('4', 3, e.target.value)}

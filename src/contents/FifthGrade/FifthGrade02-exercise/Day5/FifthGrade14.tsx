@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade14: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
@@ -59,9 +60,12 @@ const FifthGrade14: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -122,6 +126,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">1은 16의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['1'][0]}
                   onChange={e => handleChange('1', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -131,6 +136,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">16은 1의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['1'][1]}
                   onChange={e => handleChange('1', 1, e.target.value)}
                   className="fifthQuiz231Input"
@@ -171,6 +177,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">4는 24의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['2'][0]}
                   onChange={e => handleChange('2', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -180,6 +187,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">24는 6의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['2'][1]}
                   onChange={e => handleChange('2', 1, e.target.value)}
                   className="fifthQuiz231Input"
@@ -220,6 +228,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">64는 8의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['3'][0]}
                   onChange={e => handleChange('3', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -229,6 +238,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">8은 64의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['3'][1]}
                   onChange={e => handleChange('3', 1, e.target.value)}
                   className="fifthQuiz231Input"
@@ -269,6 +279,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">75는 5의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['4'][0]}
                   onChange={e => handleChange('4', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -278,6 +289,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">75는 15의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['4'][1]}
                   onChange={e => handleChange('4', 1, e.target.value)}
                   className="fifthQuiz231Input"
@@ -318,6 +330,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">88은 11의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['5'][0]}
                   onChange={e => handleChange('5', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -327,6 +340,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">11은 88의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['5'][1]}
                   onChange={e => handleChange('5', 1, e.target.value)}
                   className="fifthQuiz231Input"
@@ -367,6 +381,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter textAlignRight">
                 <div className="fontSize20">100은 25의 &nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['6'][0]}
                   onChange={e => handleChange('6', 0, e.target.value)}
                   className="fifthQuiz231Input"
@@ -376,6 +391,7 @@ const FifthGrade14: React.FC = () => {
               <div className="flexRow alignCenter margintop2512 textAlignRight">
                 <div className="fontSize20">4는 100의&nbsp;&nbsp;</div>
                 <input
+                  disabled={isInputDisabled}
                   value={answers['6'][1]}
                   onChange={e => handleChange('6', 1, e.target.value)}
                   className="fifthQuiz231Input"

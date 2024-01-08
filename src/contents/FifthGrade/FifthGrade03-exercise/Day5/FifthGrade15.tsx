@@ -13,6 +13,7 @@ import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 import fifthimg from 'src/contents/FifthGrade/fifthImage/화살표.png';
 
 const FifthGrade15: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -72,9 +73,12 @@ const FifthGrade15: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -137,6 +141,7 @@ const FifthGrade15: React.FC = () => {
               <div className="textCenter">28</div>
             </div>
             <input
+              disabled={isInputDisabled}
               type="text"
               className="averageInput redeinptueq colrrwrinput"
               value="<"
@@ -162,6 +167,7 @@ const FifthGrade15: React.FC = () => {
               <div className="textCenter">14</div>
             </div>
             <input
+              disabled={isInputDisabled}
               type="text"
               className="averageInput redeinptueq colrrwrinput"
               value="<"
@@ -208,6 +214,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">8</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['1'][0]}
             onChange={e => handleChange('1', 0, e.target.value)}
             type="text"
@@ -250,6 +257,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">8</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['2'][0]}
             onChange={e => handleChange('2', 0, e.target.value)}
             type="text"
@@ -292,6 +300,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">11</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['3'][0]}
             onChange={e => handleChange('3', 0, e.target.value)}
             type="text"
@@ -335,6 +344,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">5</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['4'][0]}
             onChange={e => handleChange('4', 0, e.target.value)}
             type="text"
@@ -377,6 +387,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">9</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['5'][0]}
             onChange={e => handleChange('5', 0, e.target.value)}
             type="text"
@@ -419,6 +430,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">2</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['6'][0]}
             onChange={e => handleChange('6', 0, e.target.value)}
             type="text"
@@ -461,6 +473,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">12</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['7'][0]}
             onChange={e => handleChange('7', 0, e.target.value)}
             type="text"
@@ -503,6 +516,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">20</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['8'][0]}
             onChange={e => handleChange('8', 0, e.target.value)}
             type="text"
@@ -545,6 +559,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">9</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['9'][0]}
             onChange={e => handleChange('9', 0, e.target.value)}
             type="text"
@@ -587,6 +602,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">2</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['10'][0]}
             onChange={e => handleChange('10', 0, e.target.value)}
             type="text"
@@ -629,6 +645,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">17</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['11'][0]}
             onChange={e => handleChange('11', 0, e.target.value)}
             type="text"
@@ -671,6 +688,7 @@ const FifthGrade15: React.FC = () => {
             <div className="textCenter">11</div>
           </div>
           <input
+            disabled={isInputDisabled}
             value={answers['12'][0]}
             onChange={e => handleChange('12', 0, e.target.value)}
             type="text"

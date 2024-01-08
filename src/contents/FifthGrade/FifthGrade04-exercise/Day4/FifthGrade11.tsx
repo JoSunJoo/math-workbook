@@ -13,6 +13,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade11: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': ['', ''],
@@ -60,9 +61,12 @@ const FifthGrade11: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -143,22 +147,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 value={answers['1'][0]}
                 onChange={e => handleChange('1', 0, e.target.value)}
                 type="text"
@@ -166,6 +191,7 @@ const FifthGrade11: React.FC = () => {
               />
               <div className="divlineCSS15"></div>
               <input
+                disabled={isInputDisabled}
                 type="text"
                 className="averageInput"
                 value={answers['1'][1]}
@@ -218,22 +244,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 value={answers['2'][0]}
                 type="text"
                 className="averageInput"
@@ -285,22 +332,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 value={answers['3'][0]}
                 onChange={e => handleChange('3', 0, e.target.value)}
                 type="text"
@@ -308,6 +376,7 @@ const FifthGrade11: React.FC = () => {
               />
               <div className="divlineCSS15"></div>
               <input
+                disabled={isInputDisabled}
                 type="text"
                 className="averageInput"
                 value={answers['3'][1]}
@@ -360,22 +429,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 onChange={e => handleChange('4', 0, e.target.value)}
                 type="text"
                 className="averageInput"
@@ -427,22 +517,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 value={answers['5'][0]}
                 onChange={e => handleChange('5', 0, e.target.value)}
                 type="text"
@@ -450,6 +561,7 @@ const FifthGrade11: React.FC = () => {
               />
               <div className="divlineCSS15"></div>
               <input
+                disabled={isInputDisabled}
                 type="text"
                 className="averageInput"
                 value={answers['5'][1]}
@@ -502,22 +614,43 @@ const FifthGrade11: React.FC = () => {
             <div>
               <div className="flexRow">
                 {' '}
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
               <div className="divlineCSS16"></div>
               <div className="flexRow justifyCenter">
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
                 <div className="awkfaui">×</div>
-                <input type="text" className="averageInput" />
+                <input
+                  disabled={isInputDisabled}
+                  type="text"
+                  className="averageInput"
+                />
               </div>
             </div>
             <div className="marginlR10px">=</div>
             <div>
               <input
+                disabled={isInputDisabled}
                 value={answers['6'][0]}
                 onChange={e => handleChange('6', 0, e.target.value)}
                 type="text"
@@ -525,6 +658,7 @@ const FifthGrade11: React.FC = () => {
               />
               <div className="divlineCSS15"></div>
               <input
+                disabled={isInputDisabled}
                 type="text"
                 className="averageInput"
                 value={answers['6'][1]}

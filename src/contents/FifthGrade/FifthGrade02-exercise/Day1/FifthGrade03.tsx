@@ -12,6 +12,7 @@ import correctimg from 'src/contents/FifthGrade/fifthImage/correct.png';
 import incorrectimg from 'src/contents/FifthGrade/fifthImage/incorrect.png';
 
 const FifthGrade03: React.FC = () => {
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
     '1': [''],
@@ -67,9 +68,12 @@ const FifthGrade03: React.FC = () => {
     return correctCount * scorePerQuestion; // 총점 계산
   };
   const handleGrade = async () => {
-    setShowResults(true);
+    setShowResults(!showResults);
+
     setType(false);
     const totalScore = calculateScore();
+    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
+
     sendScore({ score: totalScore }).catch(error => {
       console.error('Error with sendScore:', error);
     });
@@ -132,6 +136,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">8</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['1'][0]}
               onChange={e => handleChange('1', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -173,6 +178,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">6</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['2'][0]}
               onChange={e => handleChange('2', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -214,6 +220,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">12</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['3'][0]}
               onChange={e => handleChange('3', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -255,6 +262,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">26</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['4'][0]}
               onChange={e => handleChange('4', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -296,6 +304,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">9</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['5'][0]}
               onChange={e => handleChange('5', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -337,6 +346,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">27</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['6'][0]}
               onChange={e => handleChange('6', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -378,6 +388,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">18</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['7'][0]}
               onChange={e => handleChange('7', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -419,6 +430,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">90</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['8'][0]}
               onChange={e => handleChange('8', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -460,6 +472,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">69</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['9'][0]}
               onChange={e => handleChange('9', 0, e.target.value)}
               className="averageInput marginbottom666"
@@ -501,6 +514,7 @@ const FifthGrade03: React.FC = () => {
               <div className="quiz2131">63</div>
             </div>
             <input
+              disabled={isInputDisabled}
               value={answers['10'][0]}
               onChange={e => handleChange('10', 0, e.target.value)}
               className="averageInput marginbottom666"
