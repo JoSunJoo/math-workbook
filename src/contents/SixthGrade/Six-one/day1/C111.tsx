@@ -1,0 +1,118 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
+import { Box } from '@mui/material';
+
+import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
+import DivisionInput from 'src/contents/SixthGrade/common/number-box';
+import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+
+import number1Image from 'src/contents/SixthGrade/assets/icon/1-1-1_num1_full.png';
+import number2Image from 'src/contents/SixthGrade/assets/icon/1-1-1_num2Full.png';
+
+interface C111Props {
+  problem: {
+    qId: number;
+    pass: boolean;
+    qNum: string;
+    apples: number;
+    people: number;
+  };
+  allAnswers: {
+    son: string | number;
+    mother: string | number;
+  }[];
+  setAllAnswers: React.Dispatch<
+    React.SetStateAction<
+      {
+        son: string | number;
+        mother: string | number;
+      }[]
+    >
+  >;
+  isSolved: boolean;
+  handleCorrectChange: (qId: number, pass: boolean) => void;
+}
+
+export default function C111(props: C111Props) {
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
+  const { qId, qNum, apples, people } = problem;
+  const [answer, setAnswer] = useState<{
+    son: string | number;
+    mother: string | number;
+  }>({ son: '', mother: '' });
+  const { son, mother } = answer;
+
+  const [isCorrect, setIsCorrect] = useState(false);
+
+  const setSon = (value: number) => {
+    setAnswer({ ...answer, son: value });
+  };
+
+  const setMother = (value: number) => {
+    setAnswer({ ...answer, mother: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz111.answer' });
+    if (value) {
+      setAnswer({ mother: value[qId].mother, son: value[qId].son });
+    }
+  };
+
+  useEffect(() => {
+    void renderGetData();
+  }, []);
+
+  useEffect(() => {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = answer;
+      return updatedAnswers;
+    });
+
+    if (son === apples && mother === people) {
+      setIsCorrect(true);
+      handleCorrectChange(qId, true);
+    } else {
+      setIsCorrect(false);
+      handleCorrectChange(qId, false);
+    }
+  }, [son, mother, qId, apples, people]);
+
+  return (
+    <Box position="relative" minHeight="10rem">
+      <Box>
+        <Box
+          display="flex"
+          margin="1rem 2rem"
+          position="relative"
+          width="23rem"
+          height="100%"
+        >
+          {isSolved && <CorrectChecker isCorrect={isCorrect} />}
+          <CustomTypo marginRight="1rem">{qNum}</CustomTypo>
+          <img
+            width={qId === 0 ? '65%' : '85%'}
+            src={qId === 0 ? number1Image : number2Image}
+            alt="fiveApples and two People"
+          />
+          <Box
+            top="3rem"
+            right={qId === 0 ? '6rem' : '3rem'}
+            position="absolute"
+            marginTop="-0.2rem"
+          >
+            <DivisionInput
+              mother={mother}
+              son={son}
+              onChangeMother={e => setMother(Number(e.target.value))}
+              onChangeSon={e => setSon(Number(e.target.value))}
+              disabled={isSolved}
+            />
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+}

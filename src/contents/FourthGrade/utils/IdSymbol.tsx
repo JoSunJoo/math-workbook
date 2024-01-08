@@ -10,23 +10,34 @@ interface Props {
 
 const IdSymbol = (props: Props) => {
   const { id, correct } = props;
+
+  const handleType = (type: any) => {
+    switch (type) {
+      case null:
+        return <></>;
+
+      case true:
+        return (
+          <Correct>
+            <ImgSize src={correctImg} />
+          </Correct>
+        );
+
+      case false:
+        return (
+          <InCorrect>
+            <ImgSize src={inCorrectImg} />
+          </InCorrect>
+        );
+
+      default:
+        return <></>;
+    }
+  };
   return (
     <RelativeBox>
       {id}
-      {correct === true ? (
-        <Correct>
-          <ImgSize src={correctImg} />
-        </Correct>
-      ) : (
-        <></>
-      )}
-      {correct === false ? (
-        <InCorrect>
-          <ImgSize src={inCorrectImg} />
-        </InCorrect>
-      ) : (
-        <></>
-      )}
+      {handleType(correct)}
     </RelativeBox>
   );
 };
