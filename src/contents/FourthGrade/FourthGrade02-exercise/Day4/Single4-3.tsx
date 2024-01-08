@@ -34,9 +34,11 @@ const Single43 = (props: QuizProps) => {
           <div>{quiz1}</div>
           <div>{quiz2}</div>
           <Styled.NoBorderInputBox
+            disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
           />
           <Styled.NoBorderInputBox
+            disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
           />
         </Styled.AsoluteBox6>

@@ -59,7 +59,10 @@ const Single31 = (props: QuizProps) => {
           <Styled.FractUnderNum>{quiz2}</Styled.FractUnderNum>
         </Styled.ColGapBox>
         <div>가 {quiz3}이면 전체는</div>
-        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+        <Styled.InputBox1
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 0)}
+        />
         <div>입니다.</div>
       </Styled.TextBox4>
       <Styled.ColGapBox gap={0.6}>

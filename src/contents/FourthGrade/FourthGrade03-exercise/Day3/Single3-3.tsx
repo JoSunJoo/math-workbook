@@ -35,9 +35,15 @@ const Single33 = (props: QuizProps) => {
         </Styled.ColGapBox>
         <Styled.GapRowBox2 gap={0.5}>
           <div>=</div>
-          <Styled.InputBox8 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox8
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <div>÷</div>
-          <Styled.InputBox8 onChange={e => handleInput(e.target.value, 1)} />
+          <Styled.InputBox8
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 1)}
+          />
         </Styled.GapRowBox2>
       </Styled.InputWrapper1>
     </Styled.RowBox18>

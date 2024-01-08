@@ -39,6 +39,7 @@ const Single32 = (props: QuizProps) => {
             <Styled.InputWrapper>
               <div>=</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
               <div>× 10</div>
@@ -48,6 +49,7 @@ const Single32 = (props: QuizProps) => {
             <Styled.InputWrapper>
               <div>=</div>
               <Styled.InputBox4
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
               />
             </Styled.InputWrapper>

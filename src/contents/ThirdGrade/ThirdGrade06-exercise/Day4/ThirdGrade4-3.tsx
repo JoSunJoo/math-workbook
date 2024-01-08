@@ -12,6 +12,7 @@ import SingleQuiz from './Single4-1';
 import type { Data41QuizProps as QuizProps } from '../../Type/Type6';
 
 const ThirdGrade43Exercise: React.FC = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -20,7 +21,7 @@ const ThirdGrade43Exercise: React.FC = () => {
     Array.from(Array(10), () => new Array(1))
   );
   const key = 'third643.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -45,7 +46,7 @@ const ThirdGrade43Exercise: React.FC = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
@@ -55,7 +56,7 @@ const ThirdGrade43Exercise: React.FC = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={4} />

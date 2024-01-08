@@ -42,10 +42,22 @@ const Single21 = (props: Props) => {
           </Styled.DashNumMid2>
           <Styled.DashBoxMidLine2 />
           <Styled.RowBox5>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 2)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 3)}
+            />
           </Styled.RowBox5>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>

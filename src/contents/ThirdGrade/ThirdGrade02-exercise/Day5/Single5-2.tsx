@@ -34,7 +34,10 @@ const Single52 = (props: Props) => {
           <Styled.RightDashBorder></Styled.RightDashBorder>
         </Styled.RowBox>
         <Styled.DashNumWrapper>
-          <Styled.DashBoxUpper onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.DashBoxUpper
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <Styled.LetterSpacing2>{quiz1}</Styled.LetterSpacing2>
           <Styled.DashNumMid>
             <div>x</div>
@@ -42,9 +45,18 @@ const Single52 = (props: Props) => {
           </Styled.DashNumMid>
           <Styled.DashBoxMidLine />
           <Styled.RowBox5>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 2)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 3)}
+            />
           </Styled.RowBox5>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>

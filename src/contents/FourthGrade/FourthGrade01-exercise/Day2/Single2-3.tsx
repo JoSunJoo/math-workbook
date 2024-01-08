@@ -41,6 +41,7 @@ const Single23 = (props: QuizProps) => {
       return (
         <Styled.InputBox4
           placeholder={value}
+          disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, idx)}
         />
       );

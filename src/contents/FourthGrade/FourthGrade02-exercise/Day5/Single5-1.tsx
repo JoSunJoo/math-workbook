@@ -39,6 +39,7 @@ const Single51 = (props: QuizProps) => {
               <Styled.MinWidth1>
                 <Styled.TextSize>답:</Styled.TextSize>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
@@ -58,10 +59,12 @@ const Single51 = (props: QuizProps) => {
               <Styled.RowBox>
                 <Styled.TextSize>답:</Styled.TextSize>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
                 />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
@@ -81,14 +84,17 @@ const Single51 = (props: QuizProps) => {
               <Styled.GapRowBox>
                 <Styled.TextSize>답:</Styled.TextSize>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
                 />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 2)}
                 />
                 <Styled.TextSize2>{unit3}</Styled.TextSize2>
@@ -108,10 +114,12 @@ const Single51 = (props: QuizProps) => {
               <Styled.GapRowBox>
                 <Styled.TextSize2>{unit1}: </Styled.TextSize2>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <Styled.TextSize2>{unit2}: </Styled.TextSize2>
                 <Styled.ShortInput2
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
                 />
               </Styled.GapRowBox>

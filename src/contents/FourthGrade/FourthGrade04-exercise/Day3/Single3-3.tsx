@@ -26,7 +26,10 @@ const Single33 = (props: Props) => {
     <Styled.SingleWrapper2>
       <IdSymbol id={id} correct={correct} />
       <Styled.InputWrapper1>
-        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+        <Styled.InputBox1
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 0)}
+        />
         <div> × </div>
         <div>{quiz1}</div>
         <div>=</div>

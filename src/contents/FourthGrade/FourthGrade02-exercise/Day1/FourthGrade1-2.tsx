@@ -12,6 +12,7 @@ import SingleQuiz from './Single1-2';
 
 import type { Data12QuizProps1 as QuizProps } from '../../Type/Type2';
 const FourthGrade12Exercise: React.FC = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -21,7 +22,7 @@ const FourthGrade12Exercise: React.FC = () => {
     Array.from(Array(4), () => new Array(3))
   );
   const key = 'fourth212.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -38,7 +39,10 @@ const FourthGrade12Exercise: React.FC = () => {
         <Styled.ColGapBox gap={6}>
           {QuizData.map((item: QuizProps, idx) => (
             <Styled.RowBox13 key={idx}>
-              <IdSymbol id={item.id} correct={correct[idx]} />
+              <IdSymbol
+                id={item.id}
+                correct={confirmType ? null : correct[idx]}
+              />
               {/* 왼쪽 클릭 문제 */}
               <Styled.SelectSingleWrapper key={idx}>
                 {item.left.map((i: string, idx2: number) => (
@@ -46,6 +50,7 @@ const FourthGrade12Exercise: React.FC = () => {
                     <input
                       type="radio"
                       id={i}
+                      disabled={correct[idx] === null ? false : true}
                       checked={idx2.toString() === inputValue[idx][0]}
                       onChange={() => handleInput(idx, idx2)}
                     ></input>
@@ -65,7 +70,7 @@ const FourthGrade12Exercise: React.FC = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             </Styled.RowBox13>
           ))}
@@ -75,7 +80,7 @@ const FourthGrade12Exercise: React.FC = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={1} />

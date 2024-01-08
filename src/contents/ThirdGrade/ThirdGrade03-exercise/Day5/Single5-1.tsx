@@ -47,6 +47,7 @@ const Single51 = (props: QuizProps) => {
                 </Styled.NumBox1>
               </Styled.RowBox>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
             </Styled.RowBox2>
@@ -54,7 +55,10 @@ const Single51 = (props: QuizProps) => {
               {quiz3}
             </Styled.NumBox1>
           </Styled.ColGapBox3>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 1)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 1)}
+          />
         </Styled.ColGapBox3>
       </Styled.SetCenter>
     </Styled.SingleWrapper5>

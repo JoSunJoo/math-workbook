@@ -129,6 +129,7 @@ export interface Data41QuizProps {
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
   setInputValue: React.Dispatch<React.SetStateAction<string[][]>>;
   correct?: (boolean | null | undefined)[];
+  singleCorrect: boolean | null | undefined;
 }
 
 export interface Data43QuizProps {

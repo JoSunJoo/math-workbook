@@ -22,6 +22,7 @@ import img8 from '../../Image/3-1-3_8.png';
 
 const FourthGrade13Exercise: React.FC = () => {
   const imgArray = [img2, img3, img4, img5, img6, img7, img8];
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -30,7 +31,7 @@ const FourthGrade13Exercise: React.FC = () => {
     Array.from(Array(7), () => new Array(2))
   );
   const key = 'fourth313.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -52,7 +53,7 @@ const FourthGrade13Exercise: React.FC = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             ))}
           </Styled.RowWrapBox12>
@@ -68,7 +69,7 @@ const FourthGrade13Exercise: React.FC = () => {
             setCorrect,
           });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={1} />

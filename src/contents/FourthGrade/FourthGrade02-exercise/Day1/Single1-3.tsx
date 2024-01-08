@@ -30,7 +30,10 @@ const Single13 = (props: Props) => {
         <Styled.DivLeftCircle></Styled.DivLeftCircle>
         <Styled.DivLeftNum>{quiz2}</Styled.DivLeftNum>
         <Styled.DivTopInputWrapper>
-          <Styled.InputBox7 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox7
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
         </Styled.DivTopInputWrapper>
         <Styled.DivCenterNum2>{quiz1}</Styled.DivCenterNum2>
       </Styled.DivWrapper>

@@ -53,6 +53,7 @@ const Single42 = (props: QuizProps) => {
               <Styled.ColGapBox gap={1}>
                 <Styled.HandleImgSize src={imgSrc} size={2} />
                 <Styled.LongInput3
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, idx)}
                 />
               </Styled.ColGapBox>
@@ -63,7 +64,10 @@ const Single42 = (props: QuizProps) => {
           <Styled.HandleImgSize src={img} size={1.5} />
           <Styled.ColGapBox gap={1}>
             <Styled.TextSize>가장 큰 수: </Styled.TextSize>
-            <Styled.LongInput3 onChange={e => handleInput(e.target.value, 4)} />
+            <Styled.LongInput3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 4)}
+            />
           </Styled.ColGapBox>
         </Styled.RowBox16>
       </Styled.RowWrapBox17>

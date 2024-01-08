@@ -53,7 +53,10 @@ const Single53 = (props: QuizProps) => {
           </Styled.TextBox4>
           <Styled.TextBox4>
             전체의 길이는
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
             <div>cm 입니다.</div>
           </Styled.TextBox4>
         </Styled.ColGapBox>

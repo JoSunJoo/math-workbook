@@ -51,12 +51,14 @@ const Single41 = (props: QuizProps) => {
           <Styled.RowBox>
             <Styled.TextSize>가장 큰 수:</Styled.TextSize>
             <Styled.ShortInput2
+              disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
             />
           </Styled.RowBox>
           <Styled.RowBox>
             <Styled.TextSize>가장 작은 수:</Styled.TextSize>
             <Styled.ShortInput2
+              disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
             />
           </Styled.RowBox>

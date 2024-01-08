@@ -42,14 +42,17 @@ const Single41 = (props: QuizProps) => {
                   <Styled.InputWrapper3>
                     <div>=</div>
                     <Styled.InputBox1
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 0)}
                     />
                     <div>+</div>
                     <Styled.InputBox1
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 1)}
                     />
                     <div>=</div>
                     <Styled.InputBox1
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 2)}
                     />
                   </Styled.InputWrapper3>

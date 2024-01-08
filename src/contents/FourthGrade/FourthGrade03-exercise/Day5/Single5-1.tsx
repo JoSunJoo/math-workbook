@@ -31,6 +31,7 @@ const Single51 = (props: QuizProps) => {
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
               <Styled.InputBox8
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
             </Styled.FractUnderLine>
@@ -63,7 +64,10 @@ const Single51 = (props: QuizProps) => {
           <>{handleFrac(1, quiz2)}</>
         ) : (
           <>
-            <Styled.InputBox8 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox8
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
           </>
         )}
       </Styled.GapRowBox2>

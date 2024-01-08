@@ -32,7 +32,10 @@ const Single23 = (props: Props) => {
           <div> × </div>
           <div>{quiz2}</div>
           <div>=</div>
-          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox4
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
         </Styled.InputWrapper1>
       ) : (
         <Styled.InputWrapper1>
@@ -43,7 +46,10 @@ const Single23 = (props: Props) => {
             <Styled.FractUnderNum>{quiz2}</Styled.FractUnderNum>
           </Styled.ColGapBox>
           <div>=</div>
-          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox4
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
         </Styled.InputWrapper1>
       )}
     </Styled.SingleWrapper2>

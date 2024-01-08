@@ -18,6 +18,7 @@ import type { Data51QuizProps as QuizProps } from '../../Type/Type5';
 import img from '../../Image/questionMark.png';
 
 const ThirdGrade52Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -26,7 +27,7 @@ const ThirdGrade52Exercise = () => {
     Array.from(Array(4), () => new Array(3))
   );
   const key = 'third552.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -53,7 +54,7 @@ const ThirdGrade52Exercise = () => {
               setToggle={setToggle}
               inputValue={inputValue}
               setInputValue={setInputValue}
-              correct={correct[idx]}
+              correct={confirmType ? null : correct[idx]}
             />
           ))}
         </Styled.ColGapBox>
@@ -85,7 +86,7 @@ const ThirdGrade52Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={5} />

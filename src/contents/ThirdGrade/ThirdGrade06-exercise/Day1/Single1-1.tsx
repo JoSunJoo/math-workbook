@@ -29,17 +29,27 @@ const Single11 = (props: QuizProps) => {
         <Styled.GapRowBox gap={1}>
           <Styled.HandleImgSize src={imgArray[imgId]} size={5} />
           <div>색칠된 부분은 전체를 똑같이</div>
-          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox3
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <div>으로 나눈 것 중</div>
-          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
+          <Styled.InputBox3
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 1)}
+          />
           <div>이므로</div>
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
               <Styled.InputBox3
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
               />
             </Styled.FractUnderLine>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 3)}
+            />
           </Styled.ColGapBox>
           <div>입니다.</div>
         </Styled.GapRowBox>

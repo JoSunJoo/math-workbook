@@ -15,6 +15,7 @@ import type { Data21QuizProps1 as QuizProps } from '../../Type/Type2';
 import img from '../../Image/2-2-1.png';
 
 const FourthGrade21Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -23,7 +24,7 @@ const FourthGrade21Exercise = () => {
     Array.from(Array(4), () => new Array(2))
   );
   const key = 'fourth221.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -41,7 +42,10 @@ const FourthGrade21Exercise = () => {
           <Styled.ImgSize4 src={img} />
           {QuizData.map((item: QuizProps, idx) => (
             <Styled.RowBox13 key={idx}>
-              <IdSymbol id={item.id} correct={correct[idx]} />
+              <IdSymbol
+                id={item.id}
+                correct={confirmType ? null : correct[idx]}
+              />
               {/* 왼쪽 클릭 문제 */}
               <Styled.SelectSingleWrapper2 key={idx}>
                 {item.left.map((i: string, idx2: number) => (
@@ -49,6 +53,7 @@ const FourthGrade21Exercise = () => {
                     <input
                       type="radio"
                       id={i}
+                      disabled={correct === null ? false : true}
                       checked={idx2.toString() === inputValue[idx][0]}
                       onChange={() => handleInput(idx, idx2)}
                     ></input>
@@ -68,7 +73,7 @@ const FourthGrade21Exercise = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             </Styled.RowBox13>
           ))}
@@ -78,7 +83,7 @@ const FourthGrade21Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={2} />

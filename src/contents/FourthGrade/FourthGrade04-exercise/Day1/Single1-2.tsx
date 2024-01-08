@@ -56,7 +56,10 @@ const Single12 = (props: Props) => {
       <Styled.GapRowBox2 gap={1}>
         <Styled.HandleImgSize src={imgArray[imgId]} size={2} />
         <Styled.HandleImgSize src={arrow} size={1.5} />
-        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+        <Styled.InputBox1
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 0)}
+        />
       </Styled.GapRowBox2>
     </Styled.SingleWrapper2>
   );

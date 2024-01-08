@@ -41,6 +41,7 @@ const Single42 = (props: QuizProps) => {
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
               <Styled.InputBox8
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, idx2)}
               />
             </Styled.FractUnderLine>
@@ -55,6 +56,7 @@ const Single42 = (props: QuizProps) => {
               <div>{item}</div>
             </Styled.FractUnderLine>
             <Styled.InputBox8
+              disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, idx2)}
             />
           </Styled.ColGapBox>

@@ -10,6 +10,7 @@ import { FourthGrade3Day2 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single2-2';
 
 const FourthGrade22Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -18,7 +19,7 @@ const FourthGrade22Exercise = () => {
     Array.from(Array(10), () => new Array(2))
   );
   const key = 'fourth322.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
   const idxArray = [
@@ -53,7 +54,7 @@ const FourthGrade22Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={2} />

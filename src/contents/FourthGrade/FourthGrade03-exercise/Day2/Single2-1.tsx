@@ -96,12 +96,14 @@ const Single21 = (props: Props) => {
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox3
+                    disabled={correct2 === null ? false : true}
                     onChange={e =>
                       handleInput(e.target.value, idxArray[idx][1], 0)
                     }
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox3
+                  disabled={correct2 === null ? false : true}
                   onChange={e =>
                     handleInput(e.target.value, idxArray[idx][1], 1)
                   }

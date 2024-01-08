@@ -13,6 +13,7 @@ const Single22 = (props: QuizProps) => {
     setToggle,
     inputValue,
     setInputValue,
+    correct,
   } = props;
 
   const handleInput = (e: string, i: number) => {
@@ -25,7 +26,10 @@ const Single22 = (props: QuizProps) => {
   return (
     <Styled.ColorBox5>
       <Styled.ColGapBox7 gap={0.2}>
-        <Styled.InputBox8 onChange={e => handleInput(e.target.value, 1)} />
+        <Styled.InputBox8
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 1)}
+        />
         <Styled.GapRowBox gap={1.6}>
           <div>{rightQuiz2} </div>
           <Styled.RelativeBox>
@@ -39,6 +43,7 @@ const Single22 = (props: QuizProps) => {
               <Styled.GapRowBox gap={0.3}>
                 <div>···</div>
                 <Styled.InputBox8
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 2)}
                 />
               </Styled.GapRowBox>

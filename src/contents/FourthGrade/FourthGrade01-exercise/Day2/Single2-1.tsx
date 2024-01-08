@@ -30,22 +30,27 @@ const Single21 = (props: QuizProps) => {
               <Styled.ColGapBox4 gap={1}>
                 <Styled.BetweenBox>
                   <Styled.InputBox4
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 0)}
                   />
                   <div> + </div>
                   <Styled.InputBox1
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 1)}
                   />
                   <div> + </div>
                   <Styled.InputBox1
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 2)}
                   />
                   <div> + </div>
                   <Styled.InputBox1
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 3)}
                   />
                   <div> + </div>
                   <Styled.InputBox3
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 4)}
                   />
                 </Styled.BetweenBox>
@@ -53,6 +58,7 @@ const Single21 = (props: QuizProps) => {
                   <Styled.RowBox5>
                     <div>=</div>
                     <Styled.InputBox4
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 5)}
                     />
                   </Styled.RowBox5>

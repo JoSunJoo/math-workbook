@@ -2,7 +2,7 @@ import { getKeyValue } from '@elice/extcontent-apis';
 
 interface Props {
   key: string;
-  setInputValue: React.Dispatch<React.SetStateAction<string[][]>>;
+  setInputValue: any;
   setIsGeted?: React.Dispatch<React.SetStateAction<boolean>>;
   isGeted?: boolean;
 }

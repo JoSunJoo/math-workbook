@@ -13,6 +13,7 @@ import SingleQuiz from './Single3-2';
 import type { Data32QuizProps as QuizProps } from '../../Type/Type3';
 
 const FourthGrade32Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -21,7 +22,7 @@ const FourthGrade32Exercise = () => {
     Array.from(Array(17), () => new Array(2))
   );
   const key = 'fourth332.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
   return (
@@ -41,7 +42,7 @@ const FourthGrade32Exercise = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             ))}
           </Styled.RowWrapBox15>
@@ -51,7 +52,7 @@ const FourthGrade32Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={3} />

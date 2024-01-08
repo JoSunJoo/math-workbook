@@ -27,7 +27,10 @@ const Single12 = (props: QuizProps) => {
         <Styled.InputWrapper>
           <div>{quiz1}</div>
           <div>=</div>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <Styled.AngleShapeBox>
             <Styled.AngleLineLeft />
             <Styled.AngleShapeLeft />
@@ -35,27 +38,33 @@ const Single12 = (props: QuizProps) => {
           <Styled.InnerColBox>
             <Styled.InputWrapper3>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
               />
               <div>÷</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
               />
               <div>=</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
               />
             </Styled.InputWrapper3>
             <Styled.InputWrapper3>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 4)}
               />
               <div>÷</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 5)}
               />
               <div>=</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 6)}
               />
             </Styled.InputWrapper3>

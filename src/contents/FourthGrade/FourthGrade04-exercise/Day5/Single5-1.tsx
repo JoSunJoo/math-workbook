@@ -37,6 +37,7 @@ const Single51 = (props: QuizProps) => {
                 <Styled.RowBox>
                   <Styled.TextSize>답:</Styled.TextSize>
                   <Styled.MiddleInput2
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 0)}
                   />
                   <Styled.TextSize>{unit}</Styled.TextSize>

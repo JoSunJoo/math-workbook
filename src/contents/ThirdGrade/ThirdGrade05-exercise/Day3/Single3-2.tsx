@@ -29,16 +29,28 @@ const Single32 = (props: QuizProps) => {
           <Styled.RowBox7>
             <div>{quiz1}</div>
             <div>=</div>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
           </Styled.RowBox7>
           <div>➨</div>
           <Styled.BorderBox2>검산</Styled.BorderBox2>
           <Styled.RowBox7>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
             <div>×</div>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 2)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
             <div>=</div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 3)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 3)}
+            />
           </Styled.RowBox7>
         </Styled.RowBox8>
       </Styled.SetCenter>

@@ -31,7 +31,10 @@ const Single31 = (props: Props) => {
           <Styled.InputWrapper1>
             <div>{quiz1}</div>
             <div> × </div>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
             <div>=</div>
             <div>{quiz2}</div>
           </Styled.InputWrapper1>
@@ -39,7 +42,10 @@ const Single31 = (props: Props) => {
           <Styled.InputWrapper1>
             <div>{quiz1}</div>
             <div> × </div>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
             <div>{'<'} </div>
             <div>{quiz2}</div>
           </Styled.InputWrapper1>

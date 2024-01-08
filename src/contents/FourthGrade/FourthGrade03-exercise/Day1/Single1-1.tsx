@@ -32,10 +32,14 @@ const Single11 = (props: QuizProps) => {
           <Styled.ColGapBox gap={0.1}>
             <Styled.FractUnderLine>
               <Styled.InputBox3
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
             </Styled.FractUnderLine>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
           </Styled.ColGapBox>
         </Styled.RowBox12>
       </Styled.FitInputWrapper2>

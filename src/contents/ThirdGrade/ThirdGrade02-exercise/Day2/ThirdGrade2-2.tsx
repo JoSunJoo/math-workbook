@@ -12,6 +12,7 @@ import SingleQuiz from './Single2-2';
 import type { Data22QuizProps as QuizProps } from '../../Type/Type2';
 
 const ThirdGrade22Exercise: React.FC = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -20,7 +21,7 @@ const ThirdGrade22Exercise: React.FC = () => {
     Array.from(Array(6), () => new Array(3))
   );
   const key = 'third222.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -43,7 +44,7 @@ const ThirdGrade22Exercise: React.FC = () => {
               setToggle={setToggle}
               inputValue={inputValue}
               setInputValue={setInputValue}
-              correct={correct[idx]}
+              correct={confirmType ? null : correct[idx]}
             />
           ))}
         </Styled.ColGapBox>
@@ -52,7 +53,7 @@ const ThirdGrade22Exercise: React.FC = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={2} />

@@ -44,7 +44,10 @@ const Single52 = (props: QuizProps) => {
       </Styled.TextBox4>
       <Styled.TextBox4>
         {totalText}
-        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+        <Styled.InputBox1
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 0)}
+        />
         <div>{unit}입니다.</div>
       </Styled.TextBox4>
     </Styled.ColGapBox>

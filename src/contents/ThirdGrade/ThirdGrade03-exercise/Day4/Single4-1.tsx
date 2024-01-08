@@ -34,7 +34,10 @@ const Single41 = (props: Props) => {
           <Styled.RightDashBorder />
         </Styled.RowBox>
         <Styled.DashNumWrapper>
-          <Styled.DashBoxUpper onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.DashBoxUpper
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <Styled.LetterSpacing2>{quiz1}</Styled.LetterSpacing2>
           <Styled.DashNumMid2>
             <div>x</div>
@@ -42,10 +45,22 @@ const Single41 = (props: Props) => {
           </Styled.DashNumMid2>
           <Styled.DashBoxMidLine2 />
           <Styled.RowBox5>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 2)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 4)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 3)}
+            />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 4)}
+            />
           </Styled.RowBox5>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>

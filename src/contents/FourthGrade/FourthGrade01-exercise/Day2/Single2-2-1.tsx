@@ -34,6 +34,7 @@ const Single221 = (props: QuizProps) => {
               <div>10000이 </div>
               <Styled.InputBox3
                 maxLength={1}
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
               <div> 개, </div>
@@ -42,6 +43,7 @@ const Single221 = (props: QuizProps) => {
               <div>1000이 </div>
               <Styled.InputBox3
                 maxLength={1}
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
               />
               <div> 개, </div>
@@ -50,6 +52,7 @@ const Single221 = (props: QuizProps) => {
               <div>100이 </div>
               <Styled.InputBox3
                 maxLength={1}
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
               />
               <div> 개, </div>
@@ -58,6 +61,7 @@ const Single221 = (props: QuizProps) => {
               <div>10이 </div>
               <Styled.InputBox3
                 maxLength={1}
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
               />
               <div> 개, </div>
@@ -66,6 +70,7 @@ const Single221 = (props: QuizProps) => {
               <div>1이 </div>
               <Styled.InputBox3
                 maxLength={1}
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 4)}
               />
               <div> 개</div>

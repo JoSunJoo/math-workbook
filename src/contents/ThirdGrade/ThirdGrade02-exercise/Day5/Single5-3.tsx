@@ -37,6 +37,7 @@ const Single53 = (props: Props) => {
               </Styled.RowBox4>
             </Styled.BottomLine>
             <Styled.SpacingInputBox2
+              disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
             />
           </Styled.ColGapBox>

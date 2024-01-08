@@ -29,7 +29,12 @@ const Single21 = (props: QuizProps) => {
   };
   const handleComponent = (num: string, i: number) => {
     if (num === '')
-      return <Styled.NumBox3 onChange={e => handleInput(e.target.value, i)} />;
+      return (
+        <Styled.NumBox3
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, i)}
+        />
+      );
     else
       return (
         <Styled.NumBox2 color="rgba(98, 151, 255, 0.3)">{num}</Styled.NumBox2>

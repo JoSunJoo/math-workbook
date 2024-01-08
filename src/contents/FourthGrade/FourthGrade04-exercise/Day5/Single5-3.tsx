@@ -32,6 +32,7 @@ const Single53 = (props: QuizProps) => {
             <Styled.FlexEndBox1>
               <Styled.TextSize>답:</Styled.TextSize>
               <Styled.MiddleInput2
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
               <Styled.TextSize>{unit}</Styled.TextSize>

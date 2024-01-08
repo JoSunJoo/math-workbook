@@ -34,6 +34,7 @@ const Single53 = (props: QuizProps) => {
               <Styled.LongInput></Styled.LongInput>
               <Styled.TextSize>답:</Styled.TextSize>
               <Styled.ShortInput
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
               <Styled.TextSize>{unit}</Styled.TextSize>

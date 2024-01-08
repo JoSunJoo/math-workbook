@@ -31,16 +31,28 @@ const Single11 = (props: QuizProps) => {
       <Styled.RowBox17>
         <Styled.RowBox4>
           <div>{quiz1} × </div>
-          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox3
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <div>= {quiz2}</div>
         </Styled.RowBox4>
         <Styled.ImgSize10 src={arrow} />
         <Styled.RowBox4>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 1)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 1)}
+          />
           <div>÷</div>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 2)}
+          />
           <div>=</div>
-          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 3)} />
+          <Styled.InputBox3
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 3)}
+          />
         </Styled.RowBox4>
       </Styled.RowBox17>
     </Styled.RowBox13>

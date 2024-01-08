@@ -35,17 +35,25 @@ const Single22 = (props: QuizProps) => {
             <Styled.RowBox>
               <Styled.RowBox>
                 <Styled.NumBox3
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <Styled.NumBox3
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
                 />
               </Styled.RowBox>
               <Styled.NumBox2Input noBottom={true}>{quiz4}</Styled.NumBox2Input>
             </Styled.RowBox>
             <Styled.RowBox>
-              <Styled.NumBox3 onChange={e => handleInput(e.target.value, 2)} />
-              <Styled.NumBox3 onChange={e => handleInput(e.target.value, 3)} />
+              <Styled.NumBox3
+                disabled={correct === null ? false : true}
+                onChange={e => handleInput(e.target.value, 2)}
+              />
+              <Styled.NumBox3
+                disabled={correct === null ? false : true}
+                onChange={e => handleInput(e.target.value, 3)}
+              />
               <Styled.NumBox2Input>{quiz3}</Styled.NumBox2Input>
             </Styled.RowBox>
             <Styled.RowBox>

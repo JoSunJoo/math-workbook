@@ -51,9 +51,18 @@ const Single31 = (props: Props) => {
       <Styled.LinesQuiz7>{quiz8}</Styled.LinesQuiz7>
       <Styled.LinesQuiz8>{quiz9}</Styled.LinesQuiz8>
       <Styled.LinesQuiz9>{quiz10}</Styled.LinesQuiz9>
-      <Styled.LinesQuizInput3 onChange={e => handleInput(e.target.value, 0)} />
-      <Styled.LinesQuizInput4 onChange={e => handleInput(e.target.value, 1)} />
-      <Styled.LinesQuizInput5 onChange={e => handleInput(e.target.value, 2)} />
+      <Styled.LinesQuizInput3
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 0)}
+      />
+      <Styled.LinesQuizInput4
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 1)}
+      />
+      <Styled.LinesQuizInput5
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 2)}
+      />
     </Styled.LineQuizBox1>
   );
 };

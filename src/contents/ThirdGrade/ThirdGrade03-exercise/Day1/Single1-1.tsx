@@ -47,6 +47,7 @@ const Single11 = (props: QuizProps) => {
               <Styled.RowBox10>
                 <div>=</div>
                 <Styled.InputBox1
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
                 />
                 <div>× 10</div>
@@ -54,6 +55,7 @@ const Single11 = (props: QuizProps) => {
               <Styled.RowBox10>
                 <div>=</div>
                 <Styled.InputBox1
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
                 />
               </Styled.RowBox10>

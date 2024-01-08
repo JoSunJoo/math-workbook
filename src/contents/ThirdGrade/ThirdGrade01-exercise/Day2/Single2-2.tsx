@@ -42,7 +42,10 @@ const Single22 = (props: DataProps) => {
           <div>+</div>
           <div>{quiz2}</div>
           <div>=</div>
-          <Styled.InputBox2 onChange={e => handleInput(e.target.value)} />
+          <Styled.InputBox2
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value)}
+          />
         </Styled.InputWrapper2>
       </Styled.ColGapBox>
     </Styled.SingleWrapper>

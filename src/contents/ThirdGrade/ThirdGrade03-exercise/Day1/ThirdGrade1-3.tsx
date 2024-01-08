@@ -15,6 +15,7 @@ import type { Data12QuizProps } from '../../Type/Type1';
 import img from '../../Image/3-1-3.png';
 
 const ThirdGrade13Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -24,7 +25,7 @@ const ThirdGrade13Exercise = () => {
   );
   const key = 'third313.answer';
   const answer = makeAnswer({ type: 1, data: QuizData });
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -48,7 +49,7 @@ const ThirdGrade13Exercise = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx]}
+                correct={confirmType ? null : correct[idx]}
               />
             ))}
           </Styled.RowWrapBox>
@@ -58,7 +59,7 @@ const ThirdGrade13Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={1} />

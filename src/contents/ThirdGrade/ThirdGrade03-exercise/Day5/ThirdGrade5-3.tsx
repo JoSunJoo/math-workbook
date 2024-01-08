@@ -18,6 +18,7 @@ import Single531 from './Single5-3-1';
 import Single532 from './Single5-3-2';
 
 const ThirdGrade53Exercise: React.FC = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -28,7 +29,7 @@ const ThirdGrade53Exercise: React.FC = () => {
     Array.from(Array(4), () => new Array(1))
   );
   const key = 'third353.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -54,7 +55,10 @@ const ThirdGrade53Exercise: React.FC = () => {
         <Styled.ColGapBox2 gap={3}>
           {Seq.map((item, idx) => (
             <Styled.RowBox7>
-              <IdSymbol id={idArray[idx]} correct={correct[idx]} />
+              <IdSymbol
+                id={idArray[idx]}
+                correct={confirmType ? null : correct[idx]}
+              />
               <Styled.SelectSingleWrapper key={idx}>
                 {item.map((i, idx2) => (
                   <div key={idx2}>
@@ -78,7 +82,7 @@ const ThirdGrade53Exercise: React.FC = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={5} />

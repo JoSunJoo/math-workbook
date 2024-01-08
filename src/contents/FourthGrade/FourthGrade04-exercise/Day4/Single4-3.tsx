@@ -37,7 +37,10 @@ const Single43 = (props: QuizProps) => {
       <Styled.InputWrapper1>
         <Styled.ImgSize6 src={imgArray[imgId]} alt="" />
         <div>=</div>
-        <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+        <Styled.InputBox1
+          disabled={correct === null ? false : true}
+          onChange={e => handleInput(e.target.value, 0)}
+        />
         <div>{unit}</div>
       </Styled.InputWrapper1>
     </Styled.SingleWrapper2>

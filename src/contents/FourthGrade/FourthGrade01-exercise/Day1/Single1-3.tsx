@@ -27,7 +27,10 @@ const Single13 = (props: QuizProps) => {
     <Styled.RowBox13>
       <IdSymbol id={id} correct={correct} />
       <div>{quiz1}</div>
-      <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+      <Styled.InputBox4
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 0)}
+      />
       <div>{quiz2}</div>
     </Styled.RowBox13>
   );

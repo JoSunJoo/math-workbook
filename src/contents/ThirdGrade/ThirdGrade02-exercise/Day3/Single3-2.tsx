@@ -36,12 +36,14 @@ const Single32 = (props: QuizProps) => {
             <Styled.InputWrapper3>
               {quiz2} =
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
             </Styled.InputWrapper3>
             <Styled.InputWrapper3>
               {quiz3} =
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
               />
             </Styled.InputWrapper3>
@@ -50,7 +52,10 @@ const Single32 = (props: QuizProps) => {
             <Styled.AngleLineRight />
             <Styled.AngleShapeRight />
           </Styled.AngleShapeBox>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 2)}
+          />
         </Styled.InputWrapper>
       </Styled.SingleWrapper6>
     </Styled.RowBox13>

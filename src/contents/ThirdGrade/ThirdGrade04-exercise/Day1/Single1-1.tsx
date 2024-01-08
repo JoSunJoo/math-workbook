@@ -39,7 +39,10 @@ const Single11 = (props: QuizProps) => {
           <Styled.ImgSize3 src={imgUrl[imgId]} alt="" />
           <Styled.RowBox7>
             <div>{quiz1} = </div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
           </Styled.RowBox7>
         </Styled.ColGapBox>
       </Styled.FitInputWrapper4>

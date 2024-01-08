@@ -13,6 +13,7 @@ import SingleQuiz from './Single3-3';
 import type { Data33QuizProps1 as QuizProps } from '../../Type/Type1';
 
 const FourthGrade33Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -21,7 +22,7 @@ const FourthGrade33Exercise = () => {
     Array.from(Array(7), () => new Array(3))
   );
   const key = 'fourth133.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -41,7 +42,7 @@ const FourthGrade33Exercise = () => {
                   setToggle={setToggle}
                   inputValue={inputValue}
                   setInputValue={setInputValue}
-                  correct={correct[idx]}
+                  correct={confirmType ? null : correct[idx]}
                 />
               </Styled.MarginBottomBox2>
             ))}
@@ -52,7 +53,7 @@ const FourthGrade33Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={3} />

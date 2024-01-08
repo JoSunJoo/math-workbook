@@ -48,9 +48,15 @@ const Single12 = (props: QuizProps) => {
         <Styled.HandleImgSize src={img} size={1.5} />
         <Styled.ColGapBox gap={0.1}>
           <Styled.FractUnderLine>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
           </Styled.FractUnderLine>
-          <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
+          <Styled.InputBox3
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 1)}
+          />
         </Styled.ColGapBox>
       </Styled.GapRowBox>
     </Styled.RowBox>

@@ -52,16 +52,26 @@ const Single12 = (props: DataProps) => {
         <div>
           <Styled.InputWrapper>
             <div>=</div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
             <div>+</div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 1)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
             <div>+</div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
           </Styled.InputWrapper>
           <div>
             <Styled.InputWrapper>
               <div>=</div>
               <Styled.InputBox1
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
               />
             </Styled.InputWrapper>

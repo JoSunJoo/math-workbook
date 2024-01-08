@@ -32,7 +32,10 @@ const Single222 = (props: QuizProps) => {
       <IdSymbol id={id} correct={correct} />
       <Styled.FitSingleWrapper1>
         <Styled.ColGapBox4 gap={1}>
-          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox4
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <Styled.GapRowBox gap={1}>
             <Styled.ImgSize12 src={img} alt="" />
             <Styled.GapRowBox gap={1}>

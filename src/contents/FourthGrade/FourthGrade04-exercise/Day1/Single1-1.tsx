@@ -57,7 +57,10 @@ const Single12 = (props: Props) => {
           <Styled.HandleImgSize src={imgArray[imgId]} size={4} />
         </Styled.RelativeBox>
         <Styled.LeftAbsoluteBox left={leftArray[imgId]}>
-          <Styled.InputBox1 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox1
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
         </Styled.LeftAbsoluteBox>
       </Styled.ColGapBox2>
     </Styled.SingleWrapper2>

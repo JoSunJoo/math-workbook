@@ -35,6 +35,7 @@ const Single51 = (props: QuizProps) => {
               <Styled.ColGapBox gap={0.2}>
                 <Styled.RowBox4>
                   <Styled.InputBox4
+                    disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 2)}
                   />
                   배
@@ -43,12 +44,14 @@ const Single51 = (props: QuizProps) => {
                 <Styled.RowBox12>
                   <Styled.RowBox4>
                     <Styled.InputBox4
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 0)}
                     />
                     {unit}
                   </Styled.RowBox4>
                   <Styled.RowBox4>
                     <Styled.InputBox4
+                      disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 1)}
                     />
                     {unit}
@@ -58,6 +61,7 @@ const Single51 = (props: QuizProps) => {
               <Styled.RowBox4>
                 <Styled.TextSize>답: </Styled.TextSize>
                 <Styled.InputBox4
+                  disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 3)}
                 />
                 <Styled.TextSize>{unit}</Styled.TextSize>

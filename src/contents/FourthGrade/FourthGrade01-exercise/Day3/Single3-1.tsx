@@ -36,13 +36,19 @@ const Single31 = (props: QuizProps) => {
       {type === 1 ? (
         <Styled.RowBox4>
           <div>{quiz1}</div>
-          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox4
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
         </Styled.RowBox4>
       ) : (
         <Styled.RowBox4>
           <Styled.ImgSize10 src={img} alt="" />
           <Styled.NonFlexText>이 {quiz1}장 있으면</Styled.NonFlexText>
-          <Styled.InputBox4 onChange={e => handleInput(e.target.value, 0)} />
+          <Styled.InputBox4
+            disabled={correct === null ? false : true}
+            onChange={e => handleInput(e.target.value, 0)}
+          />
           <div>원</div>
         </Styled.RowBox4>
       )}

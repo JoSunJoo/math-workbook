@@ -30,6 +30,7 @@ const Single43 = (props: Props) => {
           <div>{quiz1}</div>
           <Styled.InputBox1
             maxLength={1}
+            disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
           />
         </Styled.ColGapBox>

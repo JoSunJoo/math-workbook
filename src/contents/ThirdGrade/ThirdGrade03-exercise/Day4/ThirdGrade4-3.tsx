@@ -13,6 +13,7 @@ import makeAnswer from '../../utils/makeAnswer';
 import type { Data12QuizProps } from '../../Type/Type1';
 
 const ThirdGrade43Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -22,7 +23,7 @@ const ThirdGrade43Exercise = () => {
   );
   const key = 'third343.answer';
   const answer = makeAnswer({ type: 1, data: QuizData });
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -44,7 +45,7 @@ const ThirdGrade43Exercise = () => {
               setToggle={setToggle}
               inputValue={inputValue}
               setInputValue={setInputValue}
-              correct={correct[idx]}
+              correct={confirmType ? null : correct[idx]}
             />
           ))}
         </Styled.RowWrapBox4>
@@ -53,7 +54,7 @@ const ThirdGrade43Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={4} />

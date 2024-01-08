@@ -48,8 +48,14 @@ const Single41 = (props: Props) => {
       <Styled.LinesQuiz14>{quiz7}</Styled.LinesQuiz14>
       <Styled.LinesQuiz15>{quiz8}</Styled.LinesQuiz15>
       {/* input 순서: 위 -> 아래 */}
-      <Styled.LinesQuizInput8 onChange={e => handleInput(e.target.value, 0)} />
-      <Styled.LinesQuizInput9 onChange={e => handleInput(e.target.value, 1)} />
+      <Styled.LinesQuizInput8
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 0)}
+      />
+      <Styled.LinesQuizInput9
+        disabled={correct === null ? false : true}
+        onChange={e => handleInput(e.target.value, 1)}
+      />
     </Styled.LineQuizBox1>
   );
 };

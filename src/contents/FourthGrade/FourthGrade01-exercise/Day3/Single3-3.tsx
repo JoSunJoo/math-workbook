@@ -36,12 +36,14 @@ const Single31 = (props: QuizProps) => {
             <Styled.RowBox5>
               <Styled.ImgSize10 src={tri} alt="" />
               <Styled.MiddleInput2
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
               />
             </Styled.RowBox5>
             <Styled.RowBox5>
               <Styled.ImgSize10 src={cir} alt="" />
               <Styled.MiddleInput2
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
               />
             </Styled.RowBox5>
@@ -50,6 +52,7 @@ const Single31 = (props: QuizProps) => {
             <Styled.ImgSize15 src={arrow} alt="" />
             <Styled.RowBox4>
               <Styled.InputBox4
+                disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
               />
               <div>배</div>

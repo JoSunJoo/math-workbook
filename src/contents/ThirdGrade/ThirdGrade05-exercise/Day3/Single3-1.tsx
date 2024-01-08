@@ -30,11 +30,20 @@ const Single31 = (props: QuizProps) => {
           <div>➨</div>
           <Styled.BorderBox2>검산</Styled.BorderBox2>
           <Styled.RowBox7>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 0)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 0)}
+            />
             <div>×</div>
-            <Styled.InputBox3 onChange={e => handleInput(e.target.value, 1)} />
+            <Styled.InputBox3
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 1)}
+            />
             <div>=</div>
-            <Styled.InputBox1 onChange={e => handleInput(e.target.value, 2)} />
+            <Styled.InputBox1
+              disabled={correct === null ? false : true}
+              onChange={e => handleInput(e.target.value, 2)}
+            />
           </Styled.RowBox7>
         </Styled.RowBox4>
       </Styled.SetCenter>

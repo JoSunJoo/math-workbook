@@ -31,10 +31,12 @@ const Single33 = (props: Props) => {
         <Styled.DivTopInputWrapper>
           <Styled.InputBox3
             maxLength={1}
+            disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
           />
           <Styled.InputBox3
             maxLength={1}
+            disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
           />
         </Styled.DivTopInputWrapper>

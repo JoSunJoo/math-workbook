@@ -15,6 +15,7 @@ import type { Data31QuizProps as QuizProps } from '../../Type/Type1';
 import img from '../../Image/1-3-1.png';
 
 const FourthGrade31Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -23,7 +24,7 @@ const FourthGrade31Exercise = () => {
     Array.from(Array(5), () => new Array(1))
   );
   const key = 'fourth131.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -48,7 +49,7 @@ const FourthGrade31Exercise = () => {
                   setToggle={setToggle}
                   inputValue={inputValue}
                   setInputValue={setInputValue}
-                  correct={correct[idx]}
+                  correct={confirmType ? null : correct[idx]}
                 />
               </Styled.MarginBottomBox>
             ))}
@@ -59,7 +60,7 @@ const FourthGrade31Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={3} />

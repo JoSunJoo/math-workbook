@@ -11,6 +11,7 @@ import ExampleQuiz from './Example2-1';
 import SingleQuiz from './Single2-1';
 
 const FourthGrade21Exercise = () => {
+  const [isGeted, setIsGeted] = useState(false);
   const [toggle, setToggle] = useState<boolean>(false);
   // const [score, setScore] = useState<number>(0);
   const [correct, setCorrect] = useState<boolean[]>([]);
@@ -19,7 +20,7 @@ const FourthGrade21Exercise = () => {
     Array.from(Array(6), () => new Array(2))
   );
   const key = 'fourth321.answer';
-  GetData({ setInputValue, key }).catch(error => {
+  GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
@@ -59,7 +60,7 @@ const FourthGrade21Exercise = () => {
         onClick={() => {
           handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
-          setConfirmType(false);
+          setConfirmType(prev => !prev);
         }}
       >
         <ConfirmBtn type={confirmType} day={2} />
