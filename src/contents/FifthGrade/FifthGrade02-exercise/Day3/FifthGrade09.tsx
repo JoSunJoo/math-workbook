@@ -73,7 +73,7 @@ const FifthGrade09: React.FC = () => {
   const handleGrade = async () => {
     setShowResults(!showResults);
 
-    setType(false);
+    setType(!type);
     const totalScore = calculateScore();
     setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
 
