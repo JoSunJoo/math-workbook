@@ -60,22 +60,27 @@ const FifthGrade07: React.FC = () => {
 
     return correctCount * scorePerQuestion; // 총점 계산
   };
+
   const handleGrade = async () => {
     setShowResults(!showResults);
-
     setType(!type);
-    const totalScore = calculateScore();
-    setIsInputDisabled(!isInputDisabled); // 제출 시 입력 상자 비활성화
 
-    sendScore({ score: totalScore }).catch(error => {
-      console.error('Error with sendScore:', error);
-    });
-    postKeyValue({
-      key: 'fifthGrade37Answers',
-      value: answers,
-    }).catch(error => {
-      console.error('Error saving answers:', error);
-    });
+    // 'type'이 true일 때만 점수를 계산하고 서버로 보냄
+    if (type) {
+      const totalScore = calculateScore();
+      sendScore({ score: totalScore }).catch(error => {
+        console.error('Error with sendScore:', error);
+      });
+      postKeyValue({
+        key: 'fifthGrade37Answers',
+        value: answers,
+      }).catch(error => {
+        console.error('Error saving answers:', error);
+      });
+    }
+
+    // 'type'이 false일 경우 (다시 풀기 상태), 이 부분은 실행되지 않음
+    setIsInputDisabled(!isInputDisabled);
   };
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
