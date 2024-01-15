@@ -54,7 +54,8 @@ const ThirdGrade51Exercise = () => {
 
       <div
         onClick={() => {
-          handleAnswer({ key, inputValue, answer, setCorrect });
+          if (confirmType)
+            handleAnswer({ key, inputValue, answer, setCorrect });
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

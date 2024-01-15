@@ -59,7 +59,8 @@ const ThirdGrade21Exercise: React.FC = () => {
           </Styled.RowWrapBox5>
           <div
             onClick={() => {
-              handleAnswer({ key, inputValue, answer, setCorrect });
+              if (confirmType)
+                handleAnswer({ key, inputValue, answer, setCorrect });
               setToggle(!toggle);
               setConfirmType(prev => !prev);
             }}
