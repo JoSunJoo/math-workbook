@@ -35,7 +35,7 @@ export default function P141() {
   };
 
   return (
-    <Layout title="÷(자연수)의 계산" question={`계산을 하세요.`} day="day4">
+    <Layout title="(대분수)÷(자연수)" question={`계산을 하세요.`} day="day4">
       <ExampleBox>
         <img width="100%" src={e141Image} alt="fractionE141" />
       </ExampleBox>
@@ -87,7 +87,7 @@ const divisionProblems = [
     lNature: 1,
     lSon: 3,
     lMom: 4,
-    rSon: 4,
+    rSon: 2,
     cMom: 8,
     cSon: 7,
     pass: false,
@@ -95,7 +95,7 @@ const divisionProblems = [
   {
     qId: 1,
     qNum: '②',
-    lNature: 3,
+    lNature: 1,
     lMom: 5,
     lSon: 1,
     rSon: 2,

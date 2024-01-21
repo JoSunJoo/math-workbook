@@ -45,9 +45,7 @@ export default function P241() {
         <img width="100%" src={e241Image} alt="fractionE122" />
       </ExampleBox>
       <Box display="flex" flexDirection="column" alignItems="center">
-        <Typography marginTop="1rem" fontSize="1.25rem">
-          정답은 기약분수로 적습니다.
-        </Typography>
+        <Typography> * 약분 가능한 수는 약분하여 적습니다.</Typography>
         <Box
           sx={{
             display: 'flex',
