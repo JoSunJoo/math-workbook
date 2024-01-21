@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -15,17 +16,56 @@ interface C342Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    firstInput: string | undefined;
+    secondInput: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        firstInput: string | undefined;
+        secondInput: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C342(props: C342Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, isFraction, leftItem, rightItem, answer } = problem;
-
+  const [inputs, setInputs] = useState<{
+    firstInput: string | undefined;
+    secondInput: string | undefined;
+  }>({ firstInput: '', secondInput: '' });
+  const { firstInput, secondInput } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [firstInput, setFirstInput] = useState<string | undefined>(undefined);
-  const [secondInput, setSecondInput] = useState<string | undefined>(undefined);
+  const setFirstInput = (value: string) => {
+    setInputs(prev => ({ ...prev, firstInput: value }));
+  };
+  const setSecondInput = (value: string) => {
+    setInputs(prev => ({ ...prev, secondInput: value }));
+  };
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz342.answer' });
+    if (value) {
+      setInputs({
+        firstInput: value[qId].firstInput,
+        secondInput: value[qId].secondInput,
+      });
+    }
+  };
+
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (answer[0] === firstInput && answer[1] === secondInput) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);

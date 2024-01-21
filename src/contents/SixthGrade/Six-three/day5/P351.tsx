@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -19,6 +20,14 @@ export default function P351() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      firstMom: number | undefined;
+      firstSon: number | undefined;
+      secondMom: number | undefined;
+      secondSon: number | undefined;
+    }[]
+  >([]);
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -27,11 +36,10 @@ export default function P351() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz351.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -63,6 +71,8 @@ export default function P351() {
             }}
           >
             <C351
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

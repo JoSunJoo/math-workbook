@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
-import { isContext } from 'vm';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import C451 from './C451';
 
 import Img from '../../assets/image/P451/img.png';

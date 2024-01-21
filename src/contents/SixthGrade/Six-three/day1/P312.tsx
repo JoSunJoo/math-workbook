@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 
@@ -17,6 +18,18 @@ export default function P312() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      a1: string | undefined;
+      a2: string | undefined;
+      a3: string | undefined;
+      a4: string | undefined;
+      a5: string | undefined;
+      a6: string | undefined;
+      a7: string | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -25,11 +38,10 @@ export default function P312() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz312.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -54,6 +66,8 @@ export default function P312() {
             }}
           >
             <C312
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -17,16 +18,49 @@ interface C343Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C343(props: C343Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, isFraction, leftItem, rightItem, answer } = problem;
 
+  const [inputs, setInputs] = useState<{
+    input: string | undefined;
+  }>({ input: '' });
+  const { input } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState<string | undefined>(undefined);
+  const setInput = (value: string) => {
+    setInputs(prev => ({ ...prev, input: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz343.answer' });
+    if (value) {
+      setInputs({ input: value[qId].input });
+    }
+  };
+
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (answer === input) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);

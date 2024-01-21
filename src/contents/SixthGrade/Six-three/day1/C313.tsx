@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -11,23 +12,107 @@ interface C313Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    a1: string | undefined;
+    a2: string | undefined;
+    a3: string | undefined;
+    a4: string | undefined;
+    a5: string | undefined;
+    a6: string | undefined;
+    a7: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        a1: string | undefined;
+        a2: string | undefined;
+        a3: string | undefined;
+        a4: string | undefined;
+        a5: string | undefined;
+        a6: string | undefined;
+        a7: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C313(props: C313Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, answer, imgSrc } = problem;
+  const [inputs, setInputs] = useState<{
+    a1: string | undefined;
+    a2: string | undefined;
+    a3: string | undefined;
+    a4: string | undefined;
+    a5: string | undefined;
+    a6: string | undefined;
+    a7: string | undefined;
+  }>({
+    a1: '',
+    a2: '',
+    a3: '',
+    a4: '',
+    a5: '',
+    a6: '',
+    a7: '',
+  });
+  const { a1, a2, a3, a4, a5, a6, a7 } = inputs;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [a1, setA1] = useState<string | undefined>(undefined);
-  const [a2, setA2] = useState<string | undefined>(undefined);
-  const [a3, setA3] = useState<string | undefined>(undefined);
-  const [a4, setA4] = useState<string | undefined>(undefined);
-  const [a5, setA5] = useState<string | undefined>(undefined);
-  const [a6, setA6] = useState<string | undefined>(undefined);
-  const [a7, setA7] = useState<string | undefined>(undefined);
+  const setA1 = (value: string) => {
+    setInputs(prev => ({ ...prev, a1: value }));
+  };
+
+  const setA2 = (value: string) => {
+    setInputs(prev => ({ ...prev, a2: value }));
+  };
+
+  const setA3 = (value: string) => {
+    setInputs(prev => ({ ...prev, a3: value }));
+  };
+
+  const setA4 = (value: string) => {
+    setInputs(prev => ({ ...prev, a4: value }));
+  };
+
+  const setA5 = (value: string) => {
+    setInputs(prev => ({ ...prev, a5: value }));
+  };
+
+  const setA6 = (value: string) => {
+    setInputs(prev => ({ ...prev, a6: value }));
+  };
+
+  const setA7 = (value: string) => {
+    setInputs(prev => ({ ...prev, a7: value }));
+  };
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz313.answer' });
+    if (value) {
+      setInputs({
+        a1: value[qId].a1,
+        a2: value[qId].a2,
+        a3: value[qId].a3,
+        a4: value[qId].a4,
+        a5: value[qId].a5,
+        a6: value[qId].a6,
+        a7: value[qId].a7,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (
       answer[0] === a1 &&
       answer[1] === a2 &&

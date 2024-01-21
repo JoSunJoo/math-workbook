@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -12,20 +13,77 @@ interface C351Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    firstMom: number | undefined;
+    firstSon: number | undefined;
+    secondMom: number | undefined;
+    secondSon: number | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        firstMom: number | undefined;
+        firstSon: number | undefined;
+        secondMom: number | undefined;
+        secondSon: number | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C351(props: C351Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, imgSrc, answer } = problem;
-
+  const [inputs, setInputs] = useState<{
+    firstMom: number | undefined;
+    firstSon: number | undefined;
+    secondMom: number | undefined;
+    secondSon: number | undefined;
+  }>({
+    firstMom: undefined,
+    firstSon: undefined,
+    secondMom: undefined,
+    secondSon: undefined,
+  });
+  const { firstMom, firstSon, secondMom, secondSon } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [firstMom, setFirstMom] = useState<number | undefined>(undefined);
-  const [firstSon, setFirstSon] = useState<number | undefined>(undefined);
-  const [secondMom, setSecondMom] = useState<number | undefined>(undefined);
-  const [secondSon, setSecondSon] = useState<number | undefined>(undefined);
+  const setFirstMom = (value: number) => {
+    setInputs(prev => ({ ...prev, firstMom: value }));
+  };
+  const setFirstSon = (value: number) => {
+    setInputs(prev => ({ ...prev, firstSon: value }));
+  };
+  const setSecondMom = (value: number) => {
+    setInputs(prev => ({ ...prev, secondMom: value }));
+  };
+  const setSecondSon = (value: number) => {
+    setInputs(prev => ({ ...prev, secondSon: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz351.answer' });
+    if (value) {
+      setInputs({
+        firstMom: value[qId].firstMom,
+        firstSon: value[qId].firstSon,
+        secondMom: value[qId].secondMom,
+        secondSon: value[qId].secondSon,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (
       answer.firstMom === firstMom &&
       answer.firstSon === firstSon &&
