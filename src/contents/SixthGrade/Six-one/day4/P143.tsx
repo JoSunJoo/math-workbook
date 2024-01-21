@@ -33,7 +33,7 @@ export default function P143() {
   };
 
   return (
-    <Layout title="÷(자연수)의 계산" question={`계산을 하세요.`} day="day4">
+    <Layout title="(대분수)÷(자연수)" question={`계산을 하세요.`} day="day4">
       <Typography> * 정답이 대분수일 경우 가분수로 고쳐 적습니다.</Typography>
       <Box display="flex" flexDirection="column" alignItems="center">
         <Box
@@ -145,7 +145,7 @@ const divisionProblems = [
   {
     qId: 6,
     qNum: '⑦',
-    lNature: 3,
+    lNature: 1,
     lMom: 7,
     lSon: 4,
     rSon: 5,

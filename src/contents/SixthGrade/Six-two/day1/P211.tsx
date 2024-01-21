@@ -11,6 +11,7 @@ import C211 from './C211';
 
 import type { Input211Type } from './C211';
 
+import e211I1mage from 'src/contents/SixthGrade/assets/image/P211/2-1-1-1.png';
 import e211Image from 'src/contents/SixthGrade/assets/image/P211/e_2-1-1.png';
 
 export default function P211() {
@@ -42,6 +43,7 @@ export default function P211() {
       day="day1"
     >
       <ExampleBox>
+        <img width="100%" src={e211I1mage} alt="fractionE122" />
         <img width="100%" src={e211Image} alt="fractionE122" />
       </ExampleBox>
       <Box display="flex" flexDirection="column" alignItems="center">

@@ -87,7 +87,7 @@ export default function C231(props: C231Props) {
           momNum={momNum}
           sonNum={sonNum}
         />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.5rem"> = </CustomTypo>
         <VisualFraction
           width="4rem"
           natureNum={natureNum}
@@ -101,8 +101,9 @@ export default function C231(props: C231Props) {
             />
           }
         />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.5rem"> = </CustomTypo>
         <AnswerInput
+          width="5rem"
           value={enter}
           onChange={e => setEnter(Number(e.target.value))}
           disabled={isSolved}

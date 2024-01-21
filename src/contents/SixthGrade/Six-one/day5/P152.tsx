@@ -94,7 +94,9 @@ const divisionProblems = [
   {
     qId: 1,
     qNum: '②',
-    qString: '둘레의 길이가 7분의 6cm인 정삼각형의 한 변의 길이는 몇 cm일까요?',
+    qString: '둘레의 길이가',
+    qStringEnd: ['인 정삼각형의 한 변의 길이는 몇 cm일까요?'],
+    qStringNum: [0, 7, 6],
     equationMom: 7,
     equationSon: 6,
     equationDiv: 3,
@@ -106,8 +108,12 @@ const divisionProblems = [
   {
     qId: 2,
     qNum: '③',
-    qString:
-      '길이가 8과 6분의 1m인 철사를 사용하여 크기가 같은 정칠각형 2개를 만들었습니다. 정칠각형의 한 변의 길이는 몇 m일까요?',
+    qString: '길이가',
+    qStringEnd: [
+      '인 철사를 사용하여 크기가 같은 정칠각형 2개를 만들었습니다.',
+      '정칠각형의 한 변의 길이는 몇 m일까요 ? ',
+    ],
+    qStringNum: [8, 6, 1],
     equationNature: 8,
     equationMom: 6,
     equationSon: 1,
@@ -120,8 +126,12 @@ const divisionProblems = [
   {
     qId: 3,
     qNum: '④',
-    qString:
-      '페인트 4통을 사용하여 넓이가 5와 7분의 1㎡인 벽면을 칠했습니다. 페인트 한 통으로 칠한 벽면의 넓이는 몇 ㎡일까요?',
+    qString: '페인트 4통을 사용하여 넓이가',
+    qStringEnd: [
+      '인 벽면을 칠했습니다.',
+      '페인트 한 통으로 칠한 벽면의 넓이는 몇 ㎡일까요?',
+    ],
+    qStringNum: [5, 7, 1],
     equationNature: 5,
     equationMom: 7,
     equationSon: 1,

@@ -90,6 +90,7 @@ export default function C131(props: C131Props) {
     <Box
       display="flex"
       gap="0.2rem"
+      justifyContent="left"
       alignItems="center"
       margin="1rem"
       position="relative"

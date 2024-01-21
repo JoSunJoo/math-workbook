@@ -64,17 +64,8 @@ export default function ComponentExample() {
       </Box>
       <Box>
         <Typography fontSize="1.25rem">
-          첫 번째 상황은 한 사람당 병아리를 1마리씩 가지고 병아리 1마리가
-          남지만, 두 번째 상황은 한 사람당 사과 1개와 절반을 먹으면 됩니다. 이와
-          같이 끝까지 똑같이 나누어 나머지가 없는 상황이 존재하고 이 때의 몫은
-          분수로 표시할 수 있습니다
-        </Typography>
-        <br />
-      </Box>
-      <Box>
-        <Typography fontSize="1.25rem">
           <span style={{ color: 'red' }}>나눗셈의 몫</span>은 분수에서
-          <span style={{ color: 'red' }}>
+          <span style={{ color: 'red', marginLeft: '0.3ch' }}>
             분자를 분모만큼으로 똑같이 나눈 것
           </span>
           과 같은 개념이므로 분수로 나타낼 수 있습니다.

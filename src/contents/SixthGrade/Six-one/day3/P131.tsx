@@ -45,15 +45,15 @@ export default function P131() {
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           {divisionProblems.map(problem => (
             <Box
               key={problem.qNum}
               sx={{
-                display: 'flex',
+                paddingLeft: '8%',
                 width: '40%',
-                justifyContent: 'center',
                 margin: '0.5rem',
               }}
             >

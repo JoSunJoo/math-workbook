@@ -141,7 +141,7 @@ const divisionProblems = [
     momNum: 25,
     rSon: 24,
     rMom: 1000,
-    answer: 0.024,
+    answer: 0.24,
     pass: false,
   },
 ];

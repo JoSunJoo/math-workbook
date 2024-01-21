@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
 import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import DivisionInput, {
@@ -120,7 +120,6 @@ export default function C121(props: C121Props) {
       alignItems="center"
       margin="1rem"
       position="relative"
-      minWidth="22rem"
     >
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo marginRight="0.5rem">{qNum}</CustomTypo>

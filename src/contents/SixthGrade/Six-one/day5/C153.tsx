@@ -9,6 +9,7 @@ import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+import VisualFraction from '../../common/visual-fraction';
 
 export interface Input153Type {
   equationSonValue: string | number;
@@ -32,6 +33,8 @@ interface C153Props {
     answerSon: number;
     unit: string;
     pass: boolean;
+    qStringEnd?: string[];
+    qStringNum?: number[];
   };
   allAnswers: Input153Type[];
   setAllAnswers: React.Dispatch<React.SetStateAction<Input153Type[]>>;
@@ -52,6 +55,8 @@ export default function C153(props: C153Props) {
     answerMom,
     answerSon,
     unit,
+    qStringEnd,
+    qStringNum,
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -189,9 +194,45 @@ export default function C153(props: C153Props) {
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <Box>
         <CustomTypo marginRight="0.5rem">{qNum}</CustomTypo>
-        <CustomTypo fontSize="1.25rem" paddingBottom="1rem">
-          {qString}
-        </CustomTypo>
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          alignItems="center"
+          alignContent="center"
+        >
+          <CustomTypo marginX="0.5rem" fontSize="1.25rem" whiteSpace="pre-line">
+            {qString}
+          </CustomTypo>
+          {qStringNum && (
+            <>
+              {qStringNum[0] === 0 ? (
+                <VisualFraction
+                  fontSize="1.25rem"
+                  momNum={qStringNum[1]}
+                  sonNum={qStringNum[2]}
+                />
+              ) : (
+                <VisualFraction
+                  fontSize="1.25rem"
+                  natureNum={qStringNum[0]}
+                  momNum={qStringNum[1]}
+                  sonNum={qStringNum[2]}
+                />
+              )}
+              <CustomTypo marginX="0.2rem" fontSize="1.25rem">
+                {unit}
+              </CustomTypo>
+            </>
+          )}
+          {qStringEnd && (
+            <>
+              <CustomTypo fontSize="1.25rem">{qStringEnd[0]}</CustomTypo>
+              <CustomTypo fontSize="1.25rem" marginX="0.5rem">
+                {qStringEnd[1]}
+              </CustomTypo>
+            </>
+          )}
+        </Box>
       </Box>
       <Box
         display="flex"

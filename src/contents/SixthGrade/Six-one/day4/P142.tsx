@@ -34,7 +34,7 @@ export default function P142() {
 
   return (
     <Layout
-      title="÷(자연수)의 계산"
+      title="(대분수)÷(자연수)"
       question={`(대분수)÷(자연수)를 계산 하세요.`}
       day="day4"
     >
