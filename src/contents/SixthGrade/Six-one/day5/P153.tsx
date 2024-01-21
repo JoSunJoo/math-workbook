@@ -95,8 +95,12 @@ const divisionProblems = [
   {
     qId: 1,
     qNum: '②',
-    qString:
-      '승주네 자동차는 15 km를 가는 데 1과 8분의 7L의 기름을 사용하였습니다. 이 자동차로 1 km를 가려면 몇 L의 기름이 필요할까요?',
+    qString: '승주네 자동차는 15 km를 가는 데',
+    qStringEnd: [
+      '의 기름을 사용하였습니다.',
+      '이 자동차로 1 km를 가려면 몇 L의 기름이 필요할까요? ',
+    ],
+    qStringNum: [1, 8, 7],
     equationNature: 1,
     equationMom: 8,
     equationSon: 7,
@@ -109,8 +113,12 @@ const divisionProblems = [
   {
     qId: 2,
     qNum: '③',
-    qString:
-      '길이가 4와 5분의 4cm인 철사를 사용하여 한 변의 길이가 서로 같은 정사각형과 정오각형을 만들었습니다. 두 도형의 한 변의 길이는 몇 cm일까요?',
+    qString: '길이가',
+    qStringEnd: [
+      '인 철사를 사용하여 한 변의 길이가 서로 같은 정사각형과 정오각형을 만들었습니다.',
+      '두 도형의 한 변의 길이는 몇 cm일까요?',
+    ],
+    qStringNum: [4, 5, 4],
     equationNature: 4,
     equationMom: 5,
     equationSon: 4,
@@ -123,8 +131,12 @@ const divisionProblems = [
   {
     qId: 3,
     qNum: '④',
-    qString:
-      '넓이가 9와 6분의 1m²인 직사각형이 있습니다. 이 직사각형의 가로의 길이가 6 cm일 때 세로의 길이는 몇 cm일까요?',
+    qString: '넓이가 ',
+    qStringEnd: [
+      '인 직사각형이 있습니다.',
+      '이 직사각형의 가로의 길이가 6 cm일 때 세로의 길이는 몇 cm일까요?',
+    ],
+    qStringNum: [9, 6, 1],
     equationNature: 9,
     equationMom: 6,
     equationSon: 1,

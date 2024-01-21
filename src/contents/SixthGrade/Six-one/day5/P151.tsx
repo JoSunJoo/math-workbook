@@ -85,7 +85,12 @@ function QuestionTab() {
       <Box fontSize="1.25rem" display="flex" alignItems="center">
         어떤 분수를 6으로 나누어야 할 것을 잘못하여 곱했더니
         <span style={{ margin: '0ch 0.3ch' }}>
-          <VisualFraction natureNum="3" momNum="5" sonNum="1" />
+          <VisualFraction
+            fontSize="1.25rem"
+            natureNum="3"
+            momNum="5"
+            sonNum="1"
+          />
         </span>
         이 되었습니다.
       </Box>
@@ -101,6 +106,7 @@ const divisionProblems = [
     qId: 0,
     qNum: '①',
     qString: '어떤 분수를 구하세요.',
+    qStringEnd: '',
     equationNature: 3,
     equationMom: 5,
     equationSon: 1,
@@ -113,6 +119,7 @@ const divisionProblems = [
     qId: 1,
     qNum: '②',
     qString: '바르게 계산한 몫을 구하세요.',
+    qStringEnd: '',
     equationNature: '',
     equationMom: 15,
     equationSon: 8,
@@ -124,8 +131,9 @@ const divisionProblems = [
   {
     qId: 2,
     qNum: '③',
-    qString:
-      '어떤 분수를 9로 나누어야 할 것을 잘못하여 곱했더니 5와 4분의 1이 되었습니다. 바르게 계산한 몫을 기약분수로 구하세요.',
+    qString: '어떤 분수를 9로 나누어야 할 것을 잘못하여 곱했더니',
+    qStringEnd: '바르게 계산한 몫을 기약분수로 구하세요.',
+    qStringNum: [5, 4, 1],
     equationNature: 5,
     equationMom: 4,
     equationSon: 1,
@@ -137,8 +145,9 @@ const divisionProblems = [
   {
     qId: 3,
     qNum: '④',
-    qString:
-      '어떤 분수를 8로 나누어야 할 것을 잘못하여 곱했더니 6과 3분의 2가 되었습니다. 바르게 계산한 몫을 기약분수로 구하세요.',
+    qString: '어떤 분수를 8로 나누어야 할 것을 잘못하여 곱했더니',
+    qStringEnd: '바르게 계산한 몫을 기약분수로 구하세요.',
+    qStringNum: [6, 3, 2],
     equationNature: 6,
     equationMom: 3,
     equationSon: 2,

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
+import { wrap } from 'module';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import DivisionInput, {
@@ -9,6 +10,7 @@ import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+import VisualFraction from '../../common/visual-fraction';
 
 export interface Input151Type {
   equationSonValue: string | number;
@@ -17,6 +19,8 @@ export interface Input151Type {
   equationDivValue: string | number;
   answerMomValue: string | number;
   answerSonValue: string | number;
+  qStringEnd?: string;
+  qStringNum?: number[];
 }
 
 interface C151Props {
@@ -31,6 +35,8 @@ interface C151Props {
     answerMom: number;
     answerSon: number;
     pass: boolean;
+    qStringEnd?: string;
+    qStringNum?: number[];
   };
   allAnswers: Input151Type[];
   setAllAnswers: React.Dispatch<React.SetStateAction<Input151Type[]>>;
@@ -50,6 +56,8 @@ export default function C151(props: C151Props) {
     equationDiv,
     answerMom,
     answerSon,
+    qStringEnd,
+    qStringNum,
   } = problem;
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -149,10 +157,30 @@ export default function C151(props: C151Props) {
   return (
     <Box width="90%" gap="0.2rem" marginBottom="1rem" position="relative">
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
-      <Box>
-        <CustomTypo marginRight="0.5rem">{qNum}</CustomTypo>
-        <CustomTypo fontSize="1.25rem" paddingBottom="1rem">
+      <CustomTypo>{qNum}</CustomTypo>
+      <Box display="flex" flexWrap="wrap" alignItems="center">
+        <CustomTypo marginX="0.5rem" fontSize="1.25rem" whiteSpace="pre-line">
           {qString}
+        </CustomTypo>
+        {qStringNum && (
+          <>
+            <VisualFraction
+              fontSize="1.25rem"
+              natureNum={qStringNum[0]}
+              momNum={qStringNum[1]}
+              sonNum={qStringNum[2]}
+            />
+            <CustomTypo
+              marginX="0.5rem"
+              fontSize="1.25rem"
+              whiteSpace="pre-line"
+            >
+              이 되었습니다.
+            </CustomTypo>
+          </>
+        )}
+        <CustomTypo marginX="0.5rem" fontSize="1.25rem" paddingBottom="1rem">
+          {qStringEnd}
         </CustomTypo>
       </Box>
       <Box
