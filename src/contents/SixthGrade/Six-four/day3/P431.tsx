@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -13,6 +14,13 @@ export default function P431() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: number | undefined;
+      input2: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -21,11 +29,10 @@ export default function P431() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz431.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -34,7 +41,7 @@ export default function P431() {
       day="day3"
       title="다른 비로 나타내기"
       question={
-        '어떤 비의 전항과 후항을 표에 적었습니다. 비를 가장 간단한 자연수의 비로 나타내세요.'
+        '어떤 비의 전항과 후항을 표에 적었습니다.\n비를 가장 간단한 자연수의 비로 나타내세요.'
       }
     >
       <Box display="grid" gridTemplateColumns="1fr 1fr" gap="3rem">
@@ -51,6 +58,8 @@ export default function P431() {
             }}
           >
             <C431
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

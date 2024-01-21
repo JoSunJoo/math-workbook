@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -13,6 +14,17 @@ export default function P453() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: number | undefined;
+      input2: number | undefined;
+      input3: number | undefined;
+      input4: number | undefined;
+      input5: number | undefined;
+      input6: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -21,11 +33,10 @@ export default function P453() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz453.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -34,7 +45,7 @@ export default function P453() {
       day="day5"
       title="□ 구하기"
       question={
-        '3장의 수 카드를 한 번씩만 사용하여 비례식을 완성하세요. 각각 두 가지 방법이 있어요.'
+        '3장의 수 카드를 한 번씩만 사용하여 비례식을 완성하세요.\n각각 두 가지 방법이 있어요.'
       }
     >
       <Box display="grid" gridTemplateColumns="1fr 1fr" gap="5rem">
@@ -51,6 +62,8 @@ export default function P453() {
             }}
           >
             <C453
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

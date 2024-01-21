@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -17,16 +18,49 @@ interface C343Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C343(props: C343Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, isFraction, leftItem, rightItem, answer } = problem;
 
+  const [inputs, setInputs] = useState<{
+    input: string | undefined;
+  }>({ input: '' });
+  const { input } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState<string | undefined>(undefined);
+  const setInput = (value: string) => {
+    setInputs(prev => ({ ...prev, input: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz343.answer' });
+    if (value) {
+      setInputs({ input: value[qId].input });
+    }
+  };
+
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (answer === input) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -48,55 +82,64 @@ export default function C343(props: C343Props) {
         </Box>
         <Box display="flex" flexDirection="column">
           <Box display="flex" gap="1rem">
-            <Box position="relative" width="5rem" height="5rem">
+            <Box position="relative" width="6rem" height="8.2rem">
               <Avatar
                 src={BlueBig}
                 variant="square"
                 style={{
-                  width: '5rem',
-                  height: 'max-content',
+                  width: '6rem',
+                  height: '8.2rem',
                   position: 'absolute',
                 }}
               />
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                marginRight="1rem"
+              <Box
                 position="absolute"
-                top={isFraction ? '2.3rem' : '3.3rem'}
-                left={isFraction ? '1.5rem' : '1rem'}
+                width="6rem"
+                height="8.2rem"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                marginTop="1.3rem"
               >
-                {isFraction ? (
-                  <VisualFraction sonNum={leftItem[0]} momNum={leftItem[1]} />
-                ) : (
-                  leftItem
-                )}
-              </Typography>
+                <Typography variant="h5" fontWeight={600}>
+                  {isFraction ? (
+                    <VisualFraction sonNum={leftItem[0]} momNum={leftItem[1]} />
+                  ) : (
+                    leftItem
+                  )}
+                </Typography>
+              </Box>
             </Box>
-            <Box position="relative" width="5rem" height="5rem">
+            <Box position="relative" width="6rem" height="8.2rem">
               <Avatar
                 src={OrangeBig}
                 variant="square"
                 style={{
-                  width: '5rem',
-                  height: 'max-content',
+                  width: '6rem',
+                  height: '8.2rem',
                   position: 'absolute',
                 }}
               />
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                marginRight="1rem"
+              <Box
                 position="absolute"
-                top={isFraction ? '2.3rem' : '3.3rem'}
-                left={isFraction ? '1.5rem' : '1rem'}
+                width="6rem"
+                height="8.2rem"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                marginTop="1.3rem"
               >
-                {isFraction ? (
-                  <VisualFraction sonNum={rightItem[0]} momNum={rightItem[1]} />
-                ) : (
-                  rightItem
-                )}
-              </Typography>
+                <Typography variant="h5" fontWeight={600}>
+                  {isFraction ? (
+                    <VisualFraction
+                      sonNum={rightItem[0]}
+                      momNum={rightItem[1]}
+                    />
+                  ) : (
+                    rightItem
+                  )}
+                </Typography>
+              </Box>
             </Box>
           </Box>
           <Box display="flex" alignItems="center" ml="-1.5rem">
@@ -142,7 +185,7 @@ export default function C343(props: C343Props) {
               />
               의
               <TextUnderBar
-                width="3rem"
+                width="4.5rem"
                 value={input ? input : ''}
                 onChange={e => setInput(e.target.value)}
                 disabled={isSolved}

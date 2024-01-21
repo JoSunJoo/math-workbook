@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -19,6 +20,15 @@ export default function P353() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      firstMom: number | undefined;
+      firstSon: number | undefined;
+      secondMom: number | undefined;
+      secondSon: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -27,11 +37,10 @@ export default function P353() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz353.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -56,6 +65,8 @@ export default function P353() {
             }}
           >
             <C353
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>
@@ -132,7 +143,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 3,
+    qId: 4,
     qNum: '④',
     pass: false,
     imgSrc: Img4,
@@ -145,7 +156,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 3,
+    qId: 5,
     qNum: '⑤',
     pass: false,
     imgSrc: Img5,

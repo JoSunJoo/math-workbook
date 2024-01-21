@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -10,17 +11,53 @@ interface C443Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input1: number | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input1: number | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C443(props: C443Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, numList, answer } = problem;
-
+  const [inputs, setInputs] = useState<{
+    input1: number | undefined;
+  }>({
+    input1: undefined,
+  });
+  const { input1 } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input1, setInput1] = useState<undefined | number>(undefined);
+  const setInput1 = (value: number) => {
+    setInputs(prev => ({ ...prev, input1: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz443.answer' });
+    if (value) {
+      setInputs({
+        input1: value[qId].input1,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (answer === input1) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -49,13 +86,13 @@ export default function C443(props: C443Props) {
             gap="0.5rem"
           >
             <Box
-              bgcolor="#fde3e6"
+              bgcolor={numList[0] === 'blank' ? 'white' : '#fde3e6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[0] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[0] === 'blank' ? (
@@ -72,13 +109,13 @@ export default function C443(props: C443Props) {
             </Box>
             {':'}
             <Box
-              bgcolor="#d9ecf6"
+              bgcolor={numList[1] === 'blank' ? 'white' : '#d9ecf6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[1] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[1] === 'blank' ? (
@@ -86,7 +123,7 @@ export default function C443(props: C443Props) {
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
-                  bgColor="#fde3e6"
+                  bgColor="#d9ecf6"
                   disabled={isSolved}
                 />
               ) : (
@@ -95,13 +132,13 @@ export default function C443(props: C443Props) {
             </Box>
             {'='}
             <Box
-              bgcolor="#fde3e6"
+              bgcolor={numList[2] === 'blank' ? 'white' : '#fde3e6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[2] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[2] === 'blank' ? (
@@ -118,13 +155,13 @@ export default function C443(props: C443Props) {
             </Box>
             {':'}
             <Box
-              bgcolor="#d9ecf6"
+              bgcolor={numList[3] === 'blank' ? 'white' : '#d9ecf6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[3] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[3] === 'blank' ? (
@@ -132,7 +169,7 @@ export default function C443(props: C443Props) {
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
-                  bgColor="#fde3e6"
+                  bgColor="#d9ecf6"
                   disabled={isSolved}
                 />
               ) : (

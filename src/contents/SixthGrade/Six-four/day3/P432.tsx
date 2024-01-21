@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -13,6 +14,13 @@ export default function P432() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: number | undefined;
+      input2: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -21,11 +29,10 @@ export default function P432() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz432.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -34,7 +41,7 @@ export default function P432() {
       day="day3"
       title="다른 비로 나타내기"
       question={
-        '비를 가장 간단한 자연수의 비로 나타내려고 합니다. 빈 곳에 알맞은 수를 써넣으세요.'
+        '비를 가장 간단한 자연수의 비로 나타내려고 합니다.\n빈 곳에 알맞은 수를 써넣으세요.'
       }
     >
       <Box display="grid" gridTemplateColumns="1fr">
@@ -51,6 +58,8 @@ export default function P432() {
             }}
           >
             <C432
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

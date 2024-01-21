@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -19,6 +20,15 @@ export default function P321() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      firstMom: number | undefined;
+      firstSon: number | undefined;
+      secondMom: number | undefined;
+      secondSon: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -26,12 +36,10 @@ export default function P321() {
       return newPassArray;
     });
   };
-
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz321.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -59,6 +67,8 @@ export default function P321() {
             }}
           >
             <C321
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>
@@ -115,7 +125,7 @@ const problems: ProblemProp[] = [
     qNum: '②',
     pass: false,
     leftItem: '꽃',
-    rightItem: '나비',
+    rightItem: '나무',
     imgSrc: N2,
     answer: {
       firstMom: 8,

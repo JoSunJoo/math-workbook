@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 
@@ -14,6 +15,12 @@ export default function P343() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input: string | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -22,11 +29,10 @@ export default function P343() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz343.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -58,6 +64,8 @@ export default function P343() {
             }}
           >
             <C343
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>
@@ -156,7 +164,7 @@ const problems: ProblemProp[] = [
     qNum: '⑧',
     pass: false,
     isFraction: true,
-    leftItem: ['14', '7'],
+    leftItem: ['13', '7'],
     rightItem: ['26', '91'],
     answer: '13/2',
   },

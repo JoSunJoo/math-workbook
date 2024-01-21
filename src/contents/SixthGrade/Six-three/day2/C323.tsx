@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Avatar, Box, Typography } from '@mui/material';
+import { getKeyValue } from '@elice/extcontent-apis';
+import styled from '@emotion/styled';
+import { Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import { TextUnderBar } from 'src/contents/SixthGrade/common/text-underbar';
@@ -10,17 +12,52 @@ interface C323Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C323(props: C323Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, imgSrc, answer } = problem;
+  const [inputs, setInputs] = useState<{
+    input: string | undefined;
+  }>({ input: '' });
+
+  const { input } = inputs;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState('');
+  const setInput = (value: string) => {
+    setInputs(prev => ({ ...prev, input: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz323.answer' });
+    if (value) {
+      setInputs({ input: value[qId].input });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
+
     if (answer === input) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -41,16 +78,9 @@ export default function C323(props: C323Props) {
           </Typography>
         </Box>
         <Box display="flex" gap="2rem" alignItems="end">
-          <Avatar
-            src={imgSrc}
-            variant="square"
-            style={{
-              width: '10rem',
-              height: 'max-content',
-            }}
-          />
+          <ProblemImg src={imgSrc} />
           <TextUnderBar
-            value={input}
+            value={input ? input : ''}
             onChange={e => setInput(e.target.value)}
             disabled={isSolved}
           />
@@ -59,3 +89,9 @@ export default function C323(props: C323Props) {
     </Box>
   );
 }
+
+const ProblemImg = styled.img`
+  width: 12rem;
+  height: 10rem;
+  object-fit: contain;
+`;

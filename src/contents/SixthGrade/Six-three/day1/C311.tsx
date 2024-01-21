@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -12,19 +13,69 @@ interface C311Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    firstInput: string | number | undefined;
+    secondInput: string | number | undefined;
+    thirdInput: string | number | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        firstInput: string | number | undefined;
+        secondInput: string | number | undefined;
+        thirdInput: string | number | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C311(props: C311Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, leftItem, rightItem, answer } = problem;
+  const [inputs, setInputs] = useState<{
+    firstInput: string | number | undefined;
+    secondInput: string | number | undefined;
+    thirdInput: string | number | undefined;
+  }>({ firstInput: '', secondInput: '', thirdInput: '' });
+  const { firstInput, secondInput, thirdInput } = inputs;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [firstInput, setFirstInput] = useState<string | undefined>(undefined);
-  const [secondInput, setSecondInput] = useState<string | undefined>(undefined);
-  const [thirdInput, setThirdInput] = useState<string | undefined>(undefined);
+  const setFirstInput = (value: string) => {
+    setInputs({ ...inputs, firstInput: value });
+  };
+
+  const setSecondInput = (value: string) => {
+    setInputs({ ...inputs, secondInput: value });
+  };
+
+  const setThirdInput = (value: string) => {
+    setInputs({ ...inputs, thirdInput: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz311.answer' });
+    if (value) {
+      setInputs({
+        firstInput: value[qId].firstInput,
+        secondInput: value[qId].secondInput,
+        thirdInput: value[qId].thirdInput,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prevAllInputs => {
+      const updatedInputs = [...prevAllInputs];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
+
     if (
       answer[0] === firstInput &&
       answer[0] === secondInput &&
@@ -54,8 +105,8 @@ export default function C311(props: C311Props) {
               {leftItem} ÷ {rightItem} =
             </Typography>
             <TextUnderBar
-              width="3rem"
-              value={firstInput ? firstInput : ''}
+              width="3.5rem"
+              value={firstInput ? String(firstInput) : ''}
               onChange={e => setFirstInput(e.target.value)}
               disabled={isSolved}
             />
@@ -74,8 +125,8 @@ export default function C311(props: C311Props) {
               {leftItem}는 {rightItem}의
             </Typography>
             <TextUnderBar
-              width="3rem"
-              value={secondInput ? secondInput : ''}
+              width="3.5rem"
+              value={secondInput ? String(secondInput) : ''}
               onChange={e => setSecondInput(e.target.value)}
               disabled={isSolved}
             />
@@ -83,8 +134,8 @@ export default function C311(props: C311Props) {
               배, {rightItem}는 {leftItem}의
             </Typography>
             <TextUnderBar
-              width="3rem"
-              value={thirdInput ? thirdInput : ''}
+              width="3.5rem"
+              value={thirdInput ? String(thirdInput) : ''}
               onChange={e => setThirdInput(e.target.value)}
               disabled={isSolved}
             />

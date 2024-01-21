@@ -15,6 +15,7 @@ export default function CorrectChecker({
       component="img"
       sx={{
         position: 'absolute',
+        zIndex: '3',
         width: `${$width ? $width : 4.5}rem`,
         height: `${$width ? $width : 4.5}rem`,
         transform: `${

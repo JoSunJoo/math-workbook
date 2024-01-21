@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
 import { sendScoreUtil } from '../../utils/score-utils';
-import { calculateTruePercentage } from '../../utils/true-percentage';
 import C451 from './C451';
 
 import Img from '../../assets/image/P451/img.png';
@@ -16,6 +16,12 @@ export default function P451() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: boolean | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -24,11 +30,14 @@ export default function P451() {
     });
   };
 
-  const checkAnswer = () => {
-    const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+  const checkAnswer = async () => {
+    const currentScore =
+      passArray.slice(0, -1).every(value => value === true) &&
+      passArray[passArray.length - 1] === false
+        ? 100
+        : 0;
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz451.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -94,6 +103,8 @@ export default function P451() {
               }
             >
               <C451
+                allInputs={allInputs}
+                setAllInputs={setAllInputs}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>
@@ -121,7 +132,7 @@ export interface ProblemProp {
 
 const problems: ProblemProp[] = [
   {
-    qId: -1,
+    qId: 19,
     pass: false,
     answer: false,
   },
