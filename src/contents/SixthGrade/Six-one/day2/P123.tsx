@@ -34,7 +34,7 @@ export default function P123() {
 
   return (
     <Layout title="(분수)÷(자연수)" question={`계산을 하세요.`} day="day2">
-      <Typography>대분수는 가분수로 바꾸어 적습니다.</Typography>
+      <Typography> * 정답이 대분수일 경우 가분수로 고쳐 적습니다.</Typography>
       <Box display="flex" flexDirection="column" alignItems="center">
         <Box
           sx={{
@@ -172,8 +172,8 @@ const divisionProblems = [
     mom: 6,
     son: 13,
     nature: 2,
-    aMom: 13,
-    aSon: 12,
+    aMom: 12,
+    aSon: 13,
     pass: false,
   },
   {
