@@ -49,13 +49,13 @@ export default function C443(props: C443Props) {
             gap="0.5rem"
           >
             <Box
-              bgcolor="#fde3e6"
+              bgcolor={numList[0] === 'blank' ? 'white' : '#fde3e6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[0] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[0] === 'blank' ? (
@@ -72,13 +72,13 @@ export default function C443(props: C443Props) {
             </Box>
             {':'}
             <Box
-              bgcolor="#d9ecf6"
+              bgcolor={numList[1] === 'blank' ? 'white' : '#d9ecf6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[1] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[1] === 'blank' ? (
@@ -86,7 +86,7 @@ export default function C443(props: C443Props) {
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
-                  bgColor="#fde3e6"
+                  bgColor="#d9ecf6"
                   disabled={isSolved}
                 />
               ) : (
@@ -95,13 +95,13 @@ export default function C443(props: C443Props) {
             </Box>
             {'='}
             <Box
-              bgcolor="#fde3e6"
+              bgcolor={numList[2] === 'blank' ? 'white' : '#fde3e6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[2] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[2] === 'blank' ? (
@@ -118,13 +118,13 @@ export default function C443(props: C443Props) {
             </Box>
             {':'}
             <Box
-              bgcolor="#d9ecf6"
+              bgcolor={numList[3] === 'blank' ? 'white' : '#d9ecf6'}
               width="3rem"
               height="3rem"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              border="1px solid black"
+              border={numList[3] === 'blank' ? 'none' : '1px solid black'}
               borderRadius="0.5rem"
             >
               {numList[3] === 'blank' ? (
@@ -132,7 +132,7 @@ export default function C443(props: C443Props) {
                   value={input1}
                   onChange={e => setInput1(Number(e.target.value))}
                   width="3rem"
-                  bgColor="#fde3e6"
+                  bgColor="#d9ecf6"
                   disabled={isSolved}
                 />
               ) : (

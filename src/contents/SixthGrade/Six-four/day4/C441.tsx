@@ -36,7 +36,7 @@ export default function C441(props: C441Props) {
   }, [isSolved, qId, answer, input1, input2]);
 
   return (
-    <Box display="flex" mb="5rem">
+    <Box display="flex" mb="2rem">
       <Box display="flex" alignItems="center" gap="1rem">
         <Box display="flex" alignItems="center" position="relative">
           {isSolved && <CorrectChecker isCorrect={isCorrect} />}

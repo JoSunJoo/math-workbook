@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import styled from '@emotion/styled';
+import { Box } from '@mui/material';
 
-import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import { NumberInput } from 'src/contents/SixthGrade/common/number-box';
 
 import type { ProblemProp } from './P452';
+
+import correct from '../../assets/icon/correct.png';
+import inCorrect from '../../assets/icon/inCorrect.png';
 
 interface C452Props {
   problem: ProblemProp;
@@ -14,7 +17,7 @@ interface C452Props {
 
 export default function C452(props: C452Props) {
   const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, answer } = problem;
+  const { qId, answer } = problem;
 
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -32,22 +35,32 @@ export default function C452(props: C452Props) {
   }, [isSolved, qId, answer, input]);
 
   return (
-    <Box display="flex">
-      <Box display="flex" alignItems="center" gap="1rem">
-        <Box display="flex" alignItems="center" position="relative">
-          {isSolved && <CorrectChecker isCorrect={isCorrect} />}
-          <Typography variant="h5" fontWeight={600}>
-            {qNum}
-          </Typography>
-        </Box>
-        <Box display="flex" gap="0.3rem" alignItems="center">
-          <NumberInput
-            value={input}
-            onChange={e => setInput(Number(e.target.value))}
-            disabled={isSolved}
-          />
+    <Box position="relative">
+      <Box display="flex" alignItems="center" position="absolute">
+        {isSolved && (
+          <CustomCorrectChecker src={isCorrect ? correct : inCorrect} />
+        )}
+      </Box>
+      <Box display="flex">
+        <Box display="flex" alignItems="center" gap="1rem">
+          <Box display="flex" gap="0.3rem" alignItems="center">
+            <NumberInput
+              width="2.2rem"
+              value={input}
+              onChange={e => setInput(Number(e.target.value))}
+              disabled={isSolved}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
   );
 }
+const CustomCorrectChecker = styled.img`
+  position: absolute;
+  z-index: 3;
+  width: 2rem;
+  height: 2.5rem;
+  transform: translate(0rem, 1.2rem);
+  object-fit: contain;
+`;

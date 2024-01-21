@@ -55,7 +55,7 @@ export default function C413(props: C413Props) {
         <Box display="flex" flexDirection="column">
           <Box display="flex" gap="0.5rem" alignItems="center">
             <Typography variant="h4" fontWeight={600}>
-              ×
+              {qId % 2 === 0 ? '×' : '÷'}
             </Typography>
             <NumberInput
               width="2.5rem"
@@ -237,7 +237,7 @@ export default function C413(props: C413Props) {
               }}
             />
             <Typography variant="h4" fontWeight={600}>
-              ×
+              {qId % 2 === 0 ? '×' : '÷'}
             </Typography>
             <NumberInput
               width="2.5rem"

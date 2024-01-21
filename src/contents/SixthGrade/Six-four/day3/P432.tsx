@@ -34,7 +34,7 @@ export default function P432() {
       day="day3"
       title="다른 비로 나타내기"
       question={
-        '비를 가장 간단한 자연수의 비로 나타내려고 합니다. 빈 곳에 알맞은 수를 써넣으세요.'
+        '비를 가장 간단한 자연수의 비로 나타내려고 합니다.\n빈 곳에 알맞은 수를 써넣으세요.'
       }
     >
       <Box display="grid" gridTemplateColumns="1fr">

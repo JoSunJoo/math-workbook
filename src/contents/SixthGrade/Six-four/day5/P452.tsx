@@ -37,18 +37,31 @@ export default function P452() {
       title="□ 구하기"
       question={'각 번호에 들어갈 알맞은 수를 써넣으세요.'}
     >
-      <Box width="100%" display="flex" justifyContent="center">
-        <Avatar
-          src={Img}
-          variant="square"
-          style={{
-            width: '35rem',
-            height: 'max-content',
-            marginBottom: '2rem',
-          }}
-        />
-      </Box>
-      <Box display="flex" flexWrap="wrap" gap="3rem" justifyContent="center">
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        gap="3rem"
+        justifyContent="center"
+        position="relative"
+      >
+        <Box
+          display="flex"
+          justifyContent="center"
+          width="36.5rem"
+          height="37rem"
+        >
+          <Avatar
+            src={Img}
+            variant="square"
+            style={{
+              width: '36.5rem',
+              height: '37rem',
+              margin: '4rem 0',
+              marginLeft: '2rem',
+              position: 'absolute',
+            }}
+          />
+        </Box>
         {problems.map(problem => (
           <Box
             key={problem.qNum}
@@ -56,8 +69,9 @@ export default function P452() {
               overflowY: 'auto',
               display: 'flex',
               justifyContent: 'center',
-              paddingLeft: '2rem',
-              height: '7rem',
+              position: 'absolute',
+              left: problem.left,
+              top: problem.top,
             }}
           >
             <C452
@@ -70,12 +84,13 @@ export default function P452() {
           </Box>
         ))}
       </Box>
-
-      <SubmitButton
-        onClick={checkAnswer}
-        myColor="#00B76A"
-        isSolved={isSolved}
-      />
+      <Box mt="4rem">
+        <SubmitButton
+          onClick={checkAnswer}
+          myColor="#00B76A"
+          isSolved={isSolved}
+        />
+      </Box>
     </Layout>
   );
 }
@@ -85,6 +100,8 @@ export interface ProblemProp {
   qNum: string;
   pass: boolean;
   answer: number;
+  left: string;
+  top: string;
 }
 
 const problems: ProblemProp[] = [
@@ -93,47 +110,63 @@ const problems: ProblemProp[] = [
     qNum: '①',
     pass: false,
     answer: 7,
+    left: '96.5px',
+    top: '144px',
   },
   {
     qId: 1,
     qNum: '②',
     pass: false,
     answer: 15,
+    left: '407.6px',
+    top: '144px',
   },
   {
     qId: 2,
     qNum: '③',
     pass: false,
     answer: 45,
+    left: '96.5px',
+    top: '221.5px',
   },
   {
     qId: 3,
     qNum: '④',
     pass: false,
     answer: 9,
+    left: '252px',
+    top: '221.5px',
   },
   {
     qId: 4,
     qNum: '⑤',
     pass: false,
     answer: 12,
+    left: '252px',
+    top: '377.5px',
   },
   {
     qId: 5,
     qNum: '⑥',
     pass: false,
     answer: 4,
+    left: '408px',
+    top: '377.5px',
   },
   {
     qId: 6,
     qNum: '⑦',
     pass: false,
     answer: 33,
+    left: '174.5px',
+    top: '533px',
   },
   {
     qId: 7,
     qNum: '⑧',
     pass: false,
     answer: 55,
+    left: '330px',
+    top: '533px',
   },
 ];

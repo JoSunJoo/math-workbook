@@ -34,7 +34,7 @@ export default function P453() {
       day="day5"
       title="□ 구하기"
       question={
-        '3장의 수 카드를 한 번씩만 사용하여 비례식을 완성하세요. 각각 두 가지 방법이 있어요.'
+        '3장의 수 카드를 한 번씩만 사용하여 비례식을 완성하세요.\n각각 두 가지 방법이 있어요.'
       }
     >
       <Box display="grid" gridTemplateColumns="1fr 1fr" gap="5rem">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
+import { isContext } from 'vm';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -25,7 +26,11 @@ export default function P451() {
   };
 
   const checkAnswer = () => {
-    const currentScore = calculateTruePercentage(passArray);
+    const currentScore =
+      passArray.slice(0, -1).every(value => value === true) &&
+      passArray[passArray.length - 1] === false
+        ? 100
+        : 0;
     if (!isSolved) {
       void sendScoreUtil(currentScore);
     }

@@ -37,15 +37,20 @@ export default function C412(props: C412Props) {
 
   return (
     <Box>
-      <Box display="flex" alignItems="start" marginRight="3rem">
+      <Box display="flex" alignItems="start" marginRight="1rem">
         <Box display="flex" alignItems="center" position="relative">
           {isSolved && <CorrectChecker isCorrect={isCorrect} />}
-          <Typography variant="h5" fontWeight={400} marginRight="1rem">
+          <Typography
+            variant="h5"
+            fontWeight={400}
+            marginRight="1rem"
+            marginTop="0.2rem"
+          >
             {qNum}
           </Typography>
         </Box>
         <Box display="flex" flexDirection="column" gap="1rem">
-          <Box display="flex" alignItems="center" gap="0.5rem">
+          <Box display="flex" alignItems="center" gap="0.1rem">
             <Typography variant="h5" fontWeight={600}>
               {numList[0]}
             </Typography>
@@ -78,7 +83,7 @@ export default function C412(props: C412Props) {
             ) : (
               <>
                 <NumberInput
-                  width="2rem"
+                  width="2.2rem"
                   value={Number(input1)}
                   onChange={e => {
                     setInput1(Number(e.target.value));
@@ -111,7 +116,7 @@ export default function C412(props: C412Props) {
             ) : (
               <>
                 <NumberInput
-                  width="2rem"
+                  width="2.2rem"
                   value={Number(input1)}
                   onChange={e => {
                     setInput1(Number(e.target.value));
@@ -133,7 +138,7 @@ export default function C412(props: C412Props) {
               </Typography>
             ) : (
               <NumberInput
-                width="2rem"
+                width="2.2rem"
                 value={Number(input2)}
                 onChange={e => {
                   setInput2(Number(e.target.value));
@@ -150,7 +155,7 @@ export default function C412(props: C412Props) {
               </Typography>
             ) : (
               <NumberInput
-                width="2rem"
+                width="2.2rem"
                 value={Number(input2)}
                 onChange={e => {
                   setInput2(Number(e.target.value));
@@ -159,7 +164,7 @@ export default function C412(props: C412Props) {
               />
             )}
           </Box>
-          <Box display="flex" alignItems="center" gap="1rem" mb="4rem">
+          <Box display="flex" alignItems="center" mb="4rem">
             <Avatar
               src={ArrowRight}
               variant="square"
@@ -169,7 +174,7 @@ export default function C412(props: C412Props) {
                 margin: '0rem 0.5rem',
               }}
             />
-            <Box display="flex" alignItems="center" gap="0.5rem">
+            <Box display="flex" alignItems="center" gap="0.1rem">
               <Typography variant="h5" fontWeight={600}>
                 {numList[0]}
               </Typography>
@@ -188,7 +193,7 @@ export default function C412(props: C412Props) {
                 </Typography>
               ) : (
                 <NumberInput
-                  width="2rem"
+                  width="2.2rem"
                   value={Number(input3)}
                   onChange={e => {
                     setInput3(Number(e.target.value));
@@ -205,7 +210,7 @@ export default function C412(props: C412Props) {
                 </Typography>
               ) : (
                 <NumberInput
-                  width="2rem"
+                  width="2.2rem"
                   value={Number(input3)}
                   onChange={e => {
                     setInput3(Number(e.target.value));

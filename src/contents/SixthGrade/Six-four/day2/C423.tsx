@@ -47,7 +47,7 @@ export default function C423(props: C423Props) {
   }, [isSolved, qId, answer, input1, input2, input3, input4, input5, input6]);
 
   return (
-    <Box display="flex" mb="5rem">
+    <Box display="flex" mb="2rem">
       <Box display="flex" alignItems="center" gap="1rem">
         <Box display="flex" alignItems="center" position="relative">
           {isSolved && <CorrectChecker isCorrect={isCorrect} />}

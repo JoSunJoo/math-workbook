@@ -56,7 +56,7 @@ export default function P411() {
               overflowY: 'auto',
               display: 'flex',
               justifyContent: 'center',
-              padding: '2rem 6rem',
+              padding: '2rem 2rem',
             }}
           >
             <C411

@@ -60,8 +60,8 @@ export default function C432(props: C432Props) {
                   variant="h5"
                   fontWeight={600}
                   bgcolor="#fce3e7"
-                  width="4rem"
-                  height="4rem"
+                  width="5rem"
+                  height="5rem"
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
@@ -84,8 +84,8 @@ export default function C432(props: C432Props) {
                   variant="h5"
                   fontWeight={600}
                   bgcolor="#daecf6"
-                  width="4rem"
-                  height="4rem"
+                  width="5rem"
+                  height="5rem"
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
@@ -117,7 +117,7 @@ export default function C432(props: C432Props) {
                   <NumberInput
                     value={input1}
                     onChange={e => setInput1(Number(e.target.value))}
-                    width="4rem"
+                    width="5rem"
                     bgColor="#fce3e7"
                   />
                 </Typography>
@@ -132,7 +132,7 @@ export default function C432(props: C432Props) {
                   <NumberInput
                     value={input2}
                     onChange={e => setInput2(Number(e.target.value))}
-                    width="4rem"
+                    width="5rem"
                     bgColor="#daecf6"
                     disabled={isSolved}
                   />

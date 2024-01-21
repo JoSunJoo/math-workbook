@@ -55,7 +55,6 @@ export default function P441() {
             sx={{
               overflowY: 'auto',
               display: 'flex',
-              justifyContent: 'center',
               margin: '0.5rem',
               padding: '2rem 2rem',
             }}
