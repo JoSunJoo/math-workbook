@@ -50,6 +50,7 @@ export default function P241() {
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
+            alignItems: 'center',
             justifyContent: 'center',
           }}
         >
@@ -57,9 +58,9 @@ export default function P241() {
             <Box
               key={problem.qNum}
               sx={{
+                marginLeft: '8rem',
                 display: 'flex',
-                width: '40%',
-                justifyContent: 'center',
+                width: '35%',
                 margin: '0.5rem',
               }}
             >

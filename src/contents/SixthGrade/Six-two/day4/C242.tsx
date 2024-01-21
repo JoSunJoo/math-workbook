@@ -72,13 +72,20 @@ export default function C242(props: C242Props) {
   }, [aMom, aSon, momNum, qId, sonNum]);
 
   return (
-    <Box display="flex" gap="0.2rem" margin="2rem" position="relative">
+    <Box
+      display="flex"
+      gap="0.2rem"
+      margin="2rem"
+      position="relative"
+      alignItems="center"
+    >
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
-      <CustomTypo> {qNum} </CustomTypo>
+      <CustomTypo marginX="0.5rem"> {qNum} </CustomTypo>
       <Box display="flex" alignItems="center">
         <CustomTypo>{answer}</CustomTypo>
-        <CustomTypo marginRight="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.5rem"> = </CustomTypo>
         <DivisionInput
+          width="4rem"
           mother={aMom}
           son={aSon}
           onChangeMother={e => setAMom(Number(e.target.value))}
