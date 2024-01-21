@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -41,14 +42,7 @@ export default function C323(props: C323Props) {
           </Typography>
         </Box>
         <Box display="flex" gap="2rem" alignItems="end">
-          <Avatar
-            src={imgSrc}
-            variant="square"
-            style={{
-              width: '10rem',
-              height: 'max-content',
-            }}
-          />
+          <ProblemImg src={imgSrc} />
           <TextUnderBar
             value={input}
             onChange={e => setInput(e.target.value)}
@@ -59,3 +53,9 @@ export default function C323(props: C323Props) {
     </Box>
   );
 }
+
+const ProblemImg = styled.img`
+  width: 12rem;
+  height: 10rem;
+  object-fit: contain;
+`;

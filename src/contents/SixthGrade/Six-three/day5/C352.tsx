@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -49,14 +50,7 @@ export default function C352(props: C352Props) {
               flexDirection="column"
               alignItems="center"
             >
-              <Avatar
-                src={imgSrc1}
-                variant="square"
-                style={{
-                  width: '15rem',
-                  height: 'max-content',
-                }}
-              />
+              <ProblemImg src={imgSrc1} />
               <TextUnderBar
                 value={input1}
                 onChange={e => {
@@ -71,14 +65,7 @@ export default function C352(props: C352Props) {
               gap="0.3rem"
               alignItems="center"
             >
-              <Avatar
-                src={imgSrc2}
-                variant="square"
-                style={{
-                  width: '15rem',
-                  height: 'max-content',
-                }}
-              />
+              <ProblemImg2 src={imgSrc2} />
               <TextUnderBar
                 value={input2}
                 onChange={e => {
@@ -93,3 +80,15 @@ export default function C352(props: C352Props) {
     </Box>
   );
 }
+
+const ProblemImg = styled.img`
+  width: 12rem;
+  height: 6rem;
+  object-fit: contain;
+`;
+
+const ProblemImg2 = styled.img`
+  width: 12rem;
+  height: 9rem;
+  object-fit: contain;
+`;

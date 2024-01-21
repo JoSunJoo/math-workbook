@@ -115,7 +115,7 @@ const problems: ProblemProp[] = [
     qNum: '②',
     pass: false,
     leftItem: '꽃',
-    rightItem: '나비',
+    rightItem: '나무',
     imgSrc: N2,
     answer: {
       firstMom: 8,

@@ -28,6 +28,7 @@ export default function P353() {
   };
 
   const checkAnswer = () => {
+    console.log(passArray);
     const currentScore = calculateTruePercentage(passArray);
     if (!isSolved) {
       void sendScoreUtil(currentScore);
@@ -132,7 +133,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 3,
+    qId: 4,
     qNum: '④',
     pass: false,
     imgSrc: Img4,
@@ -145,7 +146,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 3,
+    qId: 5,
     qNum: '⑤',
     pass: false,
     imgSrc: Img5,

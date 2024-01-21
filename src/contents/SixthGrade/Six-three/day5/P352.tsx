@@ -54,8 +54,9 @@ export default function P352() {
           src={ImgExample}
           variant="square"
           style={{
-            width: '18rem',
+            width: '14rem',
             height: 'max-content',
+            marginTop: '1rem',
           }}
         />
 

@@ -48,55 +48,64 @@ export default function C343(props: C343Props) {
         </Box>
         <Box display="flex" flexDirection="column">
           <Box display="flex" gap="1rem">
-            <Box position="relative" width="5rem" height="5rem">
+            <Box position="relative" width="6rem" height="8.2rem">
               <Avatar
                 src={BlueBig}
                 variant="square"
                 style={{
-                  width: '5rem',
-                  height: 'max-content',
+                  width: '6rem',
+                  height: '8.2rem',
                   position: 'absolute',
                 }}
               />
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                marginRight="1rem"
+              <Box
                 position="absolute"
-                top={isFraction ? '2.3rem' : '3.3rem'}
-                left={isFraction ? '1.5rem' : '1rem'}
+                width="6rem"
+                height="8.2rem"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                marginTop="1.3rem"
               >
-                {isFraction ? (
-                  <VisualFraction sonNum={leftItem[0]} momNum={leftItem[1]} />
-                ) : (
-                  leftItem
-                )}
-              </Typography>
+                <Typography variant="h5" fontWeight={600}>
+                  {isFraction ? (
+                    <VisualFraction sonNum={leftItem[0]} momNum={leftItem[1]} />
+                  ) : (
+                    leftItem
+                  )}
+                </Typography>
+              </Box>
             </Box>
-            <Box position="relative" width="5rem" height="5rem">
+            <Box position="relative" width="6rem" height="8.2rem">
               <Avatar
                 src={OrangeBig}
                 variant="square"
                 style={{
-                  width: '5rem',
-                  height: 'max-content',
+                  width: '6rem',
+                  height: '8.2rem',
                   position: 'absolute',
                 }}
               />
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                marginRight="1rem"
+              <Box
                 position="absolute"
-                top={isFraction ? '2.3rem' : '3.3rem'}
-                left={isFraction ? '1.5rem' : '1rem'}
+                width="6rem"
+                height="8.2rem"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                marginTop="1.3rem"
               >
-                {isFraction ? (
-                  <VisualFraction sonNum={rightItem[0]} momNum={rightItem[1]} />
-                ) : (
-                  rightItem
-                )}
-              </Typography>
+                <Typography variant="h5" fontWeight={600}>
+                  {isFraction ? (
+                    <VisualFraction
+                      sonNum={rightItem[0]}
+                      momNum={rightItem[1]}
+                    />
+                  ) : (
+                    rightItem
+                  )}
+                </Typography>
+              </Box>
             </Box>
           </Box>
           <Box display="flex" alignItems="center" ml="-1.5rem">
@@ -142,7 +151,7 @@ export default function C343(props: C343Props) {
               />
               의
               <TextUnderBar
-                width="3rem"
+                width="4.5rem"
                 value={input ? input : ''}
                 onChange={e => setInput(e.target.value)}
                 disabled={isSolved}

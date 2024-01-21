@@ -75,7 +75,9 @@ export default function C341(props: C341Props) {
               }}
             />
             <Typography variant="h5" fontWeight={600}>
-              비교하는 양은 기준량의
+              {qId % 2 === 0
+                ? '비교하는 양은 기준량의'
+                : '기준량은 비교하는 양의'}
             </Typography>
             <TextUnderBar
               width="5rem"

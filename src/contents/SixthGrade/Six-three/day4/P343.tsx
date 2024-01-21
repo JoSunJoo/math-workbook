@@ -156,7 +156,7 @@ const problems: ProblemProp[] = [
     qNum: '⑧',
     pass: false,
     isFraction: true,
-    leftItem: ['14', '7'],
+    leftItem: ['13', '7'],
     rightItem: ['26', '91'],
     answer: '13/2',
   },

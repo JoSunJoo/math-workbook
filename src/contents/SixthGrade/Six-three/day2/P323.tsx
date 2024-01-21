@@ -56,9 +56,10 @@ export default function P323() {
           src={ImgExample}
           variant="square"
           style={{
-            width: '20rem',
-            height: 'max-content',
-            marginBottom: '1rem',
+            width: '14rem',
+            height: '10rem',
+            marginLeft: '5rem',
+            marginTop: '2.5rem',
           }}
         />
         {problems.map(problem => (

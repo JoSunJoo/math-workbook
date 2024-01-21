@@ -64,7 +64,7 @@ export default function P341() {
               overflowY: 'auto',
               display: 'flex',
               justifyContent: 'center',
-              padding: '2rem 4rem',
+              padding: '2rem 3rem',
             }}
           >
             <C341

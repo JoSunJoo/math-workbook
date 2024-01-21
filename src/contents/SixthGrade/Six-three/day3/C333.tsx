@@ -54,7 +54,7 @@ export default function C333(props: C333Props) {
               {leftItem} 막대의 길이는 {rightItem} 막대의
             </Typography>
             <TextUnderBar
-              width="4rem"
+              width="4.8rem"
               value={input ? input : ''}
               onChange={e => setInput(e.target.value)}
               disabled={isSolved}

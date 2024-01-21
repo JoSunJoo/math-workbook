@@ -52,6 +52,7 @@ export default function C342(props: C342Props) {
               fontWeight={600}
               display="flex"
               alignItems="center"
+              marginLeft="-0.8rem"
             >
               <Avatar
                 src={Star}
@@ -92,7 +93,7 @@ export default function C342(props: C342Props) {
               style={{
                 width: '1.5rem',
                 height: 'max-content',
-                margin: '0rem 0.5rem',
+                margin: '0rem 0.2rem',
               }}
             />
             <Typography
@@ -107,7 +108,7 @@ export default function C342(props: C342Props) {
                 style={{
                   width: '1.5rem',
                   height: 'max-content',
-                  margin: '0rem 0.5rem',
+                  margin: '0rem 0.2rem',
                 }}
               />
               은
@@ -117,7 +118,7 @@ export default function C342(props: C342Props) {
                 style={{
                   width: '1.5rem',
                   height: 'max-content',
-                  margin: '0rem 0.5rem',
+                  margin: '0rem 0.2rem',
                 }}
               />
               의
@@ -134,7 +135,7 @@ export default function C342(props: C342Props) {
                 style={{
                   width: '1.5rem',
                   height: 'max-content',
-                  margin: '0rem 0.5rem',
+                  margin: '0rem 0.2rem',
                 }}
               />
               은
@@ -144,7 +145,7 @@ export default function C342(props: C342Props) {
                 style={{
                   width: '1.5rem',
                   height: 'max-content',
-                  margin: '0rem 0.5rem',
+                  margin: '0rem 0.2rem',
                 }}
               />
               의
