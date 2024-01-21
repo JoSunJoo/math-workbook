@@ -1,10 +1,15 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C141 from './C141';
+
+import type { Input131Type } from '../day3/C131';
 
 import e141Image from 'src/contents/SixthGrade/assets/image/P141/e_1-4-1.png';
 export default function P141() {
@@ -12,6 +17,7 @@ export default function P141() {
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<Input131Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -21,8 +27,10 @@ export default function P141() {
     });
   };
 
-  const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+  const checkAnswer = async () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz141.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -51,6 +59,8 @@ export default function P141() {
               }}
             >
               <C141
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

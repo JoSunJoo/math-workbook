@@ -1,15 +1,22 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import C152 from './C152';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C153 from './C153';
+
+import type { Input153Type } from './C153';
 
 export default function P153() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+
+  const [allAnswer, setAllAnswer] = useState<Input153Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -19,8 +26,10 @@ export default function P153() {
     });
   };
 
-  const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+  const checkAnswer = async () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz153.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -48,7 +57,9 @@ export default function P153() {
                 margin: '0.5rem',
               }}
             >
-              <C152
+              <C153
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

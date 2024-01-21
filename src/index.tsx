@@ -61,11 +61,11 @@ __eliceinternal_bootstrap__()
     rootEl.innerHTML = `<h1>Error</h1>`;
   });
 
-// root.render(
-//   <React.StrictMode>
-//     <QueryClientProvider client={appQueryClient}>
-//       <App />
-//       <AppStylesheet />
-//     </QueryClientProvider>
-//   </React.StrictMode>
-// );
+root.render(
+  <React.StrictMode>
+    <QueryClientProvider client={appQueryClient}>
+      <App />
+      <AppStylesheet />
+    </QueryClientProvider>
+  </React.StrictMode>
+);

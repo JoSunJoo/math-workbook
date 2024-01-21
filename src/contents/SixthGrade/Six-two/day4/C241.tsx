@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -6,6 +8,12 @@ import DivisionInput, {
   NumberInput,
 } from 'src/contents/SixthGrade/common/number-box';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
+
+export interface Input241Props {
+  aMom: number | string;
+  aSon: number | string;
+  aNature: number | string;
+}
 interface C241Props {
   problem: {
     qId: number;
@@ -16,30 +24,63 @@ interface C241Props {
     pass: boolean;
     nature?: number;
   };
+  allAnswers: Input241Props[];
+  setAllAnswers: React.Dispatch<React.SetStateAction<Input241Props[]>>;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
 }
 export default function C241(props: C241Props) {
   const [isCorrect, setIsCorrect] = useState(false);
-  const { problem, isSolved, handleCorrectChange } = props;
-  const { qId, qNum, sonNum, momNum, answer, pass, nature } = problem;
-  const [aMom, setAMom] = useState<number | string>('');
-  const [aSon, setASon] = useState<number | string>('');
-  const [aNature, setANature] = useState<number | string>('');
+  const { problem, isSolved, handleCorrectChange, setAllAnswers } = props;
+  const { qId, qNum, sonNum, momNum, answer, nature } = problem;
+  const [input, setInput] = useState<Input241Props>({
+    aMom: '',
+    aSon: '',
+    aNature: '',
+  });
+
+  const { aMom, aSon, aNature } = input;
+
+  const setAMom = (value: string | number) => {
+    setInput({ ...input, aMom: value });
+  };
+
+  const setASon = (value: string | number) => {
+    setInput({ ...input, aSon: value });
+  };
+
+  const setANature = (value: string | number) => {
+    setInput({ ...input, aNature: value });
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz241.answer' });
+    if (value) {
+      setInput({
+        aMom: value[qId].aMom,
+        aSon: value[qId].aSon,
+        aNature: value[qId].aNature,
+      });
+    }
+  };
+  useEffect(() => {
+    void renderGetData();
+  }, []);
 
   useEffect(() => {
-    if (aMom === momNum && aSon === sonNum) {
+    setAllAnswers(prevAllAnswers => {
+      const updatedAnswers = [...prevAllAnswers];
+      updatedAnswers[qId] = input;
+      return updatedAnswers;
+    });
+    if (aMom === momNum && aSon === sonNum && aNature === nature) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
-      if (aNature === nature) {
-        setIsCorrect(true);
-        handleCorrectChange(qId, true);
-      }
     } else {
       setIsCorrect(false);
       handleCorrectChange(qId, false);
     }
-  }, [isSolved, qId]);
+  }, [aMom, aSon, aNature, qId, momNum, sonNum, nature]);
 
   return (
     <Box display="flex" gap="0.2rem" margin="2rem" position="relative">

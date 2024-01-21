@@ -1,15 +1,22 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
-import C232 from './C232';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
+import C233 from './C233';
+
+import type { Input211Type } from '../day1/C211';
 
 export default function P233() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+
+  const [allAnswer, setAllAnswer] = useState<Input211Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -19,10 +26,13 @@ export default function P233() {
     });
   };
 
-  const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+  const checkAnswer = async () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz233.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="분모를 바꾸어 대분수를 소수로 고치기"
@@ -47,7 +57,9 @@ export default function P233() {
                 margin: '0.5rem',
               }}
             >
-              <C232
+              <C233
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

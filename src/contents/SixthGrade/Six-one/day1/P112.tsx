@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -12,6 +13,14 @@ export default function P112() {
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+  const [allAnswer, setAllAnswer] = useState<
+    {
+      son: string | number;
+      mother: string | number;
+      num1: string | number;
+      num2: string | number;
+    }[]
+  >([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -21,13 +30,13 @@ export default function P112() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz112.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="자연수 나눗셈의 몫과 분수"
@@ -53,6 +62,8 @@ export default function P112() {
               }}
             >
               <C113
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>

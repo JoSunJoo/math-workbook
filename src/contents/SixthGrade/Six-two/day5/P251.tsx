@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import styled from '@emotion/styled';
 import { Box, Typography } from '@mui/material';
 
@@ -6,13 +7,19 @@ import ExampleBox from 'src/contents/SixthGrade/common/example-box';
 import Layout from 'src/contents/SixthGrade/common/layout';
 import { CustomTypo } from 'src/contents/SixthGrade/common/styled-component';
 import SubmitButton from 'src/contents/SixthGrade/common/submit-button';
+import { sendScoreUtil } from '../../utils/score-utils';
+import { calculateTruePercentage } from '../../utils/true-percentage';
 import C251 from './C251';
+
+import type { Input211Type } from '../day1/C211';
 
 export default function P251() {
   const [isSolved, setIsSolved] = useState(false);
   const [passArray, setPassArray] = useState(
     divisionProblems.map(problem => problem.pass)
   );
+
+  const [allAnswer, setAllAnswer] = useState<Input211Type[]>([]);
 
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
@@ -22,14 +29,17 @@ export default function P251() {
     });
   };
 
-  const checkAnswer = () => {
-    //TODO 점수 보내는 api 추가
+  const checkAnswer = async () => {
+    const currentScore = calculateTruePercentage(passArray);
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz251.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
+
   return (
     <Layout
       title="연산퍼즐"
-      question={'몫이 같은 알파벳을 입력하십시오.'}
+      question={'몫이 같은 숫자를 입력하십시오.'}
       day="day5"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -74,6 +84,8 @@ export default function P251() {
               }}
             >
               <C251
+                allAnswers={allAnswer}
+                setAllAnswers={setAllAnswer}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>
@@ -112,7 +124,7 @@ interface EXC251Props {
 }
 export function EXC251(props: EXC251Props) {
   const { examples } = props;
-  const { qId, qNum, sonNum, momNum } = examples;
+  const { qNum, sonNum, momNum } = examples;
   return (
     <Box
       display="flex"

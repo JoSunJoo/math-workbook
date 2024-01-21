@@ -151,7 +151,7 @@ const NumBox = styled.input<{ width?: string; bgColor?: string }>`
     bgColor ? '0.08rem solid black' : '0.08rem solid gray'};
   border-radius: 0.5rem;
   width: ${({ width }) => (width ? width : '2.5rem')};
-  height: ${({ width }) => (width ? width : '2rem')};
+  height: 2rem;
   background-color: ${({ bgColor }) => (bgColor ? bgColor : 'white')};
 
   font-size: 1.6rem;
@@ -185,6 +185,4 @@ const Answer = styled.input<{ width?: string }>`
     outline: none;
     box-shadow: none;
   }
-
-  -moz-appearance: textfield;
 `;
