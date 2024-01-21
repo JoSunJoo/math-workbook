@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -13,6 +14,12 @@ export default function P443() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -21,11 +28,10 @@ export default function P443() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz443.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -48,6 +54,8 @@ export default function P443() {
             }}
           >
             <C443
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

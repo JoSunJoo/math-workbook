@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -15,6 +16,12 @@ export default function P452() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: number | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -23,11 +30,10 @@ export default function P452() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz452.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -75,6 +81,8 @@ export default function P452() {
             }}
           >
             <C452
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>
@@ -111,7 +119,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 7,
     left: '96.5px',
-    top: '144px',
+    top: '146px',
   },
   {
     qId: 1,
@@ -119,7 +127,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 15,
     left: '407.6px',
-    top: '144px',
+    top: '146px',
   },
   {
     qId: 2,
@@ -127,7 +135,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 45,
     left: '96.5px',
-    top: '221.5px',
+    top: '223.5px',
   },
   {
     qId: 3,
@@ -135,7 +143,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 9,
     left: '252px',
-    top: '221.5px',
+    top: '223.5px',
   },
   {
     qId: 4,
@@ -143,7 +151,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 12,
     left: '252px',
-    top: '377.5px',
+    top: '379.5px',
   },
   {
     qId: 5,
@@ -151,7 +159,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 4,
     left: '408px',
-    top: '377.5px',
+    top: '379.5px',
   },
   {
     qId: 6,
@@ -159,7 +167,7 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 33,
     left: '174.5px',
-    top: '533px',
+    top: '535px',
   },
   {
     qId: 7,
@@ -167,6 +175,6 @@ const problems: ProblemProp[] = [
     pass: false,
     answer: 55,
     left: '330px',
-    top: '533px',
+    top: '535px',
   },
 ];

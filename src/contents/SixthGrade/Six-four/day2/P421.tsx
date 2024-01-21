@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import Layout from 'src/contents/SixthGrade/common/layout';
@@ -15,6 +16,16 @@ export default function P421() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: string | undefined;
+      input2: string | undefined;
+      input3: string | undefined;
+      input4: string | undefined;
+      input5: string | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -23,11 +34,10 @@ export default function P421() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz421.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -62,6 +72,8 @@ export default function P421() {
             }}
           >
             <C421
+              allInputs={allInputs}
+              setAllInputs={setAllInputs}
               problem={problem}
               isSolved={isSolved}
               handleCorrectChange={(qId, pass) =>

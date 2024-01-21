@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -11,17 +12,53 @@ interface C442Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input1: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input1: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C442(props: C442Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, num1, num2, num3, num4, answer } = problem;
-
+  const [inputs, setInputs] = useState<{
+    input1: string | undefined;
+  }>({
+    input1: undefined,
+  });
+  const { input1 } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input1, setInput1] = useState<undefined | string>(undefined);
+  const setInput1 = (value: string) => {
+    setInputs(prev => ({ ...prev, input1: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz442.answer' });
+    if (value) {
+      setInputs({
+        input1: value[qId].input1,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (answer === input1) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);

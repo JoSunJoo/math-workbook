@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box, Typography } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -14,21 +15,86 @@ interface C422Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input1: string | undefined;
+    input2: string | undefined;
+    input3: string | undefined;
+    input4: string | undefined;
+    input5: string | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input1: string | undefined;
+        input2: string | undefined;
+        input3: string | undefined;
+        input4: string | undefined;
+        input5: string | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C422(props: C422Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, qNum, numList1, numList2, answer } = problem;
 
+  const [inputs, setInputs] = useState<{
+    input1: string | undefined;
+    input2: string | undefined;
+    input3: string | undefined;
+    input4: string | undefined;
+    input5: string | undefined;
+  }>({
+    input1: undefined,
+    input2: undefined,
+    input3: undefined,
+    input4: undefined,
+    input5: undefined,
+  });
+  const { input1, input2, input3, input4, input5 } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input1, setInput1] = useState<undefined | string>(undefined);
-  const [input2, setInput2] = useState<undefined | string>(undefined);
-  const [input3, setInput3] = useState<undefined | string>(undefined);
-  const [input4, setInput4] = useState<undefined | string>(undefined);
-  const [input5, setInput5] = useState<undefined | string>(undefined);
+  const setInput1 = (value: string) => {
+    setInputs(prev => ({ ...prev, input1: value }));
+  };
+  const setInput2 = (value: string) => {
+    setInputs(prev => ({ ...prev, input2: value }));
+  };
+  const setInput3 = (value: string) => {
+    setInputs(prev => ({ ...prev, input3: value }));
+  };
+  const setInput4 = (value: string) => {
+    setInputs(prev => ({ ...prev, input4: value }));
+  };
+  const setInput5 = (value: string) => {
+    setInputs(prev => ({ ...prev, input5: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz422.answer' });
+    if (value) {
+      setInputs({
+        input1: value[qId].input1,
+        input2: value[qId].input2,
+        input3: value[qId].input3,
+        input4: value[qId].input4,
+        input5: value[qId].input5,
+      });
+    }
+  };
 
   useEffect(() => {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
     if (
       answer[0] === Number(input1) &&
       answer[0] === Number(input2) &&
@@ -54,7 +120,7 @@ export default function C422(props: C422Props) {
             {qNum}
           </Typography>
         </Box>
-        <Box display="flex" gap="0.3rem" alignItems="center">
+        <Box display="flex" gap="0.1rem" alignItems="center">
           <Typography variant="h5" fontWeight={600}>
             {numList1[0]}와 {numList1[1]}의 최소공배수:
           </Typography>
@@ -80,7 +146,7 @@ export default function C422(props: C422Props) {
             fontWeight={600}
             display="flex"
             alignItems="center"
-            gap="0.5rem"
+            gap="0.2rem"
           >
             <VisualFraction momNum={numList1[0]} sonNum={numList2[0]} />:
             <VisualFraction momNum={numList1[1]} sonNum={numList2[1]} /> ={' ('}
@@ -99,7 +165,7 @@ export default function C422(props: C422Props) {
             fontWeight={600}
             display="flex"
             alignItems="center"
-            gap="0.5rem"
+            gap="0.2rem"
           >
             {') : ('}
             <VisualFraction momNum={numList1[1]} sonNum={numList2[1]} /> ×

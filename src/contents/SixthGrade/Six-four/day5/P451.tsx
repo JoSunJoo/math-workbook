@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { postKeyValue } from '@elice/extcontent-apis';
 import { Avatar, Box } from '@mui/material';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
@@ -15,6 +16,12 @@ export default function P451() {
     problems.map(problem => problem.pass)
   );
 
+  const [allInputs, setAllInputs] = useState<
+    {
+      input1: boolean | undefined;
+    }[]
+  >([]);
+
   const handleCorrectChange = (qId: number, pass: boolean) => {
     setPassArray(prevPassArray => {
       const newPassArray = [...prevPassArray];
@@ -23,15 +30,14 @@ export default function P451() {
     });
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     const currentScore =
       passArray.slice(0, -1).every(value => value === true) &&
       passArray[passArray.length - 1] === false
         ? 100
         : 0;
-    if (!isSolved) {
-      void sendScoreUtil(currentScore);
-    }
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz451.answer', value: allInputs });
     setIsSolved(prev => !prev);
   };
 
@@ -97,6 +103,8 @@ export default function P451() {
               }
             >
               <C451
+                allInputs={allInputs}
+                setAllInputs={setAllInputs}
                 problem={problem}
                 isSolved={isSolved}
                 handleCorrectChange={(qId, pass) =>
@@ -124,7 +132,7 @@ export interface ProblemProp {
 
 const problems: ProblemProp[] = [
   {
-    qId: -1,
+    qId: 19,
     pass: false,
     answer: false,
   },

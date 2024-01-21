@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKeyValue } from '@elice/extcontent-apis';
 import styled from '@emotion/styled';
 import { Box } from '@mui/material';
 
@@ -13,18 +14,55 @@ interface C452Props {
   problem: ProblemProp;
   isSolved: boolean;
   handleCorrectChange: (qId: number, pass: boolean) => void;
+  allInputs: {
+    input1: number | undefined;
+  }[];
+  setAllInputs: React.Dispatch<
+    React.SetStateAction<
+      {
+        input1: number | undefined;
+      }[]
+    >
+  >;
 }
 
 export default function C452(props: C452Props) {
-  const { problem, isSolved, handleCorrectChange } = props;
+  const { problem, isSolved, handleCorrectChange, setAllInputs } = props;
   const { qId, answer } = problem;
 
+  const [inputs, setInputs] = useState<{
+    input1: number | undefined;
+  }>({
+    input1: undefined,
+  });
+  const { input1 } = inputs;
   const [isCorrect, setIsCorrect] = useState(false);
 
-  const [input, setInput] = useState<undefined | number>(undefined);
+  const setInput1 = (value: number) => {
+    setInputs(prev => ({ ...prev, input1: value }));
+  };
+
+  const renderGetData = async () => {
+    const value = await getKeyValue({ key: 'quiz452.answer' });
+    if (value) {
+      setInputs({
+        input1: value[qId].input1,
+      });
+    }
+  };
 
   useEffect(() => {
-    if (answer === input) {
+    void renderGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setAllInputs(prev => {
+      const updatedInputs = [...prev];
+      updatedInputs[qId] = inputs;
+      return updatedInputs;
+    });
+    if (answer === input1) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
     } else {
@@ -32,7 +70,7 @@ export default function C452(props: C452Props) {
       handleCorrectChange(qId, false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSolved, qId, answer, input]);
+  }, [isSolved, qId, answer, input1]);
 
   return (
     <Box position="relative">
@@ -46,8 +84,8 @@ export default function C452(props: C452Props) {
           <Box display="flex" gap="0.3rem" alignItems="center">
             <NumberInput
               width="2.2rem"
-              value={input}
-              onChange={e => setInput(Number(e.target.value))}
+              value={input1}
+              onChange={e => setInput1(Number(e.target.value))}
               disabled={isSolved}
             />
           </Box>
