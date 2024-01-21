@@ -39,7 +39,7 @@ export default function P251() {
   return (
     <Layout
       title="연산퍼즐"
-      question={'몫이 같은 숫자를 입력하십시오.'}
+      question={'몫이 같은 식의 번호를 입력하세요.'}
       day="day5"
     >
       <Box display="flex" flexDirection="column" alignItems="center">

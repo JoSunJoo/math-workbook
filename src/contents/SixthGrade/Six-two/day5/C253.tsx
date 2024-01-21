@@ -83,7 +83,7 @@ export default function C253(props: C253Props) {
         <Input
           value={enter}
           onChange={e => setEnter(e.target.value)}
-          style={{ width: '3rem', textAlign: 'center' }}
+          style={{ width: '4rem', textAlign: 'center', fontSize: '1.3em' }}
           disabled={isSolved}
         />
         <CustomTypo fontSize="1.25rem"> {unit} </CustomTypo>

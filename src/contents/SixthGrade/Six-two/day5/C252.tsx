@@ -12,9 +12,9 @@ interface C253Props {
   problem: {
     qId: number;
     qNum: string;
-    sonNum: number;
-    momNum: number;
-    answer: number;
+    sonNum: number | string;
+    momNum: number | string;
+    answer: number | string;
     pass: boolean;
   };
   allAnswers: Input211Type[];
@@ -79,7 +79,7 @@ export default function C252(props: C253Props) {
       <VisualFraction momNum={momNum} sonNum={sonNum} />
       <TextField
         value={enter}
-        onChange={e => setEnter(Number(e.target.value))}
+        onChange={e => setEnter(e.target.value)}
         style={{ width: '2.5rem', textAlign: 'center', margin: '1.2rem' }}
         disabled={isSolved}
       />
