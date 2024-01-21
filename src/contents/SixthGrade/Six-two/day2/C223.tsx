@@ -73,6 +73,7 @@ export default function C223(props: C223Props) {
         <VisualFraction momNum={momNum} sonNum={sonNum} />
         <CustomTypo marginX="1rem"> = </CustomTypo>
         <AnswerInput
+          width="5rem"
           value={enter}
           onChange={e => setEnter(Number(e.target.value))}
           disabled={isSolved}

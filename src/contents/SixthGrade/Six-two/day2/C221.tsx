@@ -69,6 +69,7 @@ export default function C221(props: C221Props) {
       updatedAnswers[qId] = input;
       return updatedAnswers;
     });
+
     if (enter === answer && rSon === answerSon) {
       setIsCorrect(true);
       handleCorrectChange(qId, true);
@@ -84,7 +85,7 @@ export default function C221(props: C221Props) {
       <CustomTypo> {qNum} </CustomTypo>
       <Box display="flex" alignItems="center">
         <VisualFraction width="3rem" momNum={momNum} sonNum={sonNum} />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.5rem"> = </CustomTypo>
         <VisualFraction
           width="4rem"
           momNum={rMom}
@@ -97,8 +98,9 @@ export default function C221(props: C221Props) {
             />
           }
         />
-        <CustomTypo marginX="1rem"> = </CustomTypo>
+        <CustomTypo marginX="0.5rem"> = </CustomTypo>
         <AnswerInput
+          width="5rem"
           value={enter}
           onChange={e => setEnter(Number(e.target.value))}
           disabled={isSolved}
