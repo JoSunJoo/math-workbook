@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
 import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
-import { useEffect, useState } from 'react';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import DivisionInput, {

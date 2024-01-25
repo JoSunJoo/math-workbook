@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { getKeyValue } from '@elice/extcontent-apis';
 import { Box } from '@mui/material';
-import { wrap } from 'module';
 
 import CorrectChecker from 'src/contents/SixthGrade/common/correct-checker';
 import DivisionInput, {
