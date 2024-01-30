@@ -321,7 +321,7 @@ const FifthGrade02: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol7">4 × 8 ÷ 2 × 6</div>
+              <div className="elementAbsol7">4 × 8 ÷ 2 × 6 = </div>
               <div className="elementAbsol2">
                 <input
                   disabled={isInputDisabled}
@@ -378,7 +378,7 @@ const FifthGrade02: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">12 ÷ 2 × 4 × 5</div>
+              <div className="elementAbsol8">12 ÷ 2 × 4 × 5 =</div>
               <div className="elementAbsol2">
                 <input
                   disabled={isInputDisabled}
@@ -392,7 +392,7 @@ const FifthGrade02: React.FC = () => {
                   disabled={isInputDisabled}
                   className="inputSize1"
                   type="text"
-                  value={answers['6'][0]}
+                  value={answers['6'][1]}
                   onChange={e => handleChange('6', 1, e.target.value)}
                 />{' '}
                 × 5
@@ -402,7 +402,7 @@ const FifthGrade02: React.FC = () => {
                     disabled={isInputDisabled}
                     className="inputSize1"
                     type="text"
-                    value={answers['6'][0]}
+                    value={answers['6'][2]}
                     onChange={e => handleChange('6', 2, e.target.value)}
                   />
                 </div>
@@ -435,7 +435,7 @@ const FifthGrade02: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">12 ÷ 4 × 6 ÷ 3</div>
+              <div className="elementAbsol9">12 ÷ 4 × 6 ÷ 3 = </div>
               <div className="elementAbsol2">
                 <input
                   disabled={isInputDisabled}
@@ -460,7 +460,7 @@ const FifthGrade02: React.FC = () => {
                     className="inputSize1"
                     type="text"
                     value={answers['7'][2]}
-                    onChange={e => handleChange('2', 0, e.target.value)}
+                    onChange={e => handleChange('7', 2, e.target.value)}
                   />
                 </div>
               </div>
@@ -492,7 +492,7 @@ const FifthGrade02: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">36 ÷ 3 ÷ 4 × 9</div>
+              <div className="elementAbsol10">36 ÷ 3 ÷ 4 × 9 =</div>
               <div className="elementAbsol2">
                 <input
                   disabled={isInputDisabled}

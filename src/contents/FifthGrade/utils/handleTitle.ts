@@ -74,12 +74,12 @@ export const FifthGrade1Day1 = {
 
 export const FifthGrade1Day2 = {
   title: '덧셈, 뺄셈과 괄호',
-  subTitle: '알맞은 수를 써넣어 식을 계산하세요.',
+  subTitle: '선으로 표시된 것을 먼저 계산하여 양쪽의 계산 결과를 비교해보세요',
 };
 
 export const FifthGrade1Day3 = {
   title: '곱셈, 나눗셈과 괄호',
-  subTitle: '알맞은 수를 써넣어 식을 계산하세요.',
+  subTitle: '계산을 하세요.',
 };
 
 export const FifthGrade1Day41 = {

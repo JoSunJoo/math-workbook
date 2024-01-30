@@ -609,22 +609,27 @@ const Styled = {
     .elementAbsol2 {
       position: absolute;
       top: 28%;
-      right: 13%;
+      right: 10%;
     }
-
+    .elemeeemee {
+      right: 8.5%;
+    }
+    .elemeeeme {
+      right: 11.5%;
+    }
     .elementAbsol3 {
       position: absolute;
-      right: 18%;
+      right: 16%;
       top: 110%;
     }
     .elementAbsol4 {
       position: absolute;
-      right: 17.5%;
+      right: 15.5%;
       top: 110%;
     }
     .elementAbsol5 {
       position: absolute;
-      right: 15.5%;
+      right: 13.5%;
       top: 110%;
     }
     .elementAbsol1127 {
@@ -640,7 +645,22 @@ const Styled = {
     .elementAbsol7 {
       position: absolute;
       top: -12%;
-      right: 46%;
+      right: 40%;
+    }
+    .elementAbsol8 {
+      position: absolute;
+      top: -12%;
+      right: 40%;
+    }
+    .elementAbsol9 {
+      position: absolute;
+      top: -12%;
+      right: 40%;
+    }
+    .elementAbsol10 {
+      position: absolute;
+      top: -12%;
+      right: 40%;
     }
     .inputSize1 {
       width: 65px;
@@ -733,6 +753,15 @@ const Styled = {
     }
     .quiz1 {
       min-width: 900px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-content: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .quiz9460418 {
+      min-width: 700px;
       position: relative;
       display: grid;
       grid-template-columns: 50% 50%;
@@ -1319,7 +1348,7 @@ const Styled = {
     }
     .textRight {
       margin-top: 3%;
-      margin-left: 33%;
+      margin-left: 37.5%;
       text-align: center;
     }
     .textAlignRight {
@@ -1344,7 +1373,7 @@ const Styled = {
     }
     .textRight111 {
       margin-top: 3%;
-      margin-left: 30%;
+      margin-left: 32%;
       text-align: center;
     }
     .textRight1111 {
@@ -1354,7 +1383,7 @@ const Styled = {
     }
     .textRight1112 {
       margin-top: 3%;
-      margin-left: 36%;
+      margin-left: 39%;
       text-align: center;
     }
     .textRight2 {
@@ -1479,6 +1508,7 @@ const Styled = {
 
     .quiz121Ex {
       position: relative;
+      width: 200px;
     }
     .d-line {
       width: 0; /* 가로 길이 조절 */
@@ -1686,17 +1716,20 @@ const Styled = {
       position: absolute;
       left: 7%;
       top: 21%;
-      width: 150px;
+      width: 149px;
     }
     .img1212 {
       position: absolute;
-      left: 8%;
-      top: 21%;
-      width: 150px;
+      left: 10%;
+      top: 21.3%;
+      width: 160px;
     }
     .imgleft1311 {
       left: 13%;
       width: 160px;
+    }
+    .wewerwer117 {
+      margin-left: 5%;
     }
     .flexrow {
       display: flex;
@@ -1722,8 +1755,8 @@ const Styled = {
       border-radius: 4px;
     }
     .marginLeft8 {
-      margin-left: 24%;
-      margin-top: 14%;
+      margin-left: 25%;
+      margin-top: 12%;
       width: 42px;
       height: 42px;
       font-size: 25px;
@@ -1733,7 +1766,7 @@ const Styled = {
       border-radius: 4px;
     }
     .marginLeft9 {
-      margin-left: 1%;
+      margin-left: 2%;
       width: 42px;
       height: 42px;
       font-size: 25px;
@@ -1853,7 +1886,7 @@ const Styled = {
       top: 22%;
       right: -5%;
       outline: none;
-      padding-left: 3px;
+      padding-left: 2px;
     }
     .margintopbotom5px {
       padding: 0px 10px;
@@ -1862,18 +1895,17 @@ const Styled = {
       font-size: 10px;
       width: 42px;
       height: 42px;
-      font-size: 25px;
+      font-size: 22px;
       text-align: center;
       border: 1px solid gray;
       border-radius: 2px;
       outline: none;
-      padding-left: 3px;
+      padding-left: 2px;
     }
     .borderRedInput2 {
-      font-size: 10px;
       width: 42px;
       height: 42px;
-      font-size: 25px;
+      font-size: 22px;
       text-align: center;
       border: 1px solid gray;
       border-radius: 4px;
@@ -1881,10 +1913,10 @@ const Styled = {
       top: 90%;
       right: 32%;
       outline: none;
-      padding-left: 3px;
+      padding-left: 2px;
     }
     .quizInput1231 {
-      right: 39%;
+      right: 37%;
     }
     .quizInput1239 {
       right: 37%;
@@ -1893,7 +1925,7 @@ const Styled = {
       font-size: 10px;
       width: 42px;
       height: 42px;
-      font-size: 25px;
+      font-size: 22px;
       text-align: center;
       border: 1px solid gray;
       border-radius: 4px;
@@ -1901,7 +1933,7 @@ const Styled = {
       top: 158%;
       right: 50%;
       outline: none;
-      padding-left: 3px;
+      padding-left: 2px;
     }
     .quizMargin {
       margin-right: 5%;
@@ -2910,6 +2942,9 @@ const Styled = {
       right: 308px;
       width: 3rem;
       height: 3rem;
+    }
+    input {
+      font-weight: 700;
     }
   `,
 };

@@ -319,7 +319,7 @@ const FifthGrade01: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">35 - 27 + 9 - 14</div>
+              <div className="elementAbsol1">35 - 27 + 9 - 14 =</div>
               <div className="elementAbsol2">
                 <input
                   disabled={isInputDisabled}
@@ -376,8 +376,8 @@ const FifthGrade01: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">28 + 15 - 17 - 20</div>
-              <div className="elementAbsol2">
+              <div className="elementAbsol1">28 + 15 - 17 - 20 =</div>
+              <div className="elementAbsol2 elemeeemee">
                 <input
                   disabled={isInputDisabled}
                   className="inputSize1"
@@ -433,7 +433,7 @@ const FifthGrade01: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">15 + 4 - 16 + 11</div>
+              <div className="elementAbsol1">15 + 4 - 16 + 11 =</div>
               <div className="elementAbsol6">
                 <input
                   disabled={isInputDisabled}
@@ -490,8 +490,8 @@ const FifthGrade01: React.FC = () => {
               )}
             </p>
             <div className="absolSetting">
-              <div className="elementAbsol1">35 + 8 - 26 + 9</div>
-              <div className="elementAbsol2">
+              <div className="elementAbsol1">35 + 8 - 26 + 9 =</div>
+              <div className="elementAbsol2 elemeeeme">
                 <input
                   disabled={isInputDisabled}
                   className="inputSize1"
