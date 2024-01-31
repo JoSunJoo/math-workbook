@@ -139,7 +139,7 @@ const divisionProblems = [
     qNum: '⑥',
     sonNum: 6,
     momNum: 25,
-    rSon: 24,
+    rSon: 240,
     rMom: 1000,
     answer: 0.24,
     pass: false,
