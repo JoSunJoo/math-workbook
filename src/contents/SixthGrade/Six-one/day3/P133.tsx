@@ -47,10 +47,9 @@ export default function P133() {
             <Box
               key={problem.qNum}
               sx={{
-                justifyContent: 'center',
                 display: 'flex',
-                paddingLeft: '1rem',
                 width: '30%',
+                padding: '0 6%',
                 margin: '0.5rem',
               }}
             >
