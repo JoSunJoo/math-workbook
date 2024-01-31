@@ -192,6 +192,7 @@ export default function C151(props: C151Props) {
           <CustomTypo paddingX="1rem">식: </CustomTypo>
           {equationNature ? (
             <BigDivisionInput
+              width="3.5rem"
               num={equationNatureValue}
               mother={equationMomValue}
               son={equationSonValue}
@@ -202,6 +203,7 @@ export default function C151(props: C151Props) {
             />
           ) : (
             <DivisionInput
+              width="3.5rem"
               mother={equationMomValue}
               son={equationSonValue}
               onChangeMother={e => setEquationMomValue(Number(e.target.value))}
@@ -211,7 +213,7 @@ export default function C151(props: C151Props) {
           )}
           <CustomTypo marginX="1rem">÷</CustomTypo>
           <NumberInput
-            width="2.5rem"
+            width="3.5rem"
             value={equationDivValue}
             onChange={e => setEquationDivValue(Number(e.target.value))}
             disabled={isSolved}
@@ -220,6 +222,7 @@ export default function C151(props: C151Props) {
         <Box display="flex" alignItems="center">
           <CustomTypo paddingX="1rem">답: </CustomTypo>
           <DivisionInput
+            width="3.5rem"
             mother={answerMomValue}
             son={answerSonValue}
             onChangeMother={e => setAnswerMomValue(Number(e.target.value))}

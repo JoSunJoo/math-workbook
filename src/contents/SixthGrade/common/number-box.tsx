@@ -133,7 +133,7 @@ export function BigDivisionInput(props: BigDivisionInputProps) {
           onChange={onChangeSon}
           disabled={disabled ? true : false}
         />
-        <Divider />
+        <Divider width={width} />
         <NumberInput
           width={width}
           value={mother}

@@ -132,7 +132,8 @@ const divisionProblems = [
     qId: 2,
     qNum: '③',
     qString: '어떤 분수를 9로 나누어야 할 것을 잘못하여 곱했더니',
-    qStringEnd: '바르게 계산한 몫을 기약분수로 구하세요.',
+    qStringEnd:
+      '어떤 분수를 찾는 식을 작성하고, 바르게 계산한 몫을 기약분수로 구하세요.',
     qStringNum: [5, 4, 1],
     equationNature: 5,
     equationMom: 4,
@@ -146,7 +147,8 @@ const divisionProblems = [
     qId: 3,
     qNum: '④',
     qString: '어떤 분수를 8로 나누어야 할 것을 잘못하여 곱했더니',
-    qStringEnd: '바르게 계산한 몫을 기약분수로 구하세요.',
+    qStringEnd:
+      '어떤 분수를 찾는 식을 작성하고, 바르게 계산한 몫을 기약분수로 구하세요.',
     qStringNum: [6, 3, 2],
     equationNature: 6,
     equationMom: 3,
