@@ -131,7 +131,7 @@ export const Data21Quiz = [
   { id: '⑧', quiz1: 788, quiz2: 438 },
 ];
 export const Answer21 = [
-  [null, null, null, null, null, null, null, null, null, null, null, null, 766],
+  [null, null, null, null, null, null, null, null, null, null, null, null, 776],
   [1, 7, 0, 0, null, null, 8, 0, null, null, 1, 7, 1797],
   [null, 6, 0, 0, null, 1, 7, 0, null, null, 1, 1, 781],
   [1, 2, 0, 0, null, 1, 2, 0, null, null, 1, 2, 1332],

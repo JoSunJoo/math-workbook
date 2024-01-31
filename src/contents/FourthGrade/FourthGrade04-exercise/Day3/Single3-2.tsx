@@ -34,6 +34,7 @@ const Single32 = (props: Props) => {
           <Styled.InputBox2
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <div>=</div>
           <div>{quiz2}</div>
@@ -43,6 +44,7 @@ const Single32 = (props: Props) => {
           <Styled.InputBox2
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <div> × </div>
           <div>{quiz1}</div>

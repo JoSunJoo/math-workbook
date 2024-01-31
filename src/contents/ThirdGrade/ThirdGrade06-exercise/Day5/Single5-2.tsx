@@ -12,6 +12,7 @@ const Single52 = (props: QuizProps) => {
     len,
     totalText,
     unit,
+    conj,
     idx,
     toggle,
     setToggle,
@@ -38,7 +39,7 @@ const Single52 = (props: QuizProps) => {
           <Styled.FractUnderNum>{deno}</Styled.FractUnderNum>
         </Styled.ColGapBox>
         <div>
-          이 {len}
+          {conj} {len}
           {unit} 일 때
         </div>
       </Styled.TextBox4>
@@ -47,6 +48,7 @@ const Single52 = (props: QuizProps) => {
         <Styled.InputBox1
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, 0)}
+          value={inputValue[idx][0]}
         />
         <div>{unit}입니다.</div>
       </Styled.TextBox4>

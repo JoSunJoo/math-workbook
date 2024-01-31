@@ -9,10 +9,13 @@ interface Props {
 
 export const GetData = async (props: Props) => {
   const { setInputValue, key, setIsGeted, isGeted } = props;
-  if (isGeted) {
+
+  if (!isGeted) {
     try {
       const res = await getKeyValue({ key });
       if (res !== null) {
+        // console.log('res');
+        // console.log(savedAnswers);
         setInputValue(res);
         if (setIsGeted) setIsGeted(true);
       }
@@ -20,4 +23,15 @@ export const GetData = async (props: Props) => {
       console.error(error);
     }
   }
+  // getKeyValue({ key })
+  //   .then(savedAnswers => {
+  //     if (savedAnswers) {
+  //       console.log('res');
+  //       console.log(savedAnswers);
+  //       setInputValue(savedAnswers);
+  //     }
+  //   })
+  //   .catch(error => {
+  //     console.error('Error loading saved answers:', error);
+  //   });
 };

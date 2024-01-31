@@ -9,7 +9,7 @@ interface Props {
 
 export const GetData = async (props: Props) => {
   const { setInputValue, key, setIsGeted, isGeted } = props;
-  if (isGeted) {
+  if (!isGeted) {
     try {
       const res = await getKeyValue({ key });
       if (res !== null) {

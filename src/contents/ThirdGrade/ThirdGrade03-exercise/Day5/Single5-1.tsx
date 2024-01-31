@@ -49,6 +49,7 @@ const Single51 = (props: QuizProps) => {
               <Styled.InputBox1
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
             </Styled.RowBox2>
             <Styled.NumBox1 color="rgba(143, 108, 255, 0.6)">
@@ -58,6 +59,7 @@ const Single51 = (props: QuizProps) => {
           <Styled.InputBox1
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
+            value={inputValue[idx][1]}
           />
         </Styled.ColGapBox3>
       </Styled.SetCenter>

@@ -139,6 +139,7 @@ export const ThirdGrade6Day5 = {
 };
 
 export const SubBlank = '빈칸에 알맞은 수를 써넣으세요.';
+export const SubBlank2 = '빈곳에 알맞은 수를 써넣으세요.';
 export const SubJustCal = '계산을 하세요.';
 export const SubJustCalBelow = '다음과 같은 방법으로 계산을 하세요.';
 export const SubWay = '문제를 읽고 알맞은 식과 답을 써 보세요.';

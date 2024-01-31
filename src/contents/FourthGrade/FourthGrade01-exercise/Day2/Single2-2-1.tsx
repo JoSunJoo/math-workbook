@@ -36,6 +36,7 @@ const Single221 = (props: QuizProps) => {
                 maxLength={1}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
               <div> 개, </div>
             </Styled.RowBox4>
@@ -45,6 +46,7 @@ const Single221 = (props: QuizProps) => {
                 maxLength={1}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
+                value={inputValue[idx][1]}
               />
               <div> 개, </div>
             </Styled.RowBox4>
@@ -54,6 +56,7 @@ const Single221 = (props: QuizProps) => {
                 maxLength={1}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
+                value={inputValue[idx][2]}
               />
               <div> 개, </div>
             </Styled.RowBox4>
@@ -63,6 +66,7 @@ const Single221 = (props: QuizProps) => {
                 maxLength={1}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
+                value={inputValue[idx][3]}
               />
               <div> 개, </div>
             </Styled.RowBox4>
@@ -72,6 +76,7 @@ const Single221 = (props: QuizProps) => {
                 maxLength={1}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 4)}
+                value={inputValue[idx][4]}
               />
               <div> 개</div>
             </Styled.RowBox4>

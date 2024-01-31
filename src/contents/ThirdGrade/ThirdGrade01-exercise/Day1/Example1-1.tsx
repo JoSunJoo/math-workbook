@@ -12,11 +12,11 @@ const Example11 = () => {
             <Styled.RowBox8>
               <div>1</div>
               <div>2</div>
-              <div>3</div>
-              <div>+</div>
               <div>4</div>
+              <div>+</div>
+              <div>3</div>
               <div>5</div>
-              <div>6</div>
+              <div>3</div>
             </Styled.RowBox8>
           </Styled.Lines2Quiz1>
           <Styled.LinesQuiz2>400</Styled.LinesQuiz2>

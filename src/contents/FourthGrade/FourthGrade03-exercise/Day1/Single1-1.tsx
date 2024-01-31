@@ -34,11 +34,13 @@ const Single11 = (props: QuizProps) => {
               <Styled.InputBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
             </Styled.FractUnderLine>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
           </Styled.ColGapBox>
         </Styled.RowBox12>

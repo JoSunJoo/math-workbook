@@ -57,8 +57,9 @@ const FourthGrade43Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

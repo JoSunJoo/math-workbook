@@ -8,6 +8,7 @@ import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade4Day1 as Day } from '../../utils/handleTitle';
 import Example from './Example1-2';
+import Example2 from './Example1-2-2';
 import SingleQuiz from './Single1-2';
 
 import type { Data12QuizProps1 as QuizProps } from '../../Type/Type4';
@@ -19,7 +20,7 @@ const FourthGrade12Exercise = () => {
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string[][]>(
-    Array.from(Array(12), () => new Array(1))
+    Array.from(Array(11), () => new Array(1))
   );
   const key = 'fourth412.answer';
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
@@ -32,6 +33,7 @@ const FourthGrade12Exercise = () => {
         <Styled.ColGapBox gap={4}>
           <Example />
           <Styled.RowWrapBox8>
+            <Example2 />
             {QuizData.map((item: QuizProps, idx: number) => (
               <SingleQuiz
                 key={idx}
@@ -50,8 +52,9 @@ const FourthGrade12Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

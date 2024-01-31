@@ -7,6 +7,7 @@ import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade2Day1 as Day } from '../../utils/handleTitle';
+import ExampleQuiz from './Example1-1';
 import SingleQuiz from './Single1-1';
 
 import type { Data11QuizProps as QuizProps } from '../../Type/Type2';
@@ -28,6 +29,7 @@ const FourthGrade11Exercise: React.FC = () => {
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox5>
         <Styled.ColGapBox gap={6}>
+          <ExampleQuiz />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}
@@ -46,8 +48,9 @@ const FourthGrade11Exercise: React.FC = () => {
       </Styled.PaddingBox5>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

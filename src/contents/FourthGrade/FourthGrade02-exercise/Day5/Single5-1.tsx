@@ -41,6 +41,7 @@ const Single51 = (props: QuizProps) => {
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
               </Styled.MinWidth1>
@@ -61,11 +62,13 @@ const Single51 = (props: QuizProps) => {
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
+                  value={inputValue[idx][1]}
                 />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
               </Styled.RowBox>
@@ -86,16 +89,19 @@ const Single51 = (props: QuizProps) => {
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
                 <Styled.TextSize2>{unit1}</Styled.TextSize2>
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
+                  value={inputValue[idx][1]}
                 />
                 <Styled.TextSize2>{unit2}</Styled.TextSize2>
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 2)}
+                  value={inputValue[idx][2]}
                 />
                 <Styled.TextSize2>{unit3}</Styled.TextSize2>
               </Styled.GapRowBox>
@@ -116,11 +122,13 @@ const Single51 = (props: QuizProps) => {
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
                 <Styled.TextSize2>{unit2}: </Styled.TextSize2>
                 <Styled.ShortInput2
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
+                  value={inputValue[idx][1]}
                 />
               </Styled.GapRowBox>
             </Styled.BetweenBox2>

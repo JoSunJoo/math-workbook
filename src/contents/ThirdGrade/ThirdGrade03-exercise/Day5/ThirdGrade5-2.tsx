@@ -6,7 +6,10 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { SubBlank, ThirdGrade3Day5 } from '../../utils/handleTitle';
+import {
+  SubBlank2 as SubBlank,
+  ThirdGrade3Day5,
+} from '../../utils/handleTitle';
 import SingleQuiz from './Single5-2';
 
 import type { Data52QuizProps as QuizProps } from '../../Type/Type3';
@@ -37,7 +40,7 @@ const ThirdGrade52Exercise: React.FC = () => {
                 quiz1={item.quiz1}
                 quiz2={item.quiz2}
                 quiz3={item.quiz3}
-                quiz4={item.quiz3}
+                quiz4={item.quiz4}
                 sign1={item.sign1}
                 idx={idx}
                 toggle={toggle}
@@ -52,8 +55,9 @@ const ThirdGrade52Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

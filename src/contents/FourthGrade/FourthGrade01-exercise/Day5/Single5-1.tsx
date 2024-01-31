@@ -37,22 +37,25 @@ const Single51 = (props: QuizProps) => {
                   <Styled.InputBox4
                     disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 2)}
+                    value={inputValue[idx][2]}
                   />
                   배
                 </Styled.RowBox4>
                 <Styled.ImgSize17 src={img} alt="" />
                 <Styled.RowBox12>
                   <Styled.RowBox4>
-                    <Styled.InputBox4
+                    <Styled.InputBox9
                       disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 0)}
+                      value={inputValue[idx][0]}
                     />
                     {unit}
                   </Styled.RowBox4>
                   <Styled.RowBox4>
-                    <Styled.InputBox4
+                    <Styled.InputBox9
                       disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 1)}
+                      value={inputValue[idx][1]}
                     />
                     {unit}
                   </Styled.RowBox4>
@@ -60,9 +63,10 @@ const Single51 = (props: QuizProps) => {
               </Styled.ColGapBox>
               <Styled.RowBox4>
                 <Styled.TextSize>답: </Styled.TextSize>
-                <Styled.InputBox4
+                <Styled.InputBox9
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 3)}
+                  value={inputValue[idx][3]}
                 />
                 <Styled.TextSize>{unit}</Styled.TextSize>
               </Styled.RowBox4>

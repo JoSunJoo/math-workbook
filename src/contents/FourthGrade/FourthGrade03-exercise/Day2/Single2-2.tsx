@@ -70,7 +70,7 @@ const Single22 = (props: Props) => {
   ];
 
   return (
-    <Styled.GapRowBox3 gap={3}>
+    <Styled.GapRowBox3 gap={1}>
       <Styled.SetCenter>
         <Styled.ImgSizeWidth src={imgArray[idx]} width={sizeArray1[idx]} />
       </Styled.SetCenter>
@@ -79,10 +79,12 @@ const Single22 = (props: Props) => {
           <Styled.GapRowBox gap={2}>
             <IdSymbol id={numArray[idx][0]} correct={correct} />
             <Styled.GapRowBox2 gap={0.2}>
-              <Styled.ImgSizeWidth
-                src={totalArray[idx][0]}
-                width={sizeArray2[idx][0]}
-              />
+              <Styled.MakeWidth w={7.3}>
+                <Styled.ImgSizeWidth
+                  src={totalArray[idx][0]}
+                  width={sizeArray2[idx][0]}
+                />
+              </Styled.MakeWidth>
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox8
@@ -102,10 +104,12 @@ const Single22 = (props: Props) => {
           <Styled.GapRowBox gap={2}>
             <IdSymbol id={numArray[idx][1]} correct={correct2} />
             <Styled.GapRowBox2 gap={0.2}>
-              <Styled.ImgSizeWidth
-                src={totalArray[idx][1]}
-                width={sizeArray2[idx][1]}
-              />
+              <Styled.MakeWidth w={8}>
+                <Styled.ImgSizeWidth
+                  src={totalArray[idx][1]}
+                  width={sizeArray2[idx][1]}
+                />
+              </Styled.MakeWidth>
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox8

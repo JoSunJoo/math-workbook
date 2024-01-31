@@ -40,20 +40,23 @@ const Single51 = (props: Props) => {
             <div>{quiz2}</div>
           </Styled.DashNumMid>
           <Styled.DashBoxMidLine />
-          <Styled.RowBox5>
+          <Styled.RowBox10>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
-          </Styled.RowBox5>
+          </Styled.RowBox10>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>
     </Styled.SingleWrapper>

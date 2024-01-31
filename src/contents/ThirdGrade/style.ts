@@ -135,6 +135,13 @@ const Styled = {
     align-items: flex-end;
     gap: 1rem;
   `,
+  RowBox52: styled.div`
+    display: flex;
+    height: 2.67rem;
+    align-items: flex-end;
+    gap: 0.7rem;
+    margin-left: -0.1rem;
+  `,
   RowBox6: styled.div`
     display: flex;
     width: 85%;
@@ -1071,6 +1078,12 @@ const Styled = {
   LetterSpacing2: styled.div`
     letter-spacing: 2.5rem;
     margin-left: 1.8rem;
+    text-align: right;
+    width: 100%;
+  `,
+  LetterSpacing22: styled.div`
+    letter-spacing: 2.5rem;
+    margin-left: 1.7rem;
     text-align: right;
     width: 100%;
   `,

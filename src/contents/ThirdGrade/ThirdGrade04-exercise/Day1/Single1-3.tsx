@@ -36,6 +36,7 @@ const Single13 = (props: Props) => {
             <Styled.InputBox1
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
           </Styled.InputWrapper3>
         </div>

@@ -6,7 +6,7 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { ThirdGrade5Day3 } from '../../utils/handleTitle';
+import { ThirdGrade5Day4 as Day } from '../../utils/handleTitle';
 import SingleQuiz from './Single4-2';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
@@ -26,10 +26,7 @@ const ThirdGrade43Exercise = () => {
   });
 
   return (
-    <DayLayout
-      title={ThirdGrade5Day3.title}
-      subTitle={ThirdGrade5Day3.subTitle}
-    >
+    <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
           {QuizData.map((item: QuizProps, idx) => (
@@ -49,8 +46,9 @@ const ThirdGrade43Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

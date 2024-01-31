@@ -38,6 +38,7 @@ const Single53 = (props: QuizProps) => {
                 <Styled.ShortInput
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
               </Styled.RowBox3>
               <Styled.RowBox3>

@@ -35,16 +35,19 @@ const Single32 = (props: DataProps) => {
             <Styled.InputBox1
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <div>+</div>
             <Styled.InputBox1
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
             <div>=</div>
             <Styled.InputBox1
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
           </Styled.InputWrapper3>
         </div>

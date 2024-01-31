@@ -66,7 +66,7 @@ export const FourthGrade3Day1 = {
 };
 export const FourthGrade3Day2 = {
   title: '두 양의 비교',
-  subTitle: '빈칸 안의 도형은 왼쪽 도형의 몇 분의 몇인지 구하세요.',
+  subTitle: ' □ 안의 도형은 왼쪽 도형의 몇 분의 몇인지 구하세요.',
   subTitle2: '칠교 조각이 다른 칠교 조각의 몇 분의 몇인지 구하세요.',
 };
 export const FourthGrade3Day3 = {

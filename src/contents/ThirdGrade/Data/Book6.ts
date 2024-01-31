@@ -203,7 +203,7 @@ export const Answer33 = [
 ];
 export const Data41Quiz = [
   { id: '①', method: '신발끈', mune: 1, deno: 10, len: 5 },
-  { id: '②', method: '자', mune: 1, deno: 5, len: 11 },
+  { id: '②', method: '자', mune: 1, deno: 5, len: 6 },
   { id: '③', method: '색 테이프', mune: 1, deno: 6, len: 7 },
   { id: '④', method: '리본', mune: 1, deno: 7, len: 10 },
   { id: '⑤', method: '털실', mune: 1, deno: 3, len: 21 },
@@ -249,18 +249,18 @@ export const Answer43 = [
 ];
 
 export const Data51Quiz = [
-  { id: '①', mune: 1, deno: 3, len: 4 },
-  { id: '②', mune: 8, deno: 10, len: 40 },
-  { id: '③', mune: 5, deno: 8, len: 20 },
-  { id: '④', mune: 2, deno: 4, len: 14 },
-  { id: '⑤', mune: 3, deno: 11, len: 27 },
-  { id: '⑥', mune: 7, deno: 9, len: 42 },
-  { id: '⑦', mune: 2, deno: 5, len: 16 },
-  { id: '⑧', mune: 1, deno: 4, len: 8 },
-  { id: '⑨', mune: 2, deno: 3, len: 10 },
-  { id: '⑩', mune: 7, deno: 10, len: 21 },
-  { id: '⑪', mune: 3, deno: 8, len: 45 },
-  { id: '⑫', mune: 5, deno: 9, len: 45 },
+  { id: '①', mune: 1, deno: 3, len: 4, conj: '이' },
+  { id: '②', mune: 8, deno: 10, len: 40, conj: '이' },
+  { id: '③', mune: 5, deno: 8, len: 20, conj: '가' },
+  { id: '④', mune: 2, deno: 4, len: 14, conj: '가' },
+  { id: '⑤', mune: 3, deno: 11, len: 27, conj: '이' },
+  { id: '⑥', mune: 7, deno: 9, len: 42, conj: '이' },
+  { id: '⑦', mune: 2, deno: 5, len: 16, conj: '가' },
+  { id: '⑧', mune: 1, deno: 4, len: 8, conj: '이' },
+  { id: '⑨', mune: 2, deno: 3, len: 10, conj: '가' },
+  { id: '⑩', mune: 7, deno: 10, len: 21, conj: '이' },
+  { id: '⑪', mune: 3, deno: 8, len: 45, conj: '이' },
+  { id: '⑫', mune: 5, deno: 9, len: 45, conj: '가' },
 ];
 export const Answer51 = [
   [12],
@@ -286,6 +286,7 @@ export const Data52Quiz = [
     len: 4,
     totalText: '전체 수확한 감자는',
     unit: 'kg',
+    conj: '이',
   },
   {
     id: '②',
@@ -295,6 +296,7 @@ export const Data52Quiz = [
     len: 6,
     totalText: '전체 피자 조각은',
     unit: '조각',
+    conj: '이',
   },
   {
     id: '③',
@@ -304,6 +306,7 @@ export const Data52Quiz = [
     len: 10,
     totalText: '전체 달린 거리는',
     unit: 'km',
+    conj: '가',
   },
   {
     id: '④',
@@ -313,6 +316,7 @@ export const Data52Quiz = [
     len: 20,
     totalText: '전체 사과는',
     unit: '개',
+    conj: '가',
   },
   {
     id: '⑤',
@@ -322,6 +326,7 @@ export const Data52Quiz = [
     len: 24,
     totalText: '전체 승객은',
     unit: '명',
+    conj: '가',
   },
   {
     id: '⑥',
@@ -331,6 +336,7 @@ export const Data52Quiz = [
     len: 16,
     totalText: '전체 읽은 책은',
     unit: '권',
+    conj: '가',
   },
   {
     id: '⑦',
@@ -340,6 +346,7 @@ export const Data52Quiz = [
     len: 64,
     totalText: '전체 나무는',
     unit: '그루',
+    conj: '이',
   },
 ];
 export const Answer52 = [[24], [8], [25], [50], [84], [32], [72]];

@@ -51,10 +51,12 @@ const Single41 = (props: Props) => {
       <Styled.LinesQuizInput8
         disabled={correct === null ? false : true}
         onChange={e => handleInput(e.target.value, 0)}
+        value={inputValue[idx][0]}
       />
       <Styled.LinesQuizInput9
         disabled={correct === null ? false : true}
         onChange={e => handleInput(e.target.value, 1)}
+        value={inputValue[idx][1]}
       />
     </Styled.LineQuizBox1>
   );

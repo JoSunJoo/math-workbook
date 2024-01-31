@@ -6,10 +6,10 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { FourthGrade2Day1 as Day } from '../../utils/handleTitle';
+import { FourthGrade2Day1 as Day, SubJustCal } from '../../utils/handleTitle';
 import makeAnswer from '../../utils/makeAnswer';
 import ExampleQuiz from './Example1-3';
-import SingleQuiz from './Single1-3';
+import SingleQuiz from './NewSingle1-3';
 
 import type { Data13QuizProps as QuizProps } from '../../Type/Type2';
 const FourthGrade13Exercise: React.FC = () => {
@@ -19,16 +19,16 @@ const FourthGrade13Exercise: React.FC = () => {
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string[][]>(
-    Array.from(Array(15), () => new Array(1))
+    Array.from(Array(15), () => new Array(2))
   );
   const key = 'fourth213.answer';
-  const answer = makeAnswer({ type: 2, data: QuizData });
+  const answer = makeAnswer({ type: 3, data: QuizData });
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
 
   return (
-    <DayLayout title={Day.title} subTitle={Day.subTitle2}>
+    <DayLayout title={Day.title} subTitle={SubJustCal}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
           <Styled.RowWrapBox8>
@@ -52,8 +52,9 @@ const FourthGrade13Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

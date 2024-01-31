@@ -33,6 +33,7 @@ const Single23 = (props: QuizProps) => {
           <Styled.InputBox8
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <Styled.GapRowBox gap={1.6}>
             <div>{quiz2} </div>
@@ -49,6 +50,7 @@ const Single23 = (props: QuizProps) => {
                   <Styled.InputBox8
                     disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 1)}
+                    value={inputValue[idx][1]}
                   />
                 </Styled.GapRowBox>
               </Styled.AsoluteBox5>

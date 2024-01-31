@@ -46,7 +46,7 @@ export const handleScore = (score: number, len: number) => {
 };
 
 export const postDataUtil = async (key: any, value: any) => {
-  postKeyValue({ key, value })
+  await postKeyValue({ key, value })
     .then(response => {
       // console.log('Success:', response);
     })

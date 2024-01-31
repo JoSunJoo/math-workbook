@@ -32,6 +32,7 @@ const Single43 = (props: Props) => {
             maxLength={1}
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
         </Styled.ColGapBox>
       </Styled.SingleWrapper4>

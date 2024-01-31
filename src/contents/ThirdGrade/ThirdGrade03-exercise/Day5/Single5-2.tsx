@@ -52,6 +52,7 @@ const Single52 = (props: QuizProps) => {
                 noBottom={true}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
             </Styled.RowBox>
             <Styled.RowBox>
@@ -64,6 +65,7 @@ const Single52 = (props: QuizProps) => {
               <Styled.NumBox3Input
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
+                value={inputValue[idx][1]}
               />
             </Styled.RowBox>
             <Styled.RowBox>
@@ -71,10 +73,12 @@ const Single52 = (props: QuizProps) => {
                 noRight={true}
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
+                value={inputValue[idx][2]}
               />
               <Styled.NumBox3Input
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
+                value={inputValue[idx][3]}
               />
             </Styled.RowBox>
           </Styled.ColGapBox3>

@@ -37,6 +37,7 @@ const Single52 = (props: Props) => {
           <Styled.DashBoxUpper
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <Styled.LetterSpacing2>{quiz1}</Styled.LetterSpacing2>
           <Styled.DashNumMid>
@@ -48,14 +49,17 @@ const Single52 = (props: Props) => {
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 3)}
+              value={inputValue[idx][3]}
             />
           </Styled.RowBox5>
         </Styled.DashNumWrapper>

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-import { Answer23 as answer, Data23Quiz as QuizData } from '../../Data/Book2';
+import { Data23Quiz as QuizData } from '../../Data/Book2';
 import DayLayout from '../../Layout/Day2';
 import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { SubJustCal, ThirdGrade2Day2 } from '../../utils/handleTitle';
+import makeAnswer from '../../utils/makeAnswer';
 import SingleQuiz from '../Day1/Single1-3';
 
 import type { Data12QuizProps } from '../../Type/Type1';
@@ -23,6 +24,7 @@ const ThirdGrade23Exercise = () => {
     Array.from(Array(14), () => new Array(1))
   );
   const key = 'third223.answer';
+  const answer = makeAnswer({ type: 1, data: QuizData });
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
@@ -52,8 +54,9 @@ const ThirdGrade23Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

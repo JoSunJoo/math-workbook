@@ -33,11 +33,13 @@ const Single33 = (props: Props) => {
             maxLength={1}
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <Styled.InputBox3
             maxLength={1}
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
+            value={inputValue[idx][1]}
           />
         </Styled.DivTopInputWrapper>
         <Styled.DivCenterNum2>{quiz1}</Styled.DivCenterNum2>

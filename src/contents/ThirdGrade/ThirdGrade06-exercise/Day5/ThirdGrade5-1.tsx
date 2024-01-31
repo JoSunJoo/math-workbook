@@ -37,6 +37,7 @@ const ThirdGrade51Exercise: React.FC = () => {
                 mune={item.mune}
                 deno={item.deno}
                 len={item.len}
+                conj={item.conj}
                 idx={idx}
                 toggle={toggle}
                 setToggle={setToggle}
@@ -50,8 +51,9 @@ const ThirdGrade51Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

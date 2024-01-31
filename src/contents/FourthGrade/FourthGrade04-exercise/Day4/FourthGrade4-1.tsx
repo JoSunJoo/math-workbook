@@ -69,7 +69,7 @@ const FourthGrade41Exercise = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx + 9]}
+                correct={confirmType ? null : correct[idx + 9]}
               />
             ))}
           </Styled.RowWrapBox7>

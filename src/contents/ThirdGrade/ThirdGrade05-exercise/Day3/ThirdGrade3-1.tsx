@@ -7,6 +7,7 @@ import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleOrAnswer as handleAnswer } from '../../utils/handleOrAnswer3';
 import { SubGeometry, ThirdGrade5Day3 } from '../../utils/handleTitle';
+import ExampleQuiz from './Example3-1';
 import SingleQuiz from './Single3-1';
 
 import type { Data53QuizProps as QuizProps } from '../../Type/Type1';
@@ -32,6 +33,7 @@ const ThirdGrade31Exercise = () => {
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={2.4}>
           <Styled.ImgSize4 src={img} alt="" />
+          <ExampleQuiz />
           {QuizData.map((item: QuizProps, idx) => (
             <SingleQuiz
               key={idx}

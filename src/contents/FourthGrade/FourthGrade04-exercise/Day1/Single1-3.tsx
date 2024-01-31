@@ -36,6 +36,7 @@ const Single13 = (props: Props) => {
           <Styled.InputBox4
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
         </Styled.InputWrapper1>
       ) : (
@@ -47,12 +48,14 @@ const Single13 = (props: Props) => {
               <Styled.InputBox1
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
             </Styled.FractUnderLine>
             <Styled.FractUnderNum>
               <Styled.InputBox1
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
+                value={inputValue[idx][1]}
               />
             </Styled.FractUnderNum>
           </Styled.ColGapBox>

@@ -24,7 +24,7 @@ const Example42 = () => {
         <Styled.InnerTextBox>
           <Styled.ColGapBox>
             <Styled.SetCenter>
-              전체를 {three}로 나눈 것 중{two}이 8cm 이므로 1은 4cm입니다.
+              전체를 {three}으로 나눈 것 중 {two}가 8cm 이므로 1은 4cm입니다.
             </Styled.SetCenter>
             <Styled.SetCenter>
               (8 ÷ {two} = 4) 1이 4 cm이므로 전체 {three}은 12cm입니다. (4×

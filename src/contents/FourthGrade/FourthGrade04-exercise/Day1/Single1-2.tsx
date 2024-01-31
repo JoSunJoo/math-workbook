@@ -3,7 +3,6 @@ import IdSymbol from '../../utils/IdSymbol';
 
 import type { Data12QuizProps2 as Props } from '../../Type/Type4';
 
-import img1 from '../../Image/4-1-2_1.png';
 import img2 from '../../Image/4-1-2_2.png';
 import img3 from '../../Image/4-1-2_3.png';
 import img4 from '../../Image/4-1-2_4.png';
@@ -37,7 +36,6 @@ const Single12 = (props: Props) => {
   };
 
   const imgArray = [
-    img1,
     img2,
     img3,
     img4,
@@ -59,6 +57,7 @@ const Single12 = (props: Props) => {
         <Styled.InputBox1
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, 0)}
+          value={inputValue[idx][0]}
         />
       </Styled.GapRowBox2>
     </Styled.SingleWrapper2>

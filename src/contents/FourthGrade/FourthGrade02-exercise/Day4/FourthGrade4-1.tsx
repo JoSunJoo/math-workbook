@@ -34,14 +34,15 @@ const FourthGrade41Exercise = () => {
             setToggle={setToggle}
             inputValue={inputValue}
             setInputValue={setInputValue}
-            singleCorrect={correct[0]}
+            singleCorrect={confirmType ? null : correct[0]}
           />
         </Styled.RowBox5>
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

@@ -280,6 +280,21 @@ const Styled = {
       justify-content: center;
     }
   `,
+  RowWrapBox18: styled.div`
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    & > div {
+      width: calc(50%-3rem);
+      justify-content: flex-start;
+    }
+  `,
+  MakeWidth: styled.div<{ w?: number }>`
+    width: ${props => (props.w ? `${props.w}rem` : '')};
+    display: flex;
+  `,
   GapRowBox: styled.div<{ gap?: number }>`
     display: flex;
     gap: ${props => (props.gap ? `${props.gap}rem` : '')};
@@ -678,6 +693,19 @@ const Styled = {
     background-color: rgba(193, 193, 193, 0.2);
     border-radius: 1.25rem;
   `,
+  NewFitInputWrapper3: styled.div`
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.625rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: fit-content;
+    min-width: 40rem;
+    padding: 2rem 4rem;
+    background-color: rgba(193, 193, 193, 0.2);
+    border-radius: 1.25rem;
+  `,
   FitInputWrapper4: styled.div`
     display: flex;
     gap: 0.75rem;
@@ -1010,6 +1038,22 @@ const Styled = {
       color: #ff2e00;
     }
   `,
+  InputBox9: styled.input`
+    width: 10rem;
+    height: 2.3125rem;
+    border-radius: 0.25rem;
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #ff2e00;
+    }
+  `,
   NoBorderInputBox: styled.input`
     width: 3.1rem;
     height: 2.3125rem;
@@ -1086,6 +1130,15 @@ const Styled = {
     position: relative;
     white-space: nowrap;
     word-break: keep-all;
+  `,
+  TextBox4: styled.div`
+    line-height: 150%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
   `,
   TextSize: styled.div`
     font-size: 1.25rem;
@@ -1500,6 +1553,28 @@ const Styled = {
     position: relative;
     margin-right: 0.3rem;
     margin-left: 0.5rem;
+  `,
+  UnderLineBox2Input: styled.input`
+    border: none;
+    border-bottom: 2px solid #c0c0c0;
+    background-color: transparent;
+    height: 80%;
+    width: fit-content;
+    width: 2.5rem;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 0.3rem;
+    margin-left: 0.5rem;
+
+    color: #2b1840;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #ff2e00;
+    }
   `,
   //2-1-3
   DivSingleWrapper: styled.div`

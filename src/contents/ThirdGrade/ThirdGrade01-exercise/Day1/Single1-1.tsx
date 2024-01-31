@@ -53,10 +53,12 @@ const Single11 = (props: Props) => {
         <Styled.Lines2QuizInput1
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, 0)}
+          value={inputValue[idx][0]}
         />
         <Styled.Lines2QuizInput2
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, 1)}
+          value={inputValue[idx][1]}
         />
       </Styled.RelativeBox2>
     </Styled.LineQuizBox2>

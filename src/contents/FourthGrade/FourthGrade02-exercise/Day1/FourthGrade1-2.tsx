@@ -19,7 +19,7 @@ const FourthGrade12Exercise: React.FC = () => {
   const [confirmType, setConfirmType] = useState<boolean>(true);
 
   const [inputValue, setInputValue] = useState<string[][]>(
-    Array.from(Array(4), () => new Array(3))
+    Array.from(Array(4), () => new Array(5))
   );
   const key = 'fourth212.answer';
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
@@ -37,7 +37,7 @@ const FourthGrade12Exercise: React.FC = () => {
     <DayLayout title={Day.title} subTitle={Day.subTitle2}>
       <Styled.PaddingBox5>
         <Styled.ColGapBox gap={6}>
-          {QuizData.map((item: QuizProps, idx) => (
+          {QuizData.map((item: QuizProps, idx: number) => (
             <Styled.RowBox13 key={idx}>
               <IdSymbol
                 id={item.id}
@@ -46,12 +46,13 @@ const FourthGrade12Exercise: React.FC = () => {
               {/* 왼쪽 클릭 문제 */}
               <Styled.SelectSingleWrapper key={idx}>
                 {item.left.map((i: string, idx2: number) => (
-                  <div key={idx2}>
+                  <div key={`inputkey${idx2}`}>
                     <input
                       type="radio"
+                      name={item.id}
                       id={i}
-                      disabled={correct[idx] === null ? false : true}
-                      checked={idx2.toString() === inputValue[idx][0]}
+                      disabled={confirmType ? false : true}
+                      checked={inputValue[idx][0] === idx2.toString()}
                       onChange={() => handleInput(idx, idx2)}
                     ></input>
                     <Styled.SelectSingleButton htmlFor={i}>
@@ -62,7 +63,6 @@ const FourthGrade12Exercise: React.FC = () => {
               </Styled.SelectSingleWrapper>
               {/* 오른쪽 빈칸 문제*/}
               <SingleQuiz
-                key={idx}
                 rightQuiz1={item.rightQuiz1}
                 rightQuiz2={item.rightQuiz2}
                 idx={idx}
@@ -78,8 +78,9 @@ const FourthGrade12Exercise: React.FC = () => {
       </Styled.PaddingBox5>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

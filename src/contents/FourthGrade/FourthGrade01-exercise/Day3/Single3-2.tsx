@@ -37,6 +37,7 @@ const Single31 = (props: QuizProps) => {
               <Styled.InputBox4
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
             </Styled.RowBox4>
           ) : (
@@ -57,6 +58,7 @@ const Single31 = (props: QuizProps) => {
               <Styled.InputBox4
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[idx][0]}
               />
               배
             </Styled.RowBox4>

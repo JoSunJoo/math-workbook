@@ -35,30 +35,34 @@ const Single21 = (props: Props) => {
           <Styled.RightDashBorder />
         </Styled.RowBox>
         <Styled.DashNumWrapper>
-          <Styled.LetterSpacing2>{quiz1}</Styled.LetterSpacing2>
+          <Styled.LetterSpacing22>{quiz1}</Styled.LetterSpacing22>
           <Styled.DashNumMid2>
             <div>x</div>
             <Styled.LetterSpacing3>{quiz2}</Styled.LetterSpacing3>
           </Styled.DashNumMid2>
           <Styled.DashBoxMidLine2 />
-          <Styled.RowBox5>
+          <Styled.RowBox52>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 3)}
+              value={inputValue[idx][3]}
             />
-          </Styled.RowBox5>
+          </Styled.RowBox52>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>
     </Styled.DashSingleWrapper>

@@ -18,7 +18,7 @@ const Example32 = () => {
             <div>+</div>
             <Styled.InputBox1 placeholder="69" disabled></Styled.InputBox1>
             <div>=</div>
-            <Styled.InputBox1></Styled.InputBox1>
+            <Styled.InputBox1 placeholder="869" disabled></Styled.InputBox1>
           </Styled.InputWrapper3>
         </div>
       </Styled.InputWrapper3>

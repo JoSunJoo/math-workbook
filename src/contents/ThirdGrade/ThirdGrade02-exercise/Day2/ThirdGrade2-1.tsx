@@ -50,8 +50,9 @@ const ThirdGrade21Exercise: React.FC = () => {
       </Styled.PaddingBox4>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

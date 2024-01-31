@@ -35,6 +35,7 @@ const Single222 = (props: QuizProps) => {
           <Styled.InputBox4
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <Styled.GapRowBox gap={1}>
             <Styled.ImgSize12 src={img} alt="" />

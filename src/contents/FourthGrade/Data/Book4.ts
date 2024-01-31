@@ -28,7 +28,6 @@ export const Answer11 = [
 ];
 
 export const Data12Quiz = [
-  { id: '①' },
   { id: '②' },
   { id: '③' },
   { id: '④' },
@@ -42,7 +41,6 @@ export const Data12Quiz = [
   { id: '⑫' },
 ];
 export const Answer12 = [
-  [0.06],
   [0.003],
   [0.7],
   [0.003],
@@ -134,6 +132,20 @@ export const Data22Quiz = [
   { id: '⑪', type: 2, quiz1: 0.562, quiz2: 1000 },
   { id: '⑫', type: 2, quiz1: 6.47, quiz2: 1000 },
 ];
+export const Answer22 = [
+  [5.7],
+  [0.86],
+  [84.43],
+  [40.3],
+  [844.3],
+  [405.6],
+  [276],
+  [107],
+  [47.1],
+  [250],
+  [562],
+  [6470],
+];
 export const Data23Quiz = [
   { id: '①', type: 2, quiz1: 2.68, quiz2: 1000 },
   { id: '②', type: 1, quiz1: 0.27, quiz2: 10 },
@@ -145,7 +157,7 @@ export const Data23Quiz = [
   { id: '⑧', type: 1, quiz1: 0.4, quiz2: 10 },
   { id: '⑨', type: 2, quiz1: 1.05, quiz2: 100 },
   { id: '⑩', type: 1, quiz1: 156, quiz2: 1000 },
-  { id: '⑪', type: 2, quiz1: 9.67, quiz2: 100 },
+  { id: '⑪', type: 2, quiz1: 9.67, quiz2: 1000 },
   { id: '⑫', type: 2, quiz1: 5.672, quiz2: 10 },
   { id: '⑬', type: 1, quiz1: 41.67, quiz2: 10 },
   { id: '⑭', type: 1, quiz1: 7.2, quiz2: 100 },
@@ -160,7 +172,7 @@ export const Answer23 = [
   [0.046],
   [0.04],
   [105],
-  [0.0156],
+  [0.156],
   [9670],
   [56.72],
   [4.167],
@@ -196,7 +208,7 @@ export const Answer31 = [
 ];
 
 export const Data32Quiz = [
-  { id: '①', type: 2, quiz1: 5.16, quiz2: 0.0516 },
+  { id: '①', type: 2, quiz1: 51.6, quiz2: 0.0516 },
   { id: '②', type: 2, quiz1: 300, quiz2: 0.3 },
   { id: '③', type: 2, quiz1: 3.25, quiz2: 32.5 },
   { id: '④', type: 2, quiz1: 77.1, quiz2: 7.71 },
@@ -211,7 +223,7 @@ export const Data32Quiz = [
 ];
 export const Answer32 = [
   [5],
-  [5],
+  [6],
   [1],
   [4],
   [4],
@@ -424,13 +436,13 @@ export const Data52Quiz = [
   {
     id: '④',
     quiz1:
-      ' 과수원에서 사과를 수확하여 상자에 포장하는 데 한 개의 무게가 0.245 kg인 사과를 한 상자에 10개씩 담습니다. 한 상자에 담긴 사과의 무게는 몇 kg일까요?',
+      '과수원에서 사과를 수확하여 상자에 포장하는 데 한 개의 무게가 0.245 kg인 사과를 한 상자에 10개씩 담습니다. 한 상자에 담긴 사과의 무게는 몇 kg일까요?',
     unit: 'km',
   },
   {
     id: '⑤',
     quiz1:
-      ' 한 시간에 83.69 km를 달리는 자동차가 있습니다. 이 자동차가 같은 빠르기로 10시간 동안 달리는 거리는 몇 km일까요?',
+      '한 시간에 83.69 km를 달리는 자동차가 있습니다. 이 자동차가 같은 빠르기로 10시간 동안 달리는 거리는 몇 km일까요?',
     unit: 'km',
   },
   {

@@ -42,6 +42,7 @@ const Single41 = (props: QuizProps) => {
         <Styled.InputBox1
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, 0)}
+          value={inputValue[idx][0]}
         />
         <div>cm 입니다.</div>
       </Styled.TextBox4>

@@ -50,6 +50,7 @@ const Single11 = (props: QuizProps) => {
                   <Styled.InputBox1
                     disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 0)}
+                    value={inputValue[imgId][0]}
                   />
                   = {quiz3}
                 </Styled.InputWrapper4>
@@ -58,6 +59,7 @@ const Single11 = (props: QuizProps) => {
                   <Styled.InputBox1
                     disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, 1)}
+                    value={inputValue[imgId][1]}
                   />
                   = {quiz4}
                 </Styled.InputWrapper4>

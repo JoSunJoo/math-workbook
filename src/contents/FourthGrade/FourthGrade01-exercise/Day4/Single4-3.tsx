@@ -29,6 +29,7 @@ const Single43 = (props: QuizProps) => {
       <Styled.CircleInput
         disabled={correct === null ? false : true}
         onChange={e => handleInput(e.target.value, 0)}
+        value={inputValue[idx][0]}
       />
       <Styled.ColorBox2>{quiz2}</Styled.ColorBox2>
     </Styled.RowBox13>

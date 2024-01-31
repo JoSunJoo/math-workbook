@@ -7,11 +7,10 @@ import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
 import { FourthGrade3Day3 as Day } from '../../utils/handleTitle';
+import ExampleQuiz from './Example3-1';
 import SingleQuiz from './Single3-1';
 
 import type { Data31QuizProps as QuizProps } from '../../Type/Type3';
-
-import img from '../../Image/3-3-1.png';
 
 const FourthGrade31Exercise = () => {
   const [isGeted, setIsGeted] = useState(false);
@@ -31,9 +30,7 @@ const FourthGrade31Exercise = () => {
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={4}>
-          <Styled.ImgBox3>
-            <Styled.ImgSize4 src={img} />
-          </Styled.ImgBox3>
+          <ExampleQuiz />
           <Styled.RowWrapBox12>
             {QuizData.map((item: QuizProps, idx: number) => (
               <SingleQuiz
@@ -54,8 +51,9 @@ const FourthGrade31Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

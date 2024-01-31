@@ -80,6 +80,7 @@ export interface Data51QuizProps {
   mune: number;
   deno: number;
   len: number;
+  conj?: string;
 }
 export interface Data51QuizProps2 {
   id: string;
@@ -87,6 +88,7 @@ export interface Data51QuizProps2 {
   deno: number;
   len: number;
   idx: number;
+  conj?: string;
   inputValue: string[][];
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
@@ -101,6 +103,7 @@ export interface Data52QuizProps {
   len: number;
   totalText: string;
   unit: string;
+  conj?: string;
 }
 export interface Data52QuizProps2 {
   id: string;
@@ -110,6 +113,7 @@ export interface Data52QuizProps2 {
   len: number;
   totalText: string;
   unit: string;
+  conj?: string;
   idx: number;
   inputValue: string[][];
   toggle: boolean;

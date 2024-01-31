@@ -34,6 +34,7 @@ const Single31 = (props: Props) => {
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <div>=</div>
             <div>{quiz2}</div>
@@ -45,6 +46,7 @@ const Single31 = (props: Props) => {
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <div>{'<'} </div>
             <div>{quiz2}</div>

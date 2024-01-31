@@ -77,15 +77,16 @@ const ThirdGrade52Exercise = () => {
               setToggle={setToggle}
               inputValue={inputValue}
               setInputValue={setInputValue}
-              correct={correct[idx + 2]}
+              correct={confirmType ? null : correct[idx + 2]}
             />
           ))}
         </Styled.ColGapBox>
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

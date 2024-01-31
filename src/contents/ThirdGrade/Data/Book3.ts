@@ -196,7 +196,7 @@ export const Answer42 = [
   [6, 6, 9, 3, 0],
 ];
 export const Data43Quiz = [
-  { id: '①', quiz1: 55, quiz2: 30 },
+  { id: '①', quiz1: 56, quiz2: 30 },
   { id: '②', quiz1: 47, quiz2: 60 },
   { id: '③', quiz1: 79, quiz2: 30 },
   { id: '④', quiz1: 55, quiz2: 80 },

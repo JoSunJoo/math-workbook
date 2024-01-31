@@ -47,28 +47,30 @@ const Single21 = (props: Props) => {
     [2, 3],
     [4, 5],
   ];
-  const sizeArray1 = [6, 7, 7];
+  const sizeArray1 = [6, 7, 6];
   const sizeArray2 = [
     [4, 4],
     [3, 7],
-    [4, 7],
+    [6, 6],
   ];
 
   return (
-    <Styled.GapRowBox3 gap={3} key={idx}>
+    <Styled.GapRowBox3 gap={1} key={idx}>
       <Styled.SetCenter>
         <Styled.ImgSizeWidth src={imgArray[idx]} width={sizeArray1[idx]} />
       </Styled.SetCenter>
-      <Styled.FitInputWrapper3>
-        <Styled.GapRowBox3 gap={4}>
+      <Styled.NewFitInputWrapper3>
+        <Styled.RowWrapBox18>
           {/* 왼쪽 */}
           <Styled.GapRowBox gap={2}>
             <IdSymbol id={numArray[idx][0]} correct={correct} />
             <Styled.GapRowBox2 gap={0.2}>
-              <Styled.ImgSizeWidth
-                src={totalArray[idx][0]}
-                width={sizeArray2[idx][0]}
-              />
+              <Styled.MakeWidth w={7.2}>
+                <Styled.ImgSizeWidth
+                  src={totalArray[idx][0]}
+                  width={sizeArray2[idx][0]}
+                />
+              </Styled.MakeWidth>
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox3
@@ -89,10 +91,12 @@ const Single21 = (props: Props) => {
           <Styled.GapRowBox gap={2}>
             <IdSymbol id={numArray[idx][1]} correct={correct2} />
             <Styled.GapRowBox2 gap={0.2}>
-              <Styled.ImgSizeWidth
-                src={totalArray[idx][1]}
-                width={sizeArray2[idx][1]}
-              />
+              <Styled.MakeWidth w={8.5}>
+                <Styled.ImgSizeWidth
+                  src={totalArray[idx][1]}
+                  width={sizeArray2[idx][1]}
+                />
+              </Styled.MakeWidth>
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox3
@@ -111,8 +115,8 @@ const Single21 = (props: Props) => {
               </Styled.ColGapBox>
             </Styled.GapRowBox2>
           </Styled.GapRowBox>
-        </Styled.GapRowBox3>
-      </Styled.FitInputWrapper3>
+        </Styled.RowWrapBox18>
+      </Styled.NewFitInputWrapper3>
     </Styled.GapRowBox3>
   );
 };

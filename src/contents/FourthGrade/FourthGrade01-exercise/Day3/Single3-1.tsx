@@ -35,10 +35,11 @@ const Single31 = (props: QuizProps) => {
       <IdSymbol id={id} correct={correct} />
       {type === 1 ? (
         <Styled.RowBox4>
-          <div>{quiz1}</div>
+          <Styled.NonFlexText>{quiz1}</Styled.NonFlexText>
           <Styled.InputBox4
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
         </Styled.RowBox4>
       ) : (
@@ -48,6 +49,7 @@ const Single31 = (props: QuizProps) => {
           <Styled.InputBox4
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <div>원</div>
         </Styled.RowBox4>

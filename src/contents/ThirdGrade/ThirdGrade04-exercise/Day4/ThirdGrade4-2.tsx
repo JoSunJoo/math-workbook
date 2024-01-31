@@ -7,7 +7,10 @@ import SingleQuiz from '../../ThirdGrade03-exercise/Day5/Single5-1';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { SubBlank, ThirdGrade4Day4 } from '../../utils/handleTitle';
+import {
+  SubBlank2 as SubBlank,
+  ThirdGrade4Day4,
+} from '../../utils/handleTitle';
 import ExampleQuiz from './Example4-2';
 
 import type { Data51QuizProps as QuizProps } from '../../Type/Type3';
@@ -53,8 +56,9 @@ const ThirdGrade42Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

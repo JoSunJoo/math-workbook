@@ -38,11 +38,13 @@ const Single13 = (props: QuizProps) => {
                 <Styled.InputBox3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[imgId][0]}
                 />
               </Styled.FractUnderLine>
               <Styled.InputBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
+                value={inputValue[imgId][1]}
               />
             </Styled.ColGapBox>
           </Styled.ColorBox1>
@@ -52,11 +54,13 @@ const Single13 = (props: QuizProps) => {
                 <Styled.InputBox3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 2)}
+                  value={inputValue[imgId][2]}
                 />
               </Styled.FractUnderLine>
               <Styled.InputBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
+                value={inputValue[imgId][3]}
               />
             </Styled.ColGapBox>
           </Styled.ColorBox2>

@@ -39,6 +39,7 @@ const Single53 = (props: Props) => {
             <Styled.SpacingInputBox2
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
           </Styled.ColGapBox>
         </Styled.FitInputWrapper3>

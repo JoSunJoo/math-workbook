@@ -20,7 +20,7 @@ const Example41 = () => {
         <Styled.InnerTextBox>
           <Styled.ColGapBox>
             <Styled.SetCenter>
-              전체를 {nine}로 나눈 것 중{one}이 11cm 이므로
+              전체를 {nine}로 나눈 것 중 {one}이 11cm 이므로
             </Styled.SetCenter>
             <Styled.SetCenter>
               전체 {nine}는 99cm 입니다. (11 × {nine} = 99)

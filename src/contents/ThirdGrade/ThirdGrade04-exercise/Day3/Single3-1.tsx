@@ -32,11 +32,13 @@ const Single31 = (props: Props) => {
             maxLength={1}
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[idx][0]}
           />
           <Styled.InputBox3
             maxLength={1}
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
+            value={inputValue[idx][1]}
           />
         </Styled.DivTopInputWrapper>
         <Styled.DivCenterNum3>{quiz1}</Styled.DivCenterNum3>
@@ -47,6 +49,7 @@ const Single31 = (props: Props) => {
               top={false}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
             <Styled.DashedOrNotBox
               maxLength={1}
@@ -54,6 +57,7 @@ const Single31 = (props: Props) => {
               top={false}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 3)}
+              value={inputValue[idx][3]}
             />
           </Styled.RowBox>
           <Styled.RowBox>
@@ -62,6 +66,7 @@ const Single31 = (props: Props) => {
               bottom={true}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 4)}
+              value={inputValue[idx][4]}
             />
             <Styled.DashedOrNotBox
               maxLength={1}
@@ -69,6 +74,7 @@ const Single31 = (props: Props) => {
               bottom={true}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 5)}
+              value={inputValue[idx][5]}
             />
           </Styled.RowBox>
           <Styled.RowBox>
@@ -76,12 +82,14 @@ const Single31 = (props: Props) => {
               maxLength={1}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 6)}
+              value={inputValue[idx][6]}
             />
             <Styled.DashedOrNotBox
               maxLength={1}
               right={true}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 7)}
+              value={inputValue[idx][7]}
             />
           </Styled.RowBox>
           <Styled.RowBox>
@@ -90,12 +98,14 @@ const Single31 = (props: Props) => {
               isLeft={true}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 8)}
+              value={inputValue[idx][8]}
             />
             <Styled.DashedOrNotBoxEnd
               maxLength={1}
               isLeft={false}
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 9)}
+              value={inputValue[idx][9]}
             />
           </Styled.RowBox>
         </Styled.DashedOrNotBoxWrapper>

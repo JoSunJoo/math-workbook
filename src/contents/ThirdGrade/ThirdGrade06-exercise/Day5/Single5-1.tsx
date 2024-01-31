@@ -9,6 +9,7 @@ const Single51 = (props: QuizProps) => {
     mune,
     deno,
     len,
+    conj,
     idx,
     toggle,
     setToggle,
@@ -32,10 +33,13 @@ const Single51 = (props: QuizProps) => {
         <Styled.FractUnderLine>{mune}</Styled.FractUnderLine>
         <Styled.FractUnderNum>{deno}</Styled.FractUnderNum>
       </Styled.ColGapBox>
-      <div>이 {len}이면 전체의 길이는</div>
+      <div>
+        {conj} {len}이면 전체는
+      </div>
       <Styled.InputBox1
         disabled={correct === null ? false : true}
         onChange={e => handleInput(e.target.value, 0)}
+        value={inputValue[idx][0]}
       />
       <div>입니다.</div>
     </Styled.TextBox4>

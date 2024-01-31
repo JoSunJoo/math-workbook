@@ -41,6 +41,7 @@ const Single13 = (props: QuizProps) => {
               <Styled.InputBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[imgId][0]}
               />
               {quiz2}
             </Styled.RowBox7>

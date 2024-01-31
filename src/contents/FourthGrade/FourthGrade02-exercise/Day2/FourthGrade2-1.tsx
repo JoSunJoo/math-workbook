@@ -53,7 +53,7 @@ const FourthGrade21Exercise = () => {
                     <input
                       type="radio"
                       id={i}
-                      disabled={correct === null ? false : true}
+                      disabled={confirmType ? false : true}
                       checked={idx2.toString() === inputValue[idx][0]}
                       onChange={() => handleInput(idx, idx2)}
                     ></input>
@@ -81,8 +81,9 @@ const FourthGrade21Exercise = () => {
       </Styled.PaddingBox5>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

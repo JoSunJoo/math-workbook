@@ -23,6 +23,7 @@ const Single41 = (props: QuizProps) => {
     type,
     imgId,
     quiz1,
+    quiz2,
     idx,
     toggle,
     setToggle,
@@ -67,6 +68,7 @@ const Single41 = (props: QuizProps) => {
                     <Styled.InputBox8
                       disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 0)}
+                      value={inputValue[idx][0]}
                     />
                   </Styled.ColGapBox>
                 </>
@@ -78,6 +80,7 @@ const Single41 = (props: QuizProps) => {
                       <Styled.InputBox8
                         disabled={correct === null ? false : true}
                         onChange={e => handleInput(e.target.value, 0)}
+                        value={inputValue[idx][0]}
                       />
                     </Styled.FractUnderLine>
                     <Styled.FitBox>{quiz1}</Styled.FitBox>
@@ -96,11 +99,12 @@ const Single41 = (props: QuizProps) => {
                   <Styled.HandleImgSize src={item.src2} size={7} />
                   <Styled.ColGapBox gap={0.1}>
                     <Styled.FractUnderLine>
-                      <div>{quiz1}</div>
+                      <div>{quiz2}</div>
                     </Styled.FractUnderLine>
                     <Styled.InputBox8
                       disabled={correct === null ? false : true}
                       onChange={e => handleInput(e.target.value, 1)}
+                      value={inputValue[idx][1]}
                     />
                   </Styled.ColGapBox>
                 </>
@@ -112,9 +116,10 @@ const Single41 = (props: QuizProps) => {
                       <Styled.InputBox8
                         disabled={correct === null ? false : true}
                         onChange={e => handleInput(e.target.value, 1)}
+                        value={inputValue[idx][1]}
                       />
                     </Styled.FractUnderLine>
-                    <Styled.FitBox>{quiz1}</Styled.FitBox>
+                    <Styled.FitBox>{quiz2}</Styled.FitBox>
                   </Styled.ColGapBox>
                 </>
               )}

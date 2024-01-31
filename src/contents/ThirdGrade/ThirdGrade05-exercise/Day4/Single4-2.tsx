@@ -32,11 +32,13 @@ const Single42 = (props: QuizProps) => {
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
             <div>···</div>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
           </Styled.RowBox7>
           <div>➨</div>
@@ -45,21 +47,25 @@ const Single42 = (props: QuizProps) => {
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 2)}
+              value={inputValue[idx][2]}
             />
             <div>×</div>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 3)}
+              value={inputValue[idx][3]}
             />
             <div>+</div>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 4)}
+              value={inputValue[idx][4]}
             />
             <div>=</div>
             <Styled.InputBox1
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 5)}
+              value={inputValue[idx][5]}
             />
           </Styled.RowBox7>
         </Styled.RowBox8>

@@ -38,6 +38,7 @@ const Single31 = (props: QuizProps) => {
               <Styled.MiddleInput2
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 0)}
+                value={inputValue[imgId][0]}
               />
             </Styled.RowBox5>
             <Styled.RowBox5>
@@ -45,6 +46,7 @@ const Single31 = (props: QuizProps) => {
               <Styled.MiddleInput2
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 1)}
+                value={inputValue[imgId][1]}
               />
             </Styled.RowBox5>
           </Styled.ColGapBox>
@@ -54,6 +56,7 @@ const Single31 = (props: QuizProps) => {
               <Styled.InputBox4
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
+                value={inputValue[imgId][2]}
               />
               <div>배</div>
             </Styled.RowBox4>

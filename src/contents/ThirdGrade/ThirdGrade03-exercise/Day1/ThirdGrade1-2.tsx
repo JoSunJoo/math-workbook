@@ -6,7 +6,7 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { ThirdGrade3Day3 } from '../../utils/handleTitle';
+import { ThirdGrade3Day1 as Day } from '../../utils/handleTitle';
 import SingleQuiz from '../Day3/Single3-2';
 import ExampleQuiz from './Example1-2';
 
@@ -27,10 +27,7 @@ const ThirdGrade12Exercise: React.FC = () => {
   });
 
   return (
-    <DayLayout
-      title={ThirdGrade3Day3.title}
-      subTitle={ThirdGrade3Day3.subTitle}
-    >
+    <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={3}>
           <ExampleQuiz />
@@ -54,8 +51,9 @@ const ThirdGrade12Exercise: React.FC = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

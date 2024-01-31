@@ -32,11 +32,13 @@ const Single11 = (props: QuizProps) => {
           <Styled.InputBox3
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 0)}
+            value={inputValue[imgId][0]}
           />
           <div>으로 나눈 것 중</div>
           <Styled.InputBox3
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value, 1)}
+            value={inputValue[imgId][1]}
           />
           <div>이므로</div>
           <Styled.ColGapBox gap={0.1}>
@@ -44,11 +46,13 @@ const Single11 = (props: QuizProps) => {
               <Styled.InputBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
+                value={inputValue[imgId][2]}
               />
             </Styled.FractUnderLine>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 3)}
+              value={inputValue[imgId][3]}
             />
           </Styled.ColGapBox>
           <div>입니다.</div>

@@ -22,11 +22,9 @@ const ThirdGrade11Exercise: React.FC = () => {
     Array.from(Array(5), () => new Array(2))
   );
   const key = 'third111.answer';
-
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
     console.error('Error:', error);
   });
-
   return (
     <DayLayout
       title={ThirdGrade1Day1.title}
@@ -60,8 +58,9 @@ const ThirdGrade11Exercise: React.FC = () => {
           </Styled.RowWrapBox8>
           <div
             onClick={() => {
-              if (confirmType)
+              if (confirmType === true) {
                 handleAnswer({ key, inputValue, answer, setCorrect });
+              }
               setToggle(!toggle);
               setConfirmType(prev => !prev);
             }}

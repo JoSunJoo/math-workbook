@@ -37,10 +37,12 @@ const Single22 = (props: QuizProps) => {
                 <Styled.NumBox3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 0)}
+                  value={inputValue[idx][0]}
                 />
                 <Styled.NumBox3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, 1)}
+                  value={inputValue[idx][1]}
                 />
               </Styled.RowBox>
               <Styled.NumBox2Input noBottom={true}>{quiz4}</Styled.NumBox2Input>
@@ -49,10 +51,12 @@ const Single22 = (props: QuizProps) => {
               <Styled.NumBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 2)}
+                value={inputValue[idx][2]}
               />
               <Styled.NumBox3
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, 3)}
+                value={inputValue[idx][3]}
               />
               <Styled.NumBox2Input>{quiz3}</Styled.NumBox2Input>
             </Styled.RowBox>

@@ -44,7 +44,7 @@ const FourthGrade41Exercise = () => {
                   type={1}
                   imgId={idx}
                   quiz1={item.quiz1}
-                  quiz2={item.quiz1}
+                  quiz2={item.quiz2}
                   idx={idx}
                   toggle={toggle}
                   setToggle={setToggle}
@@ -63,13 +63,13 @@ const FourthGrade41Exercise = () => {
                 type={2}
                 imgId={idx}
                 quiz1={item.quiz1}
-                quiz2={item.quiz1}
+                quiz2={item.quiz2}
                 idx={idx + 3}
                 toggle={toggle}
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idx + 3]}
+                correct={confirmType ? null : correct[idx + 3]}
               />
             ))}
           </Styled.RowWrapBox5>
@@ -77,8 +77,9 @@ const FourthGrade41Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

@@ -53,6 +53,7 @@ const Single41 = (props: QuizProps) => {
             <Styled.ShortInput2
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 0)}
+              value={inputValue[idx][0]}
             />
           </Styled.RowBox>
           <Styled.RowBox>
@@ -60,6 +61,7 @@ const Single41 = (props: QuizProps) => {
             <Styled.ShortInput2
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
+              value={inputValue[idx][1]}
             />
           </Styled.RowBox>
         </Styled.SetCenter>

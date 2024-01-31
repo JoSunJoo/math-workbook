@@ -19,7 +19,7 @@ const FourthGrade51Exercise = () => {
   const [correct, setCorrect] = useState<boolean[]>([]);
   const [confirmType, setConfirmType] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string[][]>(
-    Array.from(Array(14), () => new Array(1))
+    Array.from(Array(18), () => new Array(1))
   );
   const key = 'fourth351.answer';
   GetData({ setInputValue, key, setIsGeted, isGeted }).catch(error => {
@@ -52,8 +52,9 @@ const FourthGrade51Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          if (confirmType)
+          if (confirmType === true) {
             handleAnswer({ key, inputValue, answer, setCorrect });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}
