@@ -92,5 +92,5 @@ const divisionProblems = [
   { qId: 8, qNum: '⑨', sonNum: 1137, momNum: 125, answer: 9.096, pass: false },
   { qId: 9, qNum: '⑩', sonNum: 127, momNum: 50, answer: 2.54, pass: false },
   { qId: 10, qNum: '⑪', sonNum: 3673, momNum: 500, answer: 7.346, pass: false },
-  { qId: 11, qNum: '⑫', sonNum: 619, momNum: 250, answer: 4.952, pass: false },
+  { qId: 11, qNum: '⑫', sonNum: 619, momNum: 125, answer: 4.952, pass: false },
 ];
