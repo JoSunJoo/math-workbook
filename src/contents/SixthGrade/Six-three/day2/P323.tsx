@@ -61,8 +61,8 @@ export default function P323() {
           src={ImgExample}
           variant="square"
           style={{
-            width: '14rem',
-            height: '10rem',
+            width: 'max-content',
+            height: '12rem',
             marginLeft: '5rem',
             marginTop: '2.5rem',
           }}
