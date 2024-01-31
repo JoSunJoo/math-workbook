@@ -27,8 +27,8 @@ export default function P242() {
 
   const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    // if (!isSolved) await sendScoreUtil(currentScore);
-    // await postKeyValue({ key: 'quiz242.answer', value: allAnswer });
+    if (!isSolved) await sendScoreUtil(currentScore);
+    await postKeyValue({ key: 'quiz242.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
