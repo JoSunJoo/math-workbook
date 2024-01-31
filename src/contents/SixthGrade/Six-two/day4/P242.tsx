@@ -27,8 +27,8 @@ export default function P242() {
 
   const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) await sendScoreUtil(currentScore);
-    await postKeyValue({ key: 'quiz242.answer', value: allAnswer });
+    // if (!isSolved) await sendScoreUtil(currentScore);
+    // await postKeyValue({ key: 'quiz242.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -90,7 +90,7 @@ const divisionProblems = [
   { qId: 6, qNum: '⑦', sonNum: 1233, momNum: 200, answer: 6.165, pass: false },
   { qId: 7, qNum: '⑧', sonNum: 5, momNum: 8, answer: 0.625, pass: false },
   { qId: 8, qNum: '⑨', sonNum: 159, momNum: 50, answer: 3.18, pass: false },
-  { qId: 9, qNum: '⑩', sonNum: 2819, momNum: 40, answer: 7.475, pass: false },
-  { qId: 10, qNum: '⑪', sonNum: 1367, momNum: 500, answer: 8.285, pass: false },
-  { qId: 11, qNum: '⑫', sonNum: 1657, momNum: 250, answer: 5.468, pass: false },
+  { qId: 9, qNum: '⑩', sonNum: 299, momNum: 40, answer: 7.475, pass: false },
+  { qId: 10, qNum: '⑪', sonNum: 1657, momNum: 200, answer: 8.285, pass: false },
+  { qId: 11, qNum: '⑫', sonNum: 1367, momNum: 250, answer: 5.468, pass: false },
 ];
