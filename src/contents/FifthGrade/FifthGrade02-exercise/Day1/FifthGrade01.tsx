@@ -301,8 +301,8 @@ const FifthGrade01: React.FC = () => {
                 12 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['3'][0]}
-                  onChange={e => handleChange('3', 0, e.target.value)}
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}
@@ -314,8 +314,8 @@ const FifthGrade01: React.FC = () => {
                 12 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['3'][1]}
-                  onChange={e => handleChange('3', 1, e.target.value)}
+                  value={answers['3'][2]}
+                  onChange={e => handleChange('3', 2, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}
@@ -325,8 +325,8 @@ const FifthGrade01: React.FC = () => {
                 12 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['3'][2]}
-                  onChange={e => handleChange('3', 2, e.target.value)}
+                  value={answers['3'][3]}
+                  onChange={e => handleChange('3', 3, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}
@@ -338,8 +338,8 @@ const FifthGrade01: React.FC = () => {
                 12 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['3'][3]}
-                  onChange={e => handleChange('3', 3, e.target.value)}
+                  value={answers['3'][4]}
+                  onChange={e => handleChange('3', 4, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}
@@ -349,8 +349,8 @@ const FifthGrade01: React.FC = () => {
                 12 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['3'][4]}
-                  onChange={e => handleChange('3', 4, e.target.value)}
+                  value={answers['3'][5]}
+                  onChange={e => handleChange('3', 5, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}

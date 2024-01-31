@@ -27,12 +27,12 @@ const FifthGrade02: React.FC = () => {
   const correctAnswers: AnswersType = {
     '1': ['1', '2', '4', '8'],
     '2': ['1', '2', '3', '6'],
-    '3': ['1', '3', '3', '9'],
+    '3': ['1', '3', '9'],
     '4': ['1', '2', '3', '4', '6', '12'],
     '5': ['1', '3', '5', '15'],
     '6': ['1', '2', '3', '6', '9', '18'],
     '7': ['1', '3', '7', '21'],
-    '8': ['1', '5', '5', '25'],
+    '8': ['1', '5', '25'],
   };
   const handleChange = (questionId: string, index: number, value: string) => {
     setAnswers({
@@ -98,7 +98,7 @@ const FifthGrade02: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
         <div className="quiz2111 afwea">
-          <div className="quizCard211 flexCol">
+          {/* <div className="quizCard211 flexCol">
             <div className="flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
                 ①
@@ -171,11 +171,11 @@ const FifthGrade02: React.FC = () => {
                 = 1
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
-                ②
+                ①
                 {showResults && (
                   <div>
                     {isCorrect('2') ? (
@@ -249,7 +249,7 @@ const FifthGrade02: React.FC = () => {
           <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
-                ③
+                ②
                 {showResults && (
                   <div>
                     {isCorrect('3') ? (
@@ -294,9 +294,20 @@ const FifthGrade02: React.FC = () => {
                 />{' '}
                 = 3
               </div>
+              {/* <div className="textleft1231 marginleft24299">
+                9 ÷{' '}
+                <input
+                  disabled={isInputDisabled}
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
+                  className="averageInput"
+                  type="text"
+                />{' '}
+                = 3
+              </div> */}
             </div>
-            <div className=" flexRow fif221221">
-              <div className="textleft1231 marginleft24299">
+            <div className="flexRow fif221221">
+              <div className="awefwa2425 marginleft24299">
                 9 ÷{' '}
                 <input
                   disabled={isInputDisabled}
@@ -305,22 +316,11 @@ const FifthGrade02: React.FC = () => {
                   className="averageInput"
                   type="text"
                 />{' '}
-                = 3
-              </div>
-              <div className="textleft1231 marginleft24299">
-                9 ÷{' '}
-                <input
-                  disabled={isInputDisabled}
-                  value={answers['3'][3]}
-                  onChange={e => handleChange('3', 3, e.target.value)}
-                  className="averageInput"
-                  type="text"
-                />{' '}
                 = 1
               </div>
             </div>
           </div>
-          <div className="quizCard211 flexCol">
+          {/* <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226">
                 ④
@@ -417,8 +417,8 @@ const FifthGrade02: React.FC = () => {
                 = 1
               </div>
             </div>
-          </div>
-          <div className="quizCard211 flexCol">
+          </div> */}
+          {/* <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
                 ⑤
@@ -491,8 +491,8 @@ const FifthGrade02: React.FC = () => {
                 = 1
               </div>
             </div>
-          </div>
-          <div className="quizCard211 flexCol">
+          </div> */}
+          {/* <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226">
                 ⑥
@@ -589,11 +589,11 @@ const FifthGrade02: React.FC = () => {
                 = 1
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
-                ⑦
+                ③
                 {showResults && (
                   <div>
                     {isCorrect('7') ? (
@@ -667,7 +667,7 @@ const FifthGrade02: React.FC = () => {
           <div className="quizCard211 flexCol">
             <div className=" flexRow fif221221">
               <p className="quizNumber1226 quizNumbToi13">
-                ⑧
+                ④
                 {showResults && (
                   <div>
                     {isCorrect('8') ? (
@@ -714,7 +714,7 @@ const FifthGrade02: React.FC = () => {
               </div>
             </div>
             <div className="flexRow fif221221">
-              <div className="textleft1231 marginleft24299">
+              {/* <div className="textleft1231 marginleft24299">
                 25 ÷{' '}
                 <input
                   disabled={isInputDisabled}
@@ -724,13 +724,13 @@ const FifthGrade02: React.FC = () => {
                   type="text"
                 />{' '}
                 = 5
-              </div>
-              <div className="textleft1231 marginleft24299">
+              </div> */}
+              <div className="awefwa2425 marginleft24299">
                 25 ÷{' '}
                 <input
                   disabled={isInputDisabled}
-                  value={answers['8'][3]}
-                  onChange={e => handleChange('8', 3, e.target.value)}
+                  value={answers['8'][2]}
+                  onChange={e => handleChange('8', 2, e.target.value)}
                   className="averageInput"
                   type="text"
                 />{' '}

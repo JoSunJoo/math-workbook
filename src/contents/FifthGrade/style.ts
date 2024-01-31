@@ -58,6 +58,30 @@ const Styled = {
       justify-content: center;
     }
   `,
+  RowWrapBox9: styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    margin-left: 3%;
+    & > div {
+      width: 85%;
+      justify-content: center;
+    }
+  `,
+  RowWrapBox8: styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    margin-left: 0%;
+    & > div {
+      width: 50% 50%;
+      justify-content: center;
+    }
+  `,
   RowBox: styled.div`
     display: flex;
   `,
@@ -760,6 +784,25 @@ const Styled = {
       justify-content: center;
       margin-top: 50px;
     }
+    .quiz136g249 {
+      min-width: 900px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-column-gap: 50px;
+      align-content: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .quiz1794 {
+      min-width: 700px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-content: center;
+      justify-content: start;
+      margin-top: 50px;
+    }
     .quiz9460418 {
       min-width: 700px;
       position: relative;
@@ -969,6 +1012,7 @@ const Styled = {
       position: relative;
       left: -20%;
     }
+
     .wef213 {
       position: relative;
     }
@@ -1041,6 +1085,40 @@ const Styled = {
         margin-top: 5px;
       }
     }
+
+    .quizCard1daafa1 {
+      width: 85%;
+      height: 140px;
+      padding: 23px;
+      font-size: 25px;
+      position: relative;
+      border-radius: 10px;
+      display: flex;
+      margin: 3%;
+      margin-bottom: 8%;
+      font-weight: 600;
+      white-space: nowrap;
+      .margin5px {
+        margin-top: 5px;
+      }
+    }
+    .quizCard1457s1 {
+      width: 85%;
+      height: 140px;
+      padding: 23px;
+      font-size: 25px;
+      position: relative;
+      border-radius: 10px;
+      display: flex;
+      justify-content: start;
+      margin: 3%;
+      margin-bottom: 8%;
+      font-weight: 600;
+      white-space: nowrap;
+      .margin5px {
+        margin-top: 5px;
+      }
+    }
     .justStart322 {
       width: 85%;
       height: 140px;
@@ -1075,6 +1153,11 @@ const Styled = {
       .margin5px {
         margin-top: 5px;
       }
+    }
+    .awefwa2425 {
+      text-align: start;
+      width: 340px;
+      margin-bottom: 10px;
     }
     .quizCard211 {
       width: 370px;
@@ -1154,7 +1237,7 @@ const Styled = {
       margin: 3%;
       margin-bottom: 8%;
       font-weight: 600;
-      background-color: #d0e0ff;
+      background-color: #e2e2e2;
       white-space: nowrap;
       .margin5px {
         margin-top: 5px;
@@ -1218,10 +1301,10 @@ const Styled = {
       margin: 50px 0px 0px 50px;
     }
     .colorNum1 {
-      background-color: #d0e0ff;
+      background-color: #e2e2e2;
     }
     .colorNum2 {
-      background-color: #ddd3ff;
+      background-color: #e2e2e2;
     }
     .quizCard5 {
       width: 92%;
@@ -1234,7 +1317,7 @@ const Styled = {
       margin: 50px 0px;
       font-weight: 600;
       font-size: 25px;
-      background-color: #d0e0ff;
+      background-color: #e2e2e2;
       white-space: nowrap;
     }
     .quiz241Ex {
@@ -1258,7 +1341,10 @@ const Styled = {
       margin-right: 100px;
     }
     .elemet2411 p {
-      margin: 2px 0px;
+      margin: 25px 0px 0px 0px;
+    }
+    .awfe139825982 {
+      margin-left: 7px;
     }
     .quizCard6 {
       width: 92%;
@@ -1271,7 +1357,7 @@ const Styled = {
       margin: 50px 0px;
       font-weight: 600;
       font-size: 25px;
-      background-color: #ddd3ff;
+      background-color: #e2e2e2;
       white-space: nowrap;
     }
     .lineAbSet1 {
@@ -1344,8 +1430,9 @@ const Styled = {
       align-content: center;
     }
     .awefawufiut {
-      margin-left: 8%;
+      margin-left: 7%;
     }
+
     .textRight {
       margin-top: 3%;
       margin-left: 37.5%;
@@ -1418,6 +1505,7 @@ const Styled = {
     }
     .fawef3532 {
       position: relative;
+      margin-left: 10%;
     }
     .marginleft2421 {
       margin-left: 25px;
@@ -1426,6 +1514,7 @@ const Styled = {
       margin-left: 12px;
     }
     .lakwerfj {
+      min-width: 700px;
       margin-top: -30px;
     }
     .lakwerfj3214 {
@@ -1644,7 +1733,10 @@ const Styled = {
         top: 63%;
       }
       .quizLine121455 {
-        right: 43%;
+        right: 42%;
+      }
+      .quizLine1214588 {
+        right: 41%;
       }
       .d-line4:before,
       .d-line4:after {
@@ -1951,7 +2043,7 @@ const Styled = {
       margin-bottom: 70px;
     }
     .quizMargin3 {
-      grid-column-gap: 80px;
+      grid-column-gap: 30px;
     }
     .fontSize25 {
       font-size: 25px;
@@ -2238,7 +2330,6 @@ const Styled = {
       text-align: center;
       outline: none;
       margin: 0px 10px 0px 20px;
-      font-size: 17px;
     }
     .d-line126 {
       width: 0; /* 가로 길이 조절 */
@@ -2945,6 +3036,27 @@ const Styled = {
     }
     input {
       font-weight: 700;
+    }
+    @media screen and (max-width: 1600px) {
+      .quizAllLate {
+        left: -10%;
+      }
+      .awefawufiut {
+        margin-left: -5%;
+      }
+    }
+    @media screen and (max-width: 1450px) {
+      .quizAllLate {
+        left: -5%;
+      }
+    }
+    @media screen and (max-width: 1300px) {
+      .quizAllLate {
+        left: 0%;
+      }
+      .awefawufiut {
+        margin-left: -10%;
+      }
     }
   `,
 };
