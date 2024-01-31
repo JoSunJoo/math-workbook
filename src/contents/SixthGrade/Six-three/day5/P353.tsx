@@ -143,7 +143,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 4,
+    qId: 3,
     qNum: '④',
     pass: false,
     imgSrc: Img4,
@@ -156,7 +156,7 @@ const problems: ProblemProp[] = [
     },
   },
   {
-    qId: 5,
+    qId: 4,
     qNum: '⑤',
     pass: false,
     imgSrc: Img5,
