@@ -29,8 +29,8 @@ export default function P231() {
 
   const checkAnswer = async () => {
     const currentScore = calculateTruePercentage(passArray);
-    if (!isSolved) await sendScoreUtil(currentScore);
-    await postKeyValue({ key: 'quiz231.answer', value: allAnswer });
+    // if (!isSolved) await sendScoreUtil(currentScore);
+    // await postKeyValue({ key: 'quiz231.answer', value: allAnswer });
     setIsSolved(prev => !prev);
   };
 
@@ -145,9 +145,9 @@ const divisionProblems = [
     natureNum: 2,
     sonNum: 6,
     momNum: 25,
-    rSon: 24,
+    rSon: 240,
     rMom: 1000,
-    answer: 2.024,
+    answer: 2.24,
     pass: false,
   },
 ];
