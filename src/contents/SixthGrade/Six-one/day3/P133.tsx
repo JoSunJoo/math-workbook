@@ -48,7 +48,7 @@ export default function P133() {
               key={problem.qNum}
               sx={{
                 display: 'flex',
-                width: '30%',
+                width: '27%',
                 padding: '0 6%',
                 margin: '0.5rem',
               }}
