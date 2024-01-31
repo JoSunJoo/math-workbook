@@ -90,7 +90,7 @@ const divisionProblems = [
   {
     qId: 1,
     qNum: '②',
-    lNature: 3,
+    lNature: 1,
     lMom: 5,
     lSon: 2,
     rSon: 7,

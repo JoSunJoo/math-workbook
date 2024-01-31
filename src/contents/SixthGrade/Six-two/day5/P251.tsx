@@ -78,7 +78,7 @@ export default function P251() {
               key={problem.qNum}
               sx={{
                 display: 'flex',
-                width: '40%',
+                width: 'calc(40% - 0.5rem)',
                 justifyContent: 'center',
                 margin: '0.5rem',
               }}

@@ -77,7 +77,7 @@ export default function C251(props: C251Props) {
     >
       {isSolved && <CorrectChecker isCorrect={isCorrect} />}
       <CustomTypo> {qNum}</CustomTypo>
-      <VisualFraction momNum={momNum} sonNum={sonNum} />
+      <VisualFraction width="3rem" momNum={momNum} sonNum={sonNum} />
       <Box marginX="1rem">
         <img width="20rem" src={arrowRight} alt="chicks" />
       </Box>
