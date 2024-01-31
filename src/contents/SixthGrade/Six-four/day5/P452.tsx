@@ -72,7 +72,7 @@ export default function P452() {
           <Box
             key={problem.qNum}
             sx={{
-              overflowY: 'auto',
+              overflow: 'hidden',
               display: 'flex',
               justifyContent: 'center',
               position: 'absolute',

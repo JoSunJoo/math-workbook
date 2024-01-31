@@ -67,7 +67,6 @@ export default function P421() {
             sx={{
               overflowY: 'auto',
               display: 'flex',
-              justifyContent: 'center',
               padding: '2rem 2rem',
             }}
           >

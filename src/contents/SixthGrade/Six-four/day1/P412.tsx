@@ -62,7 +62,7 @@ export default function P412() {
               overflowY: 'auto',
               display: 'flex',
               margin: '0.5rem',
-              padding: '2rem 1rem',
+              padding: '2rem 2rem',
             }}
           >
             <C412
