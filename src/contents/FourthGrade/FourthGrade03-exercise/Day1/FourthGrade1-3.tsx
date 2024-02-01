@@ -36,7 +36,7 @@ const FourthGrade13Exercise: React.FC = () => {
   });
 
   return (
-    <DayLayout title={Day.title} subTitle={Day.subTitle2}>
+    <DayLayout title={Day.title} subTitle={Day.subTitle3}>
       <Styled.PaddingBox5>
         <Styled.ColGapBox6 gap={4}>
           <Styled.ImgSize8 src={img1} />
@@ -61,13 +61,15 @@ const FourthGrade13Exercise: React.FC = () => {
       </Styled.PaddingBox5>
       <div
         onClick={() => {
-          handleAnswer({
-            type: 1,
-            key,
-            inputValue,
-            answer,
-            setCorrect,
-          });
+          if (confirmType === true) {
+            handleAnswer({
+              type: 1,
+              key,
+              inputValue,
+              answer,
+              setCorrect,
+            });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

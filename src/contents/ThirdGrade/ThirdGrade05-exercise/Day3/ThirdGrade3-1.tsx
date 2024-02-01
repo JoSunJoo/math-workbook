@@ -51,13 +51,15 @@ const ThirdGrade31Exercise = () => {
       </Styled.PaddingBox>
       <div
         onClick={() => {
-          handleAnswer({
-            type: 1,
-            key,
-            inputValue,
-            answer,
-            setCorrect,
-          });
+          if (confirmType) {
+            handleAnswer({
+              type: 1,
+              key,
+              inputValue,
+              answer,
+              setCorrect,
+            });
+          }
           setToggle(!toggle);
           setConfirmType(prev => !prev);
         }}

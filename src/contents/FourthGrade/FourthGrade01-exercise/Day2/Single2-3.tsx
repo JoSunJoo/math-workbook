@@ -43,6 +43,7 @@ const Single23 = (props: QuizProps) => {
           placeholder={value}
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, idx)}
+          value={inputValue[imgId][idx]}
         />
       );
     } else {

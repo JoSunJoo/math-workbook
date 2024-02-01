@@ -91,12 +91,14 @@ const Single22 = (props: Props) => {
                     onChange={e =>
                       handleInput(e.target.value, idxArray[idx][0], 0)
                     }
+                    value={inputValue[idxArray[idx][0]][0]}
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox8
                   onChange={e =>
                     handleInput(e.target.value, idxArray[idx][0], 1)
                   }
+                  value={inputValue[idxArray[idx][0]][1]}
                 />
               </Styled.ColGapBox>
             </Styled.GapRowBox2>
@@ -116,12 +118,14 @@ const Single22 = (props: Props) => {
                     onChange={e =>
                       handleInput(e.target.value, idxArray[idx][1], 0)
                     }
+                    value={inputValue[idxArray[idx][1]][0]}
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox8
                   onChange={e =>
                     handleInput(e.target.value, idxArray[idx][1], 1)
                   }
+                  value={inputValue[idxArray[idx][1]][1]}
                 />
               </Styled.ColGapBox>
             </Styled.GapRowBox2>

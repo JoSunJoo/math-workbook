@@ -55,6 +55,7 @@ const Single42 = (props: QuizProps) => {
                 <Styled.LongInput3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, idx)}
+                  value={inputValue[imgId][idx]}
                 />
               </Styled.ColGapBox>
             </Styled.RowBox16>

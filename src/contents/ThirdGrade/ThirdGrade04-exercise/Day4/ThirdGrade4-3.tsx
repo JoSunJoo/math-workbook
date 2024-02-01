@@ -34,7 +34,7 @@ const ThirdGrade43Exercise = () => {
   return (
     <DayLayout
       title={ThirdGrade4Day4.title}
-      subTitle="몫이 같은 번호를 입력하십시오."
+      subTitle="몫이 같은 번호를 입력하세요."
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={5}>

@@ -222,7 +222,7 @@ export const Data32Quiz = [
   { id: '⑫', type: 1, quiz1: 0.5, quiz2: 0.005 },
 ];
 export const Answer32 = [
-  [5],
+  [6],
   [6],
   [1],
   [4],

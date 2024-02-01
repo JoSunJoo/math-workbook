@@ -45,7 +45,7 @@ const Single41 = (props: Props) => {
             <Styled.LetterSpacing3>{quiz2}</Styled.LetterSpacing3>
           </Styled.DashNumMid2>
           <Styled.DashBoxMidLine2 />
-          <Styled.RowBox5>
+          <Styled.RowBox52>
             <Styled.InputBox3
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, 1)}
@@ -66,7 +66,7 @@ const Single41 = (props: Props) => {
               onChange={e => handleInput(e.target.value, 4)}
               value={inputValue[idx][4]}
             />
-          </Styled.RowBox5>
+          </Styled.RowBox52>
         </Styled.DashNumWrapper>
       </Styled.RightDashBorderWrapper>
     </Styled.DashSingleWrapper>

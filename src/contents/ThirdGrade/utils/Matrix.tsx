@@ -36,6 +36,7 @@ const Matrix = (props: Props) => {
             onChange={e => handleOnchange(idx, e.target.value)}
             defaultValue={placeHolder ? placeHolder[idx] : ''}
             disabled={example}
+            value={inputValue[id][idx]}
             example={example}
           />
         ))}

@@ -6,6 +6,8 @@ export const ThirdGrade1Day1 = {
   title: '자리 나누어 더하기1',
   subTitle:
     '백의 자리, 십의 자리, 일의 자리를 각각 더하는 과정입니다.\n 빈칸에 알맞은 수를 써넣으세요.',
+  subTitle2:
+    '백의 자리와 몇십몇끼리 각각 더하는 과정입니다. \n□에 알맞은 수를 써넣으세요.',
 };
 
 export const ThirdGrade1Day2 = {
@@ -22,7 +24,7 @@ export const ThirdGrade1Day3 = {
 export const ThirdGrade1Day4 = {
   title: '몇백 만들어 더하기',
   subTitle:
-    '몇백에 가까운 수가 있는 경우 그 수를 몇백을 만들고 더하는 과정입니다. 빈칸에 알맞은 수를 써넣으세요.',
+    '몇백에 가까운 수가 있는 경우 그 수를 몇백을 만들고 \n더하는 과정입니다. □에 알맞은 수를 써넣으세요. ',
 };
 
 export const ThirdGrade1Day5 = {
@@ -33,6 +35,7 @@ export const ThirdGrade1Day5 = {
 export const ThirdGrade2Day1 = {
   title: '(몇십)×(몇)',
   subTitle: '덧셈식을 곱셈식으로 나타내고 값을 구하세요.',
+  subTitle2: ' □에 알맞은 수를 써넣으세요.',
 };
 export const ThirdGrade2Day2 = {
   title: '(몇십몇)×(몇)',

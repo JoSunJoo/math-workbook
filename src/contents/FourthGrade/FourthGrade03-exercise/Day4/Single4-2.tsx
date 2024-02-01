@@ -43,6 +43,7 @@ const Single42 = (props: QuizProps) => {
               <Styled.InputBox8
                 disabled={correct === null ? false : true}
                 onChange={e => handleInput(e.target.value, idx2)}
+                value={inputValue[idx][idx2]}
               />
             </Styled.FractUnderLine>
             <Styled.FitBox>{item}</Styled.FitBox>
@@ -58,6 +59,7 @@ const Single42 = (props: QuizProps) => {
             <Styled.InputBox8
               disabled={correct === null ? false : true}
               onChange={e => handleInput(e.target.value, idx2)}
+              value={inputValue[idx][idx2]}
             />
           </Styled.ColGapBox>
         );

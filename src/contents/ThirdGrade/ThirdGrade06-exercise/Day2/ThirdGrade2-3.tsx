@@ -30,7 +30,7 @@ const ThirdGrade23Exercise: React.FC = () => {
   return (
     <DayLayout
       title={ThirdGrade6Day2.title}
-      subTitle={ThirdGrade6Day2.subTitle}
+      subTitle="분수의 크기를 비교하여 작은 것부터 차례로 쓰세요."
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox2 gap={5}>

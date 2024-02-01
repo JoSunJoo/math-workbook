@@ -6,7 +6,7 @@ import Styled from '../../style';
 import ConfirmBtn from '../../utils/ConfirmBtn';
 import { GetData } from '../../utils/getData';
 import { handleAnswer } from '../../utils/handleAnswer';
-import { ThirdGrade1Day1 } from '../../utils/handleTitle';
+import { ThirdGrade1Day4 as Day } from '../../utils/handleTitle';
 import ExampleQuiz from './Example4-1';
 import SingleQuiz from './Single4-1';
 
@@ -27,10 +27,7 @@ const ThirdGrade41Exercise: React.FC = () => {
   });
 
   return (
-    <DayLayout
-      title={ThirdGrade1Day1.title}
-      subTitle={ThirdGrade1Day1.subTitle}
-    >
+    <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox2>
         <Styled.ColGapBox gap={3.75}>
           <Styled.RowWrapBox6>

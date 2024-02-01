@@ -29,7 +29,7 @@ const ThirdGrade11Exercise: React.FC = () => {
   return (
     <DayLayout
       title={ThirdGrade2Day1.title}
-      subTitle={ThirdGrade2Day1.subTitle}
+      subTitle={ThirdGrade2Day1.subTitle2}
     >
       <Styled.PaddingBox>
         <Styled.ColGapBox gap={3}>

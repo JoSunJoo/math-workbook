@@ -75,7 +75,7 @@ export const Data13Quiz = [
   { id: '⑩', quiz1: 183, quiz2: 30 },
   { id: '⑪', quiz1: 461, quiz2: 50 },
   { id: '⑫', quiz1: 268, quiz2: 60 },
-  { id: '⑬', quiz1: 459, quiz2: 60 },
+  { id: '⑬', quiz1: 459, quiz2: 90 },
   { id: '⑭', quiz1: 161, quiz2: 70 },
   { id: '⑮', quiz1: 196, quiz2: 90 },
 ];

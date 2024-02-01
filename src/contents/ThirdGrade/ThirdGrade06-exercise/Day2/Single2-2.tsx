@@ -56,11 +56,13 @@ const Single22 = (props: QuizProps) => {
                   <Styled.InputBox3
                     disabled={correct === null ? false : true}
                     onChange={e => handleInput(e.target.value, (seq - 1) * 2)}
+                    value={inputValue[idx][(seq - 1) * 2]}
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox3
                   disabled={correct === null ? false : true}
                   onChange={e => handleInput(e.target.value, seq * 2 - 1)}
+                  value={inputValue[idx][seq * 2 - 1]}
                 />
               </Styled.ColGapBox>
               ＜

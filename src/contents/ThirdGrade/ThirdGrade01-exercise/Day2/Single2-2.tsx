@@ -45,6 +45,7 @@ const Single22 = (props: DataProps) => {
           <Styled.InputBox2
             disabled={correct === null ? false : true}
             onChange={e => handleInput(e.target.value)}
+            value={inputValue[idx][12]}
           />
         </Styled.InputWrapper2>
       </Styled.ColGapBox>

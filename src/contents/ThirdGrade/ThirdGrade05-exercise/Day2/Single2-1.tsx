@@ -33,6 +33,7 @@ const Single21 = (props: QuizProps) => {
         <Styled.NumBox3
           disabled={correct === null ? false : true}
           onChange={e => handleInput(e.target.value, i)}
+          value={inputValue[idx][i]}
         />
       );
     else
