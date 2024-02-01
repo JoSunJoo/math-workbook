@@ -344,9 +344,9 @@ const FifthGrade02: React.FC = () => {
             ③&nbsp;&nbsp;&nbsp;
           </p>
           <div className="fontSize25">
-            <div className="textCenter">3</div>
+            <div className="textCenter">1</div>
             <div className="divlineCSS1"></div>
-            <div className="textCenter">5</div>
+            <div className="textCenter">7</div>
           </div>
           <div className="margintopbotom5px">=</div>
           <div className="fontSize25">

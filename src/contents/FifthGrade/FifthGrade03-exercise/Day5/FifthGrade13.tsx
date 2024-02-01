@@ -119,7 +119,9 @@ const FifthGrade13: React.FC = () => {
       <div className="exampleBox312">
         <div className="fontSize17">
           분모가 다른 두 분수의 크기를 비교할 때에는 통분하여 분모를 같게 한
-          다음 분자의 크기를 비교합니다.
+          다음
+          <br />
+          분자의 크기를 비교합니다.
         </div>
         <div></div>
         <div className="flexRow">

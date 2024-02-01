@@ -772,14 +772,14 @@ const FifthGrade05: React.FC = () => {
                   <input
                     disabled={isInputDisabled}
                     value={answers['12'][0]}
-                    onChange={e => handleChange('1', 0, e.target.value)}
+                    onChange={e => handleChange('12', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
                     disabled={isInputDisabled}
                     value={answers['12'][1]}
-                    onChange={e => handleChange('1', 1, e.target.value)}
+                    onChange={e => handleChange('12', 1, e.target.value)}
                     className="averageInput"
                   />
                 </div>

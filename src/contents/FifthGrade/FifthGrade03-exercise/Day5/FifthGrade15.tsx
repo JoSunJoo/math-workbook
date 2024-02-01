@@ -113,8 +113,9 @@ const FifthGrade15: React.FC = () => {
       <div className="exampleBox312">
         <div className="fontSize17">
           두 분수의 크기만 비교할 경우에는 분모의 곱을 공통분모로 통분한다고
-          생각하고, 분자의 크기만 비 교하면 분수의 크기를 쉽게 비교할 수
-          있습니다.
+          생각하고,
+          <br />
+          분자의 크기만 비교하면 분수의 크기를 쉽게 비교할 수 있습니다.
         </div>
         <div></div>
         <div className="flexRow">

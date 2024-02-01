@@ -102,7 +102,7 @@ const FifthGrade11: React.FC = () => {
   }
   return (
     <Styled.OneToNine className="sectionSize">
-      <div className="quiz1 quiz3429">
+      <div className="quiz3429">
         <div className="asfw flexRow fontSize20 wef213">
           {' '}
           {showResults && (

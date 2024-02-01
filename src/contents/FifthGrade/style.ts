@@ -813,13 +813,16 @@ const Styled = {
       margin-top: 50px;
     }
     .quiz31231 {
-      min-width: 500px;
+      min-width: 570px;
       position: relative;
       display: grid;
       grid-template-columns: 50% 50%;
       align-content: center;
       justify-content: start;
       margin-top: 50px;
+    }
+    .fakwueihiu {
+      width: 20px;
     }
     .quiz33131 {
       min-width: 700px;
@@ -960,6 +963,11 @@ const Styled = {
     .quiz3429 {
       grid-template-columns: 35% 35%;
       min-width: 1200px;
+      position: relative;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      margin-top: 50px;
     }
     .quiz2 {
       position: relative;
@@ -1536,7 +1544,7 @@ const Styled = {
     .borderColor233 {
       width: 72px;
       height: 42px;
-      border: 1px solid #e2e2e2;
+      border: 1px solid gray;
       border-radius: 10px;
       font-size: 25px;
       text-align: center;
@@ -2150,7 +2158,7 @@ const Styled = {
     .averageInput331 {
       width: 32px;
       height: 32px;
-      font-size: 20px;
+      font-size: 15px;
       border-radius: 4px;
       border: 1px solid gray;
       text-align: center;
@@ -2294,7 +2302,7 @@ const Styled = {
       height: 42px;
       font-size: 25px;
       border-radius: 5px;
-      border: 1px solid #e2e2e2;
+      border: 1px solid gray;
       text-align: center;
       outline: none;
     }
@@ -3048,6 +3056,9 @@ const Styled = {
     @media screen and (max-width: 1450px) {
       .quizAllLate {
         left: -5%;
+      }
+      .quiz3429 {
+        margin-left: -10%;
       }
     }
     @media screen and (max-width: 1300px) {

@@ -353,7 +353,7 @@ const FifthGrade09: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <p>④ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <p>④ &nbsp;&nbsp;&nbsp;</p>
           <div>(</div>
           <div className="fontSize20 marginLeft10px">
             <div className="textCenter">2</div>

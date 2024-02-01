@@ -149,13 +149,8 @@ const FifthGrade04: React.FC = () => {
           </div>
         </div>
         <div className="flexRow">
-          <div className="fontSize17 marginRighttic">
-            <div className="textCenter">2</div>
-            <div className="divlineCSS1"></div>
-            <div className="textCenter">3</div>
-          </div>
           <div className="fontSize17">
-            와 같이 분모와 분자의 공약수가 1뿐이어서 더 이상 약분할 수 없는
+            다음과 같이 분모와 분자의 공약수가 1뿐이어서 더 이상 약분할 수 없는
             분수를 기약분수라고 합니다.
           </div>
         </div>

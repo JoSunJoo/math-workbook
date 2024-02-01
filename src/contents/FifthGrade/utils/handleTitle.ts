@@ -172,9 +172,9 @@ export const FifthGrade2Day53 = {
   subTitle: '세 수 중에서 약수와 배수의 관계가 아닌 수를 찾으세요.',
 };
 export const FifthGrade3Day11 = {
-  title: '약분과 통분',
+  title: '크기가 같은 분수',
   subTitle:
-    '전체에서 색칠된 부분을 분수로 나타낸 것입니다. 빈칸에 알맞은 수를 써넣으세요.',
+    '전체에서 색칠된 부분을 분수로 나타낸 것입니다.\n빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day12 = {
   title: '약분과 통분',
@@ -182,14 +182,14 @@ export const FifthGrade3Day12 = {
 };
 export const FifthGrade3Day13 = {
   title: '약분과 통분',
-  subTitle: '빈칸에 알맞은 수를 써넣으세요.',
+  subTitle: '다음 분수의 기약 분수를 써넣으세요',
 };
 export const FifthGrade3Day21 = {
-  title: '분모가 다른 진분수의 덧셈과 뺄셈',
+  title: '약분',
   subTitle: '기약분수의 갯수를 적으세요.',
 };
 export const FifthGrade3Day22 = {
-  title: '분모가 다른 진분수의 덧셈과 뺄셈',
+  title: '다음 분수의 기약 분수를 써넣으세요',
   subTitle: '빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day23 = {
@@ -197,7 +197,7 @@ export const FifthGrade3Day23 = {
   subTitle: '빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day31 = {
-  title: '도전! 계산왕',
+  title: '통분',
   subTitle: '두 분수를 통분할 때, 빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day32 = {
@@ -222,16 +222,15 @@ export const FifthGrade3Day43 = {
 };
 export const FifthGrade3Day51 = {
   title: '분수의 크기 비교',
-  subTitle:
-    '전체에서 색칠된 부분을 분수로 나타낸 것입니다. 빈칸에 알맞은 수를 써넣으세요.',
+  subTitle: '두 분수의 크기를 비교하여 빈칸 안에 >, =, < 를 알맞게 써넣으세요',
 };
 export const FifthGrade3Day52 = {
   title: '분수의 크기 비교',
-  subTitle: '빈칸에 알맞은 수를 써넣으세요.',
+  subTitle: '두 분수의 크기를 비교하여 빈칸 안에 >, =, < 를 알맞게 써넣으세요.',
 };
 export const FifthGrade3Day53 = {
   title: '분수의 크기 비교',
-  subTitle: '빈칸에 알맞은 수를 써넣으세요.',
+  subTitle: '두 분수의 크기를 비교하여 빈칸 안에 >, =, < 를 알맞게 써넣으세요.',
 };
 export const FifthGrade4Day11 = {
   title: '분수의 곱셈의 이해',

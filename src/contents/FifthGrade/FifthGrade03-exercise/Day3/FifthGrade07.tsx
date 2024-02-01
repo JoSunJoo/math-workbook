@@ -291,7 +291,7 @@ const FifthGrade07: React.FC = () => {
               className="averageInput331"
             />
             <div className="divlineCSS7"></div>
-            <div className="textCenter">18</div>
+            <div className="textCenter">24</div>
           </div>
           <div className="commaHeight">,</div>
           <div className="fontSize20 marginRighttic">
@@ -303,7 +303,7 @@ const FifthGrade07: React.FC = () => {
               className="averageInput331"
             />
             <div className="divlineCSS7"></div>
-            <div className="textCenter">18</div>
+            <div className="textCenter">24</div>
           </div>
           <div>)&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </div>
