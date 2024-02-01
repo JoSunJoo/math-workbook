@@ -122,9 +122,9 @@ const FifthGrade09: React.FC = () => {
   }
   return (
     <Styled.OneToNine className="sectionSize">
-      <div className="quizRow3case fontSize25">
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>① &nbsp;&nbsp;</p>
+      <div className="quizRow3case wafu247234y fontSize25">
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">① &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('1') ? (
@@ -177,8 +177,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>② &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">② &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('2') ? (
@@ -231,8 +231,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>③ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">③ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('3') ? (
@@ -285,8 +285,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>④ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">④ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('4') ? (
@@ -339,8 +339,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑤ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑤ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('5') ? (
@@ -393,8 +393,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑥ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑥ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('6') ? (
@@ -447,8 +447,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑦ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp a2a39892">
+          <p className="afwoawefoij">⑦ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('7') ? (
@@ -486,8 +486,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑧ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑧ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('8') ? (
@@ -540,8 +540,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑨ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑨ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('9') ? (
@@ -594,8 +594,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑩ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑩ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('10') ? (
@@ -648,8 +648,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑪ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑪ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('11') ? (
@@ -702,8 +702,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑫ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑫ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('12') ? (
@@ -756,8 +756,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑬ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑬ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('13') ? (
@@ -810,8 +810,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑭ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑭ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('14') ? (
@@ -864,8 +864,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑮ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑮ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('15') ? (
@@ -918,8 +918,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑯ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑯ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('16') ? (
@@ -972,8 +972,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑰ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑰ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('17') ? (
@@ -1026,8 +1026,8 @@ const FifthGrade09: React.FC = () => {
             />
           </div>
         </div>{' '}
-        <div className="afwe3513 flexRow awefaweTOp">
-          <p>⑱ &nbsp;&nbsp;</p>
+        <div className="afwe3513 flexRow awefaweTOp y2429y8">
+          <p className="afwoawefoij">⑱ &nbsp;&nbsp;</p>
           {showResults && (
             <div>
               {isCorrect('18') ? (

@@ -9,9 +9,9 @@ const FifthGrade11Exercise: React.FC = () => {
       title={FifthGrade4Day51.title}
       subTitle={FifthGrade4Day51.subTitle}
     >
-      <Styled.RowWrapBox10>
+      <Styled.RowWrapBox8>
         <FifthGrade13 />
-      </Styled.RowWrapBox10>
+      </Styled.RowWrapBox8>
     </DayLayout>
   );
 };

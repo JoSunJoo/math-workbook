@@ -148,7 +148,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">4</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -205,7 +205,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -262,7 +262,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">3</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -318,7 +318,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">3</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -375,7 +375,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -432,7 +432,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <div className="fontSize20">
             <input
               disabled={isInputDisabled}
@@ -492,7 +492,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">3</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['7'][0]}
@@ -557,7 +557,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['8'][0]}
@@ -624,7 +624,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['9'][0]}
@@ -692,7 +692,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">4</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['10'][0]}
@@ -760,7 +760,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">4</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['11'][0]}
@@ -828,7 +828,7 @@ const FifthGrade03: React.FC = () => {
             <div className="divlineCSS1"></div>
             <div className="textCenter">6</div>
           </div>
-          <img className="allowRight marginlR10px" src={fifthimg} alt="" />
+          <div className="textCenter marginlR10px">=</div>
           <input
             disabled={isInputDisabled}
             value={answers['12'][0]}

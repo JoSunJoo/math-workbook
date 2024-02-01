@@ -129,7 +129,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">7</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">9</div>
@@ -137,15 +137,15 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">3</div>
               </div>
             </div>
-            <div className="eaf4517 flexRow">
+            <div className="eaf451714 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">3</div>
@@ -154,7 +154,7 @@ const FifthGrade14: React.FC = () => {
             <img className="aweijaow" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['1'][0]}
@@ -200,7 +200,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">9</div>
                 <div className="divlineCSS7"></div>
                 <div className="textCenter">11</div>
@@ -208,13 +208,13 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">3</div>
               </div>
             </div>
             <div className="eaf4517 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">11</div>
                 <div className="divlineCSS7"></div>
                 <div className="textCenter">12</div>
@@ -231,7 +231,7 @@ const FifthGrade14: React.FC = () => {
                 className="averageInput marginRight239"
               />
 
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['2'][1]}
@@ -279,7 +279,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">7</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">8</div>
@@ -287,15 +287,15 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">7</div>
               </div>
             </div>
-            <div className="eaf4517 flexRow">
+            <div className="eaf451789 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">4</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">5</div>
@@ -304,7 +304,7 @@ const FifthGrade14: React.FC = () => {
             <img className="aweijaow" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['3'][0]}
@@ -352,7 +352,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">1</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">2</div>
@@ -360,15 +360,15 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">4</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">9</div>
               </div>
             </div>
-            <div className="eaf4517 flexRow">
+            <div className="eaf4517149 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">6</div>
               </div>
             </div>
@@ -383,7 +383,7 @@ const FifthGrade14: React.FC = () => {
                 className="averageInput marginRight239"
               />
 
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['4'][1]}
@@ -431,7 +431,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">9</div>
@@ -439,15 +439,15 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">3</div>
               </div>
             </div>
-            <div className="eaf4517 flexRow">
+            <div className="eaf451714 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">9</div>
                 <div className="divlineCSS7"></div>
                 <div className="textCenter">10</div>
@@ -456,7 +456,7 @@ const FifthGrade14: React.FC = () => {
             <img className="aweijaow" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['5'][0]}
@@ -504,7 +504,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">2</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">3</div>
@@ -512,15 +512,15 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">1</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">4</div>
               </div>
             </div>
-            <div className="eaf4517 flexRow">
+            <div className="eaf451714 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">5</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">6</div>
@@ -529,7 +529,7 @@ const FifthGrade14: React.FC = () => {
             <img className="aweijaow" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['6'][0]}
@@ -577,7 +577,7 @@ const FifthGrade14: React.FC = () => {
             )}{' '}
             <div className="eaf4515">
               {' '}
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">3</div>
                 <div className="divlineCSS1"></div>
                 <div className="textCenter">4</div>
@@ -585,13 +585,13 @@ const FifthGrade14: React.FC = () => {
             </div>
             <div className="eaf4516 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">5</div>
               </div>
             </div>
             <div className="eaf4517 flexRow">
               <div className="marginlR10px">×</div>
-              <div className="quiz121Ex">
+              <div className="quiz1546">
                 <div className="textCenter">1</div>
                 <div className="divlineCSS7"></div>
                 <div className="textCenter">10</div>
@@ -600,7 +600,7 @@ const FifthGrade14: React.FC = () => {
             <img className="aweijaow" src={fifthimg1} alt="" />
             <div className="flexRow marginLeft3121">
               <div className="marginlR10px">=</div>
-              <div className="quiz121Ex flexCol">
+              <div className="quiz1546 flexCol">
                 <input
                   disabled={isInputDisabled}
                   value={answers['7'][0]}

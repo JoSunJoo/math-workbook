@@ -1,5 +1,4 @@
 import DayLayout from '../../Layout/Day2';
-import Styled from '../../style';
 import { FifthGrade1Day2, FifthGrade1Day3 } from '../../utils/handleTitle';
 import FifthGrade06 from './FifthGrade06';
 

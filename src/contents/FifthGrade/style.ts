@@ -850,6 +850,12 @@ const Styled = {
     .textCenter {
       text-align: center;
     }
+    .awe3250 {
+      width: 25px;
+    }
+    .wke {
+      width: 30px;
+    }
     .marginZero {
       margin: 0;
     }
@@ -875,6 +881,9 @@ const Styled = {
       align-content: center;
       justify-content: center;
       margin-top: 50px;
+    }
+    .wafu247234y {
+      min-width: 900px;
     }
     .afwef515 {
       grid-row-gap: 50px;
@@ -1572,6 +1581,12 @@ const Styled = {
       margin-top: 10px;
       margin-left: 140px;
     }
+    .y2429y8 {
+      width: 230px;
+    }
+    .a2a39892 {
+      width: 190px;
+    }
     .awefaweTOp {
       margin-top: 50px;
     }
@@ -1606,6 +1621,12 @@ const Styled = {
     .quiz121Ex {
       position: relative;
       width: 200px;
+    }
+    .quiz1546 {
+      position: relative;
+    }
+    .quiz154999 {
+      width: 270px;
     }
     .d-line {
       width: 0; /* 가로 길이 조절 */
@@ -2155,6 +2176,9 @@ const Styled = {
       text-align: center;
       outline: none;
     }
+    .aw12323 {
+      font-size: 20px;
+    }
     .averageInput331 {
       width: 32px;
       height: 32px;
@@ -2238,7 +2262,7 @@ const Styled = {
       padding: 15px;
     }
     .imgSize311777 {
-      width: 70%;
+      width: 500px;
       padding: 15px;
     }
     .imgawer {
@@ -2760,11 +2784,31 @@ const Styled = {
     }
     .eaf4516 {
       position: absolute;
+      left: 125px;
+    }
+    .eaf4517777 {
+      position: absolute;
+      left: 130px;
+    }
+    .eaf458886 {
+      position: absolute;
       left: 130px;
     }
     .eaf4517 {
       position: absolute;
+      left: 318px;
+    }
+    .eaf451789 {
+      position: absolute;
+      left: 323px;
+    }
+    .eaf451714 {
+      position: absolute;
       left: 325px;
+    }
+    .eaf4517149 {
+      position: absolute;
+      left: 334px;
     }
     .answerImg1 {
       position: absolute;
@@ -2870,6 +2914,10 @@ const Styled = {
     }
     .afwe3513 {
       position: relative;
+    }
+    .afwoawefoij {
+      margin-top: 60px;
+      margin-right: 10px;
     }
     .answerImg46 {
       position: absolute;
@@ -3050,6 +3098,9 @@ const Styled = {
         left: -10%;
       }
       .awefawufiut {
+        margin-left: -5%;
+      }
+      .wafu247234y {
         margin-left: -5%;
       }
     }

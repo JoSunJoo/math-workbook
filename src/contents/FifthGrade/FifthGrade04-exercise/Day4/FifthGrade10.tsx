@@ -16,20 +16,20 @@ const FifthGrade10: React.FC = () => {
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [type, setType] = useState(true);
   const [answers, setAnswers] = useState<AnswersType>({
-    '1': ['', ''],
-    '2': ['', ''],
-    '3': ['', ''],
-    '4': ['', ''],
-    '5': ['', ''],
-    '6': ['', ''],
+    '1': ['', '', '', '', '', '', '', ''],
+    '2': ['', '', '', '', '', '', '', ''],
+    '3': ['', '', '', '', '', '', '', ''],
+    '4': ['', '', '', '', '', '', '', ''],
+    '5': ['', '', '', '', '', '', '', ''],
+    '6': ['', '', '', '', '', '', '', ''],
   });
   const correctAnswers: AnswersType = {
-    '1': ['2', '5'],
-    '2': ['1', '14'],
-    '3': ['15', '28'],
-    '4': ['27', '104'],
-    '5': ['1', '7'],
-    '6': ['3', '14'],
+    '1': ['1', '4', '1', '1', '5', '2', '2', '5'],
+    '2': ['4', '1', '1', '1', '2', '7', '1', '14'],
+    '3': ['3', '1', '5', '2', '7', '2', '15', '28'],
+    '4': ['9', '1', '3', '4', '2', '13', '27', '104'],
+    '5': ['1', '1', '1', '7', '1', '1', '1', '7'],
+    '6': ['1', '3', '1', '7', '2', '1', '3', '14'],
   };
   const handleChange = (questionId: string, index: number, value: string) => {
     setAnswers({
@@ -102,7 +102,7 @@ const FifthGrade10: React.FC = () => {
         <div className="fontSize17">
           세 분수의 곱셈은 여러 번 약분을 할 수 있는 경우가 있습니다.
         </div>
-        <div className="quiz121Ex justifyCenter">
+        <div className="quiz1546 justifyCenter">
           <img className="imgSize3111" src={fifthimg2} alt="" />
         </div>
         <div className="flexRow">
@@ -146,19 +146,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">5</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">7</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">28</div>
               <div className="divlineCSS7"></div>
               <div className="textCenter">15</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">3</div>
               <div className="divlineCSS7"></div>
               <div className="textCenter">10</div>
@@ -170,19 +170,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][0]}
+                  onChange={e => handleChange('1', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][1]}
+                  onChange={e => handleChange('1', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][2]}
+                  onChange={e => handleChange('1', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -191,19 +197,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][3]}
+                  onChange={e => handleChange('1', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][4]}
+                  onChange={e => handleChange('1', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['1'][5]}
+                  onChange={e => handleChange('1', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -211,18 +223,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['1'][0]}
-                onChange={e => handleChange('1', 0, e.target.value)}
+                value={answers['1'][6]}
+                onChange={e => handleChange('1', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['1'][1]}
-                onChange={e => handleChange('1', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['1'][7]}
+                onChange={e => handleChange('1', 7, e.target.value)}
               />
             </div>
           </div>
@@ -252,19 +264,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">3</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">4</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">1</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">6</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">4</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">7</div>
@@ -276,19 +288,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][0]}
+                  onChange={e => handleChange('2', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][1]}
+                  onChange={e => handleChange('2', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][2]}
+                  onChange={e => handleChange('2', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -297,19 +315,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][3]}
+                  onChange={e => handleChange('2', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][4]}
+                  onChange={e => handleChange('2', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['2'][5]}
+                  onChange={e => handleChange('2', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -317,18 +341,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['2'][0]}
-                onChange={e => handleChange('2', 0, e.target.value)}
+                value={answers['2'][6]}
+                onChange={e => handleChange('2', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['2'][1]}
-                onChange={e => handleChange('2', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['2'][7]}
+                onChange={e => handleChange('2', 7, e.target.value)}
               />
             </div>
           </div>
@@ -358,19 +382,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">9</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">8</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">4</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">7</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">5</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">6</div>
@@ -382,19 +406,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][0]}
+                  onChange={e => handleChange('3', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][1]}
+                  onChange={e => handleChange('3', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][2]}
+                  onChange={e => handleChange('3', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -403,19 +433,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][3]}
+                  onChange={e => handleChange('3', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][4]}
+                  onChange={e => handleChange('3', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['3'][5]}
+                  onChange={e => handleChange('3', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -423,18 +459,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['3'][0]}
-                onChange={e => handleChange('3', 0, e.target.value)}
+                value={answers['3'][6]}
+                onChange={e => handleChange('3', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['3'][1]}
-                onChange={e => handleChange('3', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['3'][7]}
+                onChange={e => handleChange('3', 7, e.target.value)}
               />
             </div>
           </div>
@@ -464,19 +500,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">9</div>
               <div className="divlineCSS7"></div>
               <div className="textCenter">16</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">1</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">2</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">12</div>
               <div className="divlineCSS7"></div>
               <div className="textCenter">13</div>
@@ -488,19 +524,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][0]}
+                  onChange={e => handleChange('4', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][1]}
+                  onChange={e => handleChange('4', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][2]}
+                  onChange={e => handleChange('4', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -509,19 +551,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][3]}
+                  onChange={e => handleChange('4', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][4]}
+                  onChange={e => handleChange('4', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['4'][5]}
+                  onChange={e => handleChange('4', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -529,18 +577,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['4'][0]}
-                onChange={e => handleChange('4', 0, e.target.value)}
+                value={answers['4'][6]}
+                onChange={e => handleChange('4', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['4'][1]}
-                onChange={e => handleChange('4', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['4'][7]}
+                onChange={e => handleChange('4', 7, e.target.value)}
               />
             </div>
           </div>
@@ -570,19 +618,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">2</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">7</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">5</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">6</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">3</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">5</div>
@@ -594,19 +642,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][0]}
+                  onChange={e => handleChange('5', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][1]}
+                  onChange={e => handleChange('5', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][2]}
+                  onChange={e => handleChange('5', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -615,19 +669,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][3]}
+                  onChange={e => handleChange('5', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][4]}
+                  onChange={e => handleChange('5', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['5'][5]}
+                  onChange={e => handleChange('5', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -635,18 +695,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['5'][0]}
-                onChange={e => handleChange('5', 0, e.target.value)}
+                value={answers['5'][6]}
+                onChange={e => handleChange('5', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['5'][1]}
-                onChange={e => handleChange('5', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['5'][7]}
+                onChange={e => handleChange('5', 7, e.target.value)}
               />
             </div>
           </div>
@@ -676,19 +736,19 @@ const FifthGrade10: React.FC = () => {
                 )}
               </div>
             )}{' '}
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">6</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">7</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">3</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">4</div>
             </div>
             <div className="marginlR10px">×</div>
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">1</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">3</div>
@@ -700,19 +760,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][0]}
+                  onChange={e => handleChange('6', 0, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][1]}
+                  onChange={e => handleChange('6', 1, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][2]}
+                  onChange={e => handleChange('6', 2, e.target.value)}
                 />
               </div>
               <div className="divlineCSS16"></div>
@@ -721,19 +787,25 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][3]}
+                  onChange={e => handleChange('6', 3, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][4]}
+                  onChange={e => handleChange('6', 4, e.target.value)}
                 />
                 <div className="awkfaui">×</div>
                 <input
                   disabled={isInputDisabled}
                   type="text"
-                  className="averageInput"
+                  className="averageInput aw12323"
+                  value={answers['6'][5]}
+                  onChange={e => handleChange('6', 5, e.target.value)}
                 />
               </div>{' '}
             </div>
@@ -741,18 +813,18 @@ const FifthGrade10: React.FC = () => {
             <div>
               <input
                 disabled={isInputDisabled}
-                value={answers['6'][0]}
-                onChange={e => handleChange('6', 0, e.target.value)}
+                value={answers['6'][6]}
+                onChange={e => handleChange('6', 6, e.target.value)}
                 type="text"
-                className="averageInput"
+                className="averageInput aw12323"
               />
               <div className="divlineCSS15"></div>
               <input
                 disabled={isInputDisabled}
                 type="text"
-                className="averageInput"
-                value={answers['6'][1]}
-                onChange={e => handleChange('6', 1, e.target.value)}
+                className="averageInput aw12323"
+                value={answers['6'][7]}
+                onChange={e => handleChange('6', 7, e.target.value)}
               />
             </div>
           </div>

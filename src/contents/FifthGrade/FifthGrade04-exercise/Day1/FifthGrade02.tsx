@@ -20,8 +20,8 @@ const FifthGrade02: React.FC = () => {
     '2': ['', '', ''],
   });
   const correctAnswers: AnswersType = {
-    '1': ['3', '11', '15'],
-    '2': ['1', '5', '9'],
+    '1': ['3', '1', '3'],
+    '2': ['1', '13', '15'],
   };
   const handleChange = (questionId: string, index: number, value: string) => {
     setAnswers({

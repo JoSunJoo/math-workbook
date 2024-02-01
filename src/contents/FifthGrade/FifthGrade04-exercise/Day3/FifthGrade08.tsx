@@ -111,7 +111,7 @@ const FifthGrade08: React.FC = () => {
           자연수는 분모가 1인 분수로 생각하여 분모와 바로 약분한 후 분자끼리,
           분모끼리 곱합니다
         </div>
-        <div className="quiz121Ex justifyCenter">
+        <div className="quiz1546 justifyCenter">
           <img className="imgSize3111" src={fifthimg2} alt="" />
         </div>
       </div>
@@ -135,11 +135,11 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">2</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">7</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">8</div>
@@ -189,13 +189,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">2</div>
             <div className="divlineCSS7"></div>
             <div className="textCenter">15</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">3</div>
           </div>
           <div className="marginlR10px">=</div>
@@ -236,13 +236,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">1</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">4</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">2</div>
           </div>
           <div className="marginlR10px">=</div>
@@ -283,11 +283,11 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">10</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">2</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">5</div>
@@ -322,13 +322,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">2</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">3</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">12</div>
           </div>
           <div className="marginlR10px">=</div>
@@ -361,13 +361,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">5</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">8</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">10</div>
           </div>
           <div className="marginlR10px">=</div>{' '}
@@ -415,11 +415,11 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">21</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">3</div>
             <div className="divlineCSS1"></div>
             <div className="textCenter">7</div>
@@ -454,13 +454,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">8</div>
             <div className="divlineCSS7"></div>
             <div className="textCenter">15</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">6</div>
           </div>
           <div className="marginlR10px">=</div>{' '}
@@ -508,11 +508,11 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">30</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">7</div>
             <div className="divlineCSS7"></div>
             <div className="textCenter">36</div>
@@ -562,13 +562,13 @@ const FifthGrade08: React.FC = () => {
               )}
             </div>
           )}{' '}
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">1</div>
             <div className="divlineCSS7"></div>
             <div className="textCenter">48</div>
           </div>
           <div className="marginlR10px">×</div>
-          <div className="quiz121Ex">
+          <div className="quiz1546">
             <div className="textCenter">56</div>
           </div>
           <div className="marginlR10px">=</div>{' '}

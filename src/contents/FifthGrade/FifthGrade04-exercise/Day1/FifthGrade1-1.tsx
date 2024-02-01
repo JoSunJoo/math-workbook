@@ -1,17 +1,17 @@
 import DayLayout from '../../Layout/Day1';
 import Styled from '../../style';
-import { FifthGrade3Day11 } from '../../utils/handleTitle';
+import { FifthGrade4Day11 } from '../../utils/handleTitle';
 import FifthGrade01 from './FifthGrade01';
 
 const FifthGrade11Exercise: React.FC = () => {
   return (
     <DayLayout
-      title={FifthGrade3Day11.title}
-      subTitle={FifthGrade3Day11.subTitle}
+      title={FifthGrade4Day11.title}
+      subTitle={FifthGrade4Day11.subTitle}
     >
-      <Styled.RowWrapBox10>
+      <Styled.RowWrapBox8>
         <FifthGrade01 />
-      </Styled.RowWrapBox10>
+      </Styled.RowWrapBox8>
     </DayLayout>
   );
 };

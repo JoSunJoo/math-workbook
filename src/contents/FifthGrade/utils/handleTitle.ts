@@ -283,7 +283,7 @@ export const FifthGrade4Day43 = {
 export const FifthGrade4Day51 = {
   title: '연산 퍼즐',
   subTitle:
-    '주어진 숫자 카드를 빈칸에 넣어 곱이 가장 작은 곱셈식을 만들고 곱을 구하세요.',
+    '주어진 숫자 카드를 빈칸에 넣어 곱이 가장 작은 곱셈식을 만들고\n곱을 구하세요.',
 };
 export const FifthGrade4Day52 = {
   title: '연산 퍼즐',

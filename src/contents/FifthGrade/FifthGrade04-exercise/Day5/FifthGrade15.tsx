@@ -118,14 +118,14 @@ const FifthGrade15: React.FC = () => {
               </div>
             )}{' '}
             ① &nbsp;&nbsp;어떤 정사각형의 가로를&nbsp;&nbsp;
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">1</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">6</div>
             </div>
             &nbsp;&nbsp;만큼 줄이고, 세로를 3배로 늘려 직사각형을 만들었습니다.
           </div>
-          <div> 이 직 사각형의 넓이는 처음 정사각형의 몇 배일까요?</div>
+          <div> 이 직사각형의 넓이는 처음 정사각형의 몇 배일까요?</div>
           <div className="flexRow">
             정답 : &nbsp;&nbsp;
             <input
@@ -179,13 +179,13 @@ const FifthGrade15: React.FC = () => {
               </div>
             )}{' '}
             ② &nbsp;&nbsp; 정호네 반 학생의
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">1</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">2</div>
             </div>
             &nbsp;&nbsp;은 남학생입니다. 남학생 중의&nbsp;&nbsp;
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">2</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">3</div>
@@ -241,7 +241,7 @@ const FifthGrade15: React.FC = () => {
             )}{' '}
             ③ &nbsp;&nbsp;바닥에 떨어뜨리면 튀어 오르는 높이가 떨어진
             높이의&nbsp;&nbsp;
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">4</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">5</div>
@@ -304,7 +304,7 @@ const FifthGrade15: React.FC = () => {
               </div>
             )}{' '}
             ④ &nbsp;&nbsp; 한 변의 길이가&nbsp;
-            <div className="quiz121Ex">
+            <div className="quiz1546">
               <div className="textCenter">8</div>
               <div className="divlineCSS1"></div>
               <div className="textCenter">5</div>
