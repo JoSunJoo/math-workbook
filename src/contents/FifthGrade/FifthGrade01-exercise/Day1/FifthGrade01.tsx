@@ -34,6 +34,7 @@ const FifthGrade01: React.FC = () => {
     '7': ['19', '3', '14'],
     '8': ['43', '17', '26'],
   };
+
   const handleChange = (questionId: string, index: number, value: string) => {
     setAnswers({
       ...answers,
