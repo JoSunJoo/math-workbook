@@ -182,13 +182,8 @@ export default function C151(props: C151Props) {
           {qStringEnd}
         </CustomTypo>
       </Box>
-      <Box
-        display="flex"
-        width="100%"
-        alignItems="center"
-        justifyContent="space-around"
-      >
-        <Box display="flex" alignItems="center">
+      <Box display="flex" width="100%" justifyContent="space-between">
+        <Box display="flex" alignItems="center" marginLeft="10%">
           <CustomTypo paddingX="1rem">식: </CustomTypo>
           {equationNature ? (
             <BigDivisionInput
@@ -219,7 +214,12 @@ export default function C151(props: C151Props) {
             disabled={isSolved}
           />
         </Box>
-        <Box display="flex" alignItems="center">
+        <Box
+          display="flex"
+          alignItems="center"
+          marginRight="12%"
+          marginY="1rem"
+        >
           <CustomTypo paddingX="1rem">답: </CustomTypo>
           <DivisionInput
             width="3.5rem"
