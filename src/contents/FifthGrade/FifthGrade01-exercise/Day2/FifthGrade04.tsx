@@ -118,7 +118,8 @@ const FifthGrade04: React.FC = () => {
                 </div>
                 <div className="quiz121Ex">
                   <div className="flexrow">
-                    17 - (5 + 6) = <div className="marginLeft9">6</div>
+                    17 - <div className="wewerwer117">(5 + 6) = </div>
+                    <div className="marginLeft9">6</div>
                   </div>
                   <div className="marginLeft10">11</div>
                   <div className="marginLeft11">6</div>

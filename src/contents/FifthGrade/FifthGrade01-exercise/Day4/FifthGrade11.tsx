@@ -270,8 +270,8 @@ const FifthGrade11: React.FC = () => {
               42 - 8 + 29 ={' '}
               <input
                 disabled={isInputDisabled}
-                value={answers['4'][1]}
-                onChange={e => handleChange('4', 1, e.target.value)}
+                value={answers['4'][0]}
+                onChange={e => handleChange('4', 0, e.target.value)}
                 className="inputSize1"
                 type="text"
               />
@@ -406,7 +406,7 @@ const FifthGrade11: React.FC = () => {
               )}
             </p>
             <div className="marginTop18 quizMargin1422 marginLeftZero">
-              84 ÷ (7 × 4) ={' '}
+              84 ÷ 7 × 4 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['7'][0]}

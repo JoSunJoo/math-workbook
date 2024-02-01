@@ -106,8 +106,8 @@ const FifthGrade12: React.FC = () => {
   return (
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
-        <div className="quiz1">
-          <div className="quizCard1 mpijo">
+        <div className="quiz1794">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ①{' '}
               {showResults && (
@@ -143,7 +143,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ②{' '}
               {showResults && (
@@ -169,7 +169,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              36 ÷ (6 ÷ 3) ={' '}
+              36 ÷ 6 ÷ 3 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['2'][0]}
@@ -179,7 +179,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ③{' '}
               {showResults && (
@@ -205,7 +205,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              112 ÷ (8 × 7) ={' '}
+              112 ÷ 8 × 7 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['3'][0]}
@@ -215,7 +215,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ④{' '}
               {showResults && (
@@ -241,7 +241,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              61 - (33 - 16) ={' '}
+              61 - 33 - 16 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['4'][0]}
@@ -252,7 +252,7 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
 
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑤{' '}
               {showResults && (
@@ -278,7 +278,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              120 + (32 - 87) ={' '}
+              120 + 32 - 87 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['5'][0]}
@@ -288,7 +288,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑥{' '}
               {showResults && (
@@ -324,7 +324,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑦{' '}
               {showResults && (
@@ -350,7 +350,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              26 ÷ (13 × 15) ={' '}
+              26 ÷ 13 × 15 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['7'][0]}
@@ -360,7 +360,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑧{' '}
               {showResults && (
@@ -386,7 +386,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              37 + (13 - 9) ={' '}
+              37 - (13 + 9) ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['8'][0]}
@@ -397,7 +397,7 @@ const FifthGrade12: React.FC = () => {
             </div>
           </div>
 
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑨{' '}
               {showResults && (
@@ -423,7 +423,7 @@ const FifthGrade12: React.FC = () => {
               )}
             </p>
             <div className="marginTop18">
-              96 ÷ (3 ÷ 4) ={' '}
+              96 ÷ 3 ÷ 4 ={' '}
               <input
                 disabled={isInputDisabled}
                 value={answers['9'][0]}
@@ -433,7 +433,7 @@ const FifthGrade12: React.FC = () => {
               />
             </div>
           </div>
-          <div className="quizCard1 mpijo">
+          <div className="quizCard1457s1 mpijo">
             <p className="quizNumber1433">
               ⑩{' '}
               {showResults && (

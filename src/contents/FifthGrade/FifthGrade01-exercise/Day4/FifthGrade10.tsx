@@ -214,7 +214,7 @@ const FifthGrade10: React.FC = () => {
             <div>
               {isCorrect('5') ? (
                 <div>
-                  <img className="answerImg1" src={correctimg} alt="Correct" />
+                  <img className="answerImg7" src={correctimg} alt="Correct" />
                 </div>
               ) : (
                 <div>

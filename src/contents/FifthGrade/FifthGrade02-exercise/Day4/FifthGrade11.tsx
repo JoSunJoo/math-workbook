@@ -97,7 +97,7 @@ const FifthGrade11: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll asdfasdf242">
         <div className="quiz241Ex">
-          <div className="flexRow nowrap1">
+          <div className="flexcol nowrap1">
             <div className="flexcol nowrap1">
               <div className="textLLeft fontSize20">
                 28보다 크고 57보다 작은 수 중에서 3의 배수의 개수
@@ -371,7 +371,7 @@ const FifthGrade11: React.FC = () => {
         </div>
         <div className="marginTop231">
           <div className="quizNumber123887">
-            <p className="fontSize20 afwe3513">
+            <p className="fontSize20 afwe3513 awfe139825982">
               ⑤ 37보다 크고 100보다 작은 수 중에서 12의 배수의 개수
               {showResults && (
                 <div>
@@ -396,12 +396,12 @@ const FifthGrade11: React.FC = () => {
               )}{' '}
             </p>
           </div>
-          <div className="fontSize25 flexRow marginleft2421">
+          <div className="fontSize25 flexRow marginleft2421 ">
             <input
               disabled={isInputDisabled}
               value={answers['5'][0]}
               onChange={e => handleChange('5', 0, e.target.value)}
-              className="borderColor233 quizNumber1235"
+              className="borderColor233 quizNumber1235 awfe139825982"
               type="text"
               name=""
               id=""

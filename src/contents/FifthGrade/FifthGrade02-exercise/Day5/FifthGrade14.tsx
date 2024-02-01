@@ -99,7 +99,7 @@ const FifthGrade14: React.FC = () => {
     <Styled.OneToNine className="sectionSize">
       <div className="quizAll">
         <div className="quiz1 quizMargin2 lakwerfj">
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">
@@ -150,7 +150,7 @@ const FifthGrade14: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">
@@ -201,7 +201,7 @@ const FifthGrade14: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">
@@ -252,7 +252,7 @@ const FifthGrade14: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">
@@ -279,10 +279,10 @@ const FifthGrade14: React.FC = () => {
                     </div>
                   )}{' '}
                 </p>
-                <div className="fif251numb">15 × 5 = 75</div>
+                <div className="fif251numb">15 × 7 = 105</div>
               </div>
               <div className="flexRow alignCenter textAlignRight">
-                <div className="fontSize20">75는 5의&nbsp;&nbsp;</div>
+                <div className="fontSize20">105는 7의&nbsp;&nbsp;</div>
                 <input
                   disabled={isInputDisabled}
                   value={answers['4'][0]}
@@ -292,7 +292,7 @@ const FifthGrade14: React.FC = () => {
                 <div className="fontSize20">&nbsp;&nbsp;입니다.</div>
               </div>
               <div className="flexRow alignCenter margintop2512 textAlignRight">
-                <div className="fontSize20">75는 15의&nbsp;&nbsp;</div>
+                <div className="fontSize20">105는 15의&nbsp;&nbsp;</div>
                 <input
                   disabled={isInputDisabled}
                   value={answers['4'][1]}
@@ -303,7 +303,7 @@ const FifthGrade14: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">
@@ -354,7 +354,7 @@ const FifthGrade14: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11 quizMargin1922">
+          <div className="quizCard1daafa1 quizMargin1922">
             <div className="flexcol">
               <div className="flexRow">
                 <p className="quizNumber1231">

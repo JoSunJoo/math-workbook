@@ -135,7 +135,7 @@ const FifthGrade07: React.FC = () => {
         </div>
         <div>
           <div>
-            <div className="flexRow justifyCenter noWrap1 marginTop231 fawef3532">
+            <div className="flexRow noWrap1 marginTop231 fawef3532">
               <p className="fontSize25 marginRight231 afwe3513">
                 ①
                 {showResults && (
@@ -204,7 +204,7 @@ const FifthGrade07: React.FC = () => {
               <p className="fontSize25">,</p>
               ......
             </div>
-            <div className="flexRow justifyCenter noWrap1 marginTop231 fawef3532">
+            <div className="flexRow noWrap1 marginTop231 fawef3532">
               <p className="fontSize25 marginRight231 afwe3513">
                 ②
                 {showResults && (
@@ -273,7 +273,7 @@ const FifthGrade07: React.FC = () => {
               <p className="fontSize25">,</p>
               ......
             </div>{' '}
-            <div className="flexRow justifyCenter noWrap1 marginTop231 fawef3532">
+            <div className="flexRow noWrap1 marginTop231 fawef3532">
               <p className="fontSize25 marginRight231 afwe3513">
                 ③
                 {showResults && (
@@ -342,7 +342,7 @@ const FifthGrade07: React.FC = () => {
               <p className="fontSize25">,</p>
               ......
             </div>{' '}
-            <div className="flexRow justifyCenter noWrap1 marginTop231 fawef3532">
+            <div className="flexRow noWrap1 marginTop231 fawef3532">
               <p className="fontSize25 marginRight231 afwe3513">
                 ④
                 {showResults && (
@@ -411,7 +411,7 @@ const FifthGrade07: React.FC = () => {
               <p className="fontSize25">,</p>
               ......
             </div>{' '}
-            <div className="flexRow justifyCenter noWrap1 marginTop231 fawef3532">
+            <div className="flexRow noWrap1 marginTop231 fawef3532">
               <p className="fontSize25 marginRight231 afwe3513">
                 ⑤
                 {showResults && (

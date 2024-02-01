@@ -134,7 +134,7 @@ const FifthGrade10: React.FC = () => {
           </div>
         </div>
         <div className="quiz1 lakwerfj3214">
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ① 50보다 작은 5의 배수의 개수{' '}
@@ -176,7 +176,7 @@ const FifthGrade10: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ② 60보다 작은 7의 배수의 개수{' '}
@@ -211,14 +211,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['2'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('2', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ③ 55보다 작은 9의 배수의 개수{' '}
@@ -253,14 +253,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['3'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('3', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ④ 64보다 작은 8의 배수의 개수{' '}
@@ -295,14 +295,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['4'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('4', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑤ 99보다 작은 13의 배수의 개수{' '}
@@ -337,14 +337,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['5'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('5', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑥ 98보다 작은 15의 배수의 개수{' '}
@@ -379,14 +379,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['6'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('6', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑦ 100보다 작은 18의 배수의 개수{' '}
@@ -421,14 +421,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['7'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('7', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑧ 130보다 작은 22의 배수의 개수{' '}
@@ -463,14 +463,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['8'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('8', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑨ 165보다 작은 26의 배수의 개수{' '}
@@ -505,14 +505,14 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['9'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('9', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>
               </div>
             </div>
           </div>
-          <div className="quizCard11">
+          <div className="quizCard1daafa1">
             <div className="marginTop18 flexcol">
               <p className="quizNumber1231">
                 ⑩ 187보다 작은 31의 배수의 개수{' '}
@@ -547,7 +547,7 @@ const FifthGrade10: React.FC = () => {
                 <input
                   disabled={isInputDisabled}
                   value={answers['10'][0]}
-                  onChange={e => handleChange('1', 0, e.target.value)}
+                  onChange={e => handleChange('10', 0, e.target.value)}
                   className="borderColor233 quizNumber1235"
                 />{' '}
                 개<div></div>

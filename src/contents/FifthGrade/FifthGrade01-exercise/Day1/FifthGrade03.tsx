@@ -30,16 +30,16 @@ const FifthGrade03: React.FC = () => {
   });
   const correctAnswers: AnswersType = {
     '1': ['24'],
-    '2': ['30'],
-    '3': ['13'],
-    '4': ['10'],
-    '5': ['24'],
-    '6': ['30'],
-    '7': ['6'],
-    '8': ['77'],
-    '9': ['82'],
-    '10': ['30'],
-    '11': ['256'],
+    '2': ['6'],
+    '3': ['30'],
+    '4': ['67'],
+    '5': ['13'],
+    '6': ['82'],
+    '7': ['10'],
+    '8': ['30'],
+    '9': ['24'],
+    '10': ['256'],
+    '11': ['30'],
     '12': ['3'],
   };
   const handleChange = (questionId: string, index: number, value: string) => {
@@ -137,7 +137,7 @@ const FifthGrade03: React.FC = () => {
                   </div>
                 )}
               </p>
-              37 + 15 + 28 ={' '}
+              37 + 15 - 28 ={' '}
               <input
                 disabled={isInputDisabled}
                 className="inputSize1"
@@ -318,7 +318,7 @@ const FifthGrade03: React.FC = () => {
                   </div>
                 )}
               </p>
-              110 - 56 -7 + 35 ={' '}
+              110 - 56 - 7 + 35 ={' '}
               <input
                 disabled={isInputDisabled}
                 className="inputSize1"

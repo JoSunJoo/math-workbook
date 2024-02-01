@@ -22,9 +22,9 @@ const FifthGrade05: React.FC = () => {
   });
   const correctAnswers: AnswersType = {
     '1': ['50', '97', '80', '97'],
-    '2': ['50', '97', '80', '97'],
-    '3': ['50', '97', '80', '97'],
-    '4': ['50', '97', '80', '97'],
+    '2': ['39', '23', '13', '55'],
+    '3': ['40', '66', '61', '14'],
+    '4': ['40', '21', '8', '21'],
   };
   const handleChange = (questionId: string, index: number, value: string) => {
     setAnswers({

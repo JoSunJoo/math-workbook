@@ -124,8 +124,8 @@ const FifthGrade09: React.FC = () => {
                 />
                 <div className="borderColor233 Red233">30</div>
                 <div>
-                  <div className="Red233">6×4=24(×) </div>
-                  <div className="Red233">6×5=30(○) </div>
+                  <div className="Red233">6×4=24(X) </div>
+                  <div className="Red233">6×5=30(O) </div>
                 </div>
               </div>
             </div>

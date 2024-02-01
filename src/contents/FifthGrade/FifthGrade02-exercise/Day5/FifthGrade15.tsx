@@ -41,7 +41,7 @@ const FifthGrade15: React.FC = () => {
     '3': ['78'],
     '4': ['32'],
     '5': ['75'],
-    '6': ['114'],
+    '6': ['144'],
     '7': ['74'],
     '8': ['85'],
     '9': ['61'],
@@ -161,7 +161,7 @@ const FifthGrade15: React.FC = () => {
                   value={answers['1'][0]}
                   onChange={e => handleChange('1', 0, e.target.value)}
                   className="fifthQuiz231Input"
-                  placeholder="58"
+                  // placeholder="58"
                 />
               </div>
             </div>

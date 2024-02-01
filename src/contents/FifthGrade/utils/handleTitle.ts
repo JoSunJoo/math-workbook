@@ -74,14 +74,21 @@ export const FifthGrade1Day1 = {
 
 export const FifthGrade1Day2 = {
   title: '덧셈, 뺄셈과 괄호',
-  subTitle: '알맞은 수를 써넣어 식을 계산하세요.',
+  subTitle: '선으로 표시된 것을 먼저 계산하여 양쪽의 계산 결과를 비교해보세요',
 };
 
 export const FifthGrade1Day3 = {
   title: '곱셈, 나눗셈과 괄호',
-  subTitle: '알맞은 수를 써넣어 식을 계산하세요.',
+  subTitle: '계산을 하세요.',
 };
-
+export const FifthGrade1Day32 = {
+  title: '곱셈, 나눗셈과 괄호',
+  subTitle: '선으로 표시된 것을 먼저 계산하여 양쪽의 계산 결과를 비교해보세요',
+};
+export const FifthGrade1Day33 = {
+  title: '곱셈, 나눗셈과 괄호',
+  subTitle: '계산을 하세요.',
+};
 export const FifthGrade1Day41 = {
   title: '연산 퍼즐',
   subTitle: '알맞은 수를 써넣으세요',
@@ -94,12 +101,12 @@ export const FifthGrade1Day42 = {
 
 export const FifthGrade1Day43 = {
   title: '연산 퍼즐',
-  subTitle: '계산 하세요',
+  subTitle: '계산을 하세요',
 };
 
 export const FifthGrade1Day5 = {
   title: '문장제',
-  subTitle: '문제를 읽고 하나의 식을 만들어 답을 구하세요.',
+  subTitle: '문제를 읽고 답을 구하세요.',
 };
 
 export const FifthGrade2Day11 = {
@@ -109,17 +116,17 @@ export const FifthGrade2Day11 = {
 
 export const FifthGrade2Day12 = {
   title: '약수',
-  subTitle: '곱셈을 이용하여 약수를 구하세요',
+  subTitle: '나눗셈을 이용하여 약수를 구하세요',
 };
 
 export const FifthGrade2Day13 = {
   title: '약수',
-  subTitle: '주어진 수 중 약수의 갯수를 구하세요.',
+  subTitle: '주어진 수 중 큰 마름모 안에 주어진 수의 약수의 갯수를 구하세요.',
 };
 
 export const FifthGrade2Day21 = {
   title: '약수가 2개인 수',
-  subTitle: '주어진 수 중 약수의 갯수를 구하세요.',
+  subTitle: '주어진 수 중 큰 마름모 안에 주어진 수의 약수의 갯수를 구하세요.',
 };
 
 export const FifthGrade2Day22 = {
@@ -133,7 +140,7 @@ export const FifthGrade2Day31 = {
 export const FifthGrade2Day32 = {
   title: '배수',
   subTitle:
-    '주어진 수 중 큰 마름모 안에 주어진 수의 배수에 해당하는 수의 갯수를 써넣으세요.',
+    '주어진 수 중 큰 마름모 안에 주어진 수의\n 배수에 해당하는 수의 갯수를 써넣으세요.',
 };
 export const FifthGrade2Day33 = {
   title: '배수',
@@ -141,7 +148,7 @@ export const FifthGrade2Day33 = {
 };
 export const FifthGrade2Day41 = {
   title: '배수의 개수',
-  subTitle: '빈칸에 조건을 만족하는 배수를 써넣으세요.',
+  subTitle: '빈칸에 조건을 만족하는 배수의 갯수를 써넣으세요.',
 };
 export const FifthGrade2Day42 = {
   title: '배수의 개수',
@@ -153,7 +160,8 @@ export const FifthGrade2Day43 = {
 };
 export const FifthGrade2Day51 = {
   title: '약수와 배수의 관계',
-  subTitle: '빈칸 안에 약수와 배수를 알맞게 써넣으세요',
+  subTitle:
+    '식을 보고 두 수의 관계(‘약수’ 혹은 ‘배수’)를 빈칸 안에 알맞게 써넣으세요',
 };
 export const FifthGrade2Day52 = {
   title: '약수와 배수의 관계',

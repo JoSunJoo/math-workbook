@@ -116,7 +116,7 @@ const FifthGrade13: React.FC = () => {
               </div>
             )}{' '}
             ① 과수원에서 사과 128개를 따서 가로 2줄, 세로 4줄로 놓인 상자에
-            똑같이 담으려면 한 상자 에
+            똑같이 담으려면 한 상자에
           </div>
           <div>넣어야 하는 사과는 몇 개일까요?</div>
           <div className="flexRow">
