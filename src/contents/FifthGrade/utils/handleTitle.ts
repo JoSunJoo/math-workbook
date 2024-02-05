@@ -177,11 +177,11 @@ export const FifthGrade3Day11 = {
     '전체에서 색칠된 부분을 분수로 나타낸 것입니다.\n빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day12 = {
-  title: '약분과 통분',
+  title: '크기가 같은 분수',
   subTitle: '빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day13 = {
-  title: '약분과 통분',
+  title: '크기가 같은 분수',
   subTitle: '다음 분수의 기약 분수를 써넣으세요',
 };
 export const FifthGrade3Day21 = {
@@ -189,7 +189,7 @@ export const FifthGrade3Day21 = {
   subTitle: '기약분수의 갯수를 적으세요.',
 };
 export const FifthGrade3Day22 = {
-  title: '다음 분수의 기약 분수를 써넣으세요',
+  title: '약분',
   subTitle: '빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day23 = {
@@ -201,11 +201,11 @@ export const FifthGrade3Day31 = {
   subTitle: '두 분수를 통분할 때, 빈칸에 알맞은 수를 써넣으세요.',
 };
 export const FifthGrade3Day32 = {
-  title: '도전! 계산왕',
+  title: '통분',
   subTitle: '두 분모의 곱을 공통분모로 하여 통분하세요.',
 };
 export const FifthGrade3Day33 = {
-  title: '도전! 계산왕',
+  title: '통분',
   subTitle: '두 분모의 최소공배수를 공통분모로 하여 통분하세요.',
 };
 export const FifthGrade3Day41 = {

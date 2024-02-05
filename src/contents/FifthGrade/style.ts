@@ -804,10 +804,10 @@ const Styled = {
       margin-top: 50px;
     }
     .quiz9460418 {
-      min-width: 700px;
+      min-width: 800px;
       position: relative;
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 40% 40%;
       align-content: center;
       justify-content: center;
       margin-top: 50px;
@@ -1764,6 +1764,9 @@ const Styled = {
       .quizLine121455 {
         right: 42%;
       }
+      .quizLine12145521 {
+        right: 44%;
+      }
       .quizLine1214588 {
         right: 41%;
       }
@@ -1799,6 +1802,9 @@ const Styled = {
       }
       .awoefiawfe {
         left: 45%;
+      }
+      .afweiouj23 {
+        left: 41%;
       }
       .d-line5:before,
       .d-line5:after {
@@ -1837,7 +1843,7 @@ const Styled = {
       position: absolute;
       left: 7%;
       top: 21%;
-      width: 149px;
+      width: 156px;
     }
     .img1212 {
       position: absolute;
@@ -2924,6 +2930,14 @@ const Styled = {
       z-index: 5;
       top: 2.5rem;
       left: 0rem;
+      width: 5rem;
+      height: 7rem;
+    }
+    .a111239148389 {
+      position: absolute;
+      z-index: 5;
+      top: -1.5rem;
+      left: -2rem;
       width: 5rem;
       height: 7rem;
     }

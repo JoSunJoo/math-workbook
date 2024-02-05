@@ -117,14 +117,14 @@ const FifthGrade06: React.FC = () => {
         <div className="quiz9460418">
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513 ">
                 ①{' '}
                 {showResults && (
                   <div>
                     {isCorrect('1') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -132,7 +132,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -153,14 +153,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ②{' '}
                 {showResults && (
                   <div>
                     {isCorrect('2') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -168,7 +168,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -189,14 +189,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ③{' '}
                 {showResults && (
                   <div>
                     {isCorrect('3') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -204,7 +204,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -225,14 +225,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ④{' '}
                 {showResults && (
                   <div>
                     {isCorrect('4') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -240,7 +240,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -262,14 +262,14 @@ const FifthGrade06: React.FC = () => {
 
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑤{' '}
                 {showResults && (
                   <div>
                     {isCorrect('5') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -277,7 +277,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -298,14 +298,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑥{' '}
                 {showResults && (
                   <div>
                     {isCorrect('6') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -313,7 +313,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -334,14 +334,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑦{' '}
                 {showResults && (
                   <div>
                     {isCorrect('7') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -349,7 +349,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -370,14 +370,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑧{' '}
                 {showResults && (
                   <div>
                     {isCorrect('8') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -385,7 +385,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -407,14 +407,14 @@ const FifthGrade06: React.FC = () => {
 
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑨{' '}
                 {showResults && (
                   <div>
                     {isCorrect('9') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -422,7 +422,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -443,14 +443,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑩{' '}
                 {showResults && (
                   <div>
                     {isCorrect('10') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -458,7 +458,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -479,14 +479,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑪{' '}
                 {showResults && (
                   <div>
                     {isCorrect('11') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -494,7 +494,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -515,14 +515,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑫{' '}
                 {showResults && (
                   <div>
                     {isCorrect('12') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -530,7 +530,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -551,14 +551,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑬{' '}
                 {showResults && (
                   <div>
                     {isCorrect('13') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -566,7 +566,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />
@@ -587,14 +587,14 @@ const FifthGrade06: React.FC = () => {
           </div>
           <div className="quizCard11">
             <div className="marginTop18 flexRow">
-              <p className="quizNumber1231">
+              <p className="quizNumber1231 afwe3513">
                 ⑭{' '}
                 {showResults && (
                   <div>
                     {isCorrect('14') ? (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={correctimg}
                           alt="Correct"
                         />
@@ -602,7 +602,7 @@ const FifthGrade06: React.FC = () => {
                     ) : (
                       <div>
                         <img
-                          className="answerImg101"
+                          className="a111239148389"
                           src={incorrectimg}
                           alt="Incorrect"
                         />

@@ -1193,15 +1193,15 @@ const FifthGrade06: React.FC = () => {
                 <div className="fontSize25 colorRedOnly322">
                   <input
                     disabled={isInputDisabled}
-                    value={answers['19'][0]}
-                    onChange={e => handleChange('19', 0, e.target.value)}
+                    value={answers['20'][0]}
+                    onChange={e => handleChange('20', 0, e.target.value)}
                     className="averageInput"
                   />
                   <div className="divlineCSS"></div>
                   <input
                     disabled={isInputDisabled}
-                    value={answers['19'][1]}
-                    onChange={e => handleChange('19', 1, e.target.value)}
+                    value={answers['20'][1]}
+                    onChange={e => handleChange('20', 1, e.target.value)}
                     className="averageInput"
                   />
                 </div>

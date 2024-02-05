@@ -465,7 +465,7 @@ const FifthGrade07: React.FC = () => {
                   value={answers['6'][1]}
                   onChange={e => handleChange('6', 1, e.target.value)}
                 />
-                <div className="d-line4 quizLine121455"></div>
+                <div className="d-line4 quizLine12145521"></div>
                 <div className="d-line5 awoefiawfe"></div>
               </div>
             </div>
