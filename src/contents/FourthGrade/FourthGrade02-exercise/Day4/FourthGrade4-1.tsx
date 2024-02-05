@@ -28,7 +28,7 @@ const FourthGrade41Exercise = () => {
     <DayLayout title={Day.title} subTitle={Day.subTitle}>
       <Styled.PaddingBox>
         <Styled.RowBox5>
-          <IdSymbol id={'★'} correct={correct[0]} />
+          <IdSymbol id={'★'} correct={confirmType ? null : correct[0]} />
           <SingleQuiz
             toggle={toggle}
             setToggle={setToggle}

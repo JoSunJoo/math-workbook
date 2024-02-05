@@ -88,6 +88,7 @@ const Single22 = (props: Props) => {
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox8
+                    disabled={correct === null ? false : true}
                     onChange={e =>
                       handleInput(e.target.value, idxArray[idx][0], 0)
                     }
@@ -95,6 +96,7 @@ const Single22 = (props: Props) => {
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox8
+                  disabled={correct === null ? false : true}
                   onChange={e =>
                     handleInput(e.target.value, idxArray[idx][0], 1)
                   }
@@ -115,6 +117,7 @@ const Single22 = (props: Props) => {
               <Styled.ColGapBox gap={0.1}>
                 <Styled.FractUnderLine>
                   <Styled.InputBox8
+                    disabled={correct2 === null ? false : true}
                     onChange={e =>
                       handleInput(e.target.value, idxArray[idx][1], 0)
                     }
@@ -122,6 +125,7 @@ const Single22 = (props: Props) => {
                   />
                 </Styled.FractUnderLine>
                 <Styled.InputBox8
+                  disabled={correct2 === null ? false : true}
                   onChange={e =>
                     handleInput(e.target.value, idxArray[idx][1], 1)
                   }

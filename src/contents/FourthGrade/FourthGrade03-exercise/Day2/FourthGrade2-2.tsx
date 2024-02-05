@@ -43,8 +43,8 @@ const FourthGrade22Exercise = () => {
                 setToggle={setToggle}
                 inputValue={inputValue}
                 setInputValue={setInputValue}
-                correct={correct[idxArray[idx][0]]}
-                correct2={correct[idxArray[idx][1]]}
+                correct={confirmType ? null : correct[idxArray[idx][0]]}
+                correct2={confirmType ? null : correct[idxArray[idx][1]]}
               />
             ))}
           </Styled.ColGapBox>
