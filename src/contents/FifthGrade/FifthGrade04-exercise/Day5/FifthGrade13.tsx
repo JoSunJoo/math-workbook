@@ -46,10 +46,16 @@ const FifthGrade13: React.FC = () => {
   const [showResults, setShowResults] = useState(false);
 
   const isCorrect = (questionId: string) => {
-    return correctAnswers[questionId].every(
-      (answer, index) => answer === answers[questionId][index]
+    // 정답 배열과 사용자 답변 배열에서 마지막 세 자리를 가져옴
+    const correctLastThreeAnswers = correctAnswers[questionId].slice(-3);
+    const userLastThreeAnswers = answers[questionId].slice(-3);
+
+    // 마지막 세 자리가 일치하는지 확인
+    return correctLastThreeAnswers.every(
+      (val, index) => val === userLastThreeAnswers[index]
     );
   };
+
   const calculateScore = () => {
     const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
     const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수

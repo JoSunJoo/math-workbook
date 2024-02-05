@@ -43,10 +43,22 @@ const FifthGrade11: React.FC = () => {
   const [showResults, setShowResults] = useState(false);
 
   const isCorrect = (questionId: string) => {
-    return correctAnswers[questionId].every(
-      (answer, index) => answer === answers[questionId][index]
+    // 정답 배열과 사용자 답변 배열의 길이
+    const answerLength = correctAnswers[questionId].length;
+
+    // 정답 배열과 사용자 답변 배열에서 마지막 두 자리를 가져옴
+    const correctLastTwoAnswers = correctAnswers[questionId].slice(
+      answerLength - 2
+    );
+    const userLastTwoAnswers = answers[questionId].slice(answerLength - 2);
+
+    // 마지막 두 자리가 일치하는지 확인
+    return (
+      correctLastTwoAnswers[0] === userLastTwoAnswers[0] &&
+      correctLastTwoAnswers[1] === userLastTwoAnswers[1]
     );
   };
+
   const calculateScore = () => {
     const totalQuestions = Object.keys(correctAnswers).length; // 전체 문제 수
     const scorePerQuestion = 100 / totalQuestions; // 각 문제당 점수
